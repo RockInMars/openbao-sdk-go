@@ -1,0 +1,18 @@
+{
+  "source_sha256": "02ddd7886538132fb488932a501612bad148449263c7380b364597d5d27114f5",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-p",
+    "test_dependency_check.py",
+    "-v"
+  ],
+  "started_at": "2026-09-28T12:04:23.230691+00:00",
+  "finished_at": "2026-09-28T12:04:23.925647+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-001/resume02-preflight-environment-red.log"
+}

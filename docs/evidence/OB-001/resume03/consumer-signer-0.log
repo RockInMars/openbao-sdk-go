@@ -1,0 +1,4 @@
+go: downloading github.com/openbao/openbao/api/v2 v2.7.0
+go: consumer.example/signer imports
+	git.example.com/infra/openbao-sdk-go imports
+	github.com/openbao/openbao/api/v2: github.com/openbao/openbao/api/v2@v2.7.0: Get "https://proxy.golang.org/github.com/openbao/openbao/api/v2/@v/v2.7.0.zip": dial tcp: lookup proxy.golang.org on 168.63.129.16:53: read udp 172.26.39.246:51984->168.63.129.16:53: i/o timeout

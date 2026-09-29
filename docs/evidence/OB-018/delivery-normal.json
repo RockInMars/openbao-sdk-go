@@ -1,0 +1,11 @@
+{
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "command": [
+    "make",
+    "normal-test"
+  ],
+  "started_at": "2026-09-28T10:41:32.679047+00:00",
+  "finished_at": "2026-09-28T10:41:38.827693+00:00",
+  "exit_code": 2,
+  "log": "docs/evidence/OB-018/delivery-normal.log"
+}

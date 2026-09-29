@@ -1,0 +1,9 @@
+# git.example.com/infra/openbao-sdk-go [git.example.com/infra/openbao-sdk-go.test]
+./client_test.go:23:52: undefined: Option
+./client_test.go:23:60: undefined: Client
+./client_test.go:23:83: undefined: New
+./client_test.go:24:20: undefined: Client
+./client_test.go:27:7: undefined: New
+./client_test.go:43:7: undefined: New
+FAIL	git.example.com/infra/openbao-sdk-go [build failed]
+FAIL

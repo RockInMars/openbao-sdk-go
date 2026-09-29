@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-run",
+    "TestCredentialWorkflowRejectsNilStored|TestTLSFileRejectsFIFOWithoutBlocking",
+    "-count=1",
+    ".",
+    "./examples/credentialworkflow"
+  ],
+  "started_at": "2026-09-28T10:17:22.080866+00:00",
+  "finished_at": "2026-09-28T10:17:23.623566+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-018/red-review-nil-fifo.log"
+}

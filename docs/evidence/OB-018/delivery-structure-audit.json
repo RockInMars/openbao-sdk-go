@@ -1,0 +1,24 @@
+{
+  "evidence_class": "DELIVERY_STRUCTURE_AUDIT_NOT_SECURITY_SCANNING",
+  "recorded_at": "2026-09-28T10:47:47.088288+00:00",
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "checks": {
+    "19_tasks_present": true,
+    "original_task_dependencies_preserved": true,
+    "72_acceptances_present": true,
+    "all_acceptance_and_task_evidence_references_exist": true,
+    "formal_gate_source_hash_matches": true,
+    "formal_gates_not_misreported_pass": true,
+    "four_fuzz_target_runs_finished_exit_zero": true,
+    "original_spec_checksums_match": true,
+    "no_symlink_followed": true,
+    "no_dot_git_runtime_cache_key_or_env_files_selected": true,
+    "no_embedded_private_pem_detected_by_basic_pattern": true
+  },
+  "limitations": [
+    "This audit is not govulncheck or gitleaks. Both scanner executions remain blocked.",
+    "Does not prove absence of every possible secret format or vulnerability.",
+    "Does not establish official api/v2 compilation or genuine OpenBao compatibility."
+  ],
+  "build_and_release_status": "NOT_RELEASE_READY"
+}

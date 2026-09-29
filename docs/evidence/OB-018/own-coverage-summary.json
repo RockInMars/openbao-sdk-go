@@ -1,0 +1,69 @@
+{
+  "evidence_class": "SUPPLEMENTAL_OWN_LEAF_STATEMENT_COVERAGE",
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "not_release_evidence": true,
+  "metric": "Go statements, NOT physical lines",
+  "root_facade_and_official_factory_measured": false,
+  "groups": [
+    {
+      "package": "auth",
+      "covered_statements": 64,
+      "statements": 74,
+      "percentage": 86.486
+    },
+    {
+      "package": "baoerr",
+      "covered_statements": 26,
+      "statements": 26,
+      "percentage": 100.0
+    },
+    {
+      "package": "internal/authn",
+      "covered_statements": 271,
+      "statements": 298,
+      "percentage": 90.94
+    },
+    {
+      "package": "internal/engine",
+      "covered_statements": 315,
+      "statements": 365,
+      "percentage": 86.301
+    },
+    {
+      "package": "internal/jsondoc",
+      "covered_statements": 52,
+      "statements": 56,
+      "percentage": 92.857
+    },
+    {
+      "package": "internal/pkiutil",
+      "covered_statements": 84,
+      "statements": 87,
+      "percentage": 96.552
+    },
+    {
+      "package": "internal/transitutil",
+      "covered_statements": 83,
+      "statements": 87,
+      "percentage": 95.402
+    },
+    {
+      "package": "kv",
+      "covered_statements": 22,
+      "statements": 25,
+      "percentage": 88.0
+    },
+    {
+      "package": "pki",
+      "covered_statements": 69,
+      "statements": 70,
+      "percentage": 98.571
+    },
+    {
+      "package": "sensitive",
+      "covered_statements": 22,
+      "statements": 22,
+      "percentage": 100.0
+    }
+  ]
+}

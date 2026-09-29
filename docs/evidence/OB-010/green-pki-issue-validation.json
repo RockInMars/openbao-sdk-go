@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-timeout=30s",
+    ".",
+    "./pki",
+    "-run",
+    "TestPKI(Issue|Private|CSR|Trust)"
+  ],
+  "started_at": "2026-09-28T09:24:36.707097+00:00",
+  "finished_at": "2026-09-28T09:24:39.185073+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-010/green-pki-issue-validation.log"
+}

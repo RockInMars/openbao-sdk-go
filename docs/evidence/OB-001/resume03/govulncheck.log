@@ -1,0 +1,1 @@
+go: golang.org/x/vuln/cmd/govulncheck@v1.1.4: golang.org/x/vuln/cmd/govulncheck@v1.1.4: Get "https://proxy.golang.org/golang.org/x/vuln/cmd/govulncheck/@v/v1.1.4.info": dial tcp: lookup proxy.golang.org on 168.63.129.16:53: read udp 172.26.39.246:48960->168.63.129.16:53: read: connection refused

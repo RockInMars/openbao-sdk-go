@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-v"
+  ],
+  "started_at": "2026-09-28T09:59:33.848573+00:00",
+  "finished_at": "2026-09-28T09:59:34.557245+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-018/red-tooling-gates.log"
+}

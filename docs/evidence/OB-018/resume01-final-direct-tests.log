@@ -1,0 +1,629 @@
+{"Time":"2026-09-28T11:21:29.856091975Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/auth"}
+{"Time":"2026-09-28T11:21:29.962770112Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestStaticTokenSnapshots"}
+{"Time":"2026-09-28T11:21:29.964671915Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestStaticTokenSnapshots","Output":"=== RUN   TestStaticTokenSnapshots\n"}
+{"Time":"2026-09-28T11:21:29.964966965Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestStaticTokenSnapshots","Output":"--- PASS: TestStaticTokenSnapshots (0.00s)\n"}
+{"Time":"2026-09-28T11:21:29.964976188Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestStaticTokenSnapshots","Elapsed":0}
+{"Time":"2026-09-28T11:21:29.965068544Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestTokenFileAtomicReplacement"}
+{"Time":"2026-09-28T11:21:29.96507331Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestTokenFileAtomicReplacement","Output":"=== RUN   TestTokenFileAtomicReplacement\n"}
+{"Time":"2026-09-28T11:21:29.967591454Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestTokenFileAtomicReplacement","Output":"--- PASS: TestTokenFileAtomicReplacement (0.00s)\n"}
+{"Time":"2026-09-28T11:21:29.96762263Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestTokenFileAtomicReplacement","Elapsed":0}
+{"Time":"2026-09-28T11:21:29.967634195Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestTokenFileValidation"}
+{"Time":"2026-09-28T11:21:29.967641393Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestTokenFileValidation","Output":"=== RUN   TestTokenFileValidation\n"}
+{"Time":"2026-09-28T11:21:29.987571994Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestTokenFileValidation","Output":"--- PASS: TestTokenFileValidation (0.02s)\n"}
+{"Time":"2026-09-28T11:21:29.987921527Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestTokenFileValidation","Elapsed":0.02}
+{"Time":"2026-09-28T11:21:29.988206548Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestSecretIDGenerationAndUse"}
+{"Time":"2026-09-28T11:21:29.988216002Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestSecretIDGenerationAndUse","Output":"=== RUN   TestSecretIDGenerationAndUse\n"}
+{"Time":"2026-09-28T11:21:29.988221671Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestSecretIDGenerationAndUse","Output":"--- PASS: TestSecretIDGenerationAndUse (0.00s)\n"}
+{"Time":"2026-09-28T11:21:29.988226156Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/auth","Test":"TestSecretIDGenerationAndUse","Elapsed":0}
+{"Time":"2026-09-28T11:21:29.988229859Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:29.998847595Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Output":"coverage: 86.5% of statements\n"}
+{"Time":"2026-09-28T11:21:30.770303226Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/kv"}
+{"Time":"2026-09-28T11:21:30.891378763Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentExactNumber"}
+{"Time":"2026-09-28T11:21:30.89145868Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentExactNumber","Output":"=== RUN   TestDocumentExactNumber\n"}
+{"Time":"2026-09-28T11:21:30.898785969Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentExactNumber","Output":"--- PASS: TestDocumentExactNumber (0.01s)\n"}
+{"Time":"2026-09-28T11:21:30.898835161Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentExactNumber","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:30.899094234Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentIndependentCopy"}
+{"Time":"2026-09-28T11:21:30.899134181Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentIndependentCopy","Output":"=== RUN   TestDocumentIndependentCopy\n"}
+{"Time":"2026-09-28T11:21:30.900504764Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentIndependentCopy","Output":"--- PASS: TestDocumentIndependentCopy (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.900822783Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentIndependentCopy","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.900851707Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentConstructAndDecode"}
+{"Time":"2026-09-28T11:21:30.900855344Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentConstructAndDecode","Output":"=== RUN   TestDocumentConstructAndDecode\n"}
+{"Time":"2026-09-28T11:21:30.902805821Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentConstructAndDecode","Output":"--- PASS: TestDocumentConstructAndDecode (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.902828818Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentConstructAndDecode","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.90283662Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentRejectsLossyUnicode"}
+{"Time":"2026-09-28T11:21:30.902852809Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentRejectsLossyUnicode","Output":"=== RUN   TestDocumentRejectsLossyUnicode\n"}
+{"Time":"2026-09-28T11:21:30.903350193Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentRejectsLossyUnicode","Output":"--- PASS: TestDocumentRejectsLossyUnicode (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.903360727Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"TestDocumentRejectsLossyUnicode","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.903869803Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument"}
+{"Time":"2026-09-28T11:21:30.903881598Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument","Output":"=== RUN   FuzzDocument\n"}
+{"Time":"2026-09-28T11:21:30.904742479Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#0"}
+{"Time":"2026-09-28T11:21:30.904767553Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#0","Output":"=== RUN   FuzzDocument/seed#0\n"}
+{"Time":"2026-09-28T11:21:30.905760019Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#0","Output":"--- PASS: FuzzDocument/seed#0 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.905902594Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#0","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.905977172Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#1"}
+{"Time":"2026-09-28T11:21:30.905984042Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#1","Output":"=== RUN   FuzzDocument/seed#1\n"}
+{"Time":"2026-09-28T11:21:30.906408688Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#1","Output":"--- PASS: FuzzDocument/seed#1 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.906417481Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#1","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.906478309Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#2"}
+{"Time":"2026-09-28T11:21:30.906482693Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#2","Output":"=== RUN   FuzzDocument/seed#2\n"}
+{"Time":"2026-09-28T11:21:30.906720369Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#2","Output":"--- PASS: FuzzDocument/seed#2 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.906749826Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#2","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.906758577Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#3"}
+{"Time":"2026-09-28T11:21:30.906762076Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#3","Output":"=== RUN   FuzzDocument/seed#3\n"}
+{"Time":"2026-09-28T11:21:30.907039812Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#3","Output":"--- PASS: FuzzDocument/seed#3 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.907059672Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#3","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.907113135Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#4"}
+{"Time":"2026-09-28T11:21:30.907120016Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#4","Output":"=== RUN   FuzzDocument/seed#4\n"}
+{"Time":"2026-09-28T11:21:30.907297504Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#4","Output":"--- PASS: FuzzDocument/seed#4 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.907307455Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#4","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.907398702Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#5"}
+{"Time":"2026-09-28T11:21:30.907406763Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#5","Output":"=== RUN   FuzzDocument/seed#5\n"}
+{"Time":"2026-09-28T11:21:30.907816912Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#5","Output":"--- PASS: FuzzDocument/seed#5 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.908011537Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#5","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.908023669Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#6"}
+{"Time":"2026-09-28T11:21:30.908026646Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#6","Output":"=== RUN   FuzzDocument/seed#6\n"}
+{"Time":"2026-09-28T11:21:30.908352964Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#6","Output":"--- PASS: FuzzDocument/seed#6 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.908368138Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument/seed#6","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.908465575Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument","Output":"--- PASS: FuzzDocument (0.00s)\n"}
+{"Time":"2026-09-28T11:21:30.908519559Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Test":"FuzzDocument","Elapsed":0}
+{"Time":"2026-09-28T11:21:30.908552891Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:30.915564956Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Output":"coverage: 88.0% of statements\n"}
+{"Time":"2026-09-28T11:21:31.01833841Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/auth","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/auth\t1.160s\tcoverage: 86.5% of statements\n"}
+{"Time":"2026-09-28T11:21:31.019069317Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/auth","Elapsed":1.163}
+{"Time":"2026-09-28T11:21:31.847279288Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/pki"}
+{"Time":"2026-09-28T11:21:31.847663998Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/transit"}
+{"Time":"2026-09-28T11:21:31.848210126Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/transit","Output":"?   \tgit.example.com/infra/openbao-sdk-go/transit\t[no test files]\n"}
+{"Time":"2026-09-28T11:21:31.848269285Z","Action":"skip","Package":"git.example.com/infra/openbao-sdk-go/transit","Elapsed":0.001}
+{"Time":"2026-09-28T11:21:31.848181625Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/baoerr"}
+{"Time":"2026-09-28T11:21:31.85486006Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/sensitive"}
+{"Time":"2026-09-28T11:21:31.912678466Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/diagnostics"}
+{"Time":"2026-09-28T11:21:31.912840473Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/diagnostics","Output":"?   \tgit.example.com/infra/openbao-sdk-go/diagnostics\t[no test files]\n"}
+{"Time":"2026-09-28T11:21:31.912854082Z","Action":"skip","Package":"git.example.com/infra/openbao-sdk-go/diagnostics","Elapsed":0}
+{"Time":"2026-09-28T11:21:31.935689499Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/kv","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/kv\t1.164s\tcoverage: 88.0% of statements\n"}
+{"Time":"2026-09-28T11:21:31.93574048Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/kv","Elapsed":1.165}
+{"Time":"2026-09-28T11:21:31.951854511Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Test":"TestNilUnknownAndAllCodes"}
+{"Time":"2026-09-28T11:21:31.951920418Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Test":"TestNilUnknownAndAllCodes","Output":"=== RUN   TestNilUnknownAndAllCodes\n"}
+{"Time":"2026-09-28T11:21:31.9599386Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Test":"TestNilUnknownAndAllCodes","Output":"--- PASS: TestNilUnknownAndAllCodes (0.01s)\n"}
+{"Time":"2026-09-28T11:21:31.960163217Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Test":"TestNilUnknownAndAllCodes","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:31.960350862Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Test":"TestErrorClassificationAndRedaction"}
+{"Time":"2026-09-28T11:21:31.960363679Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Test":"TestErrorClassificationAndRedaction","Output":"=== RUN   TestErrorClassificationAndRedaction\n"}
+{"Time":"2026-09-28T11:21:31.961115657Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKITrustAndLifetime"}
+{"Time":"2026-09-28T11:21:31.961147393Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKITrustAndLifetime","Output":"=== RUN   TestPKITrustAndLifetime\n"}
+{"Time":"2026-09-28T11:21:31.96160128Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Test":"TestErrorClassificationAndRedaction","Output":"--- PASS: TestErrorClassificationAndRedaction (0.00s)\n"}
+{"Time":"2026-09-28T11:21:31.96170392Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Test":"TestErrorClassificationAndRedaction","Elapsed":0}
+{"Time":"2026-09-28T11:21:31.961819936Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:31.975437025Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2026-09-28T11:21:31.98587041Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveFormatting"}
+{"Time":"2026-09-28T11:21:31.986038332Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveFormatting","Output":"=== RUN   TestSensitiveFormatting\n"}
+{"Time":"2026-09-28T11:21:31.992991467Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveFormatting","Output":"--- PASS: TestSensitiveFormatting (0.01s)\n"}
+{"Time":"2026-09-28T11:21:31.993029055Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveFormatting","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:31.993041079Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveCopyAndZero"}
+{"Time":"2026-09-28T11:21:31.993044153Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveCopyAndZero","Output":"=== RUN   TestSensitiveCopyAndZero\n"}
+{"Time":"2026-09-28T11:21:31.993643863Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveCopyAndZero","Output":"--- PASS: TestSensitiveCopyAndZero (0.00s)\n"}
+{"Time":"2026-09-28T11:21:31.993668429Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveCopyAndZero","Elapsed":0}
+{"Time":"2026-09-28T11:21:31.993673159Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead"}
+{"Time":"2026-09-28T11:21:31.993676618Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead","Output":"=== RUN   TestSensitiveConcurrentRead\n"}
+{"Time":"2026-09-28T11:21:31.994004621Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/0"}
+{"Time":"2026-09-28T11:21:31.99401931Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/0","Output":"=== RUN   TestSensitiveConcurrentRead/0\n"}
+{"Time":"2026-09-28T11:21:31.994468127Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/0","Output":"=== PAUSE TestSensitiveConcurrentRead/0\n"}
+{"Time":"2026-09-28T11:21:31.994481101Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/0"}
+{"Time":"2026-09-28T11:21:31.994686898Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/1"}
+{"Time":"2026-09-28T11:21:31.994696489Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/1","Output":"=== RUN   TestSensitiveConcurrentRead/1\n"}
+{"Time":"2026-09-28T11:21:31.994776461Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/1","Output":"=== PAUSE TestSensitiveConcurrentRead/1\n"}
+{"Time":"2026-09-28T11:21:31.994780766Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/1"}
+{"Time":"2026-09-28T11:21:31.994939372Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/2"}
+{"Time":"2026-09-28T11:21:31.994943826Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/2","Output":"=== RUN   TestSensitiveConcurrentRead/2\n"}
+{"Time":"2026-09-28T11:21:31.995105773Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/2","Output":"=== PAUSE TestSensitiveConcurrentRead/2\n"}
+{"Time":"2026-09-28T11:21:31.995110467Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/2"}
+{"Time":"2026-09-28T11:21:31.995309731Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/3"}
+{"Time":"2026-09-28T11:21:31.995319529Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/3","Output":"=== RUN   TestSensitiveConcurrentRead/3\n"}
+{"Time":"2026-09-28T11:21:31.995601133Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/3","Output":"=== PAUSE TestSensitiveConcurrentRead/3\n"}
+{"Time":"2026-09-28T11:21:31.995612663Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/3"}
+{"Time":"2026-09-28T11:21:31.995742269Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/4"}
+{"Time":"2026-09-28T11:21:31.995747241Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/4","Output":"=== RUN   TestSensitiveConcurrentRead/4\n"}
+{"Time":"2026-09-28T11:21:31.995894606Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/4","Output":"=== PAUSE TestSensitiveConcurrentRead/4\n"}
+{"Time":"2026-09-28T11:21:31.995899521Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/4"}
+{"Time":"2026-09-28T11:21:31.996013197Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/5"}
+{"Time":"2026-09-28T11:21:31.996017688Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/5","Output":"=== RUN   TestSensitiveConcurrentRead/5\n"}
+{"Time":"2026-09-28T11:21:31.99614073Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/5","Output":"=== PAUSE TestSensitiveConcurrentRead/5\n"}
+{"Time":"2026-09-28T11:21:31.996147188Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/5"}
+{"Time":"2026-09-28T11:21:31.996403021Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/6"}
+{"Time":"2026-09-28T11:21:31.996413281Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/6","Output":"=== RUN   TestSensitiveConcurrentRead/6\n"}
+{"Time":"2026-09-28T11:21:31.996532171Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/6","Output":"=== PAUSE TestSensitiveConcurrentRead/6\n"}
+{"Time":"2026-09-28T11:21:31.996537144Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/6"}
+{"Time":"2026-09-28T11:21:31.9966971Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/7"}
+{"Time":"2026-09-28T11:21:31.996701841Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/7","Output":"=== RUN   TestSensitiveConcurrentRead/7\n"}
+{"Time":"2026-09-28T11:21:31.997081676Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/7","Output":"=== PAUSE TestSensitiveConcurrentRead/7\n"}
+{"Time":"2026-09-28T11:21:31.99709194Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/7"}
+{"Time":"2026-09-28T11:21:31.997262563Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/8"}
+{"Time":"2026-09-28T11:21:31.997272119Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/8","Output":"=== RUN   TestSensitiveConcurrentRead/8\n"}
+{"Time":"2026-09-28T11:21:31.997407377Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/8","Output":"=== PAUSE TestSensitiveConcurrentRead/8\n"}
+{"Time":"2026-09-28T11:21:31.997466486Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/8"}
+{"Time":"2026-09-28T11:21:31.997500106Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/9"}
+{"Time":"2026-09-28T11:21:31.99750375Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/9","Output":"=== RUN   TestSensitiveConcurrentRead/9\n"}
+{"Time":"2026-09-28T11:21:31.997910717Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/9","Output":"=== PAUSE TestSensitiveConcurrentRead/9\n"}
+{"Time":"2026-09-28T11:21:31.997921347Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/9"}
+{"Time":"2026-09-28T11:21:31.997960512Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/10"}
+{"Time":"2026-09-28T11:21:31.997964587Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/10","Output":"=== RUN   TestSensitiveConcurrentRead/10\n"}
+{"Time":"2026-09-28T11:21:31.998098954Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/10","Output":"=== PAUSE TestSensitiveConcurrentRead/10\n"}
+{"Time":"2026-09-28T11:21:31.998103088Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/10"}
+{"Time":"2026-09-28T11:21:31.99827296Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/11"}
+{"Time":"2026-09-28T11:21:31.998280794Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/11","Output":"=== RUN   TestSensitiveConcurrentRead/11\n"}
+{"Time":"2026-09-28T11:21:31.998427294Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/11","Output":"=== PAUSE TestSensitiveConcurrentRead/11\n"}
+{"Time":"2026-09-28T11:21:31.998431591Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/11"}
+{"Time":"2026-09-28T11:21:31.998776308Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/12"}
+{"Time":"2026-09-28T11:21:31.99878611Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/12","Output":"=== RUN   TestSensitiveConcurrentRead/12\n"}
+{"Time":"2026-09-28T11:21:32.004041667Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/12","Output":"=== PAUSE TestSensitiveConcurrentRead/12\n"}
+{"Time":"2026-09-28T11:21:32.004059412Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/12"}
+{"Time":"2026-09-28T11:21:32.004280123Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/13"}
+{"Time":"2026-09-28T11:21:32.004353045Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/13","Output":"=== RUN   TestSensitiveConcurrentRead/13\n"}
+{"Time":"2026-09-28T11:21:32.004462541Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/13","Output":"=== PAUSE TestSensitiveConcurrentRead/13\n"}
+{"Time":"2026-09-28T11:21:32.004466736Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/13"}
+{"Time":"2026-09-28T11:21:32.004625794Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/14"}
+{"Time":"2026-09-28T11:21:32.00465955Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/14","Output":"=== RUN   TestSensitiveConcurrentRead/14\n"}
+{"Time":"2026-09-28T11:21:32.004766408Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/14","Output":"=== PAUSE TestSensitiveConcurrentRead/14\n"}
+{"Time":"2026-09-28T11:21:32.004779779Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/14"}
+{"Time":"2026-09-28T11:21:32.004923405Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/15"}
+{"Time":"2026-09-28T11:21:32.004930276Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/15","Output":"=== RUN   TestSensitiveConcurrentRead/15\n"}
+{"Time":"2026-09-28T11:21:32.005316649Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/15","Output":"=== PAUSE TestSensitiveConcurrentRead/15\n"}
+{"Time":"2026-09-28T11:21:32.005325327Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/15"}
+{"Time":"2026-09-28T11:21:32.005550922Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/16"}
+{"Time":"2026-09-28T11:21:32.005556176Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/16","Output":"=== RUN   TestSensitiveConcurrentRead/16\n"}
+{"Time":"2026-09-28T11:21:32.005701898Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/16","Output":"=== PAUSE TestSensitiveConcurrentRead/16\n"}
+{"Time":"2026-09-28T11:21:32.005706267Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/16"}
+{"Time":"2026-09-28T11:21:32.005934796Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/17"}
+{"Time":"2026-09-28T11:21:32.005939068Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/17","Output":"=== RUN   TestSensitiveConcurrentRead/17\n"}
+{"Time":"2026-09-28T11:21:32.006141531Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/17","Output":"=== PAUSE TestSensitiveConcurrentRead/17\n"}
+{"Time":"2026-09-28T11:21:32.006145863Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/17"}
+{"Time":"2026-09-28T11:21:32.006316461Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/18"}
+{"Time":"2026-09-28T11:21:32.006324215Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/18","Output":"=== RUN   TestSensitiveConcurrentRead/18\n"}
+{"Time":"2026-09-28T11:21:32.006455945Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/18","Output":"=== PAUSE TestSensitiveConcurrentRead/18\n"}
+{"Time":"2026-09-28T11:21:32.006460104Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/18"}
+{"Time":"2026-09-28T11:21:32.006693781Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/19"}
+{"Time":"2026-09-28T11:21:32.006704241Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/19","Output":"=== RUN   TestSensitiveConcurrentRead/19\n"}
+{"Time":"2026-09-28T11:21:32.006709284Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/19","Output":"=== PAUSE TestSensitiveConcurrentRead/19\n"}
+{"Time":"2026-09-28T11:21:32.006711872Z","Action":"pause","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/19"}
+{"Time":"2026-09-28T11:21:32.007571372Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/2"}
+{"Time":"2026-09-28T11:21:32.00758269Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/2","Output":"=== CONT  TestSensitiveConcurrentRead/2\n"}
+{"Time":"2026-09-28T11:21:32.010537637Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/9"}
+{"Time":"2026-09-28T11:21:32.01056503Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/9","Output":"=== CONT  TestSensitiveConcurrentRead/9\n"}
+{"Time":"2026-09-28T11:21:32.016761355Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/4"}
+{"Time":"2026-09-28T11:21:32.016779725Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/4","Output":"=== CONT  TestSensitiveConcurrentRead/4\n"}
+{"Time":"2026-09-28T11:21:32.016786973Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/2","Output":"--- PASS: TestSensitiveConcurrentRead/2 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016790551Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/2","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.01679578Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/9","Output":"--- PASS: TestSensitiveConcurrentRead/9 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016799059Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/9","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.016801593Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/4","Output":"--- PASS: TestSensitiveConcurrentRead/4 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016818926Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/4","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.016831736Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/7"}
+{"Time":"2026-09-28T11:21:32.016834558Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/7","Output":"=== CONT  TestSensitiveConcurrentRead/7\n"}
+{"Time":"2026-09-28T11:21:32.016838424Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/7","Output":"--- PASS: TestSensitiveConcurrentRead/7 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016842003Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/7","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.01684449Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/3"}
+{"Time":"2026-09-28T11:21:32.016847327Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/3","Output":"=== CONT  TestSensitiveConcurrentRead/3\n"}
+{"Time":"2026-09-28T11:21:32.016850638Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/3","Output":"--- PASS: TestSensitiveConcurrentRead/3 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016853448Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/3","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.016855706Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/8"}
+{"Time":"2026-09-28T11:21:32.016858063Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/8","Output":"=== CONT  TestSensitiveConcurrentRead/8\n"}
+{"Time":"2026-09-28T11:21:32.016861161Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/8","Output":"--- PASS: TestSensitiveConcurrentRead/8 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016863912Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/8","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.016872715Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/0"}
+{"Time":"2026-09-28T11:21:32.016875037Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/0","Output":"=== CONT  TestSensitiveConcurrentRead/0\n"}
+{"Time":"2026-09-28T11:21:32.016878094Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/0","Output":"--- PASS: TestSensitiveConcurrentRead/0 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016880885Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/0","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.016857711Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKITrustAndLifetime","Output":"--- PASS: TestPKITrustAndLifetime (0.05s)\n"}
+{"Time":"2026-09-28T11:21:32.016897131Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKITrustAndLifetime","Elapsed":0.05}
+{"Time":"2026-09-28T11:21:32.016905036Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKICSRSignature"}
+{"Time":"2026-09-28T11:21:32.016909139Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKICSRSignature","Output":"=== RUN   TestPKICSRSignature\n"}
+{"Time":"2026-09-28T11:21:32.016882944Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/14"}
+{"Time":"2026-09-28T11:21:32.016925462Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/14","Output":"=== CONT  TestSensitiveConcurrentRead/14\n"}
+{"Time":"2026-09-28T11:21:32.01692953Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/14","Output":"--- PASS: TestSensitiveConcurrentRead/14 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016932537Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/14","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.016949547Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/1"}
+{"Time":"2026-09-28T11:21:32.016954676Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/1","Output":"=== CONT  TestSensitiveConcurrentRead/1\n"}
+{"Time":"2026-09-28T11:21:32.01695855Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/1","Output":"--- PASS: TestSensitiveConcurrentRead/1 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016961486Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/1","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.016963876Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/18"}
+{"Time":"2026-09-28T11:21:32.016966197Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/18","Output":"=== CONT  TestSensitiveConcurrentRead/18\n"}
+{"Time":"2026-09-28T11:21:32.016969783Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/18","Output":"--- PASS: TestSensitiveConcurrentRead/18 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.01697303Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/18","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.016975754Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/16"}
+{"Time":"2026-09-28T11:21:32.016978074Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/16","Output":"=== CONT  TestSensitiveConcurrentRead/16\n"}
+{"Time":"2026-09-28T11:21:32.016985895Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/16","Output":"--- PASS: TestSensitiveConcurrentRead/16 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016988793Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/16","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.016990965Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/10"}
+{"Time":"2026-09-28T11:21:32.016993231Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/10","Output":"=== CONT  TestSensitiveConcurrentRead/10\n"}
+{"Time":"2026-09-28T11:21:32.016996361Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/10","Output":"--- PASS: TestSensitiveConcurrentRead/10 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.016999706Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/10","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.01700185Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/19"}
+{"Time":"2026-09-28T11:21:32.017004039Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/19","Output":"=== CONT  TestSensitiveConcurrentRead/19\n"}
+{"Time":"2026-09-28T11:21:32.017009427Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/19","Output":"--- PASS: TestSensitiveConcurrentRead/19 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.017013165Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/19","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.017015339Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/17"}
+{"Time":"2026-09-28T11:21:32.017017621Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/17","Output":"=== CONT  TestSensitiveConcurrentRead/17\n"}
+{"Time":"2026-09-28T11:21:32.017020752Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/17","Output":"--- PASS: TestSensitiveConcurrentRead/17 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.017023584Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/17","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.017025627Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/6"}
+{"Time":"2026-09-28T11:21:32.017028052Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/6","Output":"=== CONT  TestSensitiveConcurrentRead/6\n"}
+{"Time":"2026-09-28T11:21:32.0170312Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/6","Output":"--- PASS: TestSensitiveConcurrentRead/6 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.017034078Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/6","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.017036222Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/5"}
+{"Time":"2026-09-28T11:21:32.017038436Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/5","Output":"=== CONT  TestSensitiveConcurrentRead/5\n"}
+{"Time":"2026-09-28T11:21:32.017065453Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/5","Output":"--- PASS: TestSensitiveConcurrentRead/5 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.017069847Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/5","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.017076053Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/12"}
+{"Time":"2026-09-28T11:21:32.01707856Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/12","Output":"=== CONT  TestSensitiveConcurrentRead/12\n"}
+{"Time":"2026-09-28T11:21:32.017089811Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/13"}
+{"Time":"2026-09-28T11:21:32.017092357Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/13","Output":"=== CONT  TestSensitiveConcurrentRead/13\n"}
+{"Time":"2026-09-28T11:21:32.017413506Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/15"}
+{"Time":"2026-09-28T11:21:32.017428801Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/15","Output":"=== CONT  TestSensitiveConcurrentRead/15\n"}
+{"Time":"2026-09-28T11:21:32.017434527Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/13","Output":"--- PASS: TestSensitiveConcurrentRead/13 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.018110916Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/13","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.018123256Z","Action":"cont","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/11"}
+{"Time":"2026-09-28T11:21:32.018126097Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/11","Output":"=== CONT  TestSensitiveConcurrentRead/11\n"}
+{"Time":"2026-09-28T11:21:32.018413863Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/15","Output":"--- PASS: TestSensitiveConcurrentRead/15 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.018524151Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/15","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.018530887Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/11","Output":"--- PASS: TestSensitiveConcurrentRead/11 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.019794728Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/11","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.019832724Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/12","Output":"--- PASS: TestSensitiveConcurrentRead/12 (0.01s)\n"}
+{"Time":"2026-09-28T11:21:32.020105272Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/observe"}
+{"Time":"2026-09-28T11:21:32.020220979Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/observe","Output":"?   \tgit.example.com/infra/openbao-sdk-go/observe\t[no test files]\n"}
+{"Time":"2026-09-28T11:21:32.020385109Z","Action":"skip","Package":"git.example.com/infra/openbao-sdk-go/observe","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.022564832Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead/12","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:32.022595217Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead","Output":"--- PASS: TestSensitiveConcurrentRead (0.01s)\n"}
+{"Time":"2026-09-28T11:21:32.022605507Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Test":"TestSensitiveConcurrentRead","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:32.022609528Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:32.027475856Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKICSRSignature","Output":"--- PASS: TestPKICSRSignature (0.01s)\n"}
+{"Time":"2026-09-28T11:21:32.02779313Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKICSRSignature","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:32.028002293Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKIMetadataAndMalformedPolicy"}
+{"Time":"2026-09-28T11:21:32.02801365Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKIMetadataAndMalformedPolicy","Output":"=== RUN   TestPKIMetadataAndMalformedPolicy\n"}
+{"Time":"2026-09-28T11:21:32.029857392Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Output":"coverage: 90.9% of statements\n"}
+{"Time":"2026-09-28T11:21:32.045677833Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKIMetadataAndMalformedPolicy","Output":"--- PASS: TestPKIMetadataAndMalformedPolicy (0.02s)\n"}
+{"Time":"2026-09-28T11:21:32.04596097Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"TestPKIMetadataAndMalformedPolicy","Elapsed":0.02}
+{"Time":"2026-09-28T11:21:32.04646963Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR"}
+{"Time":"2026-09-28T11:21:32.046486216Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR","Output":"=== RUN   FuzzPKICSR\n"}
+{"Time":"2026-09-28T11:21:32.053945081Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#0"}
+{"Time":"2026-09-28T11:21:32.053976993Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#0","Output":"=== RUN   FuzzPKICSR/seed#0\n"}
+{"Time":"2026-09-28T11:21:32.05491482Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#0","Output":"--- PASS: FuzzPKICSR/seed#0 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.054935705Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#0","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.054952458Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#1"}
+{"Time":"2026-09-28T11:21:32.054958026Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#1","Output":"=== RUN   FuzzPKICSR/seed#1\n"}
+{"Time":"2026-09-28T11:21:32.056157876Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#1","Output":"--- PASS: FuzzPKICSR/seed#1 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.056181406Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#1","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.056399249Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#2"}
+{"Time":"2026-09-28T11:21:32.056414609Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#2","Output":"=== RUN   FuzzPKICSR/seed#2\n"}
+{"Time":"2026-09-28T11:21:32.056740164Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#2","Output":"--- PASS: FuzzPKICSR/seed#2 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:32.056773981Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR/seed#2","Elapsed":0}
+{"Time":"2026-09-28T11:21:32.056789064Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR","Output":"--- PASS: FuzzPKICSR (0.01s)\n"}
+{"Time":"2026-09-28T11:21:32.056853785Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/pki","Test":"FuzzPKICSR","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:32.056866642Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:32.062840391Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Output":"coverage: 98.6% of statements\n"}
+{"Time":"2026-09-28T11:21:32.984183334Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/baoerr\t1.134s\tcoverage: 100.0% of statements\n"}
+{"Time":"2026-09-28T11:21:32.984337183Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/baoerr","Elapsed":1.1360000000000001}
+{"Time":"2026-09-28T11:21:33.045638126Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/sensitive\t1.190s\tcoverage: 90.9% of statements\n"}
+{"Time":"2026-09-28T11:21:33.045680234Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/sensitive","Elapsed":1.191}
+{"Time":"2026-09-28T11:21:33.077876443Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/pki","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/pki\t1.229s\tcoverage: 98.6% of statements\n"}
+{"Time":"2026-09-28T11:21:33.077952632Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/pki","Elapsed":1.231}
+{"Time":"2026-09-28T11:21:35.190976166Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/internal/engine"}
+{"Time":"2026-09-28T11:21:35.191113411Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/internal/authn"}
+{"Time":"2026-09-28T11:21:35.191265528Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc"}
+{"Time":"2026-09-28T11:21:35.299943609Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestStrictTree"}
+{"Time":"2026-09-28T11:21:35.300003262Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestStrictTree","Output":"=== RUN   TestStrictTree\n"}
+{"Time":"2026-09-28T11:21:35.311653304Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestStrictTree","Output":"--- PASS: TestStrictTree (0.01s)\n"}
+{"Time":"2026-09-28T11:21:35.312089741Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestStrictTree","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:35.312380263Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestJSONRejectsUnpairedSurrogateEscapes"}
+{"Time":"2026-09-28T11:21:35.312398261Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestJSONRejectsUnpairedSurrogateEscapes","Output":"=== RUN   TestJSONRejectsUnpairedSurrogateEscapes\n"}
+{"Time":"2026-09-28T11:21:35.313030261Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestJSONRejectsUnpairedSurrogateEscapes","Output":"--- PASS: TestJSONRejectsUnpairedSurrogateEscapes (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.313171007Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestJSONRejectsUnpairedSurrogateEscapes","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.313383242Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestJSONPreservesValidUnicodeEscapes"}
+{"Time":"2026-09-28T11:21:35.313410296Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestJSONPreservesValidUnicodeEscapes","Output":"=== RUN   TestJSONPreservesValidUnicodeEscapes\n"}
+{"Time":"2026-09-28T11:21:35.317664468Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestJSONPreservesValidUnicodeEscapes","Output":"--- PASS: TestJSONPreservesValidUnicodeEscapes (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.321760862Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"TestJSONPreservesValidUnicodeEscapes","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.32178381Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON"}
+{"Time":"2026-09-28T11:21:35.321788533Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON","Output":"=== RUN   FuzzJSON\n"}
+{"Time":"2026-09-28T11:21:35.32180052Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#0"}
+{"Time":"2026-09-28T11:21:35.321803634Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#0","Output":"=== RUN   FuzzJSON/seed#0\n"}
+{"Time":"2026-09-28T11:21:35.324144439Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#0","Output":"--- PASS: FuzzJSON/seed#0 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.324163408Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#0","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.325099469Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#1"}
+{"Time":"2026-09-28T11:21:35.325113993Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#1","Output":"=== RUN   FuzzJSON/seed#1\n"}
+{"Time":"2026-09-28T11:21:35.32619579Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#1","Output":"--- PASS: FuzzJSON/seed#1 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.326210957Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#1","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.326216027Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#2"}
+{"Time":"2026-09-28T11:21:35.326218708Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#2","Output":"=== RUN   FuzzJSON/seed#2\n"}
+{"Time":"2026-09-28T11:21:35.326921952Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#2","Output":"--- PASS: FuzzJSON/seed#2 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.326935788Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#2","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.327001587Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#3"}
+{"Time":"2026-09-28T11:21:35.327006956Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#3","Output":"=== RUN   FuzzJSON/seed#3\n"}
+{"Time":"2026-09-28T11:21:35.328054513Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#3","Output":"--- PASS: FuzzJSON/seed#3 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.328494082Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON/seed#3","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.328512674Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON","Output":"--- PASS: FuzzJSON (0.01s)\n"}
+{"Time":"2026-09-28T11:21:35.328521505Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Test":"FuzzJSON","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:35.328527324Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:35.341863992Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestPathValidation"}
+{"Time":"2026-09-28T11:21:35.341895223Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestPathValidation","Output":"=== RUN   TestPathValidation\n"}
+{"Time":"2026-09-28T11:21:35.34194802Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExternalProviderFailureBoundaries"}
+{"Time":"2026-09-28T11:21:35.341952041Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExternalProviderFailureBoundaries","Output":"=== RUN   TestExternalProviderFailureBoundaries\n"}
+{"Time":"2026-09-28T11:21:35.343817915Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestPathValidation","Output":"--- PASS: TestPathValidation (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.343934974Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestPathValidation","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.344189848Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestRetryAfterLimitsAndCancellation"}
+{"Time":"2026-09-28T11:21:35.344199625Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestRetryAfterLimitsAndCancellation","Output":"=== RUN   TestRetryAfterLimitsAndCancellation\n"}
+{"Time":"2026-09-28T11:21:35.344666531Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Output":"coverage: 90.1% of statements\n"}
+{"Time":"2026-09-28T11:21:35.345643912Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestRetryAfterLimitsAndCancellation","Output":"--- PASS: TestRetryAfterLimitsAndCancellation (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.345769746Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestRetryAfterLimitsAndCancellation","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.345960122Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestDecodeAndIdentifierBoundaries"}
+{"Time":"2026-09-28T11:21:35.345969828Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestDecodeAndIdentifierBoundaries","Output":"=== RUN   TestDecodeAndIdentifierBoundaries\n"}
+{"Time":"2026-09-28T11:21:35.348756553Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestDecodeAndIdentifierBoundaries","Output":"--- PASS: TestDecodeAndIdentifierBoundaries (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.348886854Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestDecodeAndIdentifierBoundaries","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.3490085Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestMalformedDeletedMetadata"}
+{"Time":"2026-09-28T11:21:35.34901734Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestMalformedDeletedMetadata","Output":"=== RUN   TestMalformedDeletedMetadata\n"}
+{"Time":"2026-09-28T11:21:35.35016475Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestMalformedDeletedMetadata","Output":"--- PASS: TestMalformedDeletedMetadata (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.35028477Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestMalformedDeletedMetadata","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.350475184Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestTransportSafetyConstruction"}
+{"Time":"2026-09-28T11:21:35.350495241Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestTransportSafetyConstruction","Output":"=== RUN   TestTransportSafetyConstruction\n"}
+{"Time":"2026-09-28T11:21:35.352187879Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestTransportSafetyConstruction","Output":"--- PASS: TestTransportSafetyConstruction (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.3523417Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestTransportSafetyConstruction","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.352690862Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestAmbiguous404WritePreservesUnknown"}
+{"Time":"2026-09-28T11:21:35.352714458Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestAmbiguous404WritePreservesUnknown","Output":"=== RUN   TestAmbiguous404WritePreservesUnknown\n"}
+{"Time":"2026-09-28T11:21:35.353095076Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestAmbiguous404WritePreservesUnknown","Output":"--- PASS: TestAmbiguous404WritePreservesUnknown (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.353193866Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestAmbiguous404WritePreservesUnknown","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.353362226Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"Test404RejectionRequiresAPIProof"}
+{"Time":"2026-09-28T11:21:35.353372353Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"Test404RejectionRequiresAPIProof","Output":"=== RUN   Test404RejectionRequiresAPIProof\n"}
+{"Time":"2026-09-28T11:21:35.354296182Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"Test404RejectionRequiresAPIProof","Output":"--- PASS: Test404RejectionRequiresAPIProof (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.354506579Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"Test404RejectionRequiresAPIProof","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.354604504Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestSingleAttemptIssue"}
+{"Time":"2026-09-28T11:21:35.354624343Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestSingleAttemptIssue","Output":"=== RUN   TestSingleAttemptIssue\n"}
+{"Time":"2026-09-28T11:21:35.354974974Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExternalProviderFailureBoundaries","Output":"--- PASS: TestExternalProviderFailureBoundaries (0.01s)\n"}
+{"Time":"2026-09-28T11:21:35.355121829Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExternalProviderFailureBoundaries","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:35.355130962Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthenticationContextBoundaries"}
+{"Time":"2026-09-28T11:21:35.355133945Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthenticationContextBoundaries","Output":"=== RUN   TestAuthenticationContextBoundaries\n"}
+{"Time":"2026-09-28T11:21:35.356227731Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthenticationContextBoundaries","Output":"--- PASS: TestAuthenticationContextBoundaries (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.35630089Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthenticationContextBoundaries","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.356307901Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestSecretProviderPanicAndInvalidGeneration"}
+{"Time":"2026-09-28T11:21:35.356311235Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestSecretProviderPanicAndInvalidGeneration","Output":"=== RUN   TestSecretProviderPanicAndInvalidGeneration\n"}
+{"Time":"2026-09-28T11:21:35.357196154Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestSecretProviderPanicAndInvalidGeneration","Output":"--- PASS: TestSecretProviderPanicAndInvalidGeneration (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.357210637Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestSecretProviderPanicAndInvalidGeneration","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.357214748Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExpiredReplyAndLatePublication"}
+{"Time":"2026-09-28T11:21:35.357217953Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExpiredReplyAndLatePublication","Output":"=== RUN   TestExpiredReplyAndLatePublication\n"}
+{"Time":"2026-09-28T11:21:35.361616304Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExpiredReplyAndLatePublication","Output":"--- PASS: TestExpiredReplyAndLatePublication (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.361651428Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExpiredReplyAndLatePublication","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.361658487Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRunStopsAndRestartsCanceledAttempt"}
+{"Time":"2026-09-28T11:21:35.361662718Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRunStopsAndRestartsCanceledAttempt","Output":"=== RUN   TestRunStopsAndRestartsCanceledAttempt\n"}
+{"Time":"2026-09-28T11:21:35.368104723Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRunStopsAndRestartsCanceledAttempt","Output":"--- PASS: TestRunStopsAndRestartsCanceledAttempt (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.368144429Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRunStopsAndRestartsCanceledAttempt","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.368152922Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthCapacityNotStarved"}
+{"Time":"2026-09-28T11:21:35.36815695Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthCapacityNotStarved","Output":"=== RUN   TestAuthCapacityNotStarved\n"}
+{"Time":"2026-09-28T11:21:35.371794146Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthCapacityNotStarved","Output":"--- PASS: TestAuthCapacityNotStarved (0.01s)\n"}
+{"Time":"2026-09-28T11:21:35.371848369Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthCapacityNotStarved","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:35.371859598Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestBusiness403DoesNotLoginOrReplay"}
+{"Time":"2026-09-28T11:21:35.371864151Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestBusiness403DoesNotLoginOrReplay","Output":"=== RUN   TestBusiness403DoesNotLoginOrReplay\n"}
+{"Time":"2026-09-28T11:21:35.373383676Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestBusiness403DoesNotLoginOrReplay","Output":"--- PASS: TestBusiness403DoesNotLoginOrReplay (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.373404344Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestBusiness403DoesNotLoginOrReplay","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.373415558Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthStateAfterCanceledProvider"}
+{"Time":"2026-09-28T11:21:35.373420194Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthStateAfterCanceledProvider","Output":"=== RUN   TestAuthStateAfterCanceledProvider\n"}
+{"Time":"2026-09-28T11:21:35.374042866Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthStateAfterCanceledProvider","Output":"--- PASS: TestAuthStateAfterCanceledProvider (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.374060871Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAuthStateAfterCanceledProvider","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.374269071Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAppRoleLoginContract"}
+{"Time":"2026-09-28T11:21:35.374282279Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAppRoleLoginContract","Output":"=== RUN   TestAppRoleLoginContract\n"}
+{"Time":"2026-09-28T11:21:35.375322068Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAppRoleLoginContract","Output":"--- PASS: TestAppRoleLoginContract (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.375349142Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAppRoleLoginContract","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.375584631Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAppRoleRejectEmptyOrInvalidLease"}
+{"Time":"2026-09-28T11:21:35.375612641Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAppRoleRejectEmptyOrInvalidLease","Output":"=== RUN   TestAppRoleRejectEmptyOrInvalidLease\n"}
+{"Time":"2026-09-28T11:21:35.380653824Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAppRoleRejectEmptyOrInvalidLease","Output":"--- PASS: TestAppRoleRejectEmptyOrInvalidLease (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.381021996Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestAppRoleRejectEmptyOrInvalidLease","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.381214385Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestSingleUseSecretID"}
+{"Time":"2026-09-28T11:21:35.381225232Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestSingleUseSecretID","Output":"=== RUN   TestSingleUseSecretID\n"}
+{"Time":"2026-09-28T11:21:35.382773194Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestSingleUseSecretID","Output":"--- PASS: TestSingleUseSecretID (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.382792862Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestSingleUseSecretID","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.383736258Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRenewUsesLatestTTL"}
+{"Time":"2026-09-28T11:21:35.383757558Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRenewUsesLatestTTL","Output":"=== RUN   TestRenewUsesLatestTTL\n"}
+{"Time":"2026-09-28T11:21:35.388037412Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRenewUsesLatestTTL","Output":"--- PASS: TestRenewUsesLatestTTL (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.388065308Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRenewUsesLatestTTL","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.388073123Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRenewSingleFlight"}
+{"Time":"2026-09-28T11:21:35.388078132Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRenewSingleFlight","Output":"=== RUN   TestRenewSingleFlight\n"}
+{"Time":"2026-09-28T11:21:35.401839482Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRenewSingleFlight","Output":"--- PASS: TestRenewSingleFlight (0.01s)\n"}
+{"Time":"2026-09-28T11:21:35.401895131Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestRenewSingleFlight","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:35.401907216Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExpiryAndShutdown"}
+{"Time":"2026-09-28T11:21:35.401912609Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExpiryAndShutdown","Output":"=== RUN   TestExpiryAndShutdown\n"}
+{"Time":"2026-09-28T11:21:35.405191129Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExpiryAndShutdown","Output":"--- PASS: TestExpiryAndShutdown (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.405236223Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Test":"TestExpiryAndShutdown","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.405269415Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:35.412870511Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil"}
+{"Time":"2026-09-28T11:21:35.413010027Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil"}
+{"Time":"2026-09-28T11:21:35.423572917Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Output":"coverage: 90.6% of statements\n"}
+{"Time":"2026-09-28T11:21:35.444225719Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestSingleAttemptIssue","Output":"--- PASS: TestSingleAttemptIssue (0.09s)\n"}
+{"Time":"2026-09-28T11:21:35.445686662Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestSingleAttemptIssue","Elapsed":0.09}
+{"Time":"2026-09-28T11:21:35.445713674Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestReadRetryBudget"}
+{"Time":"2026-09-28T11:21:35.445722545Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestReadRetryBudget","Output":"=== RUN   TestReadRetryBudget\n"}
+{"Time":"2026-09-28T11:21:35.500294467Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestReadRetryBudget","Output":"--- PASS: TestReadRetryBudget (0.06s)\n"}
+{"Time":"2026-09-28T11:21:35.500362974Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestReadRetryBudget","Elapsed":0.06}
+{"Time":"2026-09-28T11:21:35.500458805Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestNoWriteReplayHeader"}
+{"Time":"2026-09-28T11:21:35.500466005Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestNoWriteReplayHeader","Output":"=== RUN   TestNoWriteReplayHeader\n"}
+{"Time":"2026-09-28T11:21:35.508355248Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestCertificateMaterialBoundaries"}
+{"Time":"2026-09-28T11:21:35.508393653Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestCertificateMaterialBoundaries","Output":"=== RUN   TestCertificateMaterialBoundaries\n"}
+{"Time":"2026-09-28T11:21:35.541212555Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"TestDecodeStartsAtFirstBlock"}
+{"Time":"2026-09-28T11:21:35.541310617Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"TestDecodeStartsAtFirstBlock","Output":"=== RUN   TestDecodeStartsAtFirstBlock\n"}
+{"Time":"2026-09-28T11:21:35.542993429Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"TestDecodeStartsAtFirstBlock","Output":"--- PASS: TestDecodeStartsAtFirstBlock (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.5433131Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"TestDecodeStartsAtFirstBlock","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.543655914Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode"}
+{"Time":"2026-09-28T11:21:35.54367407Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode","Output":"=== RUN   FuzzDecode\n"}
+{"Time":"2026-09-28T11:21:35.54457089Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode/seed#0"}
+{"Time":"2026-09-28T11:21:35.544586305Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode/seed#0","Output":"=== RUN   FuzzDecode/seed#0\n"}
+{"Time":"2026-09-28T11:21:35.54545589Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode/seed#0","Output":"--- PASS: FuzzDecode/seed#0 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.545579557Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode/seed#0","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.545792163Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode/seed#1"}
+{"Time":"2026-09-28T11:21:35.545819615Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode/seed#1","Output":"=== RUN   FuzzDecode/seed#1\n"}
+{"Time":"2026-09-28T11:21:35.546167063Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode/seed#1","Output":"--- PASS: FuzzDecode/seed#1 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.546301201Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode/seed#1","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.54649415Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode","Output":"--- PASS: FuzzDecode (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.54656508Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Test":"FuzzDecode","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.546739092Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:35.554116337Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2026-09-28T11:21:35.55507479Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestNoWriteReplayHeader","Output":"--- PASS: TestNoWriteReplayHeader (0.05s)\n"}
+{"Time":"2026-09-28T11:21:35.555089843Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestNoWriteReplayHeader","Elapsed":0.05}
+{"Time":"2026-09-28T11:21:35.555097337Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestResponseBoundAndSafeError"}
+{"Time":"2026-09-28T11:21:35.555100826Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestResponseBoundAndSafeError","Output":"=== RUN   TestResponseBoundAndSafeError\n"}
+{"Time":"2026-09-28T11:21:35.560275007Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestCertificateMaterialBoundaries","Output":"--- PASS: TestCertificateMaterialBoundaries (0.05s)\n"}
+{"Time":"2026-09-28T11:21:35.560403646Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestCertificateMaterialBoundaries","Elapsed":0.05}
+{"Time":"2026-09-28T11:21:35.560422649Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPrivateKeyMaterialBoundaries"}
+{"Time":"2026-09-28T11:21:35.560436391Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPrivateKeyMaterialBoundaries","Output":"=== RUN   TestPrivateKeyMaterialBoundaries\n"}
+{"Time":"2026-09-28T11:21:35.570773891Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPrivateKeyMaterialBoundaries","Output":"--- PASS: TestPrivateKeyMaterialBoundaries (0.01s)\n"}
+{"Time":"2026-09-28T11:21:35.570818054Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPrivateKeyMaterialBoundaries","Elapsed":0.01}
+{"Time":"2026-09-28T11:21:35.571087423Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestSerialBoundaries"}
+{"Time":"2026-09-28T11:21:35.571099933Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestSerialBoundaries","Output":"=== RUN   TestSerialBoundaries\n"}
+{"Time":"2026-09-28T11:21:35.57173289Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestSerialBoundaries","Output":"--- PASS: TestSerialBoundaries (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.571753748Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestSerialBoundaries","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.571763233Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks"}
+{"Time":"2026-09-28T11:21:35.571775498Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks","Output":"=== RUN   TestPEMRejectsSkippedMalformedBlocks\n"}
+{"Time":"2026-09-28T11:21:35.581843615Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/certificate-first"}
+{"Time":"2026-09-28T11:21:35.581864571Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/certificate-first","Output":"=== RUN   TestPEMRejectsSkippedMalformedBlocks/certificate-first\n"}
+{"Time":"2026-09-28T11:21:35.585882269Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/certificate-first","Output":"--- PASS: TestPEMRejectsSkippedMalformedBlocks/certificate-first (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.586006505Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/certificate-first","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.587367449Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/certificate-middle"}
+{"Time":"2026-09-28T11:21:35.587378956Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/certificate-middle","Output":"=== RUN   TestPEMRejectsSkippedMalformedBlocks/certificate-middle\n"}
+{"Time":"2026-09-28T11:21:35.588424615Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/certificate-middle","Output":"--- PASS: TestPEMRejectsSkippedMalformedBlocks/certificate-middle (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.588531606Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/certificate-middle","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.588586315Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/csr"}
+{"Time":"2026-09-28T11:21:35.588591828Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/csr","Output":"=== RUN   TestPEMRejectsSkippedMalformedBlocks/csr\n"}
+{"Time":"2026-09-28T11:21:35.592446282Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/csr","Output":"--- PASS: TestPEMRejectsSkippedMalformedBlocks/csr (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.592465658Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/csr","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.592593035Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/private-key"}
+{"Time":"2026-09-28T11:21:35.592600164Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/private-key","Output":"=== RUN   TestPEMRejectsSkippedMalformedBlocks/private-key\n"}
+{"Time":"2026-09-28T11:21:35.593119289Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/private-key","Output":"--- PASS: TestPEMRejectsSkippedMalformedBlocks/private-key (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.593508222Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks/private-key","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.593522784Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks","Output":"--- PASS: TestPEMRejectsSkippedMalformedBlocks (0.02s)\n"}
+{"Time":"2026-09-28T11:21:35.593534704Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Test":"TestPEMRejectsSkippedMalformedBlocks","Elapsed":0.02}
+{"Time":"2026-09-28T11:21:35.5935389Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:35.600465256Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestResponseBoundAndSafeError","Output":"--- PASS: TestResponseBoundAndSafeError (0.05s)\n"}
+{"Time":"2026-09-28T11:21:35.600498025Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestResponseBoundAndSafeError","Elapsed":0.05}
+{"Time":"2026-09-28T11:21:35.600607037Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestCanceledBeforeAndAfterSend"}
+{"Time":"2026-09-28T11:21:35.600618984Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestCanceledBeforeAndAfterSend","Output":"=== RUN   TestCanceledBeforeAndAfterSend\n"}
+{"Time":"2026-09-28T11:21:35.602324235Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Output":"coverage: 90.8% of statements\n"}
+{"Time":"2026-09-28T11:21:35.808645787Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestCanceledBeforeAndAfterSend","Output":"--- PASS: TestCanceledBeforeAndAfterSend (0.21s)\n"}
+{"Time":"2026-09-28T11:21:35.808698901Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"TestCanceledBeforeAndAfterSend","Elapsed":0.21}
+{"Time":"2026-09-28T11:21:35.808709667Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath"}
+{"Time":"2026-09-28T11:21:35.808713686Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath","Output":"=== RUN   FuzzPath\n"}
+{"Time":"2026-09-28T11:21:35.809321674Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#0"}
+{"Time":"2026-09-28T11:21:35.809330868Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#0","Output":"=== RUN   FuzzPath/seed#0\n"}
+{"Time":"2026-09-28T11:21:35.810123258Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#0","Output":"--- PASS: FuzzPath/seed#0 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.810146386Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#0","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.810150833Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#1"}
+{"Time":"2026-09-28T11:21:35.810153499Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#1","Output":"=== RUN   FuzzPath/seed#1\n"}
+{"Time":"2026-09-28T11:21:35.810411742Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#1","Output":"--- PASS: FuzzPath/seed#1 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.810422195Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#1","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.810510539Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#2"}
+{"Time":"2026-09-28T11:21:35.810515599Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#2","Output":"=== RUN   FuzzPath/seed#2\n"}
+{"Time":"2026-09-28T11:21:35.810678148Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#2","Output":"--- PASS: FuzzPath/seed#2 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.810756508Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#2","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.810809444Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#3"}
+{"Time":"2026-09-28T11:21:35.810813739Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#3","Output":"=== RUN   FuzzPath/seed#3\n"}
+{"Time":"2026-09-28T11:21:35.810941888Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#3","Output":"--- PASS: FuzzPath/seed#3 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.810947597Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath/seed#3","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.815536795Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath","Output":"--- PASS: FuzzPath (0.00s)\n"}
+{"Time":"2026-09-28T11:21:35.815578465Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Test":"FuzzPath","Elapsed":0}
+{"Time":"2026-09-28T11:21:35.815586331Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:35.819683852Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Output":"coverage: 75.3% of statements\n"}
+{"Time":"2026-09-28T11:21:36.354776505Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/internal/jsondoc\t1.163s\tcoverage: 90.1% of statements\n"}
+{"Time":"2026-09-28T11:21:36.354812542Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/jsondoc","Elapsed":1.164}
+{"Time":"2026-09-28T11:21:36.429443401Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/internal/authn\t1.238s\tcoverage: 90.6% of statements\n"}
+{"Time":"2026-09-28T11:21:36.429486528Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/authn","Elapsed":1.238}
+{"Time":"2026-09-28T11:21:36.575546965Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/internal/pemutil\t1.162s\tcoverage: 100.0% of statements\n"}
+{"Time":"2026-09-28T11:21:36.575600882Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pemutil","Elapsed":1.163}
+{"Time":"2026-09-28T11:21:36.61389523Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/internal/pkiutil\t1.201s\tcoverage: 90.8% of statements\n"}
+{"Time":"2026-09-28T11:21:36.613946953Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/pkiutil","Elapsed":1.201}
+{"Time":"2026-09-28T11:21:36.837344688Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/internal/engine\t1.646s\tcoverage: 75.3% of statements\n"}
+{"Time":"2026-09-28T11:21:36.837392195Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/engine","Elapsed":1.646}
+{"Time":"2026-09-28T11:21:37.829704489Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil"}
+{"Time":"2026-09-28T11:21:37.950406505Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestStrictWrappedEncoding"}
+{"Time":"2026-09-28T11:21:37.95045776Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestStrictWrappedEncoding","Output":"=== RUN   TestStrictWrappedEncoding\n"}
+{"Time":"2026-09-28T11:21:37.950500526Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestStrictWrappedEncoding","Output":"--- PASS: TestStrictWrappedEncoding (0.00s)\n"}
+{"Time":"2026-09-28T11:21:37.950628631Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestStrictWrappedEncoding","Elapsed":0}
+{"Time":"2026-09-28T11:21:37.950648051Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestPublicNormalizationAndSignatureProfiles"}
+{"Time":"2026-09-28T11:21:37.95065893Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestPublicNormalizationAndSignatureProfiles","Output":"=== RUN   TestPublicNormalizationAndSignatureProfiles\n"}
+{"Time":"2026-09-28T11:21:38.604883592Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestPublicNormalizationAndSignatureProfiles","Output":"--- PASS: TestPublicNormalizationAndSignatureProfiles (0.65s)\n"}
+{"Time":"2026-09-28T11:21:38.604963716Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestPublicNormalizationAndSignatureProfiles","Elapsed":0.65}
+{"Time":"2026-09-28T11:21:38.604976397Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestPublicRejectsSkippedMalformedPEM"}
+{"Time":"2026-09-28T11:21:38.604981221Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestPublicRejectsSkippedMalformedPEM","Output":"=== RUN   TestPublicRejectsSkippedMalformedPEM\n"}
+{"Time":"2026-09-28T11:21:38.611346615Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestPublicRejectsSkippedMalformedPEM","Output":"--- PASS: TestPublicRejectsSkippedMalformedPEM (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.611386104Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"TestPublicRejectsSkippedMalformedPEM","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.611547936Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding"}
+{"Time":"2026-09-28T11:21:38.611560858Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding","Output":"=== RUN   FuzzEncoding\n"}
+{"Time":"2026-09-28T11:21:38.61468493Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#0"}
+{"Time":"2026-09-28T11:21:38.614717944Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#0","Output":"=== RUN   FuzzEncoding/seed#0\n"}
+{"Time":"2026-09-28T11:21:38.615278579Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#0","Output":"--- PASS: FuzzEncoding/seed#0 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.615674193Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#0","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.615887377Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#1"}
+{"Time":"2026-09-28T11:21:38.615892816Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#1","Output":"=== RUN   FuzzEncoding/seed#1\n"}
+{"Time":"2026-09-28T11:21:38.616569803Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#1","Output":"--- PASS: FuzzEncoding/seed#1 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.616744326Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#1","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.616802866Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#2"}
+{"Time":"2026-09-28T11:21:38.616807814Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#2","Output":"=== RUN   FuzzEncoding/seed#2\n"}
+{"Time":"2026-09-28T11:21:38.616917802Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#2","Output":"--- PASS: FuzzEncoding/seed#2 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.616961795Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#2","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.61697297Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#3"}
+{"Time":"2026-09-28T11:21:38.616975685Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#3","Output":"=== RUN   FuzzEncoding/seed#3\n"}
+{"Time":"2026-09-28T11:21:38.617819504Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#3","Output":"--- PASS: FuzzEncoding/seed#3 (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.61801339Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding/seed#3","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.618078852Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding","Output":"--- PASS: FuzzEncoding (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.618085672Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Test":"FuzzEncoding","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.618189347Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:38.624095688Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv"}
+{"Time":"2026-09-28T11:21:38.624378183Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/internal/testutil"}
+{"Time":"2026-09-28T11:21:38.624579236Z","Action":"start","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow"}
+{"Time":"2026-09-28T11:21:38.628017509Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Output":"coverage: 95.4% of statements\n"}
+{"Time":"2026-09-28T11:21:38.671956703Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testutil","Output":"\tgit.example.com/infra/openbao-sdk-go/internal/testutil\t\tcoverage: 0.0% of statements\n"}
+{"Time":"2026-09-28T11:21:38.699056912Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/testutil","Elapsed":0.075}
+{"Time":"2026-09-28T11:21:38.727719254Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowRecovery"}
+{"Time":"2026-09-28T11:21:38.72778471Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowRecovery","Output":"=== RUN   TestCredentialWorkflowRecovery\n"}
+{"Time":"2026-09-28T11:21:38.729016575Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowRecovery","Output":"--- PASS: TestCredentialWorkflowRecovery (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.729032941Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowRecovery","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.729185439Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowUnknownDoesNotReissue"}
+{"Time":"2026-09-28T11:21:38.729193163Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowUnknownDoesNotReissue","Output":"=== RUN   TestCredentialWorkflowUnknownDoesNotReissue\n"}
+{"Time":"2026-09-28T11:21:38.729381947Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowUnknownDoesNotReissue","Output":"--- PASS: TestCredentialWorkflowUnknownDoesNotReissue (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.72941083Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowUnknownDoesNotReissue","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.72952627Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowUnknownKVReconciles"}
+{"Time":"2026-09-28T11:21:38.729533948Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowUnknownKVReconciles","Output":"=== RUN   TestCredentialWorkflowUnknownKVReconciles\n"}
+{"Time":"2026-09-28T11:21:38.729719099Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowUnknownKVReconciles","Output":"--- PASS: TestCredentialWorkflowUnknownKVReconciles (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.729726436Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowUnknownKVReconciles","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.729730773Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowGenerationMismatch"}
+{"Time":"2026-09-28T11:21:38.72973335Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowGenerationMismatch","Output":"=== RUN   TestCredentialWorkflowGenerationMismatch\n"}
+{"Time":"2026-09-28T11:21:38.729954875Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowGenerationMismatch","Output":"--- PASS: TestCredentialWorkflowGenerationMismatch (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.729970155Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowGenerationMismatch","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.730032181Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestRegistrationRequiresBothMaterials"}
+{"Time":"2026-09-28T11:21:38.73003625Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestRegistrationRequiresBothMaterials","Output":"=== RUN   TestRegistrationRequiresBothMaterials\n"}
+{"Time":"2026-09-28T11:21:38.730370196Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestRegistrationRequiresBothMaterials","Output":"--- PASS: TestRegistrationRequiresBothMaterials (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.73038203Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestRegistrationRequiresBothMaterials","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.730439588Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowRejectsNilStored"}
+{"Time":"2026-09-28T11:21:38.730445681Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowRejectsNilStored","Output":"=== RUN   TestCredentialWorkflowRejectsNilStored\n"}
+{"Time":"2026-09-28T11:21:38.730767522Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowRejectsNilStored","Output":"--- PASS: TestCredentialWorkflowRejectsNilStored (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.730802608Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Test":"TestCredentialWorkflowRejectsNilStored","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.731061742Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:38.734134578Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission"}
+{"Time":"2026-09-28T11:21:38.734153996Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission","Output":"=== RUN   TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission\n"}
+{"Time":"2026-09-28T11:21:38.739935253Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Output":"coverage: 75.0% of statements\n"}
+{"Time":"2026-09-28T11:21:38.956727298Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission","Output":"--- PASS: TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission (0.22s)\n"}
+{"Time":"2026-09-28T11:21:38.956794194Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission","Elapsed":0.22}
+{"Time":"2026-09-28T11:21:38.956805714Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationOptionsFailClosed"}
+{"Time":"2026-09-28T11:21:38.956811305Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationOptionsFailClosed","Output":"=== RUN   TestIntegrationOptionsFailClosed\n"}
+{"Time":"2026-09-28T11:21:38.957305985Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationOptionsFailClosed","Output":"--- PASS: TestIntegrationOptionsFailClosed (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.957326986Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationOptionsFailClosed","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.957384343Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationBinaryDigest"}
+{"Time":"2026-09-28T11:21:38.957389552Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationBinaryDigest","Output":"=== RUN   TestIntegrationBinaryDigest\n"}
+{"Time":"2026-09-28T11:21:38.958692701Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationBinaryDigest","Output":"--- PASS: TestIntegrationBinaryDigest (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.958712663Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationBinaryDigest","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.959037155Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationPolicyIsolation"}
+{"Time":"2026-09-28T11:21:38.959050349Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationPolicyIsolation","Output":"=== RUN   TestIntegrationPolicyIsolation\n"}
+{"Time":"2026-09-28T11:21:38.959367893Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationPolicyIsolation","Output":"--- PASS: TestIntegrationPolicyIsolation (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.959394613Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationPolicyIsolation","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.959399154Z","Action":"run","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationEnvironmentInput"}
+{"Time":"2026-09-28T11:21:38.959401862Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationEnvironmentInput","Output":"=== RUN   TestIntegrationEnvironmentInput\n"}
+{"Time":"2026-09-28T11:21:38.959783535Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationEnvironmentInput","Output":"--- PASS: TestIntegrationEnvironmentInput (0.00s)\n"}
+{"Time":"2026-09-28T11:21:38.959795309Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Test":"TestIntegrationEnvironmentInput","Elapsed":0}
+{"Time":"2026-09-28T11:21:38.959920904Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Output":"PASS\n"}
+{"Time":"2026-09-28T11:21:38.964050092Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Output":"coverage: 39.5% of statements\n"}
+{"Time":"2026-09-28T11:21:39.63546021Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/internal/transitutil\t1.805s\tcoverage: 95.4% of statements\n"}
+{"Time":"2026-09-28T11:21:39.635536143Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/transitutil","Elapsed":1.806}
+{"Time":"2026-09-28T11:21:39.746985604Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/examples/credentialworkflow\t1.122s\tcoverage: 75.0% of statements\n"}
+{"Time":"2026-09-28T11:21:39.747021785Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/examples/credentialworkflow","Elapsed":1.1219999999999999}
+{"Time":"2026-09-28T11:21:39.977599623Z","Action":"output","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Output":"ok  \tgit.example.com/infra/openbao-sdk-go/internal/testenv\t1.353s\tcoverage: 39.5% of statements\n"}
+{"Time":"2026-09-28T11:21:39.977634271Z","Action":"pass","Package":"git.example.com/infra/openbao-sdk-go/internal/testenv","Elapsed":1.354}

@@ -1,0 +1,26 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-timeout=90s",
+    ".",
+    "./auth",
+    "./kv",
+    "./pki",
+    "./transit",
+    "./baoerr",
+    "./sensitive",
+    "./diagnostics",
+    "./observe",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/transitutil"
+  ],
+  "started_at": "2026-09-28T09:36:20.841082+00:00",
+  "finished_at": "2026-09-28T09:36:24.081335+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-014/regression-own-code-after-fix.log"
+}

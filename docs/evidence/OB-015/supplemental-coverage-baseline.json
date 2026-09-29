@@ -1,0 +1,28 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-coverpkg=./...,",
+    "-coverprofile=.artifacts/supplemental-coverage.out",
+    "-timeout=90s",
+    ".",
+    "./auth",
+    "./kv",
+    "./pki",
+    "./transit",
+    "./baoerr",
+    "./sensitive",
+    "./diagnostics",
+    "./observe",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/transitutil"
+  ],
+  "started_at": "2026-09-28T09:41:37.729452+00:00",
+  "finished_at": "2026-09-28T09:41:39.877927+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-015/supplemental-coverage-baseline.log"
+}

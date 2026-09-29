@@ -1,0 +1,19 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "-cover",
+    "-timeout=60s",
+    "./baoerr",
+    "./internal/jsondoc",
+    "./internal/transitutil"
+  ],
+  "started_at": "2026-09-28T09:45:48.574645+00:00",
+  "finished_at": "2026-09-28T09:45:50.304788+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/encoding-and-error-boundaries.log"
+}

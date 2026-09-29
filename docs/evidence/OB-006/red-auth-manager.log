@@ -1,0 +1,7 @@
+# git.example.com/infra/openbao-sdk-go/internal/authn [git.example.com/infra/openbao-sdk-go/internal/authn.test]
+internal/authn/manager_test.go:25:55: undefined: Clock
+internal/authn/manager_test.go:25:62: undefined: Manager
+internal/authn/manager_test.go:25:77: undefined: New
+internal/authn/manager_test.go:78:44: undefined: Timer
+FAIL	git.example.com/infra/openbao-sdk-go/internal/authn [build failed]
+FAIL

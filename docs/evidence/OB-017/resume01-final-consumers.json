@@ -1,0 +1,13 @@
+{
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "command": [
+    "timeout",
+    "420s",
+    "make",
+    "consumer-test"
+  ],
+  "started_at": "2026-09-28T11:26:30.685584+00:00",
+  "finished_at": "2026-09-28T11:26:38.392168+00:00",
+  "exit_code": 2,
+  "log": "docs/evidence/OB-017/resume01-final-consumers.log"
+}

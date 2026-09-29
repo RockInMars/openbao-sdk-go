@@ -1,0 +1,20 @@
+test_archive_corruption_and_wrong_expected_sha_are_rejected (test_dependency_bundle.DependencyBundleTests.test_archive_corruption_and_wrong_expected_sha_are_rejected) ... ok
+test_archive_roundtrip_is_integrity_only_not_official_verification (test_dependency_bundle.DependencyBundleTests.test_archive_roundtrip_is_integrity_only_not_official_verification) ... ok
+test_archive_symlink_traversal_and_duplicate_are_rejected (test_dependency_bundle.DependencyBundleTests.test_archive_symlink_traversal_and_duplicate_are_rejected) ... ok
+test_bundle_paths_cannot_escape_or_carry_code_credentials_or_ziphash (test_dependency_bundle.DependencyBundleTests.test_bundle_paths_cannot_escape_or_carry_code_credentials_or_ziphash) ... ok
+test_duplicate_json_keys_are_rejected (test_dependency_bundle.DependencyBundleTests.test_duplicate_json_keys_are_rejected) ... ok
+test_environment_uses_fresh_caches_and_no_identity_or_bypass (test_dependency_bundle.DependencyBundleTests.test_environment_uses_fresh_caches_and_no_identity_or_bypass) ... ok
+test_existing_output_is_not_overwritten (test_dependency_bundle.DependencyBundleTests.test_existing_output_is_not_overwritten) ... ok
+test_failed_export_leaves_no_bundle_or_modified_sdk (test_dependency_bundle.DependencyBundleTests.test_failed_export_leaves_no_bundle_or_modified_sdk) ... PUBLIC_DEPENDENCY_EXPORT: BLOCKED
+ok
+test_input_fingerprint_detects_code_and_module_changes (test_dependency_bundle.DependencyBundleTests.test_input_fingerprint_detects_code_and_module_changes) ... ok
+test_payload_limits_are_enforced_before_extraction (test_dependency_bundle.DependencyBundleTests.test_payload_limits_are_enforced_before_extraction) ... ok
+test_proxy_must_be_one_https_origin_without_credentials_or_fallback (test_dependency_bundle.DependencyBundleTests.test_proxy_must_be_one_https_origin_without_credentials_or_fallback) ... ok
+test_real_go_rejects_unsigned_synthetic_sumdb_without_network_fallback (test_dependency_bundle.DependencyBundleTests.test_real_go_rejects_unsigned_synthetic_sumdb_without_network_fallback) ... ok
+test_source_snapshot_does_not_copy_secrets_nested_modules_or_seed_sums (test_dependency_bundle.DependencyBundleTests.test_source_snapshot_does_not_copy_secrets_nested_modules_or_seed_sums) ... ok
+test_source_symlink_is_rejected_not_followed (test_dependency_bundle.DependencyBundleTests.test_source_symlink_is_rejected_not_followed) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.058s
+
+OK

@@ -1,0 +1,7 @@
+{
+  "status": "NOT_VERIFIED",
+  "version": null,
+  "image": null,
+  "binary_sha256": null,
+  "reason": "No verified OpenBao executable/image was obtainable in the implementation environment. The integration runner requires explicit checksum-pinned inputs and verifies them before launch. This is not a passing baseline."
+}

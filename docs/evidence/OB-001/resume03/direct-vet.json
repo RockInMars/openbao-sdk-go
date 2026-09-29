@@ -1,0 +1,29 @@
+{
+  "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+  "name": "direct-vet",
+  "command": [
+    "go",
+    "vet",
+    "./auth",
+    "./kv",
+    "./pki",
+    "./transit",
+    "./baoerr",
+    "./sensitive",
+    "./diagnostics",
+    "./observe",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/pemutil",
+    "./internal/transitutil",
+    "./internal/testenv",
+    "./internal/testutil",
+    "./examples/credentialworkflow"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-09-28T15:42:13.276153+00:00",
+  "finished_at": "2026-09-28T15:42:36.500758+00:00",
+  "log": "docs/evidence/OB-001/resume03/direct-vet.log"
+}

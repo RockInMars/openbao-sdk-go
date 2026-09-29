@@ -1,0 +1,14 @@
+{
+  "source_sha256": "658af59e4318a08c68b96162777d398001cc23890729f4b65414064a2cc9db21",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-tags=integration",
+    "-run=^$",
+    "./tests/integration"
+  ],
+  "started_at": "2026-09-28T10:31:27.913575+00:00",
+  "finished_at": "2026-09-28T10:31:29.298026+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-016/current-integration-source-compile.log"
+}

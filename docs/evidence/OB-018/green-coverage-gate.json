@@ -1,0 +1,16 @@
+{
+  "source_sha256": "d32cbc925470aeb3fe9ee3942e336924368e670375628831bc391edff68bace9",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-v"
+  ],
+  "started_at": "2026-09-28T10:20:42.086197+00:00",
+  "finished_at": "2026-09-28T10:20:42.757334+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/green-coverage-gate.log"
+}

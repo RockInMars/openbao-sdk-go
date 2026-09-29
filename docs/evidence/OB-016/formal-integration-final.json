@@ -1,0 +1,11 @@
+{
+  "source_sha256": "658af59e4318a08c68b96162777d398001cc23890729f4b65414064a2cc9db21",
+  "command": [
+    "make",
+    "integration-test"
+  ],
+  "started_at": "2026-09-28T10:36:35.780745+00:00",
+  "finished_at": "2026-09-28T10:36:36.392600+00:00",
+  "exit_code": 2,
+  "log": "docs/evidence/OB-016/formal-integration-final.log"
+}

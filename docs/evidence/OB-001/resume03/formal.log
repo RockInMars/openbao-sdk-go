@@ -1,0 +1,10 @@
+python3 scripts/normal-test.py
+unit: exit 1
+race-coverage: exit 1
+vet: exit 1
+modules: exit 1
+build: exit 1
+module-graph: exit 1
+test-list: exit 1
+NORMAL_OFFICIAL_CLIENT: FAIL
+make: *** [Makefile:21: normal-test] Error 1

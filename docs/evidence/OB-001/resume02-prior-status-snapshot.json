@@ -1,0 +1,372 @@
+{
+  "note": "historical R1 snapshot, not an execution ledger",
+  "tasks": [
+    {
+      "id": "OB-001",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "OB-002",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-003",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-004",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-005",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-006",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-007",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-008",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-009",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-010",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-011",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-012",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-013",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-014",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-015",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "OB-016",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "OB-017",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "OB-018",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "OB-019",
+      "status": "BLOCKED"
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "AC-001",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "AC-002",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-003",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-004",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-005",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-006",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-007",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-008",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-009",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-010",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-011",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-012",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-013",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-014",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-015",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-016",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-017",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-018",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-019",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-020",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-021",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-022",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-023",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-024",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-025",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-026",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-027",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-028",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-029",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-030",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-031",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-032",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-033",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-034",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-035",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-036",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-037",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-038",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-039",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-040",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-041",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-042",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-043",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-044",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-045",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-046",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-047",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-048",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-049",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-050",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-051",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-052",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-053",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-054",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-055",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-056",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-057",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-058",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-059",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-060",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-061",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-062",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-063",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-064",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-065",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "AC-066",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-067",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "AC-068",
+      "status": "PASS"
+    },
+    {
+      "id": "AC-069",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-070",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AC-071",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "AC-072",
+      "status": "NOT_RUN"
+    }
+  ],
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d"
+}

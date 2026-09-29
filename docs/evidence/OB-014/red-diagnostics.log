@@ -1,0 +1,8 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+# git.example.com/infra/openbao-sdk-go [git.example.com/infra/openbao-sdk-go.test]
+./diagnostics_client_test.go:42:14: c.ClusterHealth undefined (type *Client has no field or method ClusterHealth)
+./diagnostics_client_test.go:71:12: c.CheckReady undefined (type *Client has no field or method CheckReady)
+./diagnostics_client_test.go:76:11: c.CheckReady undefined (type *Client has no field or method CheckReady)
+./diagnostics_client_test.go:82:14: c.CheckReady undefined (type *Client has no field or method CheckReady)
+FAIL	git.example.com/infra/openbao-sdk-go [build failed]
+FAIL

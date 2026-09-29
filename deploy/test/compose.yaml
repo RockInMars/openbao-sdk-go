@@ -1,0 +1,14 @@
+# Reference topology only. The authoritative integration runner dynamically creates
+# its own loopback port, TLS CA, config, namespaces, policies and credentials.
+# It uses docker run (or a checksum-verified local binary), not an existing server.
+services:
+  bao-test:
+    image: ${BAO_TEST_IMAGE:?Set a verified repository@sha256 digest}
+    entrypoint: [bao]
+    command: [server, -config=/fixture/config.hcl]
+    user: '0:0'
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    ports: ['127.0.0.1:${BAO_TEST_PORT:?Use an unused loopback port}:8200']
+    volumes: ['${BAO_TEST_FIXTURE_DIR:?Owned temporary TLS fixture only}:/fixture:ro']

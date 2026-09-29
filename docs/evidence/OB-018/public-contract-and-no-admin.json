@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "scripts/contract-test.py",
+    "-race",
+    "-run=TestPublic",
+    "."
+  ],
+  "started_at": "2026-09-28T10:10:26.747194+00:00",
+  "finished_at": "2026-09-28T10:10:28.834258+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/public-contract-and-no-admin.log"
+}

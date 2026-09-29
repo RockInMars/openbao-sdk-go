@@ -1,0 +1,26 @@
+{
+  "source_sha256": "752ca0380e6a084c9a0e57ccd6439b8c2b7d387e909ec3a4e6c1feb048fea5ad",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=1",
+    "-coverpkg=./internal/engine,./internal/authn,./internal/jsondoc,./internal/pkiutil,./internal/transitutil,./sensitive,./baoerr,./kv,./pki,./auth",
+    "-coverprofile=.artifacts/own-leaf-coverage.out",
+    ".",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/transitutil",
+    "./sensitive",
+    "./baoerr",
+    "./kv",
+    "./pki",
+    "./auth"
+  ],
+  "started_at": "2026-09-28T10:24:23.576433+00:00",
+  "finished_at": "2026-09-28T10:24:29.211202+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/supplemental-coverage-final.log"
+}

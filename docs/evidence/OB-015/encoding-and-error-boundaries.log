@@ -1,0 +1,3 @@
+ok  	git.example.com/infra/openbao-sdk-go/baoerr	1.015s	coverage: 100.0% of statements
+ok  	git.example.com/infra/openbao-sdk-go/internal/jsondoc	1.014s	coverage: 92.9% of statements
+ok  	git.example.com/infra/openbao-sdk-go/internal/transitutil	1.225s	coverage: 94.3% of statements

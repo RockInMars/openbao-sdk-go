@@ -1,0 +1,11 @@
+{
+  "source_sha256": "8b12880ae2a08782623746c6fa3b6f3cfdfc571773cb2a167732fe44f3ee038f",
+  "command": [
+    "make",
+    "tooling-test"
+  ],
+  "started_at": "2026-09-28T10:39:41.080484+00:00",
+  "finished_at": "2026-09-28T10:39:41.868504+00:00",
+  "exit_code": 2,
+  "log": "docs/evidence/OB-018/red-fuzz-make-targets.log"
+}

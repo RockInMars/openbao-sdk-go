@@ -1,0 +1,18 @@
+{
+  "source_sha256": "752ca0380e6a084c9a0e57ccd6439b8c2b7d387e909ec3a4e6c1feb048fea5ad",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "test",
+    "-race",
+    "-run",
+    "TestAmbiguous404WritePreservesUnknown",
+    "-count=1",
+    "./internal/engine"
+  ],
+  "started_at": "2026-09-28T10:24:21.353298+00:00",
+  "finished_at": "2026-09-28T10:24:22.952807+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/green-404-write-effect.log"
+}

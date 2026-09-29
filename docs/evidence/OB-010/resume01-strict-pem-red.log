@@ -1,0 +1,18 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+ok  	git.example.com/infra/openbao-sdk-go	1.179s
+--- FAIL: TestPEMRejectsSkippedMalformedBlocks (0.02s)
+    --- FAIL: TestPEMRejectsSkippedMalformedBlocks/certificate-first (0.00s)
+        strict_pem_regression_test.go:20: malformed leading certificate was silently skipped
+    --- FAIL: TestPEMRejectsSkippedMalformedBlocks/certificate-middle (0.00s)
+        strict_pem_regression_test.go:26: malformed middle certificate was silently skipped
+    --- FAIL: TestPEMRejectsSkippedMalformedBlocks/csr (0.00s)
+        strict_pem_regression_test.go:31: malformed leading CSR was silently skipped
+    --- FAIL: TestPEMRejectsSkippedMalformedBlocks/private-key (0.00s)
+        strict_pem_regression_test.go:38: malformed leading private key was silently skipped
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go/internal/pkiutil	0.149s
+--- FAIL: TestPublicRejectsSkippedMalformedPEM (0.01s)
+    strict_pem_regression_test.go:23: malformed leading public key was silently skipped
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go/internal/transitutil	0.145s
+FAIL

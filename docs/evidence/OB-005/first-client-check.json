@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-timeout=20s",
+    "."
+  ],
+  "started_at": "2026-09-28T09:17:35.637429+00:00",
+  "finished_at": "2026-09-28T09:17:36.867989+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-005/first-client-check.log"
+}

@@ -1,0 +1,11 @@
+{
+  "source_sha256": "658af59e4318a08c68b96162777d398001cc23890729f4b65414064a2cc9db21",
+  "command": [
+    "make",
+    "tooling-test"
+  ],
+  "started_at": "2026-09-28T10:36:24.160945+00:00",
+  "finished_at": "2026-09-28T10:36:24.784770+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/tooling-tests-final.log"
+}

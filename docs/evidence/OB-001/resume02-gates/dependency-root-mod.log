@@ -1,0 +1,15 @@
+{
+	"Module": {
+		"Path": "git.example.com/infra/openbao-sdk-go"
+	},
+	"Go": "1.23.2",
+	"Require": [
+		{
+			"Path": "github.com/openbao/openbao/api/v2",
+			"Version": "v2.7.0"
+		}
+	],
+	"Exclude": null,
+	"Replace": null,
+	"Retract": null
+}

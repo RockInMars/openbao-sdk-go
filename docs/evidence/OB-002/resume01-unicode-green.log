@@ -1,0 +1,2 @@
+ok  	git.example.com/infra/openbao-sdk-go/internal/jsondoc	1.100s	coverage: 90.1% of statements
+ok  	git.example.com/infra/openbao-sdk-go/kv	1.118s	coverage: 88.0% of statements

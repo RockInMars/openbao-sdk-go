@@ -1,0 +1,17 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "-timeout=30s",
+    "./internal/authn",
+    "-count=20"
+  ],
+  "started_at": "2026-09-28T09:13:57.153253+00:00",
+  "finished_at": "2026-09-28T09:13:58.523500+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-007/green-auth-lifecycle.log"
+}

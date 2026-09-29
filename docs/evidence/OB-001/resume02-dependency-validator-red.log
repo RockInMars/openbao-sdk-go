@@ -1,0 +1,89 @@
+test_decode_concatenated_go_json_and_reject_truncated_output (test_dependency_check.DependencyCheckTests.test_decode_concatenated_go_json_and_reject_truncated_output) ... FAIL
+test_error_or_missing_checksum_never_passes (test_dependency_check.DependencyCheckTests.test_error_or_missing_checksum_never_passes) ... FAIL
+test_go_sum_must_bind_both_direct_records (test_dependency_check.DependencyCheckTests.test_go_sum_must_bind_both_direct_records) ... FAIL
+test_module_graph_replacements_and_missing_pin_are_rejected (test_dependency_check.DependencyCheckTests.test_module_graph_replacements_and_missing_pin_are_rejected) ... FAIL
+test_records_real_files_but_does_not_claim_checksum_verification (test_dependency_check.DependencyCheckTests.test_records_real_files_but_does_not_claim_checksum_verification) ... FAIL
+test_root_module_configuration_and_minimum_go_are_not_guessed (test_dependency_check.DependencyCheckTests.test_root_module_configuration_and_minimum_go_are_not_guessed) ... FAIL
+test_symlink_or_missing_source_is_rejected (test_dependency_check.DependencyCheckTests.test_symlink_or_missing_source_is_rejected) ... FAIL
+
+======================================================================
+FAIL: test_decode_concatenated_go_json_and_reject_truncated_output (test_dependency_check.DependencyCheckTests.test_decode_concatenated_go_json_and_reject_truncated_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 112, in test_decode_concatenated_go_json_and_reject_truncated_output
+    m = self.load()
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 19, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 lacks the real-dependency validation entrypoint')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 lacks the real-dependency validation entrypoint
+
+======================================================================
+FAIL: test_error_or_missing_checksum_never_passes (test_dependency_check.DependencyCheckTests.test_error_or_missing_checksum_never_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 39, in test_error_or_missing_checksum_never_passes
+    m = self.load()
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 19, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 lacks the real-dependency validation entrypoint')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 lacks the real-dependency validation entrypoint
+
+======================================================================
+FAIL: test_go_sum_must_bind_both_direct_records (test_dependency_check.DependencyCheckTests.test_go_sum_must_bind_both_direct_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 74, in test_go_sum_must_bind_both_direct_records
+    m = self.load()
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 19, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 lacks the real-dependency validation entrypoint')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 lacks the real-dependency validation entrypoint
+
+======================================================================
+FAIL: test_module_graph_replacements_and_missing_pin_are_rejected (test_dependency_check.DependencyCheckTests.test_module_graph_replacements_and_missing_pin_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 84, in test_module_graph_replacements_and_missing_pin_are_rejected
+    m = self.load()
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 19, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 lacks the real-dependency validation entrypoint')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 lacks the real-dependency validation entrypoint
+
+======================================================================
+FAIL: test_records_real_files_but_does_not_claim_checksum_verification (test_dependency_check.DependencyCheckTests.test_records_real_files_but_does_not_claim_checksum_verification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 50, in test_records_real_files_but_does_not_claim_checksum_verification
+    m = self.load()
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 19, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 lacks the real-dependency validation entrypoint')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 lacks the real-dependency validation entrypoint
+
+======================================================================
+FAIL: test_root_module_configuration_and_minimum_go_are_not_guessed (test_dependency_check.DependencyCheckTests.test_root_module_configuration_and_minimum_go_are_not_guessed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 97, in test_root_module_configuration_and_minimum_go_are_not_guessed
+    m = self.load()
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 19, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 lacks the real-dependency validation entrypoint')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 lacks the real-dependency validation entrypoint
+
+======================================================================
+FAIL: test_symlink_or_missing_source_is_rejected (test_dependency_check.DependencyCheckTests.test_symlink_or_missing_source_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 62, in test_symlink_or_missing_source_is_rejected
+    m = self.load()
+  File "/mnt/data/openbao-r2/openbao-sdk-go/scripts/tests/test_dependency_check.py", line 19, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 lacks the real-dependency validation entrypoint')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 lacks the real-dependency validation entrypoint
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+FAILED (failures=7)

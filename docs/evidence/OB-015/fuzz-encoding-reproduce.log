@@ -1,0 +1,15 @@
+fuzz: elapsed: 0s, gathering baseline coverage: 0/51 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 51/51 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 55866 (18618/sec), new interesting: 5 (total: 56)
+fuzz: elapsed: 6s, execs: 122136 (22093/sec), new interesting: 7 (total: 58)
+fuzz: elapsed: 9s, execs: 185369 (21077/sec), new interesting: 11 (total: 62)
+fuzz: elapsed: 12s, execs: 251747 (22124/sec), new interesting: 12 (total: 63)
+fuzz: elapsed: 15s, execs: 311390 (19885/sec), new interesting: 13 (total: 64)
+fuzz: elapsed: 18s, execs: 311390 (0/sec), new interesting: 13 (total: 64)
+fuzz: elapsed: 21s, execs: 321681 (3432/sec), new interesting: 15 (total: 66)
+fuzz: elapsed: 24s, execs: 321681 (0/sec), new interesting: 15 (total: 66)
+fuzz: elapsed: 27s, execs: 355911 (11415/sec), new interesting: 17 (total: 68)
+fuzz: elapsed: 30s, execs: 417004 (20370/sec), new interesting: 17 (total: 68)
+fuzz: elapsed: 30s, execs: 417004 (0/sec), new interesting: 17 (total: 68)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/internal/transitutil	30.015s

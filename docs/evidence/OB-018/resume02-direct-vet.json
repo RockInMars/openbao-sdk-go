@@ -1,0 +1,33 @@
+{
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "command": [
+    "env",
+    "GOENV=off",
+    "GOWORK=off",
+    "GOFLAGS=",
+    "GOTOOLCHAIN=local",
+    "go",
+    "vet",
+    "./auth",
+    "./kv",
+    "./pki",
+    "./transit",
+    "./baoerr",
+    "./sensitive",
+    "./diagnostics",
+    "./observe",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/pemutil",
+    "./internal/transitutil",
+    "./internal/testenv",
+    "./internal/testutil",
+    "./examples/credentialworkflow"
+  ],
+  "started_at": "2026-09-28T12:08:04.416623+00:00",
+  "finished_at": "2026-09-28T12:08:15.789259+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/resume02-direct-vet.log"
+}

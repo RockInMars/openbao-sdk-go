@@ -1,0 +1,28 @@
+{
+  "source_sha256": "658af59e4318a08c68b96162777d398001cc23890729f4b65414064a2cc9db21",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-json",
+    "./auth",
+    "./kv",
+    "./pki",
+    "./baoerr",
+    "./sensitive",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/transitutil",
+    "./internal/testenv",
+    "./examples/credentialworkflow"
+  ],
+  "started_at": "2026-09-28T10:33:41.543369+00:00",
+  "finished_at": "2026-09-28T10:33:45.777723+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/direct-own-tests-final.log"
+}

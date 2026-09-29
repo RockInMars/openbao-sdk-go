@@ -1,0 +1,11 @@
+{
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "command": [
+    "python3",
+    "scripts/consumer-contract-test.py"
+  ],
+  "started_at": "2026-09-28T10:41:59.020263+00:00",
+  "finished_at": "2026-09-28T10:42:02.007256+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-017/delivery-consumer-sources.log"
+}

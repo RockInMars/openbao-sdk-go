@@ -1,0 +1,13 @@
+{
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "command": [
+    "timeout",
+    "420s",
+    "make",
+    "integration-test"
+  ],
+  "started_at": "2026-09-28T11:26:25.765220+00:00",
+  "finished_at": "2026-09-28T11:26:28.471201+00:00",
+  "exit_code": 2,
+  "log": "docs/evidence/OB-016/resume01-final-integration.log"
+}

@@ -1,0 +1,23 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+?   	git.example.com/infra/openbao-sdk-go/transit	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/diagnostics	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/observe	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/internal/testutil	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/examples/kv-versioned	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/examples/pki-issue-store	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/examples/service-bootstrap	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/examples/transit-sign	[no test files]
+ok  	git.example.com/infra/openbao-sdk-go	3.564s
+ok  	git.example.com/infra/openbao-sdk-go/auth	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/kv	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/pki	1.033s
+ok  	git.example.com/infra/openbao-sdk-go/baoerr	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/sensitive	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/internal/engine	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/internal/authn	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/internal/jsondoc	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/internal/pkiutil	1.042s
+ok  	git.example.com/infra/openbao-sdk-go/internal/transitutil	1.306s
+ok  	git.example.com/infra/openbao-sdk-go/internal/testenv	1.015s
+ok  	git.example.com/infra/openbao-sdk-go/examples/credentialworkflow	1.012s
+ok  	git.example.com/infra/openbao-sdk-go/examples/internal/bootstrap	1.010s

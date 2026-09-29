@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-09-28T11:01:20.296361+00:00",
+  "evidence_class": "RESTORE_AND_ENVIRONMENT",
+  "input_archive_sha256": "bd4d36a0bad2cdbedacf53e3190c61d0bebee3f8793db6274fad064648088581",
+  "restored_entries": 372,
+  "mismatches_before_changes": [],
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "git_metadata_present": false,
+  "recovery": "Restored the uploaded source snapshot into its original folder; no prior checkout or .git existed in this runtime. No repository reinitialization or remote action. Subsequent diff is against the immutable input ZIP.",
+  "tools": {
+    "go": "/usr/local/go/bin/go",
+    "git": "/usr/bin/git",
+    "docker": null,
+    "bao": null,
+    "curl": "/usr/local/bin/curl",
+    "make": "/usr/bin/make"
+  },
+  "go_version": "go version go1.23.2 linux/amd64",
+  "registered_codex_environments": 0
+}

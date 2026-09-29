@@ -1,0 +1,17 @@
+# git.example.com/infra/openbao-sdk-go/kv [git.example.com/infra/openbao-sdk-go/kv.test]
+kv/document_test.go:5:9: undefined: ParseDocument
+kv/document_test.go:12:13: undefined: ParseDocument
+kv/document_test.go:16:34: undefined: ParseDocument
+kv/document_test.go:18:113: undefined: Document
+kv/document_test.go:21:9: undefined: NewDocument
+kv/document_test.go:23:12: undefined: NewDocument
+kv/document_test.go:24:12: undefined: NewDocument
+kv/document_test.go:27:179: undefined: ParseDocument
+# git.example.com/infra/openbao-sdk-go/sensitive [git.example.com/infra/openbao-sdk-go/sensitive.test]
+sensitive/bytes_test.go:13:12: undefined: NewBytes
+sensitive/bytes_test.go:24:31: undefined: NewBytes
+sensitive/bytes_test.go:28:16: undefined: Bytes
+sensitive/bytes_test.go:31:5: undefined: NewBytes
+FAIL	git.example.com/infra/openbao-sdk-go/sensitive [build failed]
+FAIL	git.example.com/infra/openbao-sdk-go/kv [build failed]
+FAIL

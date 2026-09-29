@@ -1,0 +1,66 @@
+{
+  "evidence_class": "OFFICIAL_DEPENDENCY_PREFLIGHT",
+  "status": "BLOCKED",
+  "started_at": "2026-09-28T15:32:28.189002+00:00",
+  "source_before_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "module": "github.com/openbao/openbao/api/v2",
+  "version": "v2.7.0",
+  "commands": [
+    {
+      "name": "toolchain",
+      "command": [
+        "go",
+        "env",
+        "-json",
+        "GOVERSION",
+        "GOOS",
+        "GOARCH",
+        "GOTOOLCHAIN"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-28T15:32:28.210786+00:00",
+      "finished_at": "2026-09-28T15:32:28.233034+00:00",
+      "log": ".artifacts/dependency-toolchain.log"
+    },
+    {
+      "name": "root-mod",
+      "command": [
+        "go",
+        "mod",
+        "edit",
+        "-json"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-28T15:32:28.233120+00:00",
+      "finished_at": "2026-09-28T15:32:28.238890+00:00",
+      "log": ".artifacts/dependency-root-mod.log"
+    },
+    {
+      "name": "download",
+      "command": [
+        "go",
+        "mod",
+        "download",
+        "-json",
+        "github.com/openbao/openbao/api/v2@v2.7.0"
+      ],
+      "exit_code": 1,
+      "started_at": "2026-09-28T15:32:28.238969+00:00",
+      "finished_at": "2026-09-28T15:32:28.246958+00:00",
+      "log": ".artifacts/dependency-download.log"
+    }
+  ],
+  "minimum_go": null,
+  "sdk_compile_verified": false,
+  "server_verified": false,
+  "scope": "actual download/go.mod/go.sum/module graph/cache verification only",
+  "toolchain": {
+    "GOARCH": "amd64",
+    "GOOS": "linux",
+    "GOTOOLCHAIN": "local",
+    "GOVERSION": "go1.23.2"
+  },
+  "reason": "download did not complete; inspect the recorded log",
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "finished_at": "2026-09-28T15:32:28.269722+00:00"
+}

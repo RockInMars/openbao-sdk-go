@@ -1,0 +1,104 @@
+{
+  "files": [
+    {
+      "source": ".artifacts/consumer-reader-0.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/consumer-reader-0.log",
+      "sha256": "696ebbf40fa230bf9f761a37ecc9ae88708012aa84e7cd3783b8a189094f5467"
+    },
+    {
+      "source": ".artifacts/consumer-report.json",
+      "archive": "docs/evidence/OB-001/resume02-gates/consumer-report.json",
+      "sha256": "696d15b6fdf17b2a26fcf516dfd44870de78b4fa1bb96081235fad8d1710de92"
+    },
+    {
+      "source": ".artifacts/consumer-signer-0.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/consumer-signer-0.log",
+      "sha256": "09494af5d5cc5edf1af7d5741dcfe0ed720c149cdf49569c96da68cab54223a6"
+    },
+    {
+      "source": ".artifacts/coverage-report.json",
+      "archive": "docs/evidence/OB-001/resume02-gates/coverage-report.json",
+      "sha256": "5c347541f7b0ed21518e4e531da7c22e41e97348d398aec56dc2386410524f7d"
+    },
+    {
+      "source": ".artifacts/dependency-download.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/dependency-download.log",
+      "sha256": "31c0d59795a21b7c8e104fb9e7130ae38fdf5ec16a1477703b344b681ff6d6b3"
+    },
+    {
+      "source": ".artifacts/dependency-report.json",
+      "archive": "docs/evidence/OB-001/resume02-gates/dependency-report.json",
+      "sha256": "3ef607335194b469fa8a7ea7adcbc9bd3bb2a92d75862472782abfc06bf7abe4"
+    },
+    {
+      "source": ".artifacts/dependency-root-mod.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/dependency-root-mod.log",
+      "sha256": "d28ad495f0061a7b20bbf4e284b2563f9c033584118614163ad675a93140c82c"
+    },
+    {
+      "source": ".artifacts/dependency-toolchain.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/dependency-toolchain.log",
+      "sha256": "9a71b7cef9b07fde5f2aa88da31ac95352aca813ea49a090a1feeb1d6e48323a"
+    },
+    {
+      "source": ".artifacts/gitleaks.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/gitleaks.log",
+      "sha256": "d025842a72cb8b9e256a974c50f82b12a7fc4264549a52be521b015c24b610f7"
+    },
+    {
+      "source": ".artifacts/govulncheck.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/govulncheck.log",
+      "sha256": "0a207ee1a7bca5a55122b11daf5f03f2db92f3606e36c438dcb7fccd6cd6e7d6"
+    },
+    {
+      "source": ".artifacts/integration-report.json",
+      "archive": "docs/evidence/OB-001/resume02-gates/integration-report.json",
+      "sha256": "e00cf9959b10972d16394ff9155427cf482ee052b474f7b13c0581f170a6c304"
+    },
+    {
+      "source": ".artifacts/normal-build.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/normal-build.log",
+      "sha256": "a87a408b5cc273e464b60b89bb5fd499c931ce27c76993a11d4d0396d3ab77a7"
+    },
+    {
+      "source": ".artifacts/normal-module-graph.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/normal-module-graph.log",
+      "sha256": "7f4f0afb5e3339354f87e9c6633079c3151453773b10b48be7da56e755869d4d"
+    },
+    {
+      "source": ".artifacts/normal-modules.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/normal-modules.log",
+      "sha256": "4cad452700d87b32c50c588898fd784e188cdfc281b7b96571587c2061740a03"
+    },
+    {
+      "source": ".artifacts/normal-race-coverage.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/normal-race-coverage.log",
+      "sha256": "a87a408b5cc273e464b60b89bb5fd499c931ce27c76993a11d4d0396d3ab77a7"
+    },
+    {
+      "source": ".artifacts/normal-report.json",
+      "archive": "docs/evidence/OB-001/resume02-gates/normal-report.json",
+      "sha256": "de0a401a5594bd99732e319ea5b6acd16dcb0ad56fe1051af1d7593cc60746f4"
+    },
+    {
+      "source": ".artifacts/normal-test-list.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/normal-test-list.log",
+      "sha256": "a87a408b5cc273e464b60b89bb5fd499c931ce27c76993a11d4d0396d3ab77a7"
+    },
+    {
+      "source": ".artifacts/normal-unit.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/normal-unit.log",
+      "sha256": "a87a408b5cc273e464b60b89bb5fd499c931ce27c76993a11d4d0396d3ab77a7"
+    },
+    {
+      "source": ".artifacts/normal-vet.log",
+      "archive": "docs/evidence/OB-001/resume02-gates/normal-vet.log",
+      "sha256": "a87a408b5cc273e464b60b89bb5fd499c931ce27c76993a11d4d0396d3ab77a7"
+    },
+    {
+      "source": ".artifacts/security-report.json",
+      "archive": "docs/evidence/OB-001/resume02-gates/security-report.json",
+      "sha256": "63ae29b46a85275057bb6f035381215246f2ba794ea59a271f5d436fa7dc6e04"
+    }
+  ]
+}

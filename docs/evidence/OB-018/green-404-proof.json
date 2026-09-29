@@ -1,0 +1,16 @@
+{
+  "source_sha256": "4dc9375fb2b3af5a8b6a7178438cdf0d1beac8e527462da2cf48e488c4295b3b",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "./internal/engine"
+  ],
+  "started_at": "2026-09-28T10:27:40.053664+00:00",
+  "finished_at": "2026-09-28T10:27:41.985183+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/green-404-proof.log"
+}

@@ -1,0 +1,39 @@
+{
+  "evidence_class": "INDEPENDENT_CONSUMERS",
+  "status": "FAIL",
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "delivery": "temporary file GOPROXY, NOT a remote publication",
+  "consumers": [
+    {
+      "name": "reader",
+      "status": "FAIL",
+      "commands": [
+        {
+          "command": [
+            "go",
+            "mod",
+            "tidy"
+          ],
+          "exit_code": 1,
+          "log": ".artifacts/consumer-reader-0.log"
+        }
+      ]
+    },
+    {
+      "name": "signer",
+      "status": "FAIL",
+      "commands": [
+        {
+          "command": [
+            "go",
+            "mod",
+            "tidy"
+          ],
+          "exit_code": 1,
+          "log": ".artifacts/consumer-signer-0.log"
+        }
+      ]
+    }
+  ],
+  "finished_at": "2026-09-28T10:41:46.613712+00:00"
+}

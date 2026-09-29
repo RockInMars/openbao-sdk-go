@@ -1,0 +1,14 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "./internal/testenv"
+  ],
+  "started_at": "2026-09-28T09:53:47.082627+00:00",
+  "finished_at": "2026-09-28T09:53:47.143398+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-016/red-isolated-harness.log"
+}

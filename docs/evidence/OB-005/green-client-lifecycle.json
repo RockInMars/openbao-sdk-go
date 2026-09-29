@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-timeout=20s",
+    ".",
+    "./auth",
+    "./internal/authn",
+    "./internal/engine"
+  ],
+  "started_at": "2026-09-28T09:18:16.079061+00:00",
+  "finished_at": "2026-09-28T09:18:18.646346+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-005/green-client-lifecycle.log"
+}

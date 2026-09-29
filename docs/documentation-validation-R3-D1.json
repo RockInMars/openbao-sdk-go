@@ -1,0 +1,739 @@
+{
+  "evidence_class": "DOCUMENTATION_ONLY",
+  "revision": "R3-D1",
+  "created_at": "2026-09-29T00:34:57.159601+00:00",
+  "base_zip_sha256": "cf15918b29a01a3a899521a27a88b2b729c1f55071212a966e9a1cc41f61f5d9",
+  "runtime_go_files_unchanged": 98,
+  "protected_file_sha256": {
+    "go.mod": "5dc24eaa91168e06836ceaf96cd374cce853381ea5fe7c3bf0b11fc86be2a729",
+    "go.sum": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "task-status.json": "dc21b66404120599429c0087881dcaa2db187be6110d5864bee54e1f8d3a0d72",
+    "acceptance-results.json": "1b179c4889b03f22b65784b747abc5bcb4973fe06df5d89a7a13faa0f6a0245f"
+  },
+  "new_reader_guides": [
+    "docs/sdk-integration-guide.md",
+    "docs/sdk-feature-manual.md",
+    "docs/first-use-guide.md"
+  ],
+  "go_snippet_syntax_checks": [
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "snippet": 1,
+      "command": [
+        "gofmt"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "kind": "GO_SYNTAX_ONLY"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "snippet": 2,
+      "command": [
+        "gofmt"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "kind": "GO_SYNTAX_ONLY"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "snippet": 3,
+      "command": [
+        "gofmt"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "kind": "GO_SYNTAX_ONLY"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "snippet": 4,
+      "command": [
+        "gofmt"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "kind": "GO_SYNTAX_ONLY"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "snippet": 1,
+      "command": [
+        "gofmt"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "kind": "GO_SYNTAX_ONLY"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "snippet": 2,
+      "command": [
+        "gofmt"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "kind": "GO_SYNTAX_ONLY"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "snippet": 3,
+      "command": [
+        "gofmt"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "kind": "GO_SYNTAX_ONLY"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "snippet": 4,
+      "command": [
+        "gofmt"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "kind": "GO_SYNTAX_ONLY"
+    }
+  ],
+  "go_type_check": "NOT_RUN",
+  "official_sdk_build": "NOT_RUN",
+  "openbao_calls": "NOT_RUN",
+  "software_acceptance_updated": false,
+  "relative_links_checked": 132,
+  "links": [
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "first-use-guide.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "sdk-feature-manual.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "spec/02-接口契约.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../public_contract_test.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../acceptance-results.json"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../README.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "integration-and-rollback.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../go.mod"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../config.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "compatibility.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "dependency-transfer.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "release.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../Makefile"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../auth/config.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../auth/providers.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "authentication.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../internal/authn/approle.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../client.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../kv_client.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../config_types.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../config.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../network.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../internal/engine/path.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../client.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "authentication.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../diagnostics_client.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../deploy/test/policies/"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../internal/testenv/policies.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../transit_hmac.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "error-handling.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../baoerr/error.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../internal/engine/errors.go"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "integration-and-rollback.md"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "documentation-validation-R3-D1.json"
+    },
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "target": "../IMPLEMENTATION_REPORT_R3.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "sdk-integration-guide.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "first-use-guide.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../acceptance-results.json"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "spec/04-验收矩阵.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../public_contract_test.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "spec/02-接口契约.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../internal/engine/client.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../internal/engine/operations.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../transit_keys.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../client.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../options.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../diagnostics/types.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../auth/config.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../auth/providers.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "authentication.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../kv_client.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../kv_metadata.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../kv/types.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../kv/document.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../internal/jsondoc/json.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../internal/jsondoc/unicode.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../pki_client.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../pki_read.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../pki/types.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../examples/pki-issue-store/main.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../examples/credentialworkflow/workflow.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../transit_client.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../transit_keys.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../transit_cipher.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../transit_hmac.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../transit_hmac.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../deploy/test/policies/control.hcl"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../diagnostics_client.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../internal/engine/client.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../observe/observer.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../client.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "observability.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../sensitive/bytes.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../baoerr/error.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../internal/engine/errors.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../public_contract_test.go"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "spec/01-总体设计.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "../IMPLEMENTATION_REPORT_R3.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "dependency-transfer.md"
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "target": "release.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "sdk-integration-guide.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "sdk-feature-manual.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "compatibility.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../deploy/test/README.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../examples/internal/bootstrap/config.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "dependency-transfer.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "sdk-integration-guide.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../examples/internal/bootstrap/config.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../deploy/test/README.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "sdk-integration-guide.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../examples/service-bootstrap/main.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../examples/internal/bootstrap/config.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../client.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../examples/kv-versioned/main.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../kv_client.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "sdk-feature-manual.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../examples/transit-sign/main.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../transit/types.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "sdk-feature-manual.md"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../examples/pki-issue-store/main.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../examples/credentialworkflow/workflow.go"
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "target": "../deploy/test/README.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/sdk-integration-guide.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/sdk-feature-manual.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/first-use-guide.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/README.md"
+    },
+    {
+      "file": "README.md",
+      "target": "IMPLEMENTATION_REPORT_R3.md"
+    },
+    {
+      "file": "examples/README.md",
+      "target": "../docs/first-use-guide.md"
+    },
+    {
+      "file": "examples/README.md",
+      "target": "../docs/sdk-integration-guide.md"
+    },
+    {
+      "file": "examples/README.md",
+      "target": "../docs/sdk-feature-manual.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "sdk-integration-guide.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "sdk-feature-manual.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "first-use-guide.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "authentication.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "error-handling.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "observability.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "compatibility.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "testing.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "release.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "integration-and-rollback.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "dependency-bootstrap.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "dependency-transfer.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "implementation-handoff.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "spec/01-总体设计.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "spec/02-接口契约.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "spec/03-实现任务计划.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "spec/04-验收矩阵.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "../task-status.json"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "../acceptance-results.json"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "../IMPLEMENTATION_REPORT_R3.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "documentation-change-R3-D1.md"
+    },
+    {
+      "file": "docs/README.md",
+      "target": "documentation-validation-R3-D1.json"
+    }
+  ],
+  "markdown_fences": [
+    {
+      "file": "docs/sdk-integration-guide.md",
+      "count": 12
+    },
+    {
+      "file": "docs/sdk-feature-manual.md",
+      "count": 8
+    },
+    {
+      "file": "docs/first-use-guide.md",
+      "count": 22
+    },
+    {
+      "file": "README.md",
+      "count": 6
+    },
+    {
+      "file": "CHANGELOG.md",
+      "count": 0
+    },
+    {
+      "file": "examples/README.md",
+      "count": 0
+    },
+    {
+      "file": "docs/README.md",
+      "count": 0
+    },
+    {
+      "file": "docs/documentation-change-R3-D1.md",
+      "count": 0
+    }
+  ],
+  "trailing_whitespace_count": 0,
+  "public_runtime_methods_documented": [
+    "Client.Start",
+    "Client.Close",
+    "Client.State",
+    "Client.KVv2",
+    "Client.PKI",
+    "Client.Transit",
+    "Client.ClusterHealth",
+    "Client.CheckReady",
+    "KVClient.Create",
+    "KVClient.CompareAndSwap",
+    "KVClient.ReadVersion",
+    "KVClient.ReadLatest",
+    "KVClient.ReadRef",
+    "KVClient.ReadMetadata",
+    "KVClient.List",
+    "KVClient.DeleteVersions",
+    "KVClient.UndeleteVersions",
+    "PKIClient.Issue",
+    "PKIClient.SignCSR",
+    "PKIClient.ReadCertificate",
+    "PKIClient.ReadIssuerChain",
+    "PKIClient.Revoke",
+    "TransitClient.Sign",
+    "TransitClient.SignDigest",
+    "TransitClient.Verify",
+    "TransitClient.VerifyDigest",
+    "TransitClient.ReadKeyMetadata",
+    "TransitClient.ReadPublicKey",
+    "TransitClient.Encrypt",
+    "TransitClient.Decrypt",
+    "TransitClient.Rewrap",
+    "TransitClient.HMAC",
+    "TransitClient.HMACVerify"
+  ],
+  "example_env_names_checked": [
+    "SDK_BAO_ADDRESS",
+    "SDK_BAO_CA_FILE",
+    "SDK_BAO_CERT_CN",
+    "SDK_BAO_CLUSTER",
+    "SDK_BAO_GENERATION",
+    "SDK_BAO_ISSUER_TRUST_FILE",
+    "SDK_BAO_KEY_NAME",
+    "SDK_BAO_KEY_VERSION",
+    "SDK_BAO_KV_MOUNT",
+    "SDK_BAO_NAMESPACE",
+    "SDK_BAO_NAMESPACE_MODE",
+    "SDK_BAO_OPERATION_ID",
+    "SDK_BAO_PKI_MOUNT",
+    "SDK_BAO_PKI_ROLE",
+    "SDK_BAO_SECRET_PATH",
+    "SDK_BAO_SIGN_PROFILE",
+    "SDK_BAO_TOKEN_FILE",
+    "SDK_BAO_TRANSIT_MOUNT"
+  ],
+  "make_targets_checked": [
+    "consumer-test",
+    "contract-test",
+    "dependency-check",
+    "dependency-export",
+    "fuzz-test",
+    "integration-test",
+    "normal-test",
+    "release-check",
+    "security-test",
+    "tooling-test"
+  ],
+  "status": "PASS",
+  "status_scope": "Only documentation syntax, source-name correspondence, links and preservation. Not runtime or release validation."
+}

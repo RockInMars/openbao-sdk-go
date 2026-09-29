@@ -1,0 +1,22 @@
+# Reference fixture; canonical generator: internal/testenv/policies.go
+path "auth/token/renew-self" { capabilities = ["update"] }
+path "transit/keys/ecdsa" { capabilities = ["read"] }
+path "transit/keys/rsa" { capabilities = ["read"] }
+path "transit/keys/ed25519" { capabilities = ["read"] }
+path "transit/keys/cipher" { capabilities = ["read"] }
+path "transit/keys/derived" { capabilities = ["read"] }
+path "transit/keys/mac" { capabilities = ["read"] }
+path "transit/sign/ecdsa" { capabilities = ["update"] }
+path "transit/verify/ecdsa" { capabilities = ["update"] }
+path "transit/sign/rsa" { capabilities = ["update"] }
+path "transit/verify/rsa" { capabilities = ["update"] }
+path "transit/sign/ed25519" { capabilities = ["update"] }
+path "transit/verify/ed25519" { capabilities = ["update"] }
+path "transit/encrypt/cipher" { capabilities = ["update"] }
+path "transit/decrypt/cipher" { capabilities = ["update"] }
+path "transit/rewrap/cipher" { capabilities = ["update"] }
+path "transit/encrypt/derived" { capabilities = ["update"] }
+path "transit/decrypt/derived" { capabilities = ["update"] }
+path "transit/rewrap/derived" { capabilities = ["update"] }
+path "transit/hmac/mac/sha2-256" { capabilities = ["update"] }
+path "transit/verify/mac" { capabilities = ["update"] }

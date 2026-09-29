@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-timeout=30s",
+    "./internal/authn",
+    "-run",
+    "Test(RunStops|AuthCapacity|Business403|AuthStateAfter)"
+  ],
+  "started_at": "2026-09-28T09:41:06.209066+00:00",
+  "finished_at": "2026-09-28T09:41:09.537447+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-015/red-auth-loop-restart.log"
+}

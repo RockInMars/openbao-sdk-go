@@ -1,0 +1,6 @@
+{
+	"GOARCH": "amd64",
+	"GOOS": "linux",
+	"GOTOOLCHAIN": "local",
+	"GOVERSION": "go1.23.2"
+}

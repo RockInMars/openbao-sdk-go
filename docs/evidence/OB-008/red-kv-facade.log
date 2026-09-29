@@ -1,0 +1,13 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+# git.example.com/infra/openbao-sdk-go [git.example.com/infra/openbao-sdk-go.test]
+./kv_client_test.go:20:33: c.KVv2 undefined (type *Client has no field or method KVv2)
+./kv_client_test.go:25:33: c.KVv2 undefined (type *Client has no field or method KVv2)
+./kv_client_test.go:29:154: c.KVv2 undefined (type *Client has no field or method KVv2)
+./kv_client_test.go:35: c.KVv2 undefined (type *Client has no field or method KVv2)
+./kv_client_test.go:38:229: c.KVv2 undefined (type *Client has no field or method KVv2)
+./kv_client_test.go:43: c.KVv2 undefined (type *Client has no field or method KVv2)
+./kv_client_test.go:47: c.KVv2 undefined (type *Client has no field or method KVv2)
+./kv_client_test.go:50: c.KVv2 undefined (type *Client has no field or method KVv2)
+./kv_client_test.go:55: c.KVv2 undefined (type *Client has no field or method KVv2)
+FAIL	git.example.com/infra/openbao-sdk-go [build failed]
+FAIL

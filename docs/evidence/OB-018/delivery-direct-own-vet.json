@@ -1,0 +1,25 @@
+{
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "vet",
+    "./auth",
+    "./kv",
+    "./pki",
+    "./baoerr",
+    "./sensitive",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/transitutil",
+    "./internal/testenv",
+    "./examples/credentialworkflow"
+  ],
+  "started_at": "2026-09-28T10:41:17.908029+00:00",
+  "finished_at": "2026-09-28T10:41:18.134734+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/delivery-direct-own-vet.log"
+}

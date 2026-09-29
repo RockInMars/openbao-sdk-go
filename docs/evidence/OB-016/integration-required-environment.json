@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "scripts/integration-test.py"
+  ],
+  "started_at": "2026-09-28T10:00:42.242177+00:00",
+  "finished_at": "2026-09-28T10:00:42.881780+00:00",
+  "exit_code": 2,
+  "log": "docs/evidence/OB-016/integration-required-environment.log"
+}

@@ -1,0 +1,17 @@
+{
+  "source_sha256": "88f51e717ced3071804911c7a5e24c0d3c4bff1843417af3d53e5cc2ae617aed",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=20",
+    "-run",
+    "^Test(Close|NewNoNetwork)",
+    "-timeout=45s",
+    "."
+  ],
+  "started_at": "2026-09-28T11:07:44.607110+00:00",
+  "finished_at": "2026-09-28T11:07:54.498525+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-005/resume01-health-close-green.log"
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "./internal/testenv"
+  ],
+  "started_at": "2026-09-28T09:55:34.500863+00:00",
+  "finished_at": "2026-09-28T09:55:36.067486+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-016/green-isolation-policy.log"
+}

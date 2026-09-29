@@ -1,0 +1,19 @@
+{
+  "source_sha256": "a6da3e37d1aa6f75922175e46e1ae11bdf2c0d465c373eb4ec1277059f9787bf",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-run",
+    "^TestBootstrapSchedulesDeletion",
+    "-timeout=30s",
+    "./internal/testenv"
+  ],
+  "started_at": "2026-09-28T11:14:42.314013+00:00",
+  "finished_at": "2026-09-28T11:14:44.827648+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-016/resume01-scheduled-fixture-red.log"
+}

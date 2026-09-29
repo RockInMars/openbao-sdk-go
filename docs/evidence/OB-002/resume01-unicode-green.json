@@ -1,0 +1,18 @@
+{
+  "source_sha256": "6d529a1bed38ca505c2a3b2e0b2be09e270d854d59a595de6758bd30dec0d4f2",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-coverprofile=/tmp/resume01-json.cover",
+    "./internal/jsondoc",
+    "./kv"
+  ],
+  "started_at": "2026-09-28T11:18:44.177497+00:00",
+  "finished_at": "2026-09-28T11:18:47.216642+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-002/resume01-unicode-green.log"
+}

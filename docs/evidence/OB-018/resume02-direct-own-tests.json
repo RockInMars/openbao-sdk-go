@@ -1,0 +1,30 @@
+{
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "command": [
+    "env",
+    "GOENV=off",
+    "GOWORK=off",
+    "GOFLAGS=",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "-json",
+    "-count=1",
+    "./auth",
+    "./baoerr",
+    "./internal/authn",
+    "./internal/engine",
+    "./internal/jsondoc",
+    "./internal/pemutil",
+    "./internal/pkiutil",
+    "./internal/transitutil",
+    "./kv",
+    "./pki",
+    "./sensitive"
+  ],
+  "started_at": "2026-09-28T12:06:09.012745+00:00",
+  "finished_at": "2026-09-28T12:06:28.917067+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/resume02-direct-own-tests.log"
+}

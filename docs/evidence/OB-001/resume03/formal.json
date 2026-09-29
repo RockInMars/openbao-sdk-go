@@ -1,0 +1,12 @@
+{
+  "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+  "name": "formal",
+  "command": [
+    "make",
+    "normal-test"
+  ],
+  "exit_code": 2,
+  "started_at": "2026-09-28T15:40:54.642211+00:00",
+  "finished_at": "2026-09-28T15:41:01.347696+00:00",
+  "log": "docs/evidence/OB-001/resume03/formal.log"
+}

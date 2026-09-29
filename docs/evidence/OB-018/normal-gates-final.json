@@ -1,0 +1,11 @@
+{
+  "source_sha256": "d32cbc925470aeb3fe9ee3942e336924368e670375628831bc391edff68bace9",
+  "command": [
+    "make",
+    "normal-test"
+  ],
+  "started_at": "2026-09-28T10:20:50.828753+00:00",
+  "finished_at": "2026-09-28T10:20:56.744896+00:00",
+  "exit_code": 2,
+  "log": "docs/evidence/OB-018/normal-gates-final.log"
+}

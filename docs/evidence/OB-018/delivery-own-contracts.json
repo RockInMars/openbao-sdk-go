@@ -1,0 +1,32 @@
+{
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=1",
+    "-json",
+    "-timeout=120s",
+    ".",
+    "./auth",
+    "./kv",
+    "./pki",
+    "./transit",
+    "./baoerr",
+    "./sensitive",
+    "./diagnostics",
+    "./observe",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/transitutil",
+    "./internal/testenv",
+    "./internal/testutil",
+    "./examples/..."
+  ],
+  "started_at": "2026-09-28T10:41:05.831861+00:00",
+  "finished_at": "2026-09-28T10:41:12.354964+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/delivery-own-contracts.log"
+}

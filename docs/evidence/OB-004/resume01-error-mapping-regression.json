@@ -1,0 +1,17 @@
+{
+  "source_sha256": "daa736688b5ffec032f4ef56b92945f0bf2030aceb28e1e76ff32b52d9c0252e",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-timeout=60s",
+    "./internal/engine"
+  ],
+  "started_at": "2026-09-28T11:13:46.102712+00:00",
+  "finished_at": "2026-09-28T11:13:58.219273+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-004/resume01-error-mapping-regression.log"
+}

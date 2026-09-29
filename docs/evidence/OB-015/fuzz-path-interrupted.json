@@ -1,0 +1,19 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "GOMAXPROCS=2",
+    "go",
+    "test",
+    "./internal/engine",
+    "-run=^$",
+    "-fuzz=FuzzPath",
+    "-fuzztime=30s",
+    "-parallel=2"
+  ],
+  "status": "INTERRUPTED_BY_TOOL_TIMEOUT",
+  "exit_code": null,
+  "note": "Tool timeout during initial cold instrumented build and fuzzing. No completion was observed. Later independent rerun required.",
+  "log": "docs/evidence/OB-015/fuzz-path-interrupted.log"
+}

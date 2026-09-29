@@ -1,0 +1,13 @@
+{
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "command": [
+    "timeout",
+    "420s",
+    "python3",
+    "scripts/consumer-contract-test.py"
+  ],
+  "started_at": "2026-09-28T11:22:22.919348+00:00",
+  "finished_at": "2026-09-28T11:22:30.286474+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-017/resume01-final-consumer-source.log"
+}

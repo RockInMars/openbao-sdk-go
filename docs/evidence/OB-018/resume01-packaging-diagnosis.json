@@ -1,0 +1,63 @@
+{
+  "recorded_at": "2026-09-28T11:34:20.727566+00:00",
+  "evidence_class": "PACKAGING_TOOL_DIAGNOSIS",
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "initial_packaging_step": {
+    "status": "FAILED_ASSERTION",
+    "expected_no_index_check_code": 0,
+    "actual_code": 1,
+    "actual_stdout": "",
+    "actual_stderr": "",
+    "zip_created": false
+  },
+  "reproductions": [
+    {
+      "fixture": "clean difference",
+      "command": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "a",
+        "b"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "fixture": "clean difference",
+      "command": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "--no-exit-code",
+        "a",
+        "b"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "fixture": "trailing whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "--no-exit-code",
+        "a",
+        "b"
+      ],
+      "exit_code": 3,
+      "stdout": "b:1: trailing whitespace.\n+new \n",
+      "stderr": ""
+    }
+  ],
+  "resolution": "Use --no-exit-code with no-index --check so diff presence does not mask whitespace-check outcome. Clean fixture must exit0; whitespace fixture must still fail. No test or release gate changed.",
+  "resolution_verified": false,
+  "failed_hypothesis": "--no-exit-code does not remove implicit no-index difference exit1 in this installed Git; previous resolution was a disproved packaging hypothesis, not a passed verification.",
+  "corrected_resolution": "Preserve raw no-index exit1 and empty diagnostics (clean diff); whitespace fixture returns3 with diagnostics. Verify applicability and strict whitespace independently using git apply --check --whitespace=error-all. No source/test/release gate change."
+}

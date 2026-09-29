@@ -1,0 +1,192 @@
+{
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+  "evidence_class": "SUPPLEMENTAL_LEAF_COVERAGE",
+  "unit": "Go statements",
+  "threshold": 85,
+  "whole_sdk_coverage_passed": false,
+  "root_facades_official_adapter": "NOT_VERIFIED",
+  "note": "Direct and explicit leaf -coverpkg profiles retained separately; merged per-file covered counts choose max with equal denominator. This does not claim physical-line coverage, root coverage or complete domain coverage.",
+  "profiles": [
+    "docs/evidence/OB-018/resume01-own.cover",
+    "docs/evidence/OB-018/resume01-leaf-instrumented.cover"
+  ],
+  "packages": [
+    {
+      "package": "auth",
+      "covered_statements": 64,
+      "statements": 74,
+      "percentage": 86.49,
+      "direct_only": {
+        "covered_statements": 64,
+        "statements": 74,
+        "percentage": 86.49
+      },
+      "leaf_instrumented": {
+        "covered_statements": 64,
+        "statements": 74,
+        "percentage": 86.49
+      }
+    },
+    {
+      "package": "baoerr",
+      "covered_statements": 26,
+      "statements": 26,
+      "percentage": 100.0,
+      "direct_only": {
+        "covered_statements": 26,
+        "statements": 26,
+        "percentage": 100.0
+      },
+      "leaf_instrumented": {
+        "covered_statements": 26,
+        "statements": 26,
+        "percentage": 100.0
+      }
+    },
+    {
+      "package": "internal/authn",
+      "covered_statements": 271,
+      "statements": 298,
+      "percentage": 90.94,
+      "direct_only": {
+        "covered_statements": 270,
+        "statements": 298,
+        "percentage": 90.6
+      },
+      "leaf_instrumented": {
+        "covered_statements": 271,
+        "statements": 298,
+        "percentage": 90.94
+      }
+    },
+    {
+      "package": "internal/engine",
+      "covered_statements": 315,
+      "statements": 365,
+      "percentage": 86.3,
+      "direct_only": {
+        "covered_statements": 275,
+        "statements": 365,
+        "percentage": 75.34
+      },
+      "leaf_instrumented": {
+        "covered_statements": 315,
+        "statements": 365,
+        "percentage": 86.3
+      }
+    },
+    {
+      "package": "internal/jsondoc",
+      "covered_statements": 82,
+      "statements": 91,
+      "percentage": 90.11,
+      "direct_only": {
+        "covered_statements": 82,
+        "statements": 91,
+        "percentage": 90.11
+      },
+      "leaf_instrumented": {
+        "covered_statements": 82,
+        "statements": 91,
+        "percentage": 90.11
+      }
+    },
+    {
+      "package": "internal/pkiutil",
+      "covered_statements": 84,
+      "statements": 87,
+      "percentage": 96.55,
+      "direct_only": {
+        "covered_statements": 79,
+        "statements": 87,
+        "percentage": 90.8
+      },
+      "leaf_instrumented": {
+        "covered_statements": 84,
+        "statements": 87,
+        "percentage": 96.55
+      }
+    },
+    {
+      "package": "internal/transitutil",
+      "covered_statements": 83,
+      "statements": 87,
+      "percentage": 95.4,
+      "direct_only": {
+        "covered_statements": 83,
+        "statements": 87,
+        "percentage": 95.4
+      },
+      "leaf_instrumented": {
+        "covered_statements": 83,
+        "statements": 87,
+        "percentage": 95.4
+      }
+    },
+    {
+      "package": "internal/pemutil",
+      "covered_statements": 10,
+      "statements": 10,
+      "percentage": 100.0,
+      "direct_only": {
+        "covered_statements": 10,
+        "statements": 10,
+        "percentage": 100.0
+      },
+      "leaf_instrumented": {
+        "covered_statements": 10,
+        "statements": 10,
+        "percentage": 100.0
+      }
+    },
+    {
+      "package": "kv",
+      "covered_statements": 22,
+      "statements": 25,
+      "percentage": 88.0,
+      "direct_only": {
+        "covered_statements": 22,
+        "statements": 25,
+        "percentage": 88.0
+      },
+      "leaf_instrumented": {
+        "covered_statements": 22,
+        "statements": 25,
+        "percentage": 88.0
+      }
+    },
+    {
+      "package": "pki",
+      "covered_statements": 69,
+      "statements": 70,
+      "percentage": 98.57,
+      "direct_only": {
+        "covered_statements": 69,
+        "statements": 70,
+        "percentage": 98.57
+      },
+      "leaf_instrumented": {
+        "covered_statements": 69,
+        "statements": 70,
+        "percentage": 98.57
+      }
+    },
+    {
+      "package": "sensitive",
+      "covered_statements": 22,
+      "statements": 22,
+      "percentage": 100.0,
+      "direct_only": {
+        "covered_statements": 20,
+        "statements": 22,
+        "percentage": 90.91
+      },
+      "leaf_instrumented": {
+        "covered_statements": 22,
+        "statements": 22,
+        "percentage": 100.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,1485 @@
+{
+  "schema_version": 1,
+  "plan_version": "1.0",
+  "implementation_status": "IN_PROGRESS",
+  "tasks": [
+    {
+      "id": "OB-001",
+      "title": "固定依赖基线与公开类型",
+      "depends_on": [],
+      "status": "BLOCKED",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/dependency-report.json",
+        "docs/evidence/OB-001/resume03/export-attempt.log",
+        "docs/evidence/OB-001/resume03/tooling.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3新增公共依赖联网导出/离线独立校验工具及18项测试。真实导出在DNS阶段失败，无真实依赖包；98个Go源码和go.mod/go.sum未变。未编译官方适配器，保持BLOCKED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-001",
+        "AC-002"
+      ],
+      "files": [
+        "auth/config.go",
+        "config_types.go",
+        "diagnostics/types.go",
+        "go.mod",
+        "go.sum",
+        "kv/types.go",
+        "observe/observer.go",
+        "pki/types.go",
+        "public_contract_test.go",
+        "public_types_test.go",
+        "tests/dependency/dependency_test.go",
+        "transit/types.go",
+        "scripts/dependency-check.py",
+        "scripts/tests/test_dependency_check.py",
+        "Makefile",
+        "docs/dependency-bootstrap.md",
+        "scripts/dependency-bundle.py",
+        "scripts/tests/test_dependency_bundle.py",
+        "docs/dependency-transfer.md"
+      ],
+      "remaining_gate": "公开类型已编写并检查；官方依赖完整模块、最低Go版本、go.sum和服务镜像基线未核实。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-001/delivery-environment.json",
+          "docs/evidence/OB-001/dependency-download.json",
+          "docs/evidence/OB-001/public-types.json",
+          "docs/evidence/OB-001/red-official-baseline.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-001/resume01-dependency-download.json",
+        "docs/evidence/OB-001/resume01-environment.json",
+        "docs/evidence/OB-001/resume01-spec-consistency.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "BLOCKED",
+        "implementation_note": "恢复归档与原方案副本一致；重新下载api/v2@v2.7.0仍遭DNS阻断。公开边界在本轮补充测试中重新通过；完整官方依赖、最低Go版本、go.sum与服务版本基线未核实。",
+        "evidence": [
+          "docs/evidence/OB-001/resume01-environment.json",
+          "docs/evidence/OB-001/resume01-spec-consistency.json",
+          "docs/evidence/OB-001/resume01-dependency-download.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "BLOCKED",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-001/resume02-preflight-environment-green.json",
+          "docs/evidence/OB-001/resume02-reference-review.md"
+        ],
+        "implementation_note": "R2实际下载及保留TLS的网络探测仍失败；新建严格真实依赖预检入口并通过8个解析/拒绝单测。未取得完整go.mod、最低Go和checksum，未编译官方适配器。98个Go源码及go.mod/go.sum均未修改。"
+      }
+    },
+    {
+      "id": "OB-002",
+      "title": "秘密包装与无损 JSON 文档",
+      "depends_on": [
+        "OB-001"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-003",
+        "AC-004",
+        "AC-005",
+        "AC-006",
+        "AC-007"
+      ],
+      "files": [
+        "internal/jsondoc/json.go",
+        "internal/jsondoc/json_test.go",
+        "internal/jsondoc/unicode.go",
+        "internal/jsondoc/unicode_regression_test.go",
+        "kv/document.go",
+        "kv/document_test.go",
+        "kv/unicode_regression_test.go",
+        "sensitive/bytes.go",
+        "sensitive/bytes_test.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-002/green-material-types.json",
+          "docs/evidence/OB-002/red-material-types.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-002/resume01-unicode-green.json",
+        "docs/evidence/OB-002/resume01-unicode-red.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "新增严格UTF-16转义校验：拒绝会丢信息的不配对代理项；合法Unicode、数字与秘密包装回归通过。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-003",
+      "title": "配置、路径与 TLS 默认值",
+      "depends_on": [
+        "OB-001",
+        "OB-002"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-008",
+        "AC-009",
+        "AC-010",
+        "AC-011",
+        "AC-012"
+      ],
+      "files": [
+        "config.go",
+        "config_test.go",
+        "internal/engine/path.go",
+        "internal/engine/path_test.go",
+        "internal/pemutil/decode.go",
+        "internal/pemutil/decode_test.go",
+        "network.go",
+        "network_linux_test.go",
+        "tls_pem_regression_test.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-003/green-config-path.json",
+          "docs/evidence/OB-003/red-config-path.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-003/resume01-mutual-tls-regression.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "TLS材料使用非跳跃PEM解析；损坏首块不能被跳过。CA/mTLS负例及PKCS8/EC/CRLF双向TLS正例通过。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-004",
+      "title": "统一请求、错误与操作注册表",
+      "depends_on": [
+        "OB-003"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-013",
+        "AC-014",
+        "AC-015",
+        "AC-016",
+        "AC-017",
+        "AC-018",
+        "AC-019",
+        "AC-020",
+        "AC-021"
+      ],
+      "files": [
+        "baoerr/boundary_test.go",
+        "baoerr/error.go",
+        "baoerr/error_test.go",
+        "internal/engine/client.go",
+        "internal/engine/errors.go",
+        "internal/engine/executor_test.go",
+        "internal/engine/operations.go",
+        "internal/engine/path.go",
+        "internal/engine/path_test.go",
+        "internal/engine/retry.go",
+        "internal/engine/semantics_test.go",
+        "internal/engine/transport.go",
+        "internal/engine/types.go",
+        "internal/testutil/http_sender.go",
+        "official_sender.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-004/executor-diagnosis.json",
+          "docs/evidence/OB-004/green-executor.json",
+          "docs/evidence/OB-004/green-safe-errors.json",
+          "docs/evidence/OB-004/red-errors.json",
+          "docs/evidence/OB-004/red-executor.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-004/resume01-error-mapping-regression.json",
+        "docs/evidence/OB-004/resume01-json-executor-regression.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "404未来deletion_time不再误判已删除；无效JSON转义被统一响应解析器拒绝。原有单次写入、UNKNOWN、重定向与取消回归通过。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-005",
+      "title": "生命周期与外部 Token 模式",
+      "depends_on": [
+        "OB-004"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-022",
+        "AC-023",
+        "AC-024",
+        "AC-025",
+        "AC-026"
+      ],
+      "files": [
+        "auth/provider_test.go",
+        "auth/providers.go",
+        "client.go",
+        "client_shutdown_regression_test.go",
+        "client_test.go",
+        "internal/authn/manager.go",
+        "options.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-005/first-client-check.json",
+          "docs/evidence/OB-005/green-client-lifecycle.json",
+          "docs/evidence/OB-005/green-providers.json",
+          "docs/evidence/OB-005/red-client-lifecycle.json",
+          "docs/evidence/OB-005/red-providers.json",
+          "docs/evidence/OB-005/red-start-count.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-005/resume01-health-close-green.json",
+        "docs/evidence/OB-005/resume01-health-close-red.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "修复Start前健康请求在Close预算耗尽后未取消；关联独立请求生命周期，保持New无网络/后台任务及原关闭预算。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-006",
+      "title": "AppRole 单次登录与凭据提供器",
+      "depends_on": [
+        "OB-005"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-027",
+        "AC-028",
+        "AC-029",
+        "AC-030"
+      ],
+      "files": [
+        "internal/authn/approle.go",
+        "internal/authn/boundary_test.go",
+        "internal/authn/manager.go",
+        "internal/authn/manager_test.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-006/green-auth-login.json",
+          "docs/evidence/OB-006/red-auth-manager.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "本轮直接/补充契约回归重新通过；未重写模块。官方依赖及必需前置验收未满足。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-007",
+      "title": "续期、重登、过期与关闭",
+      "depends_on": [
+        "OB-006"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-031",
+        "AC-032",
+        "AC-033",
+        "AC-034"
+      ],
+      "files": [
+        "internal/authn/approle.go",
+        "internal/authn/boundary_test.go",
+        "internal/authn/clock.go",
+        "internal/authn/lifecycle_test.go",
+        "internal/authn/manager.go",
+        "internal/authn/manager_test.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-007/green-auth-lifecycle.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "本轮直接/补充契约回归重新通过；未重写模块。官方依赖及必需前置验收未满足。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-008",
+      "title": "KV 创建与准确版本读取",
+      "depends_on": [
+        "OB-005"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-035",
+        "AC-036",
+        "AC-037",
+        "AC-038"
+      ],
+      "files": [
+        "kv/types.go",
+        "kv_client.go",
+        "kv_client_test.go",
+        "kv_scheduled_deletion_test.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-008/green-kv-read-write.json",
+          "docs/evidence/OB-008/red-kv-facade.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-008/resume01-kv-scheduled-green.json",
+        "docs/evidence/OB-008/resume01-kv-scheduled-red.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "未来计划删除时间不再使完整有效版本不可读；404/缺数据仍拒绝；不回退latest或变更版本。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-009",
+      "title": "KV CAS、元数据、列表与软删除",
+      "depends_on": [
+        "OB-008"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-039",
+        "AC-040",
+        "AC-041",
+        "AC-042"
+      ],
+      "files": [
+        "kv_client_test.go",
+        "kv_metadata.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-009/green-kv-metadata-cas.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "本轮直接/补充契约回归重新通过；未重写模块。官方依赖及必需前置验收未满足。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-010",
+      "title": "PKI 签发、CSR 与本地材料校验",
+      "depends_on": [
+        "OB-008"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-043",
+        "AC-044",
+        "AC-045",
+        "AC-046",
+        "AC-047"
+      ],
+      "files": [
+        "internal/pkiutil/parse.go",
+        "internal/pkiutil/parse_test.go",
+        "internal/pkiutil/strict_pem_regression_test.go",
+        "internal/testutil/pki_fixture.go",
+        "pki/validate.go",
+        "pki/validate_test.go",
+        "pki_client.go",
+        "pki_client_test.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-010/green-pki-issue-validation.json",
+          "docs/evidence/OB-010/red-pki.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-010/resume01-strict-pem-green.json",
+        "docs/evidence/OB-010/resume01-strict-pem-red.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "证书、CSR和PKCS8私钥拒绝跳过损坏PEM块；信任链与匹配校验回归通过。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-011",
+      "title": "PKI 读取、链和吊销",
+      "depends_on": [
+        "OB-010"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-048",
+        "AC-049",
+        "AC-050"
+      ],
+      "files": [
+        "pki_client_test.go",
+        "pki_read.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-011/green-pki-read-revoke.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "共享证书解析器加固，查询及链处理在本轮契约回归中重新通过。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-012",
+      "title": "Transit 版本化签名与公钥",
+      "depends_on": [
+        "OB-007"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-051",
+        "AC-052",
+        "AC-053",
+        "AC-054",
+        "AC-055"
+      ],
+      "files": [
+        "internal/transitutil/encoding.go",
+        "internal/transitutil/encoding_test.go",
+        "internal/transitutil/strict_pem_regression_test.go",
+        "transit_client.go",
+        "transit_client_test.go",
+        "transit_keys.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-012/green-transit-signatures.json",
+          "docs/evidence/OB-012/red-transit-signatures.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "公钥拒绝损坏PEM首块；版本/算法/原文与摘要/验签边界回归通过。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-013",
+      "title": "Transit 加密、重包裹与 HMAC",
+      "depends_on": [
+        "OB-012"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-056",
+        "AC-057",
+        "AC-058"
+      ],
+      "files": [
+        "transit_cipher.go",
+        "transit_cipher_test.go",
+        "transit_hmac.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-013/green-transit-cipher.json",
+          "docs/evidence/OB-013/red-transit-cipher.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "本轮直接/补充契约回归重新通过；未重写模块。官方依赖及必需前置验收未满足。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-014",
+      "title": "诊断和可观测钩子",
+      "depends_on": [
+        "OB-009",
+        "OB-011",
+        "OB-013"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-059",
+        "AC-060",
+        "AC-061"
+      ],
+      "files": [
+        "diagnostics/types.go",
+        "diagnostics_client.go",
+        "diagnostics_client_test.go",
+        "observe/observer.go"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-014/green-diagnostics-scoped-fixture.json",
+          "docs/evidence/OB-014/green-diagnostics.json",
+          "docs/evidence/OB-014/red-diagnostics.json",
+          "docs/evidence/OB-014/regression-all-own-code.json",
+          "docs/evidence/OB-014/regression-own-code-after-fix.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "健康请求纳入独立关闭生命周期；诊断、就绪、Observer回归通过。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-015",
+      "title": "故障、隔离与模糊测试加固",
+      "depends_on": [
+        "OB-014"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-062",
+        "AC-063",
+        "AC-064"
+      ],
+      "files": [
+        "Makefile",
+        "hardening_test.go",
+        "internal/authn/boundary_test.go",
+        "internal/authn/lifecycle_test.go",
+        "internal/authn/manager_test.go",
+        "internal/engine/executor_test.go",
+        "internal/engine/path_test.go",
+        "internal/engine/semantics_test.go",
+        "internal/pemutil/decode_test.go",
+        "internal/pkiutil/parse_test.go",
+        "internal/transitutil/encoding_test.go",
+        "kv/document_test.go",
+        "pki/validate_test.go",
+        "review_fixes_test.go",
+        "scripts/tests/test_tooling.py"
+      ],
+      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-015/boundary-existing-behavior.json",
+          "docs/evidence/OB-015/encoding-and-error-boundaries.json",
+          "docs/evidence/OB-015/fuzz-document-30s.json",
+          "docs/evidence/OB-015/fuzz-encoding-interrupted.json",
+          "docs/evidence/OB-015/fuzz-encoding-reproduce.json",
+          "docs/evidence/OB-015/fuzz-path-30s.json",
+          "docs/evidence/OB-015/fuzz-path-interrupted.json",
+          "docs/evidence/OB-015/fuzz-pki-30s.json",
+          "docs/evidence/OB-015/green-auth-loop-restart.json",
+          "docs/evidence/OB-015/green-hardening.json",
+          "docs/evidence/OB-015/make-fuzz-all-final.json",
+          "docs/evidence/OB-015/red-auth-loop-restart.json",
+          "docs/evidence/OB-015/red-hardening.json",
+          "docs/evidence/OB-015/start-result-stress.json",
+          "docs/evidence/OB-015/stdlib-package-race-coverage.json",
+          "docs/evidence/OB-015/supplemental-coverage-baseline.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-015/resume01-final-fuzz.json",
+        "docs/evidence/OB-015/resume01-full-regression-no-overlay-coverage.json",
+        "docs/evidence/OB-015/resume01-full-regression.json",
+        "docs/evidence/OB-015/resume01-fuzz-entry-green.json",
+        "docs/evidence/OB-015/resume01-fuzz-entry-red.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "IN_PROGRESS",
+        "implementation_note": "保留四项fuzz并增加第5项PEM解码fuzz，全部实际运行30秒通过；补充跨空间及关闭回归通过。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json",
+          "docs/evidence/OB-015/resume01-final-fuzz.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-015/resume02-fuzz-path.json",
+          "docs/evidence/OB-015/resume02-fuzz-document.json",
+          "docs/evidence/OB-015/resume02-fuzz-csr.json",
+          "docs/evidence/OB-015/resume02-fuzz-encoding.json",
+          "docs/evidence/OB-015/resume02-fuzz-pem.json"
+        ],
+        "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      }
+    },
+    {
+      "id": "OB-016",
+      "title": "临时真实 OpenBao 集成环境",
+      "depends_on": [
+        "OB-015"
+      ],
+      "status": "BLOCKED",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-065",
+        "AC-066"
+      ],
+      "files": [
+        "deploy/test/README.md",
+        "deploy/test/bootstrap-test.sh",
+        "deploy/test/compose.yaml",
+        "deploy/test/gitleaks.toml",
+        "deploy/test/policies/control.hcl",
+        "deploy/test/policies/maintenance.hcl",
+        "deploy/test/policies/runtime.hcl",
+        "deploy/test/server-lock.json",
+        "internal/testenv/bootstrap.go",
+        "internal/testenv/bootstrap_test.go",
+        "internal/testenv/cluster.go",
+        "internal/testenv/options.go",
+        "internal/testenv/options_test.go",
+        "internal/testenv/policies.go",
+        "scripts/integration-test.py",
+        "tests/integration/runtime_test.go"
+      ],
+      "remaining_gate": "临时环境/受限身份/真实集成测试代码已编写；无可核验OpenBao程序或digest镜像，真实测试未运行。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-016/compile-integration-own-code-corrected.json",
+          "docs/evidence/OB-016/compile-integration-with-test-sender-only.json",
+          "docs/evidence/OB-016/current-integration-source-compile.json",
+          "docs/evidence/OB-016/delivery-integration-source-compile.json",
+          "docs/evidence/OB-016/delivery-integration.json",
+          "docs/evidence/OB-016/formal-integration-final.json",
+          "docs/evidence/OB-016/green-isolation-policy.json",
+          "docs/evidence/OB-016/integration-required-environment.json",
+          "docs/evidence/OB-016/red-isolated-harness.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-016/resume01-final-integration-source.json",
+        "docs/evidence/OB-016/resume01-final-integration.json",
+        "docs/evidence/OB-016/resume01-integration-source-check-interrupted.json",
+        "docs/evidence/OB-016/resume01-integration-source-rerun.json",
+        "docs/evidence/OB-016/resume01-scheduled-fixture-green.json",
+        "docs/evidence/OB-016/resume01-scheduled-fixture-red.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "BLOCKED",
+        "implementation_note": "新增计划删除有限权限集成子用例及fixture-builder契约测试；业务policy未扩权。真实OpenBao缺来源核验程序/镜像，未执行集成。",
+        "evidence": [
+          "docs/evidence/OB-016/resume01-final-integration.json",
+          "docs/evidence/OB-016/resume01-final-integration-source.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "BLOCKED",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-016/resume02-integration-attempt.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ],
+        "implementation_note": "R2实际运行集成入口，缺少来源核验的服务程序/镜像，专用入口非零退出；未执行真实服务用例。"
+      }
+    },
+    {
+      "id": "OB-017",
+      "title": "示例与两个独立消费者验证",
+      "depends_on": [
+        "OB-016"
+      ],
+      "status": "BLOCKED",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-067",
+        "AC-068",
+        "AC-069"
+      ],
+      "files": [
+        "examples/README.md",
+        "examples/credentialworkflow/workflow.go",
+        "examples/credentialworkflow/workflow_test.go",
+        "examples/internal/bootstrap/config.go",
+        "examples/internal/bootstrap/config_test.go",
+        "examples/kv-versioned/main.go",
+        "examples/pki-issue-store/main.go",
+        "examples/service-bootstrap/main.go",
+        "examples/transit-sign/main.go",
+        "scripts/consumer-contract-test.py",
+        "scripts/consumer-test.py",
+        "tests/consumers/reader/go.mod",
+        "tests/consumers/reader/reader.go",
+        "tests/consumers/reader/reader_test.go",
+        "tests/consumers/signer/go.mod",
+        "tests/consumers/signer/signer.go",
+        "tests/consumers/signer/signer_test.go"
+      ],
+      "remaining_gate": "四类示例、恢复示例和两个消费者源码已编写并有补充证据；真正独立模块构建在上游下载失败，依赖OB-016未通过。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-017/delivery-consumer-sources.json",
+          "docs/evidence/OB-017/delivery-consumers.json",
+          "docs/evidence/OB-017/formal-consumer-final.json",
+          "docs/evidence/OB-017/green-example-contracts-workflow.json",
+          "docs/evidence/OB-017/independent-consumers-real-attempt.json",
+          "docs/evidence/OB-017/red-examples-workflow.json",
+          "docs/evidence/OB-017/supplemental-consumer-source.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-017/resume01-final-consumer-source.json",
+        "docs/evidence/OB-017/resume01-final-consumers.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "BLOCKED",
+        "implementation_note": "两份消费者源码补充测试与凭据恢复回归通过；独立go.mod消费者仍在依赖下载阶段失败，不能称独立消费通过。",
+        "evidence": [
+          "docs/evidence/OB-017/resume01-final-consumers.json",
+          "docs/evidence/OB-017/resume01-final-consumer-source.json",
+          "docs/evidence/OB-018/resume01-final-direct-tests.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "BLOCKED",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-017/resume02-consumer-attempt.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ],
+        "implementation_note": "R2独立go.mod消费者实际运行，两者均在上游模块下载阶段失败；本轮纯编排示例自有逻辑测试通过，不代表独立消费或迁移成功。"
+      }
+    },
+    {
+      "id": "OB-018",
+      "title": "发布门禁、文档与安全审查",
+      "depends_on": [
+        "OB-017"
+      ],
+      "status": "BLOCKED",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-070",
+        "AC-071"
+      ],
+      "files": [
+        ".github/workflows/ci.yaml",
+        "CHANGELOG.md",
+        "Makefile",
+        "README.md",
+        "SECURITY.md",
+        "docs/acceptance-results.md",
+        "docs/authentication.md",
+        "docs/compatibility.md",
+        "docs/error-handling.md",
+        "docs/implementation-handoff.md",
+        "docs/integration-and-rollback.md",
+        "docs/observability.md",
+        "docs/release.md",
+        "docs/self-review.md",
+        "docs/testing.md",
+        "scripts/consumer-contract-test.py",
+        "scripts/consumer-test.py",
+        "scripts/contract-test.py",
+        "scripts/coverage-check.py",
+        "scripts/integration-test.py",
+        "scripts/normal-test.py",
+        "scripts/record.py",
+        "scripts/security-test.py",
+        "scripts/tests/test_tooling.py",
+        "scripts/tooling.py",
+        "scripts/verify-release.py"
+      ],
+      "remaining_gate": "CI、命令门禁、固定扫描调用、文档和作者自审已编写；正式测试/扫描/覆盖率/发布门禁未通过，未远端发布。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-diff-check.json",
+          "docs/evidence/OB-018/delivery-direct-own-tests.json",
+          "docs/evidence/OB-018/delivery-direct-own-vet.json",
+          "docs/evidence/OB-018/delivery-leaf-coverage.json",
+          "docs/evidence/OB-018/delivery-normal.json",
+          "docs/evidence/OB-018/delivery-own-contracts.json",
+          "docs/evidence/OB-018/delivery-release-gate.json",
+          "docs/evidence/OB-018/delivery-scanners.json",
+          "docs/evidence/OB-018/delivery-source-diff-check.json",
+          "docs/evidence/OB-018/direct-own-tests-final.json",
+          "docs/evidence/OB-018/direct-own-vet-final.json",
+          "docs/evidence/OB-018/direct-pki-validation-boundaries.json",
+          "docs/evidence/OB-018/formal-normal-final.json",
+          "docs/evidence/OB-018/formal-scanners-final.json",
+          "docs/evidence/OB-018/green-404-proof.json",
+          "docs/evidence/OB-018/green-404-write-effect.json",
+          "docs/evidence/OB-018/green-coverage-gate.json",
+          "docs/evidence/OB-018/green-fuzz-make-targets.json",
+          "docs/evidence/OB-018/green-review-findings.json",
+          "docs/evidence/OB-018/green-review-nil-fifo.json",
+          "docs/evidence/OB-018/green-tooling-gates.json",
+          "docs/evidence/OB-018/normal-gates-final.json",
+          "docs/evidence/OB-018/own-coverage-summary.json",
+          "docs/evidence/OB-018/own-leaf-coverage-final.json",
+          "docs/evidence/OB-018/own-tests-final.json",
+          "docs/evidence/OB-018/pinned-security-scanners.json",
+          "docs/evidence/OB-018/public-contract-and-no-admin.json",
+          "docs/evidence/OB-018/red-404-write-effect.json",
+          "docs/evidence/OB-018/red-coverage-gate.json",
+          "docs/evidence/OB-018/red-fuzz-make-targets.json",
+          "docs/evidence/OB-018/red-review-findings.json",
+          "docs/evidence/OB-018/red-review-nil-fifo.json",
+          "docs/evidence/OB-018/red-tooling-gates.json",
+          "docs/evidence/OB-018/regression-after-review.json",
+          "docs/evidence/OB-018/regression-review-all-own.json",
+          "docs/evidence/OB-018/supplemental-coverage-final.json",
+          "docs/evidence/OB-018/supplemental-leaf-coverage.json",
+          "docs/evidence/OB-018/tooling-tests-final.json"
+        ],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [
+        "docs/evidence/OB-018/resume01-baseline-interrupted.json",
+        "docs/evidence/OB-018/resume01-baseline-rerun.json",
+        "docs/evidence/OB-018/resume01-final-contract-tests.json",
+        "docs/evidence/OB-018/resume01-final-direct-tests.json",
+        "docs/evidence/OB-018/resume01-final-direct-vet.json",
+        "docs/evidence/OB-018/resume01-final-normal.json",
+        "docs/evidence/OB-018/resume01-final-scanners.json",
+        "docs/evidence/OB-018/resume01-final-tooling.json",
+        "docs/evidence/OB-018/resume01-leaf-coverage-summary.json",
+        "docs/evidence/OB-018/resume01-leaf-instrumented-contracts.json",
+        "docs/evidence/OB-018/resume01-tooling-test.json"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "BLOCKED",
+        "implementation_note": "重跑正式构建、测试、消费、扫描与发布准备；官方依赖缺失。保存当轮日志及叶子覆盖率，完整发布门禁仍未通过。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json",
+          "docs/evidence/OB-018/resume01-final-normal.json",
+          "docs/evidence/OB-018/resume01-final-scanners.json",
+          "docs/evidence/OB-018/resume01-final-tooling.json",
+          "docs/evidence/OB-018/resume01-leaf-coverage-summary.json",
+          "docs/evidence/OB-018/resume01-final-release.json",
+          "docs/evidence/OB-018/resume01-git-diff-check.json",
+          "docs/evidence/OB-018/resume01-gofmt-check.json",
+          "docs/evidence/OB-018/resume01-source-diff.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "BLOCKED",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-tooling.json",
+          "docs/evidence/OB-018/resume02-security-attempt.json",
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ],
+        "implementation_note": "R2新增依赖预检工具，工具测试17项通过；正式normal、独立消费、扫描仍失败；没有发布。"
+      }
+    },
+    {
+      "id": "OB-019",
+      "title": "既有项目接入与回滚演练",
+      "depends_on": [
+        "OB-018"
+      ],
+      "status": "BLOCKED",
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-vet.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "acceptance_ids": [
+        "AC-072"
+      ],
+      "files": [
+        "docs/integration-and-rollback.md"
+      ],
+      "remaining_gate": "仅编写接入与回滚说明；真实业务仓库与迁移环境缺失，未进行实际接入。",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [],
+        "note": "Original-run evidence is retained, not promoted to current-source validation."
+      },
+      "incremental_evidence": [],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "BLOCKED",
+        "implementation_note": "未提供真实业务源码/隔离迁移条件；没有进行项目接入、回滚或部署。",
+        "evidence": [
+          "docs/evidence/OB-001/resume01-environment.json",
+          "docs/implementation-handoff.md"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "BLOCKED",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-environment.json"
+        ],
+        "implementation_note": "R2仍无真实调用项目源码和隔离迁移条件；未执行迁移及远端动作。"
+      }
+    }
+  ],
+  "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "release_status": "BLOCKED",
+  "business_migration_status": "BLOCKED",
+  "status_rule": "保留原始依赖；VERIFIED要求本任务及依赖门禁满足。自有代码通过不等于官方/服务/发布通过。",
+  "task_status_counts": {
+    "BLOCKED": 5,
+    "IN_PROGRESS": 14
+  },
+  "continuation": {
+    "round": "R3",
+    "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+    "scope": "OB-001 public dependency transfer tooling; no runtime rewrite",
+    "official_dependency_status": "BLOCKED"
+  },
+  "previous_source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d"
+}

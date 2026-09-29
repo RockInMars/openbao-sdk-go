@@ -1,0 +1,17 @@
+{
+  "source_sha256": "1d2c2f9c6674bca9f0dfa0fe476ac468564dde2fd82e94962c72cd8bd1aa281c",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=1",
+    "-run",
+    "^TestCloseCancelsHealthBeforeStart$",
+    "-timeout=15s",
+    "."
+  ],
+  "started_at": "2026-09-28T11:07:21.942815+00:00",
+  "finished_at": "2026-09-28T11:07:27.919885+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-005/resume01-health-close-red.log"
+}

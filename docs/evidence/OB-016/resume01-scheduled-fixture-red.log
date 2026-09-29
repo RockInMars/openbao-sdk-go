@@ -1,0 +1,5 @@
+--- FAIL: TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission (0.23s)
+    bootstrap_test.go:72: scheduled-deletion fixture was not prepared in both namespaces
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go/internal/testenv	0.330s
+FAIL

@@ -1,0 +1,22 @@
+{
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "command": [
+    "env",
+    "GOENV=off",
+    "GOWORK=off",
+    "GOFLAGS=",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-run=^$",
+    "-fuzz=FuzzEncoding",
+    "-fuzztime=30s",
+    "-parallel=1",
+    "-timeout=90s",
+    "./internal/transitutil"
+  ],
+  "started_at": "2026-09-28T12:11:21.585079+00:00",
+  "finished_at": "2026-09-28T12:11:53.398882+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/resume02-fuzz-encoding.log"
+}

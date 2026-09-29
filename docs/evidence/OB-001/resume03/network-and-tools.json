@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+  "go_version": "go1.23.2 linux/amd64",
+  "docker_on_path": false,
+  "codex_registered_environments": 0,
+  "download_attempt": "official Go command and container curl DNS failed; alternate tool did not retrieve module zip",
+  "streaming_exec": "not supported by this container",
+  "official_module_obtained": false,
+  "official_minimum_go_verified": false,
+  "artifact_exported": false
+}

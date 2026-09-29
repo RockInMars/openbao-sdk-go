@@ -1,0 +1,6 @@
+python3 scripts/dependency-check.py --prepare
+toolchain: exit 0
+root-mod: exit 0
+download: exit 1
+OFFICIAL_DEPENDENCY_PREFLIGHT: BLOCKED
+make: *** [Makefile:17: dependency-check] Error 1

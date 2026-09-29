@@ -1,0 +1,5 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+ok  	git.example.com/infra/openbao-sdk-go	1.124s
+ok  	git.example.com/infra/openbao-sdk-go/internal/pemutil	1.140s
+ok  	git.example.com/infra/openbao-sdk-go/internal/pkiutil	1.156s
+ok  	git.example.com/infra/openbao-sdk-go/internal/transitutil	1.106s

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "scripts/contract-test.py"
+  ],
+  "started_at": "2026-09-28T10:09:05.008862+00:00",
+  "finished_at": "2026-09-28T10:09:09.997253+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/regression-after-review.log"
+}

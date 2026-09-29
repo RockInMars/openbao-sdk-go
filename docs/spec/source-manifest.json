@@ -1,0 +1,35 @@
+{
+  "input_archive_sha256": "74a8565b1d21aacc077ef77ccdfe7304f62a072f36b3e861adb500a6385ede11",
+  "source_document_comparisons": [
+    {
+      "file": "docs/spec/01-总体设计.md",
+      "matches_original": true,
+      "sha256": "6e60a3edd4a0d8c18bfe6b019de58da5bf2998bc7ff4f8b4e2b7a9db3ea5d636"
+    },
+    {
+      "file": "docs/spec/02-接口契约.md",
+      "matches_original": true,
+      "sha256": "05d3b54a6fa5766930c9b6c4c42f2f7aa5432740960bb6fa3ba15dee67aa5479"
+    },
+    {
+      "file": "docs/spec/03-实现任务计划.md",
+      "matches_original": true,
+      "sha256": "b90f5a59c20138ab51e5de6fdf5ab37bffce65c077d795f1299793121f494911"
+    },
+    {
+      "file": "docs/spec/04-验收矩阵.md",
+      "matches_original": true,
+      "sha256": "e894791f8b1b5645c6ee5dfdb02c3f1831c56ba0ad80de64b97a543c9aba05e6"
+    },
+    {
+      "file": "docs/spec/05-AI开发执行提示词.md",
+      "matches_original": true,
+      "sha256": "af6076f508b4e9d5011bbd469916c514d6c4f24ba715d20535a1daeacc7e020e"
+    },
+    {
+      "file": "docs/spec/06-资料依据.md",
+      "matches_original": true,
+      "sha256": "1b2c44edff81121f696292d385e12a27f09ab48ac8a6c417a340bb8b825bb464"
+    }
+  ]
+}

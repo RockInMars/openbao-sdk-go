@@ -1,0 +1,4301 @@
+{
+  "schema_version": 1,
+  "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+  "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+  "overall_status": "BLOCKED",
+  "definitions": {
+    "PASS": "该项在明确注明的本地范围已经取得满足断言的证据，不自动代表任务或发布完成。",
+    "PARTIAL": "有自有代码/示例/契约测试证据，但必需的官方、真实集成或业务证据缺失。",
+    "NOT_RUN": "对应实质验收没有运行；准备命令可能已失败，不将环境失败伪作业务断言失败。"
+  },
+  "counts": {
+    "NOT_RUN": 5,
+    "PARTIAL": 59,
+    "PASS": 8
+  },
+  "results": [
+    {
+      "id": "AC-001",
+      "task_id": "OB-001",
+      "scenario": "依赖与工具链",
+      "required_observation": "精确版本、工具链、镜像digest有记录；不使用latest。",
+      "status": "NOT_RUN",
+      "execution_note": "R3真实下载和新转移工具导出均在DNS阶段失败；18项转移工具测试不是官方依赖认证通过。最低Go、模块校验记录与服务端基线未取得。",
+      "tests": [],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/dependency-report.json",
+        "docs/evidence/OB-001/resume03/export-attempt.log"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-001/dependency-download.json",
+          "docs/evidence/OB-001/delivery-environment.json",
+          "docs/evidence/OB-018/delivery-normal.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "NOT_RUN",
+        "execution_note": "R1重新尝试仍DNS失败；完整官方模块/go.mod/checksum、真实服务版本/digest未核实；仅工具链Go1.23.2可确认。",
+        "evidence": [
+          "docs/evidence/OB-001/resume01-dependency-download.json",
+          "docs/evidence/OB-001/resume01-environment.json",
+          "docs/evidence/OB-018/resume01-final-normal.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "NOT_RUN",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2依赖下载未完成；最低Go、模块sum、完整模块和服务基线未取得，预检没有标绿。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-002",
+      "task_id": "OB-001",
+      "scenario": "公开边界",
+      "required_observation": "公开接口无官方Secret/ResponseError与业务服务依赖。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestPublicTypeBoundary",
+          "files": [
+            "public_types_test.go"
+          ]
+        },
+        {
+          "name": "TestPublicRuntimeHasNoAdminEscape",
+          "files": [
+            "public_contract_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PASS",
+        "execution_note": "公开方法签名和反射边界已验证，未暴露官方响应或管理逃逸。此PASS仅指公开结构，不证明官方客户端兼容。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R1公开类型曾在补充模式中通过；R2未使用该模式，正式根包因缺上游无法编译，所以当前由PASS改为PARTIAL。这是证据范围收紧，不是新发现的公开接口变更。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-003",
+      "task_id": "OB-002",
+      "scenario": "敏感格式化",
+      "required_observation": "fmt各常见verb、slog及GoString均不出现秘密。",
+      "status": "PASS",
+      "execution_note": "R3在未改动的自有Go源码上重新运行直接测试与race并通过；本轮不使用overlay或替代发送器。不推导官方适配器、真实OpenBao或业务接入通过。",
+      "tests": [
+        {
+          "name": "TestSensitiveFormatting",
+          "files": [
+            "sensitive/bytes_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-counts.json",
+        "docs/evidence/OB-001/resume03/direct.log"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-direct-own-tests.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PASS",
+        "execution_note": "真实自有敏感类型的fmt、GoString、slog脱敏断言通过；不含真实部署凭据。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PASS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2直接运行该项列出的真实自有包测试及race，断言通过；未使用overlay或替代发送器；不推导官方模块/真实服务已验证。",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-004",
+      "task_id": "OB-002",
+      "scenario": "普通JSON序列化秘密",
+      "required_observation": "返回显式错误，不能静默写入[REDACTED]。",
+      "status": "PASS",
+      "execution_note": "R3在未改动的自有Go源码上重新运行直接测试与race并通过；本轮不使用overlay或替代发送器。不推导官方适配器、真实OpenBao或业务接入通过。",
+      "tests": [
+        {
+          "name": "TestSensitiveFormatting",
+          "files": [
+            "sensitive/bytes_test.go"
+          ]
+        },
+        {
+          "name": "TestDocumentConstructAndDecode",
+          "files": [
+            "kv/document_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-counts.json",
+        "docs/evidence/OB-001/resume03/direct.log"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-direct-own-tests.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PASS",
+        "execution_note": "普通JSON编码返回明确错误；显式导出/往返由独立接口处理，测试通过。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PASS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2直接运行该项列出的真实自有包测试及race，断言通过；未使用overlay或替代发送器；不推导官方模块/真实服务已验证。",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-005",
+      "task_id": "OB-002",
+      "scenario": "秘密切片别名",
+      "required_observation": "修改输入或RevealCopy拷贝不改变源对象。",
+      "status": "PASS",
+      "execution_note": "R3在未改动的自有Go源码上重新运行直接测试与race并通过；本轮不使用overlay或替代发送器。不推导官方适配器、真实OpenBao或业务接入通过。",
+      "tests": [
+        {
+          "name": "TestSensitiveCopyAndZero",
+          "files": [
+            "sensitive/bytes_test.go"
+          ]
+        },
+        {
+          "name": "TestDocumentIndependentCopy",
+          "files": [
+            "kv/document_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-counts.json",
+        "docs/evidence/OB-001/resume03/direct.log"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-direct-own-tests.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PASS",
+        "execution_note": "输入、RevealCopy及文档复制隔离断言通过，race未报告竞争。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PASS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2直接运行该项列出的真实自有包测试及race，断言通过；未使用overlay或替代发送器；不推导官方模块/真实服务已验证。",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-006",
+      "task_id": "OB-002",
+      "scenario": "大整数9007199254740993",
+      "required_observation": "往返不丢精度。",
+      "status": "PASS",
+      "execution_note": "R3在未改动的自有Go源码上重新运行直接测试与race并通过；本轮不使用overlay或替代发送器。不推导官方适配器、真实OpenBao或业务接入通过。",
+      "tests": [
+        {
+          "name": "TestDocumentExactNumber",
+          "files": [
+            "kv/document_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-counts.json",
+        "docs/evidence/OB-001/resume03/direct.log"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-direct-own-tests.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PASS",
+        "execution_note": "9007199254740993及数字词法值往返测试通过，未经过float64。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PASS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2直接运行该项列出的真实自有包测试及race，断言通过；未使用overlay或替代发送器；不推导官方模块/真实服务已验证。",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-007",
+      "task_id": "OB-002",
+      "scenario": "重复键/深度65/根null",
+      "required_observation": "明确拒绝，无panic。",
+      "status": "PASS",
+      "execution_note": "R3在未改动的自有Go源码上重新运行直接测试与race并通过；本轮不使用overlay或替代发送器。不推导官方适配器、真实OpenBao或业务接入通过。",
+      "tests": [
+        {
+          "name": "TestStrictTree",
+          "files": [
+            "internal/jsondoc/json_test.go"
+          ]
+        },
+        {
+          "name": "TestDocumentConstructAndDecode",
+          "files": [
+            "kv/document_test.go"
+          ]
+        },
+        {
+          "name": "TestJSONRejectsUnpairedSurrogateEscapes",
+          "files": [
+            "internal/jsondoc/unicode_regression_test.go"
+          ]
+        },
+        {
+          "name": "TestJSONPreservesValidUnicodeEscapes",
+          "files": [
+            "internal/jsondoc/unicode_regression_test.go"
+          ]
+        },
+        {
+          "name": "TestDocumentRejectsLossyUnicode",
+          "files": [
+            "kv/unicode_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-counts.json",
+        "docs/evidence/OB-001/resume03/direct.log"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-direct-own-tests.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PASS",
+        "execution_note": "重复键、根null、深度超限等输入测试通过；不把拒绝解析改为空对象。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PASS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2直接运行该项列出的真实自有包测试及race，断言通过；未使用overlay或替代发送器；不推导官方模块/真实服务已验证。",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-008",
+      "task_id": "OB-003",
+      "scenario": "环境污染",
+      "required_observation": "BAO/VAULT/HTTP_PROXY不能改变显式配置。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestConfigEnvironmentIgnored",
+          "files": [
+            "client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-009",
+      "task_id": "OB-003",
+      "scenario": "Namespace零值/冲突",
+      "required_observation": "本地失败，不发送根空间请求。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestNamespaceExplicit",
+          "files": [
+            "config_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-010",
+      "task_id": "OB-003",
+      "scenario": "TLS信任/主机名错误",
+      "required_observation": "连接失败；没有insecure降级。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTLSHostAndCARejected",
+          "files": [
+            "client_test.go"
+          ]
+        },
+        {
+          "name": "TestTLSRejectsSkippedMalformedPEM",
+          "files": [
+            "tls_pem_regression_test.go"
+          ]
+        },
+        {
+          "name": "TestTLSStrictPEMPreservesMutualTLS",
+          "files": [
+            "tls_pem_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-011",
+      "task_id": "OB-003",
+      "scenario": "CA来源冲突",
+      "required_observation": "New返回invalid_argument。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTLSAndPathValidation",
+          "files": [
+            "config_test.go"
+          ]
+        },
+        {
+          "name": "TestExplicitEmptyCAFileIsNotSystemTrust",
+          "files": [
+            "review_fixes_test.go"
+          ]
+        },
+        {
+          "name": "TestTLSRejectsSkippedMalformedPEM",
+          "files": [
+            "tls_pem_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-012",
+      "task_id": "OB-003",
+      "scenario": "路径穿越与编码分隔",
+      "required_observation": "发送前拒绝，不自动path.Clean修复。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestPathValidation",
+          "files": [
+            "internal/engine/path_test.go"
+          ]
+        },
+        {
+          "name": "TestTLSAndPathValidation",
+          "files": [
+            "config_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-013",
+      "task_id": "OB-004",
+      "scenario": "读取退避",
+      "required_observation": "默认最多3次SDK尝试，总预算内。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestReadRetryBudget",
+          "files": [
+            "internal/engine/executor_test.go"
+          ]
+        },
+        {
+          "name": "TestRetryAfterLimitsAndCancellation",
+          "files": [
+            "internal/engine/semantics_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-014",
+      "task_id": "OB-004",
+      "scenario": "写返回503",
+      "required_observation": "单次已到达请求，未知执行结果不自动重放。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestSingleAttemptIssue",
+          "files": [
+            "internal/engine/executor_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-015",
+      "task_id": "OB-004",
+      "scenario": "写接受后断连",
+      "required_observation": "Effect=unknown，上层可识别。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestAcceptedThenDisconnected",
+          "files": [
+            "hardening_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-016",
+      "task_id": "OB-004",
+      "scenario": "307/308",
+      "required_observation": "不跟随重定向，不泄露Token至新host。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestSingleAttemptIssue",
+          "files": [
+            "internal/engine/executor_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-017",
+      "task_id": "OB-004",
+      "scenario": "幂等头",
+      "required_observation": "单次写不携带Idempotency-Key/X-Idempotency-Key。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestNoWriteReplayHeader",
+          "files": [
+            "internal/engine/executor_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-018",
+      "task_id": "OB-004",
+      "scenario": "200/204与关键数据",
+      "required_observation": "void操作正常处理；需要数据的空体不伪造成功。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestVoidErrorEnvelope",
+          "files": [
+            "hardening_test.go"
+          ]
+        },
+        {
+          "name": "TestDecodeAndIdentifierBoundaries",
+          "files": [
+            "internal/engine/semantics_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-019",
+      "task_id": "OB-004",
+      "scenario": "超大错误/成功响应",
+      "required_observation": "在官方解析前限制解压后body；不泄漏正文。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestResponseBoundAndSafeError",
+          "files": [
+            "internal/engine/executor_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "测试发送器沿用真实有界Transport，并测试解压后限制；尚未执行官方解析路径。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-020",
+      "task_id": "OB-004",
+      "scenario": "取消与deadline",
+      "required_observation": "发送前/后Effect不同；errors.Is仍可识别Context错误。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestCanceledBeforeAndAfterSend",
+          "files": [
+            "internal/engine/executor_test.go"
+          ]
+        },
+        {
+          "name": "TestAuthenticationContextBoundaries",
+          "files": [
+            "internal/authn/boundary_test.go"
+          ]
+        },
+        {
+          "name": "TestCloseCancelsHealthBeforeStart",
+          "files": [
+            "client_shutdown_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-021",
+      "task_id": "OB-004",
+      "scenario": "CAS 400与一般400",
+      "required_observation": "只已验证CAS响应映射cas_conflict。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestKVCASConflict",
+          "files": [
+            "kv_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-022",
+      "task_id": "OB-005",
+      "scenario": "New无副作用",
+      "required_observation": "没有网络、goroutine、秘密写入。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestNewNoNetwork",
+          "files": [
+            "client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-023",
+      "task_id": "OB-005",
+      "scenario": "并发Start/Close",
+      "required_observation": "状态可预测、关闭幂等、无race。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestStartSingleFlight",
+          "files": [
+            "client_test.go"
+          ]
+        },
+        {
+          "name": "TestCloseDrainAndCancel",
+          "files": [
+            "client_test.go"
+          ]
+        },
+        {
+          "name": "TestStartResultBelongsToAttempt",
+          "files": [
+            "hardening_test.go"
+          ]
+        },
+        {
+          "name": "TestCloseCancelsHealthBeforeStart",
+          "files": [
+            "client_shutdown_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-024",
+      "task_id": "OB-005",
+      "scenario": "Token文件替换",
+      "required_observation": "下一请求使用完整新Token。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTokenFileAtomicReplacement",
+          "files": [
+            "auth/provider_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "Token文件原子替换的直接测试通过；下一实际官方请求的组合路径仍需正式客户端验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-025",
+      "task_id": "OB-005",
+      "scenario": "Token文件不可读",
+      "required_observation": "不复用历史Token，不输出文件内容。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTokenFileValidation",
+          "files": [
+            "auth/provider_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "文件读取失败不返回旧Token的直接测试通过；官方组合路径尚未验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-026",
+      "task_id": "OB-005",
+      "scenario": "外部凭据关闭",
+      "required_observation": "不撤销Token、不吊销证书、不删KV。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestCloseDrainAndCancel",
+          "files": [
+            "client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-027",
+      "task_id": "OB-006",
+      "scenario": "AppRole自定义mount",
+      "required_observation": "请求Namespace及auth mount正确。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestAppRoleLoginContract",
+          "files": [
+            "internal/authn/manager_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-028",
+      "task_id": "OB-006",
+      "scenario": "空认证响应",
+      "required_observation": "认证失败，不创建空Token READY状态。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestAppRoleRejectEmptyOrInvalidLease",
+          "files": [
+            "internal/authn/manager_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-029",
+      "task_id": "OB-006",
+      "scenario": "单次SecretID响应丢失",
+      "required_observation": "同generation不盲目重放，有阻塞/刷新记录。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestSingleUseSecretID",
+          "files": [
+            "internal/authn/manager_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-030",
+      "task_id": "OB-006",
+      "scenario": "业务403",
+      "required_observation": "无无条件重登，不重放写。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestBusiness403DoesNotLoginOrReplay",
+          "files": [
+            "internal/authn/lifecycle_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-031",
+      "task_id": "OB-007",
+      "scenario": "续期TTL缩短",
+      "required_observation": "按新TTL调度并到期失败关闭。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestRenewUsesLatestTTL",
+          "files": [
+            "internal/authn/manager_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-032",
+      "task_id": "OB-007",
+      "scenario": "并发刷新",
+      "required_observation": "认证合并，不发生登录风暴。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestRenewSingleFlight",
+          "files": [
+            "internal/authn/manager_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-033",
+      "task_id": "OB-007",
+      "scenario": "凭据彻底到期",
+      "required_observation": "AUTH_UNAVAILABLE，不继续用过期快照。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestExpiryAndShutdown",
+          "files": [
+            "internal/authn/manager_test.go"
+          ]
+        },
+        {
+          "name": "TestExpiredReplyAndLatePublication",
+          "files": [
+            "internal/authn/boundary_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-034",
+      "task_id": "OB-007",
+      "scenario": "并发槽饱和",
+      "required_observation": "认证不饿死，业务等待可取消。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestAuthCapacityNotStarved",
+          "files": [
+            "internal/authn/lifecycle_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-035",
+      "task_id": "OB-008",
+      "scenario": "Create cas=0",
+      "required_observation": "真实写对象，已存在不覆盖。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestKVCreateCASZero",
+          "files": [
+            "kv_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "HTTP协议fixture中的cas=0断言通过；真实OpenBao写对象尚未运行。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-036",
+      "task_id": "OB-008",
+      "scenario": "ReadVersion固定",
+      "required_observation": "返回值版本匹配请求；无latest回退。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestKVReadExactVersion",
+          "files": [
+            "kv_client_test.go"
+          ]
+        },
+        {
+          "name": "TestKVFutureDeletionStillReadable",
+          "files": [
+            "kv_scheduled_deletion_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。 已补未来deletion_time与当前删除的区分，真实服务子用例尚未运行。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-037",
+      "task_id": "OB-008",
+      "scenario": "Ref错集群/空间/挂载",
+      "required_observation": "发送前拒绝。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestKVReadRefBinding",
+          "files": [
+            "kv_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-038",
+      "task_id": "OB-008",
+      "scenario": "soft-deleted/destroyed",
+      "required_observation": "data=null不作为正常空秘密。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestKVDeletedVersion",
+          "files": [
+            "kv_client_test.go"
+          ]
+        },
+        {
+          "name": "TestMalformedDeletedMetadata",
+          "files": [
+            "internal/engine/semantics_test.go"
+          ]
+        },
+        {
+          "name": "TestKVFutureDeletionStillReadable",
+          "files": [
+            "kv_scheduled_deletion_test.go"
+          ]
+        },
+        {
+          "name": "TestKVFutureDeletionDoesNotExplainMissingData",
+          "files": [
+            "kv_scheduled_deletion_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。 已补未来deletion_time与当前删除的区分，真实服务子用例尚未运行。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-039",
+      "task_id": "OB-009",
+      "scenario": "并发CAS",
+      "required_observation": "一个期望版本上只有一个成功写。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestKVCASConcurrentWinner",
+          "files": [
+            "kv_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "协议fixture中的单胜CAS竞争通过；真实服务竞争验收未运行。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-040",
+      "task_id": "OB-009",
+      "scenario": "metadata变化",
+      "required_observation": "不得当成历史每版本内容证据。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestKVMetadataIsNotVersionHistory",
+          "files": [
+            "kv_client_test.go"
+          ]
+        },
+        {
+          "name": "TestKVFutureDeletionStillReadable",
+          "files": [
+            "kv_scheduled_deletion_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "已将custom_metadata与每版本数据区分；版本化资源代次仍由业务负责，真实OpenBao行为待验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。 已补未来deletion_time与当前删除的区分，真实服务子用例尚未运行。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-041",
+      "task_id": "OB-009",
+      "scenario": "软删除/恢复",
+      "required_observation": "只操作显式版本，恢复后正确可读。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestKVDeleteExactVersions",
+          "files": [
+            "kv_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-042",
+      "task_id": "OB-009",
+      "scenario": "LIST 404",
+      "required_observation": "保持not_found_or_hidden，不伪造empty。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestKVList404",
+          "files": [
+            "kv_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-043",
+      "task_id": "OB-010",
+      "scenario": "Issue协议",
+      "required_observation": "固定PEM与PKCS8，不假造key_type参数。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestPKIIssueContract",
+          "files": [
+            "pki_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-044",
+      "task_id": "OB-010",
+      "scenario": "Issue不保存",
+      "required_observation": "SDK Issue不产生KV写请求。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestPKIIssueContract",
+          "files": [
+            "pki_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "测试记录到Issue不调用KV；真实官方发送路径未运行。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-045",
+      "task_id": "OB-010",
+      "scenario": "证书私钥不匹配",
+      "required_observation": "拒绝返回完整成功，无自动补发。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestPKIPrivateKeyMismatch",
+          "files": [
+            "pki_client_test.go"
+          ]
+        },
+        {
+          "name": "TestPEMRejectsSkippedMalformedBlocks",
+          "files": [
+            "internal/pkiutil/strict_pem_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-046",
+      "task_id": "OB-010",
+      "scenario": "CSR损坏/返回公钥错",
+      "required_observation": "拒绝，SignCSR结果无私钥字段。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestPKICSRPublicKeyMatch",
+          "files": [
+            "pki_client_test.go"
+          ]
+        },
+        {
+          "name": "TestPKICSRSignature",
+          "files": [
+            "pki/validate_test.go"
+          ]
+        },
+        {
+          "name": "TestPEMRejectsSkippedMalformedBlocks",
+          "files": [
+            "internal/pkiutil/strict_pem_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-047",
+      "task_id": "OB-010",
+      "scenario": "受信根/EKU/SAN/有效期",
+      "required_observation": "按传入信任与真实证书字段校验。",
+      "status": "PASS",
+      "execution_note": "R3在未改动的自有Go源码上重新运行直接测试与race并通过；本轮不使用overlay或替代发送器。不推导官方适配器、真实OpenBao或业务接入通过。",
+      "tests": [
+        {
+          "name": "TestPKITrustAndLifetime",
+          "files": [
+            "pki/validate_test.go"
+          ]
+        },
+        {
+          "name": "TestPKIMetadataAndMalformedPolicy",
+          "files": [
+            "pki/validate_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-counts.json",
+        "docs/evidence/OB-001/resume03/direct.log"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-direct-own-tests.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PASS",
+        "execution_note": "对本次内存生成证书执行真实x509、根、EKU、SAN、期限校验，直接测试通过；不代表任何现网CA认可。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PASS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2直接运行该项列出的真实自有包测试及race，断言通过；未使用overlay或替代发送器；不推导官方模块/真实服务已验证。",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-048",
+      "task_id": "OB-011",
+      "scenario": "查询不到证书",
+      "required_observation": "不推断从未签发，不尝试读取私钥。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestPKIReadMultiPEMAndChain",
+          "files": [
+            "pki_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-049",
+      "task_id": "OB-011",
+      "scenario": "ca_chain",
+      "required_observation": "有界PEM解析，说明只代表当前默认issuer。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestPKIReadMultiPEMAndChain",
+          "files": [
+            "pki_client_test.go"
+          ]
+        },
+        {
+          "name": "TestCertificateMaterialBoundaries",
+          "files": [
+            "internal/pkiutil/parse_test.go"
+          ]
+        },
+        {
+          "name": "TestPEMRejectsSkippedMalformedBlocks",
+          "files": [
+            "internal/pkiutil/strict_pem_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "本地有界PEM及当前链含义已实现并有测试；真实当前默认issuer响应未验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-050",
+      "task_id": "OB-011",
+      "scenario": "吊销回执",
+      "required_observation": "不把当前本地时间伪造为服务器吊销时间。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestPKIRevokeReceipt",
+          "files": [
+            "pki_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-051",
+      "task_id": "OB-012",
+      "scenario": "签名版本0",
+      "required_observation": "本地拒绝。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTransitVersionPin",
+          "files": [
+            "transit_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-052",
+      "task_id": "OB-012",
+      "scenario": "包装版本不符",
+      "required_observation": "拒绝，不换最新公钥。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTransitVersionPin",
+          "files": [
+            "transit_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-053",
+      "task_id": "OB-012",
+      "scenario": "raw与prehashed",
+      "required_observation": "原消息/摘要互不混淆；Ed25519不支持预摘要入口。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTransitSignProfiles",
+          "files": [
+            "transit_client_test.go"
+          ]
+        },
+        {
+          "name": "TestPublicNormalizationAndSignatureProfiles",
+          "files": [
+            "internal/transitutil/encoding_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-054",
+      "task_id": "OB-012",
+      "scenario": "公钥算法返回差异",
+      "required_observation": "ECDSA/RSA/Ed25519解析正确；对称时间戳拒绝。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTransitPublicKeyFormats",
+          "files": [
+            "transit_client_test.go"
+          ]
+        },
+        {
+          "name": "TestPublicNormalizationAndSignatureProfiles",
+          "files": [
+            "internal/transitutil/encoding_test.go"
+          ]
+        },
+        {
+          "name": "TestPublicRejectsSkippedMalformedPEM",
+          "files": [
+            "internal/transitutil/strict_pem_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "真实本地RSA/ECDSA/Ed25519格式与签名校验通过；服务端实际返回样式仍需真实集成。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-055",
+      "task_id": "OB-012",
+      "scenario": "valid=false",
+      "required_observation": "验签无效与网络失败分开表达。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTransitVerifyFalse",
+          "files": [
+            "transit_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-056",
+      "task_id": "OB-013",
+      "scenario": "加解密/重包裹",
+      "required_observation": "指定版本/正确context，失败不吞掉。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTransitCipherVersion",
+          "files": [
+            "transit_cipher_test.go"
+          ]
+        },
+        {
+          "name": "TestTransitCipherContext",
+          "files": [
+            "transit_cipher_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-057",
+      "task_id": "OB-013",
+      "scenario": "未知加密key",
+      "required_observation": "不会自动创建密钥。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTransitNoKeyCreation",
+          "files": [
+            "transit_cipher_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-058",
+      "task_id": "OB-013",
+      "scenario": "HMAC",
+      "required_observation": "明确版本、SHA256、篡改验证失败。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestTransitHMAC",
+          "files": [
+            "transit_cipher_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-059",
+      "task_id": "OB-014",
+      "scenario": "集群健康",
+      "required_observation": "200/429/501/503按健康语义返回，无Token/Namespace。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestClusterHealthSemantics",
+          "files": [
+            "diagnostics_client_test.go"
+          ]
+        },
+        {
+          "name": "TestCloseCancelsHealthBeforeStart",
+          "files": [
+            "client_shutdown_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-060",
+      "task_id": "OB-014",
+      "scenario": "Namespace readiness",
+      "required_observation": "受限准确读，无sys管理授权。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestReadyScopedProbe",
+          "files": [
+            "diagnostics_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-061",
+      "task_id": "OB-014",
+      "scenario": "Observer异常",
+      "required_observation": "不改变写成功，不包含正文，不无限排队。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestObserverRedaction",
+          "files": [
+            "diagnostics_client_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-062",
+      "task_id": "OB-015",
+      "scenario": "并发跨Namespace",
+      "required_observation": "相同路径不同Token无串空间。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestCrossNamespaceConcurrency",
+          "files": [
+            "hardening_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-063",
+      "task_id": "OB-015",
+      "scenario": "写过程中关闭",
+      "required_observation": "UNKNOWN不被归零，goroutine退出。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestCloseDuringWrite",
+          "files": [
+            "hardening_test.go"
+          ]
+        },
+        {
+          "name": "TestCloseCancelsHealthBeforeStart",
+          "files": [
+            "client_shutdown_regression_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "自有实现的单元/HTTP契约测试已通过；官方api/v2发送器未编译验证，真实OpenBao路径未运行，保持部分验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-064",
+      "task_id": "OB-015",
+      "scenario": "模糊测试",
+      "required_observation": "不panic、不路径逃逸、不无限内存增长。",
+      "status": "PASS",
+      "execution_note": "R3原五项fuzz各请求30秒并取得实际退出码0；初次包装调用被外层中断，保留记录，仅计入后续有退出码的重跑。",
+      "tests": [
+        {
+          "name": "FuzzPath",
+          "files": [
+            "internal/engine/path_test.go"
+          ]
+        },
+        {
+          "name": "FuzzDocument",
+          "files": [
+            "kv/document_test.go"
+          ]
+        },
+        {
+          "name": "FuzzPKICSR",
+          "files": [
+            "pki/validate_test.go"
+          ]
+        },
+        {
+          "name": "FuzzEncoding",
+          "files": [
+            "internal/transitutil/encoding_test.go"
+          ]
+        },
+        {
+          "name": "FuzzDecode",
+          "files": [
+            "internal/pemutil/decode_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/fuzz-path.json",
+        "docs/evidence/OB-001/resume03/fuzz-document.json",
+        "docs/evidence/OB-001/resume03/fuzz-csr.json",
+        "docs/evidence/OB-001/resume03/fuzz-encoding.json",
+        "docs/evidence/OB-001/resume03/fuzz-pem.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-015/make-fuzz-all-final.json",
+          "docs/evidence/OB-015/fuzz-path-30s.json",
+          "docs/evidence/OB-015/fuzz-document-30s.json",
+          "docs/evidence/OB-015/fuzz-pki-30s.json",
+          "docs/evidence/OB-015/fuzz-encoding-reproduce.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PASS",
+        "execution_note": "R1五项实际Go模糊测试各30秒通过，保留原四项并增加FuzzDecode；不是把普通种子运行视作fuzz。",
+        "evidence": [
+          "docs/evidence/OB-015/resume01-final-fuzz.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PASS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2五项fuzz各30秒完成，实际退出0；首次路径fuzz被工具45秒超时中断，原日志保留，后续重新完整运行通过。",
+        "evidence": [
+          "docs/evidence/OB-015/resume02-fuzz-path.json",
+          "docs/evidence/OB-015/resume02-fuzz-document.json",
+          "docs/evidence/OB-015/resume02-fuzz-csr.json",
+          "docs/evidence/OB-015/resume02-fuzz-encoding.json",
+          "docs/evidence/OB-015/resume02-fuzz-pem.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-065",
+      "task_id": "OB-016",
+      "scenario": "真实集成有限权限",
+      "required_observation": "不只用root测试；越权读终端私钥失败。",
+      "status": "NOT_RUN",
+      "execution_note": "R3真实集成入口因缺少经核验的OpenBao程序/镜像失败，业务用例未运行。",
+      "tests": [],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/integration.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-016/delivery-integration.json",
+          "docs/evidence/OB-016/delivery-integration-source-compile.json",
+          "docs/evidence/OB-018/green-fuzz-make-targets.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "prepared_tests_not_run": [
+        "TestIntegrationKVScheduledDeletion"
+      ],
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "NOT_RUN",
+        "execution_note": "R1新增受限身份计划删除用例；仅完成补充编译检查与fixture-builder契约测试。缺核验OpenBao服务，真实集成未运行。",
+        "evidence": [
+          "docs/evidence/OB-016/resume01-final-integration.json",
+          "docs/evidence/OB-016/resume01-final-integration-source.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "NOT_RUN",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2实际启动测试入口即因缺服务输入失败，真实OpenBao用例未执行。",
+        "evidence": [
+          "docs/evidence/OB-016/resume02-integration-attempt.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-066",
+      "task_id": "OB-016",
+      "scenario": "集成环境缺失",
+      "required_observation": "专用CI任务失败而非全skip绿色。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestIntegrationOptionsFailClosed",
+          "files": [
+            "internal/testenv/options_test.go"
+          ]
+        },
+        {
+          "name": "TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission",
+          "files": [
+            "internal/testenv/bootstrap_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-016/delivery-integration.json",
+          "docs/evidence/OB-016/delivery-integration-source-compile.json",
+          "docs/evidence/OB-018/green-fuzz-make-targets.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "本地make integration-test在缺环境时实际exit 2，工具负例通过；远端专用CI未运行，因此保留PARTIAL。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json",
+          "docs/evidence/OB-018/resume01-final-tooling.json",
+          "docs/evidence/OB-016/resume01-final-integration.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2集成入口因缺经核验的服务程序/镜像实际非零退出，防skip工具测试通过；未执行远端专用CI任务，保留PARTIAL。",
+        "evidence": [
+          "docs/evidence/OB-016/resume02-integration-attempt.json",
+          "docs/evidence/OB-018/resume02-tooling.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-067",
+      "task_id": "OB-017",
+      "scenario": "两个独立go.mod",
+      "required_observation": "GOWORK=off经tag或临时module proxy消费。",
+      "status": "NOT_RUN",
+      "execution_note": "R3两个独立消费者仍在真实依赖获取阶段失败，未完成消费验证。",
+      "tests": [],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/consumers.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-017/delivery-consumers.json",
+          "docs/evidence/OB-017/delivery-consumer-sources.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "NOT_RUN",
+        "execution_note": "R1实际两个独立消费者go mod tidy均在官方依赖下载失败；源码补充测试通过不计作独立模块通过。",
+        "evidence": [
+          "docs/evidence/OB-017/resume01-final-consumers.json",
+          "docs/evidence/OB-017/resume01-final-consumer-source.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "NOT_RUN",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2两个独立消费者均实际尝试但上游下载失败，消费验收未进入。",
+        "evidence": [
+          "docs/evidence/OB-017/resume02-consumer-attempt.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-068",
+      "task_id": "OB-017",
+      "scenario": "凭据保存恢复",
+      "required_observation": "KV成功DB失败恢复原引用；未知时不补发。",
+      "status": "PASS",
+      "execution_note": "R3在未改动的自有Go源码上重新运行直接测试与race并通过；本轮不使用overlay或替代发送器。不推导官方适配器、真实OpenBao或业务接入通过。",
+      "tests": [
+        {
+          "name": "TestCredentialWorkflowRecovery",
+          "files": [
+            "examples/credentialworkflow/workflow_test.go"
+          ]
+        },
+        {
+          "name": "TestCredentialWorkflowUnknownDoesNotReissue",
+          "files": [
+            "examples/credentialworkflow/workflow_test.go"
+          ]
+        },
+        {
+          "name": "TestCredentialWorkflowUnknownKVReconciles",
+          "files": [
+            "examples/credentialworkflow/workflow_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/direct.json",
+        "docs/evidence/OB-001/resume03/direct-counts.json",
+        "docs/evidence/OB-001/resume03/direct.log"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-direct-own-tests.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PASS",
+        "execution_note": "调用方编排示例的真实Coordinator逻辑及故障模拟通过；没有连接真实MySQL，不代表OB-019完成。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PASS",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2直接运行该项列出的真实自有包测试及race，断言通过；未使用overlay或替代发送器；不推导官方模块/真实服务已验证。",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-069",
+      "task_id": "OB-017",
+      "scenario": "游艇注册前置",
+      "required_observation": "仅业务层所有终端材料核验完成才允许发码。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [
+        {
+          "name": "TestRegistrationRequiresBothMaterials",
+          "files": [
+            "examples/credentialworkflow/workflow_test.go"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-own-contracts.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "单终端MQTT与业务材料的前置谓词已测试；“所有终端就绪后发码”的实际业务整合尚无源码可验证。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-070",
+      "task_id": "OB-018",
+      "scenario": "发布证据",
+      "required_observation": "单测/契约/真实服务/消费者分层记录，不虚报PASS。",
+      "status": "PARTIAL",
+      "execution_note": "R3运行时源码与R2逐字节相同；正式全库仍在依赖阶段失败，未使用替代发送器。保留原实现与历史证据，本项未达到完整门禁。",
+      "tests": [],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/formal.json",
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-normal.json",
+          "docs/evidence/OB-016/delivery-integration.json",
+          "docs/evidence/OB-017/delivery-consumers.json",
+          "docs/evidence/OB-018/delivery-scanners.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "current_named_test_check": {
+        "all_named_tests_observed_pass": true,
+        "index": "docs/evidence/resume01-test-index.json"
+      },
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "PARTIAL",
+        "execution_note": "分层命令、退出码和记录已归档；正式模块/真实服务/消费者/扫描未通过，不能形成完整发布证据。 R1：已在当前源码重跑对应直接/补充契约用例；结果范围不扩张。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-direct-tests.json",
+          "docs/evidence/OB-018/resume01-final-contract-tests.json",
+          "docs/evidence/resume01-test-index.json",
+          "docs/evidence/OB-018/resume01-final-normal.json",
+          "docs/evidence/OB-018/resume01-final-scanners.json",
+          "docs/evidence/OB-018/resume01-final-tooling.json",
+          "docs/evidence/OB-018/resume01-final-release.json",
+          "docs/evidence/OB-018/resume01-git-diff-check.json",
+          "docs/evidence/OB-018/resume01-gofmt-check.json",
+          "docs/evidence/OB-018/resume01-source-diff.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "PARTIAL",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2源码与R1逐字节保持，保留已实现和历史证据；当前正式根包/官方适配器依赖阶段失败，本轮不运行替代发送器，不能认定本项完整通过。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-dependency-download.json",
+          "docs/evidence/OB-001/resume02-dependency-preflight.json",
+          "docs/evidence/OB-001/resume02-environment.json",
+          "docs/evidence/OB-001/resume02-formal-validation.json",
+          "docs/evidence/OB-018/resume02-final-direct-tests.json",
+          "docs/evidence/OB-018/resume02-direct-vet.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-071",
+      "task_id": "OB-018",
+      "scenario": "依赖与秘密扫描",
+      "required_observation": "锁定扫描工具；处理实际发现，报告无真实凭据。",
+      "status": "NOT_RUN",
+      "execution_note": "R3扫描工具获取失败，扫描主体未执行；不能推导无漏洞。",
+      "tests": [],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/security.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-018/delivery-scanners.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "NOT_RUN",
+        "execution_note": "R1固定版本govulncheck/gitleaks获取失败，命令exit1，扫描主体未运行；不能报告未发现漏洞或秘密。",
+        "evidence": [
+          "docs/evidence/OB-018/resume01-final-scanners.json"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "NOT_RUN",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2两种固定扫描工具均在获取阶段失败，扫描主体未运行；不是无漏洞。",
+        "evidence": [
+          "docs/evidence/OB-018/resume02-security-attempt.json"
+        ]
+      }
+    },
+    {
+      "id": "AC-072",
+      "task_id": "OB-019",
+      "scenario": "实际项目迁移",
+      "required_observation": "不双写发证，回滚不丢历史引用。",
+      "status": "NOT_RUN",
+      "execution_note": "仍无真实调用项目源码与迁移条件，未接入业务项目。",
+      "tests": [],
+      "evidence": [
+        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+      ],
+      "historical_evidence": {
+        "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+        "evidence": [
+          "docs/evidence/OB-001/delivery-environment.json"
+        ]
+      },
+      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "prior_review": {
+        "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+        "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+        "status": "NOT_RUN",
+        "execution_note": "未提供实际调用仓库、迁移与回滚环境；本轮未进行业务接入。",
+        "evidence": [
+          "docs/evidence/OB-001/resume01-environment.json",
+          "docs/implementation-handoff.md"
+        ]
+      },
+      "prior_review_r2": {
+        "status": "NOT_RUN",
+        "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+        "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+        "execution_note": "R2没有真实业务源码与迁移条件，未接入项目。",
+        "evidence": [
+          "docs/evidence/OB-001/resume02-environment.json"
+        ]
+      }
+    }
+  ],
+  "continuation": {
+    "round": "R3",
+    "official_export": "BLOCKED",
+    "offline_positive_replay": "NOT_RUN",
+    "runtime_source_unchanged": true
+  },
+  "previous_source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854"
+}

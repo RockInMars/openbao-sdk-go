@@ -1,0 +1,7 @@
+{
+  "check_exit": 0,
+  "check_output": "",
+  "apply_exit": 0,
+  "scope": "incremental implementation/tooling only; use full ZIP for updated ledgers and documents",
+  "source_hash_matches": true
+}

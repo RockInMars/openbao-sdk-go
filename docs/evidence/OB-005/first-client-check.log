@@ -1,0 +1,6 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED
+# git.example.com/infra/openbao-sdk-go
+# [git.example.com/infra/openbao-sdk-go]
+vet: ./official_sender.go:9:9: could not import github.com/openbao/openbao/api/v2 (can't resolve import "")
+FAIL	git.example.com/infra/openbao-sdk-go [build failed]
+FAIL

@@ -1,0 +1,6 @@
+{
+  "status": "INTERRUPTED",
+  "exit_code": null,
+  "reason": "Container execution limit reached during compile; no test result was produced.",
+  "log": "docs/evidence/OB-016/resume01-integration-source-check.log"
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-timeout=30s",
+    ".",
+    "-run",
+    "TestKV"
+  ],
+  "started_at": "2026-09-28T09:19:42.465990+00:00",
+  "finished_at": "2026-09-28T09:19:43.234028+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-008/red-kv-facade.log"
+}

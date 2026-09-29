@@ -1,0 +1,26 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "-coverprofile=.artifacts/stdlib-coverage.out",
+    "-timeout=90s",
+    "./auth",
+    "./baoerr",
+    "./kv",
+    "./pki",
+    "./sensitive",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/transitutil"
+  ],
+  "started_at": "2026-09-28T09:42:45.923354+00:00",
+  "finished_at": "2026-09-28T09:42:49.483985+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/stdlib-package-race-coverage.log"
+}

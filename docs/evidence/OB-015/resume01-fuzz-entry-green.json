@@ -1,0 +1,11 @@
+{
+  "source_sha256": "ce9e98202267c72a7547ba93dbe057497f156044ac6d83ddb4a0d57d624fe319",
+  "command": [
+    "make",
+    "tooling-test"
+  ],
+  "started_at": "2026-09-28T11:19:48.401802+00:00",
+  "finished_at": "2026-09-28T11:19:50.429655+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/resume01-fuzz-entry-green.log"
+}

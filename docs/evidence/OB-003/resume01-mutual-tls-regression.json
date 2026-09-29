@@ -1,0 +1,17 @@
+{
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=1",
+    "-run",
+    "^TestTLS",
+    "-timeout=30s",
+    "."
+  ],
+  "started_at": "2026-09-28T11:20:45.283401+00:00",
+  "finished_at": "2026-09-28T11:20:52.862067+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-003/resume01-mutual-tls-regression.log"
+}

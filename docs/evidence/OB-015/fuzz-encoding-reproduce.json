@@ -1,0 +1,21 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "GOMAXPROCS=2",
+    "go",
+    "test",
+    "./internal/transitutil",
+    "-run=^$",
+    "-fuzz=FuzzEncoding",
+    "-fuzztime=30s",
+    "-fuzzminimizetime=5s",
+    "-timeout=60s",
+    "-parallel=1"
+  ],
+  "started_at": "2026-09-28T10:11:40.667612+00:00",
+  "finished_at": "2026-09-28T10:12:10.958513+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/fuzz-encoding-reproduce.log"
+}

@@ -1,0 +1,16 @@
+{
+  "source_sha256": "97e929d7b84ebfc8cdeae3b59191193e7b0c97652bf80b1644910686a33e7b23",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-v"
+  ],
+  "started_at": "2026-09-28T10:19:40.654968+00:00",
+  "finished_at": "2026-09-28T10:19:41.352137+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-018/red-coverage-gate.log"
+}

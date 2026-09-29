@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "scripts/contract-test.py",
+    "-tags=integration",
+    "-run=^$",
+    "./tests/integration"
+  ],
+  "started_at": "2026-09-28T09:56:59.272469+00:00",
+  "finished_at": "2026-09-28T09:57:00.310922+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-016/compile-integration-with-test-sender-only.log"
+}

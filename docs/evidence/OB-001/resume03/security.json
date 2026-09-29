@@ -1,0 +1,12 @@
+{
+  "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+  "name": "security",
+  "command": [
+    "make",
+    "security-test"
+  ],
+  "exit_code": 2,
+  "started_at": "2026-09-28T15:43:48.343867+00:00",
+  "finished_at": "2026-09-28T15:43:54.357645+00:00",
+  "log": "docs/evidence/OB-001/resume03/security.log"
+}

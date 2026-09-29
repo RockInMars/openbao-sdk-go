@@ -1,0 +1,14 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "./baoerr"
+  ],
+  "started_at": "2026-09-28T08:59:21.449130+00:00",
+  "finished_at": "2026-09-28T08:59:21.532079+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-004/red-errors.log"
+}

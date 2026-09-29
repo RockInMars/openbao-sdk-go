@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=100",
+    "-timeout=90s",
+    ".",
+    "-run",
+    "TestStartResultBelongsToAttempt"
+  ],
+  "started_at": "2026-09-28T09:39:50.748762+00:00",
+  "finished_at": "2026-09-28T09:39:52.847365+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/start-result-stress.log"
+}

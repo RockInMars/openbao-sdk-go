@@ -1,0 +1,19 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "GOMAXPROCS=2",
+    "go",
+    "test",
+    "./kv",
+    "-run=^$",
+    "-fuzz=FuzzDocument",
+    "-fuzztime=30s",
+    "-parallel=2"
+  ],
+  "started_at": "2026-09-28T09:57:00.988817+00:00",
+  "finished_at": "2026-09-28T09:57:31.965529+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/fuzz-document-30s.log"
+}

@@ -1,0 +1,18 @@
+{
+  "source_sha256": "c84743689479e5a4d8d5a3b4cefaeb005ad5fe0b4dbdd9f8904cfafcf9b7d975",
+  "command": [
+    "timeout",
+    "240s",
+    "python3",
+    "scripts/contract-test.py",
+    "-tags=integration",
+    "-run",
+    "^$",
+    "-timeout=30s",
+    "./tests/integration"
+  ],
+  "started_at": "2026-09-28T11:16:30.923222+00:00",
+  "finished_at": "2026-09-28T11:16:46.159227+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-016/resume01-integration-source-rerun.log"
+}

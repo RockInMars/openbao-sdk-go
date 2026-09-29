@@ -1,0 +1,11 @@
+{
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "command": [
+    "make",
+    "fuzz-test"
+  ],
+  "started_at": "2026-09-28T10:40:25.461557+00:00",
+  "finished_at": "2026-09-28T10:42:28.459436+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/make-fuzz-all-final.log"
+}

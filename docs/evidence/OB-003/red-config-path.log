@@ -1,0 +1,16 @@
+# git.example.com/infra/openbao-sdk-go/internal/engine [git.example.com/infra/openbao-sdk-go/internal/engine.test]
+internal/engine/path_test.go:4:132: undefined: ValidatePath
+internal/engine/path_test.go:5:54: undefined: ValidatePath
+internal/engine/path_test.go:6:5: undefined: ValidateSegment
+internal/engine/path_test.go:8:149: undefined: ValidatePath
+# git.example.com/infra/openbao-sdk-go [git.example.com/infra/openbao-sdk-go.test]
+./config_test.go:3:36: undefined: auth.NewStaticToken
+./config_test.go:5:9: undefined: normalizeConfig
+./config_test.go:8:32: undefined: normalizeConfig
+./config_test.go:10:220: undefined: normalizeConfig
+./config_test.go:12:232: undefined: normalizeConfig
+./config_test.go:13:69: undefined: normalizeConfig
+./config_test.go:14:59: undefined: normalizeConfig
+FAIL	git.example.com/infra/openbao-sdk-go [build failed]
+FAIL	git.example.com/infra/openbao-sdk-go/internal/engine [build failed]
+FAIL

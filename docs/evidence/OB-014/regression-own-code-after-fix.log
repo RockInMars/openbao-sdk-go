@@ -1,0 +1,15 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+?   	git.example.com/infra/openbao-sdk-go/transit	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/diagnostics	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/observe	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/internal/jsondoc	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/internal/pkiutil	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/internal/transitutil	[no test files]
+ok  	git.example.com/infra/openbao-sdk-go	2.267s
+ok  	git.example.com/infra/openbao-sdk-go/auth	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/kv	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/pki	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/baoerr	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/sensitive	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/internal/engine	(cached)
+ok  	git.example.com/infra/openbao-sdk-go/internal/authn	(cached)

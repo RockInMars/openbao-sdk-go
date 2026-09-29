@@ -1,0 +1,12 @@
+{
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "command": [
+    "git",
+    "diff",
+    "--check"
+  ],
+  "started_at": "2026-09-28T11:32:45.308262+00:00",
+  "finished_at": "2026-09-28T11:32:45.375636+00:00",
+  "exit_code": 129,
+  "log": "docs/evidence/OB-018/resume01-git-diff-check.log"
+}

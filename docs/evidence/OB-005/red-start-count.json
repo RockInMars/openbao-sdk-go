@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-timeout=20s",
+    "."
+  ],
+  "started_at": "2026-09-28T09:17:52.892187+00:00",
+  "finished_at": "2026-09-28T09:17:54.002153+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-005/red-start-count.log"
+}

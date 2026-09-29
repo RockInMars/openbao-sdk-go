@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "go_files": 98,
+  "go_mod_unchanged": true,
+  "go_sum_unchanged": true,
+  "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+  "scope": "byte comparison to R2; NOT SDK compilation"
+}

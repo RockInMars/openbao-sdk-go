@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=30",
+    "-timeout=90s",
+    "./internal/authn",
+    "-run",
+    "Test(RunStops|AuthCapacity|Business403|AuthStateAfter)"
+  ],
+  "started_at": "2026-09-28T09:41:34.863262+00:00",
+  "finished_at": "2026-09-28T09:41:37.076116+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/green-auth-loop-restart.log"
+}

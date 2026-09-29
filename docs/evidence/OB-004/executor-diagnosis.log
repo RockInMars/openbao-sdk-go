@@ -1,0 +1,72 @@
+=== RUN   TestPathValidation
+--- PASS: TestPathValidation (0.00s)
+=== RUN   TestSingleAttemptIssue
+--- PASS: TestSingleAttemptIssue (0.02s)
+=== RUN   TestReadRetryBudget
+--- PASS: TestReadRetryBudget (0.02s)
+=== RUN   TestNoWriteReplayHeader
+--- PASS: TestNoWriteReplayHeader (0.01s)
+=== RUN   TestResponseBoundAndSafeError
+--- PASS: TestResponseBoundAndSafeError (0.01s)
+=== RUN   TestCanceledBeforeAndAfterSend
+2026/09/28 09:06:26 httptest.Server blocked in Close after 5 seconds, waiting for connections:
+  *tls.Conn 0xc000004a88 127.0.0.1:37562 in state active
+panic: test timed out after 20s
+	running tests:
+		TestCanceledBeforeAndAfterSend (20s)
+
+goroutine 71 [running]:
+testing.(*M).startAlarm.func1()
+	/usr/local/go/src/testing/testing.go:2373 +0x265
+created by time.goFunc
+	/usr/local/go/src/time/sleep.go:215 +0x45
+
+goroutine 1 [chan receive]:
+testing.(*T).Run(0xc0001d44e0, {0xa76480, 0x1e}, 0xaa32c0)
+	/usr/local/go/src/testing/testing.go:1751 +0x851
+testing.runTests.func1(0xc0001d44e0)
+	/usr/local/go/src/testing/testing.go:2168 +0x86
+testing.tRunner(0xc0001d44e0, 0xc00020bae0)
+	/usr/local/go/src/testing/testing.go:1690 +0x227
+testing.runTests(0xc0001b20c0, {0xdcb2c0, 0x6, 0x6}, {0x7ff80174ff18?, 0x40?, 0xdd2d60?})
+	/usr/local/go/src/testing/testing.go:2166 +0x8bf
+testing.(*M).Run(0xc00019eaa0)
+	/usr/local/go/src/testing/testing.go:2034 +0xf18
+main.main()
+	_testmain.go:59 +0x165
+
+goroutine 83 [semacquire]:
+sync.runtime_Semacquire(0xc00039c198?)
+	/usr/local/go/src/runtime/sema.go:71 +0x25
+sync.(*WaitGroup).Wait(0xc00039c190)
+	/usr/local/go/src/sync/waitgroup.go:118 +0xa5
+net/http/httptest.(*Server).Close(0xc00039c150)
+	/usr/local/go/src/net/http/httptest/server.go:251 +0x3d5
+testing.(*common).Cleanup.func1()
+	/usr/local/go/src/testing/testing.go:1176 +0x17a
+testing.(*common).runCleanup(0xc0003ce000, 0x0)
+	/usr/local/go/src/testing/testing.go:1354 +0x262
+testing.tRunner.func2()
+	/usr/local/go/src/testing/testing.go:1684 +0x51
+testing.tRunner(0xc0003ce000, 0xaa32c0)
+	/usr/local/go/src/testing/testing.go:1696 +0x265
+created by testing.(*T).Run in goroutine 1
+	/usr/local/go/src/testing/testing.go:1743 +0x826
+
+goroutine 67 [chan receive]:
+git.example.com/infra/openbao-sdk-go/internal/engine_test.TestCanceledBeforeAndAfterSend.func1({0x4b5d59?, 0x4b7591?}, 0xc000390a00)
+	/mnt/data/openbao-sdk-go/internal/engine/executor_test.go:96 +0xa5
+net/http.HandlerFunc.ServeHTTP(0xc00038e270, {0xb2ce50, 0xc0003c0380}, 0xc000390a00)
+	/usr/local/go/src/net/http/server.go:2220 +0x48
+net/http.serverHandler.ServeHTTP({0xb2bbc8?}, {0xb2ce50, 0xc0003c0380}, 0xc000390a00)
+	/usr/local/go/src/net/http/server.go:3210 +0x2a2
+net/http.(*conn).serve(0xc0000d66c0, {0xb2de68, 0xc000528000})
+	/usr/local/go/src/net/http/server.go:2092 +0x12a5
+created by net/http.(*Server).Serve in goroutine 84
+	/usr/local/go/src/net/http/server.go:3360 +0x8ed
+FAIL	git.example.com/infra/openbao-sdk-go/internal/engine	20.030s
+=== RUN   TestErrorClassificationAndRedaction
+--- PASS: TestErrorClassificationAndRedaction (0.00s)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/baoerr	1.010s
+FAIL

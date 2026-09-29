@@ -1,0 +1,2 @@
+official_sender.go:9:2: missing go.sum entry for module providing package github.com/openbao/openbao/api/v2 (imported by git.example.com/infra/openbao-sdk-go); to add:
+	go get git.example.com/infra/openbao-sdk-go

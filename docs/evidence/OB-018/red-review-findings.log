@@ -1,0 +1,17 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+--- FAIL: TestExplicitEmptyCAFileIsNotSystemTrust (0.00s)
+    review_fixes_test.go:26: explicit empty CA file silently fell back to system trust
+--- FAIL: TestStartAfterLifetimeCancellationDoesNotReportReady (0.00s)
+    review_fixes_test.go:41: Start reports success on canceled service lifetime
+--- FAIL: TestPublicKeyDecodeAttemptsNotHTTPStatus (0.02s)
+    review_fixes_test.go:55: public key decode confused HTTP status with attempts
+--- FAIL: TestAmbiguousWrite4xxRetainsUnknown (0.05s)
+    --- FAIL: TestAmbiguousWrite4xxRetainsUnknown/Bad_Request (0.02s)
+        review_fixes_test.go:75: unrecognized rejection envelope classified as definitely unexecuted
+    --- FAIL: TestAmbiguousWrite4xxRetainsUnknown/Unauthorized (0.02s)
+        review_fixes_test.go:75: unrecognized rejection envelope classified as definitely unexecuted
+    --- FAIL: TestAmbiguousWrite4xxRetainsUnknown/Forbidden (0.01s)
+        review_fixes_test.go:75: unrecognized rejection envelope classified as definitely unexecuted
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go	0.074s
+FAIL

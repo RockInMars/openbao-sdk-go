@@ -1,0 +1,2 @@
+docs/evidence/OB-015/supplemental-coverage-baseline.log:2: trailing whitespace.
++warning: no packages being tested depend on matches for pattern 

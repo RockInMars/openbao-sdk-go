@@ -1,0 +1,437 @@
+{
+  "recorded_at": "2026-09-28T12:17:08.347470+00:00",
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "records": [
+    {
+      "record": "docs/evidence/OB-001/resume02-dependency-download.json",
+      "command": [
+        "env",
+        "GOWORK=off",
+        "timeout",
+        "40",
+        "go",
+        "mod",
+        "download",
+        "-json",
+        "github.com/openbao/openbao/api/v2@v2.7.0"
+      ],
+      "exit_code": 1,
+      "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+      "log": "docs/evidence/OB-001/resume02-dependency-download.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-dependency-preflight.json",
+      "command": [
+        "make",
+        "dependency-check"
+      ],
+      "exit_code": 2,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-001/resume02-dependency-preflight.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-dependency-validator-green.json",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_dependency_check.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "source_sha256": "1c3eee3944cbcf632c99e5854d708efe763655b603271d213c57ecbf65011217",
+      "log": "docs/evidence/OB-001/resume02-dependency-validator-green.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-dependency-validator-red.json",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_dependency_check.py",
+        "-v"
+      ],
+      "exit_code": 1,
+      "source_sha256": "4671804abb72e9fb677c4da92ceca0359faad7aa5485a4b52c6703551ce885e9",
+      "log": "docs/evidence/OB-001/resume02-dependency-validator-red.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-dns-https-probe.json",
+      "command": [
+        "curl",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "5",
+        "--max-time",
+        "10",
+        "--resolve",
+        "dns.google:443:8.8.8.8",
+        "https://dns.google/resolve?name=proxy.golang.org&type=A"
+      ],
+      "exit_code": 7,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-001/resume02-dns-https-probe.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-formal-validation.json",
+      "command": [
+        "make",
+        "normal-test"
+      ],
+      "exit_code": 2,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-001/resume02-formal-validation.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-git-check.json",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 129,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-001/resume02-git-check.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-github-reachability.json",
+      "command": [
+        "curl",
+        "-I",
+        "--connect-timeout",
+        "5",
+        "--max-time",
+        "8",
+        "https://raw.githubusercontent.com/openbao/openbao/api/v2.7.0/api/go.mod"
+      ],
+      "exit_code": 6,
+      "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+      "log": "docs/evidence/OB-001/resume02-github-reachability.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-preflight-environment-green.json",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_dependency_check.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-001/resume02-preflight-environment-green.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-preflight-environment-red.json",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_dependency_check.py",
+        "-v"
+      ],
+      "exit_code": 1,
+      "source_sha256": "02ddd7886538132fb488932a501612bad148449263c7380b364597d5d27114f5",
+      "log": "docs/evidence/OB-001/resume02-preflight-environment-red.log"
+    },
+    {
+      "record": "docs/evidence/OB-001/resume02-proxy-reachability.json",
+      "command": [
+        "curl",
+        "-I",
+        "--connect-timeout",
+        "5",
+        "--max-time",
+        "8",
+        "https://proxy.golang.org/github.com/openbao/openbao/api/v2/@v/v2.7.0.mod"
+      ],
+      "exit_code": 6,
+      "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+      "log": "docs/evidence/OB-001/resume02-proxy-reachability.log"
+    },
+    {
+      "record": "docs/evidence/OB-015/resume02-fuzz-csr.json",
+      "command": [
+        "env",
+        "GOENV=off",
+        "GOWORK=off",
+        "GOFLAGS=",
+        "GOTOOLCHAIN=local",
+        "go",
+        "test",
+        "-run=^$",
+        "-fuzz=FuzzPKICSR",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./pki"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-015/resume02-fuzz-csr.log"
+    },
+    {
+      "record": "docs/evidence/OB-015/resume02-fuzz-document.json",
+      "command": [
+        "env",
+        "GOENV=off",
+        "GOWORK=off",
+        "GOFLAGS=",
+        "GOTOOLCHAIN=local",
+        "go",
+        "test",
+        "-run=^$",
+        "-fuzz=FuzzDocument",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./kv"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-015/resume02-fuzz-document.log"
+    },
+    {
+      "record": "docs/evidence/OB-015/resume02-fuzz-encoding.json",
+      "command": [
+        "env",
+        "GOENV=off",
+        "GOWORK=off",
+        "GOFLAGS=",
+        "GOTOOLCHAIN=local",
+        "go",
+        "test",
+        "-run=^$",
+        "-fuzz=FuzzEncoding",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./internal/transitutil"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-015/resume02-fuzz-encoding.log"
+    },
+    {
+      "record": "docs/evidence/OB-015/resume02-fuzz-path.json",
+      "command": [
+        "env",
+        "GOENV=off",
+        "GOWORK=off",
+        "GOFLAGS=",
+        "GOTOOLCHAIN=local",
+        "go",
+        "test",
+        "-run=^$",
+        "-fuzz=FuzzPath",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./internal/engine"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-015/resume02-fuzz-path.log"
+    },
+    {
+      "record": "docs/evidence/OB-015/resume02-fuzz-pem.json",
+      "command": [
+        "env",
+        "GOENV=off",
+        "GOWORK=off",
+        "GOFLAGS=",
+        "GOTOOLCHAIN=local",
+        "go",
+        "test",
+        "-run=^$",
+        "-fuzz=FuzzDecode",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./internal/pemutil"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-015/resume02-fuzz-pem.log"
+    },
+    {
+      "record": "docs/evidence/OB-016/resume02-integration-attempt.json",
+      "command": [
+        "make",
+        "integration-test"
+      ],
+      "exit_code": 2,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-016/resume02-integration-attempt.log"
+    },
+    {
+      "record": "docs/evidence/OB-017/resume02-consumer-attempt.json",
+      "command": [
+        "make",
+        "consumer-test"
+      ],
+      "exit_code": 2,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-017/resume02-consumer-attempt.log"
+    },
+    {
+      "record": "docs/evidence/OB-018/resume02-direct-own-tests.json",
+      "command": [
+        "env",
+        "GOENV=off",
+        "GOWORK=off",
+        "GOFLAGS=",
+        "GOTOOLCHAIN=local",
+        "go",
+        "test",
+        "-race",
+        "-json",
+        "-count=1",
+        "./auth",
+        "./baoerr",
+        "./internal/authn",
+        "./internal/engine",
+        "./internal/jsondoc",
+        "./internal/pemutil",
+        "./internal/pkiutil",
+        "./internal/transitutil",
+        "./kv",
+        "./pki",
+        "./sensitive"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-018/resume02-direct-own-tests.log"
+    },
+    {
+      "record": "docs/evidence/OB-018/resume02-direct-vet.json",
+      "command": [
+        "env",
+        "GOENV=off",
+        "GOWORK=off",
+        "GOFLAGS=",
+        "GOTOOLCHAIN=local",
+        "go",
+        "vet",
+        "./auth",
+        "./kv",
+        "./pki",
+        "./transit",
+        "./baoerr",
+        "./sensitive",
+        "./diagnostics",
+        "./observe",
+        "./internal/engine",
+        "./internal/authn",
+        "./internal/jsondoc",
+        "./internal/pkiutil",
+        "./internal/pemutil",
+        "./internal/transitutil",
+        "./internal/testenv",
+        "./internal/testutil",
+        "./examples/credentialworkflow"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-018/resume02-direct-vet.log"
+    },
+    {
+      "record": "docs/evidence/OB-018/resume02-final-direct-tests.json",
+      "command": [
+        "env",
+        "GOENV=off",
+        "GOWORK=off",
+        "GOFLAGS=",
+        "GOTOOLCHAIN=local",
+        "go",
+        "test",
+        "-race",
+        "-json",
+        "-count=1",
+        "-timeout=90s",
+        "./auth",
+        "./kv",
+        "./pki",
+        "./transit",
+        "./baoerr",
+        "./sensitive",
+        "./diagnostics",
+        "./observe",
+        "./internal/engine",
+        "./internal/authn",
+        "./internal/jsondoc",
+        "./internal/pkiutil",
+        "./internal/pemutil",
+        "./internal/transitutil",
+        "./internal/testenv",
+        "./internal/testutil",
+        "./examples/credentialworkflow"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-018/resume02-final-direct-tests.log"
+    },
+    {
+      "record": "docs/evidence/OB-018/resume02-final-tooling.json",
+      "command": [
+        "make",
+        "tooling-test"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-018/resume02-final-tooling.log"
+    },
+    {
+      "record": "docs/evidence/OB-018/resume02-release-check.json",
+      "command": [
+        "make",
+        "release-check"
+      ],
+      "exit_code": 2,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-018/resume02-release-check.log"
+    },
+    {
+      "record": "docs/evidence/OB-018/resume02-security-attempt.json",
+      "command": [
+        "make",
+        "security-test"
+      ],
+      "exit_code": 2,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-018/resume02-security-attempt.log"
+    },
+    {
+      "record": "docs/evidence/OB-018/resume02-tooling.json",
+      "command": [
+        "make",
+        "tooling-test"
+      ],
+      "exit_code": 0,
+      "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+      "log": "docs/evidence/OB-018/resume02-tooling.log"
+    }
+  ],
+  "direct_top_level_tests": 64,
+  "tooling_tests": 17,
+  "new_tooling_tests": 8,
+  "fuzz_targets": 5,
+  "official_full_tests_executed_successfully": false
+}

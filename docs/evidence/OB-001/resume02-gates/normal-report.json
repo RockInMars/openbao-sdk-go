@@ -1,0 +1,93 @@
+{
+  "evidence_class": "NORMAL_OFFICIAL_CLIENT",
+  "status": "FAIL",
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "started_at": "2026-09-28T12:05:24.491243+00:00",
+  "commands": [
+    {
+      "name": "unit",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "./..."
+      ],
+      "exit_code": 1,
+      "log": ".artifacts/normal-unit.log"
+    },
+    {
+      "name": "race-coverage",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-coverprofile=coverage.out",
+        "./..."
+      ],
+      "exit_code": 1,
+      "log": ".artifacts/normal-race-coverage.log"
+    },
+    {
+      "name": "vet",
+      "command": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "exit_code": 1,
+      "log": ".artifacts/normal-vet.log"
+    },
+    {
+      "name": "modules",
+      "command": [
+        "go",
+        "mod",
+        "verify"
+      ],
+      "exit_code": 1,
+      "log": ".artifacts/normal-modules.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "go",
+        "build",
+        "./..."
+      ],
+      "exit_code": 1,
+      "log": ".artifacts/normal-build.log"
+    },
+    {
+      "name": "module-graph",
+      "command": [
+        "go",
+        "list",
+        "-m",
+        "-json",
+        "all"
+      ],
+      "exit_code": 1,
+      "log": ".artifacts/normal-module-graph.log"
+    },
+    {
+      "name": "test-list",
+      "command": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "./..."
+      ],
+      "exit_code": 1,
+      "log": ".artifacts/normal-test-list.log"
+    }
+  ],
+  "coverage_passed": false,
+  "coverage_report": ".artifacts/coverage-report.json",
+  "passed_tests": 0,
+  "failed_tests": 0,
+  "skipped_tests": 0,
+  "official_baseline_passed": false,
+  "finished_at": "2026-09-28T12:05:29.897201+00:00"
+}

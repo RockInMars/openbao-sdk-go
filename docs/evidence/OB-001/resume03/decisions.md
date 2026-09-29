@@ -1,0 +1,8 @@
+# R3 OB-001 decisions / scope and evidence
+
+- Baseline: restored the exact R2 ZIP into a fresh isolated directory; no prior working tree existed. No Git history was invented. Runtime sources, public contracts, task dependencies and original specs stay unchanged.
+- The R2 handoff explicitly permits a verified public dependency offline transfer. Implement its exporter/replayer under OB-001 instead of retrying identical unavailable networking indefinitely. This is delivery tooling, not a new SDK feature or an OB-001 completion claim.
+- A private local SDK copy and empty caches/home are used for export. No personal module cache, existing go.sum, private key or token is used to authenticate modules or packed. Source input hashes bind the exported graph to this SDK snapshot.
+- Receiver verifies archive integrity, then invokes genuine Go from a fresh cache with no seeded go.sum. Signed sumdb lookup records and tiles are served from an explicit local file proxy; checksums are not disabled. Manifest hashes alone do not establish source authenticity.
+- First negative Go test failed only on its expected diagnostic substring: genuine Go returned `verifying go.mod: ... malformed record data`, rather than spelling `sumdb`. Keep the original failure output. Replace the loose substring with BOTH observed verification-stage and malformed-record assertions; retain nonzero exit, no external URL fallback and no created go.sum assertions. No success assertion was weakened.
+- Real positive official export/replay and subsequent SDK build remain blocked unless their real commands complete. Synthetic fixtures only validate transport/parsing/rejection behavior.

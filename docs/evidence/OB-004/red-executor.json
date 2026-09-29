@@ -1,0 +1,14 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "./internal/engine"
+  ],
+  "started_at": "2026-09-28T09:04:23.078769+00:00",
+  "finished_at": "2026-09-28T09:04:25.262389+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-004/red-executor.log"
+}

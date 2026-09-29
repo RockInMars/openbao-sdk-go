@@ -1,0 +1,80 @@
+go test -run='^$' -fuzz=FuzzPath -fuzztime=30s -parallel=1 -timeout=90s ./internal/engine
+fuzz: elapsed: 0s, gathering baseline coverage: 0/4 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 4/4 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 12309 (4102/sec), new interesting: 17 (total: 21)
+fuzz: elapsed: 6s, execs: 29476 (5722/sec), new interesting: 18 (total: 22)
+fuzz: elapsed: 9s, execs: 37236 (2587/sec), new interesting: 21 (total: 25)
+fuzz: elapsed: 12s, execs: 43112 (1954/sec), new interesting: 22 (total: 26)
+fuzz: elapsed: 15s, execs: 48371 (1755/sec), new interesting: 22 (total: 26)
+fuzz: elapsed: 18s, execs: 67690 (6446/sec), new interesting: 24 (total: 28)
+fuzz: elapsed: 21s, execs: 79334 (3881/sec), new interesting: 26 (total: 30)
+fuzz: elapsed: 24s, execs: 88852 (3173/sec), new interesting: 27 (total: 31)
+fuzz: elapsed: 27s, execs: 102352 (4501/sec), new interesting: 27 (total: 31)
+fuzz: elapsed: 30s, execs: 117507 (5052/sec), new interesting: 27 (total: 31)
+fuzz: elapsed: 30s, execs: 117507 (0/sec), new interesting: 27 (total: 31)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/internal/engine	30.062s
+go test -run='^$' -fuzz=FuzzDocument -fuzztime=30s -parallel=1 -timeout=90s ./kv
+fuzz: elapsed: 0s, gathering baseline coverage: 0/7 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 7/7 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 7275 (2424/sec), new interesting: 40 (total: 47)
+fuzz: elapsed: 6s, execs: 60649 (17798/sec), new interesting: 68 (total: 75)
+fuzz: elapsed: 9s, execs: 60649 (0/sec), new interesting: 68 (total: 75)
+fuzz: elapsed: 12s, execs: 60649 (0/sec), new interesting: 68 (total: 75)
+fuzz: elapsed: 15s, execs: 60649 (0/sec), new interesting: 68 (total: 75)
+fuzz: elapsed: 18s, execs: 60649 (0/sec), new interesting: 68 (total: 75)
+fuzz: elapsed: 21s, execs: 60649 (0/sec), new interesting: 68 (total: 75)
+fuzz: elapsed: 24s, execs: 60649 (0/sec), new interesting: 68 (total: 75)
+fuzz: elapsed: 27s, execs: 60649 (0/sec), new interesting: 68 (total: 75)
+fuzz: elapsed: 30s, execs: 60649 (0/sec), new interesting: 68 (total: 75)
+fuzz: elapsed: 31s, execs: 60649 (0/sec), new interesting: 68 (total: 75)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/kv	31.042s
+go test -run='^$' -fuzz=FuzzPKICSR -fuzztime=30s -parallel=1 -timeout=90s ./pki
+fuzz: elapsed: 0s, gathering baseline coverage: 0/3 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 3/3 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 53 (18/sec), new interesting: 1 (total: 4)
+fuzz: elapsed: 6s, execs: 53 (0/sec), new interesting: 1 (total: 4)
+fuzz: elapsed: 9s, execs: 53 (0/sec), new interesting: 1 (total: 4)
+fuzz: elapsed: 12s, execs: 53 (0/sec), new interesting: 1 (total: 4)
+fuzz: elapsed: 15s, execs: 107527 (35829/sec), new interesting: 2 (total: 5)
+fuzz: elapsed: 18s, execs: 159001 (17162/sec), new interesting: 4 (total: 7)
+fuzz: elapsed: 21s, execs: 159001 (0/sec), new interesting: 4 (total: 7)
+fuzz: elapsed: 24s, execs: 159001 (0/sec), new interesting: 4 (total: 7)
+fuzz: elapsed: 27s, execs: 159001 (0/sec), new interesting: 4 (total: 7)
+fuzz: elapsed: 30s, execs: 264831 (35285/sec), new interesting: 5 (total: 8)
+fuzz: elapsed: 31s, execs: 264831 (0/sec), new interesting: 5 (total: 8)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/pki	31.044s
+go test -run='^$' -fuzz=FuzzEncoding -fuzztime=30s -parallel=1 -timeout=90s ./internal/transitutil
+fuzz: elapsed: 0s, gathering baseline coverage: 0/4 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 4/4 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 25974 (8658/sec), new interesting: 15 (total: 19)
+fuzz: elapsed: 6s, execs: 50837 (8286/sec), new interesting: 20 (total: 24)
+fuzz: elapsed: 9s, execs: 81659 (10275/sec), new interesting: 22 (total: 26)
+fuzz: elapsed: 12s, execs: 113206 (10513/sec), new interesting: 28 (total: 32)
+fuzz: elapsed: 15s, execs: 147595 (11466/sec), new interesting: 33 (total: 37)
+fuzz: elapsed: 18s, execs: 181722 (11376/sec), new interesting: 35 (total: 39)
+fuzz: elapsed: 21s, execs: 217529 (11932/sec), new interesting: 37 (total: 41)
+fuzz: elapsed: 24s, execs: 253968 (12147/sec), new interesting: 38 (total: 42)
+fuzz: elapsed: 27s, execs: 288984 (11671/sec), new interesting: 41 (total: 45)
+fuzz: elapsed: 30s, execs: 325485 (12170/sec), new interesting: 45 (total: 49)
+fuzz: elapsed: 30s, execs: 325485 (0/sec), new interesting: 45 (total: 49)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/internal/transitutil	30.058s
+go test -run='^$' -fuzz=FuzzDecode -fuzztime=30s -parallel=1 -timeout=90s ./internal/pemutil
+fuzz: elapsed: 0s, gathering baseline coverage: 0/2 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 2/2 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 42442 (14144/sec), new interesting: 12 (total: 14)
+fuzz: elapsed: 6s, execs: 93689 (17085/sec), new interesting: 21 (total: 23)
+fuzz: elapsed: 9s, execs: 151097 (19137/sec), new interesting: 31 (total: 33)
+fuzz: elapsed: 12s, execs: 205195 (18033/sec), new interesting: 38 (total: 40)
+fuzz: elapsed: 15s, execs: 259144 (17979/sec), new interesting: 43 (total: 45)
+fuzz: elapsed: 18s, execs: 309985 (16947/sec), new interesting: 49 (total: 51)
+fuzz: elapsed: 21s, execs: 359620 (16548/sec), new interesting: 53 (total: 55)
+fuzz: elapsed: 24s, execs: 411304 (17217/sec), new interesting: 57 (total: 59)
+fuzz: elapsed: 27s, execs: 462994 (17240/sec), new interesting: 57 (total: 59)
+fuzz: elapsed: 30s, execs: 510395 (15802/sec), new interesting: 60 (total: 62)
+fuzz: elapsed: 30s, execs: 510395 (0/sec), new interesting: 60 (total: 62)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/internal/pemutil	30.136s

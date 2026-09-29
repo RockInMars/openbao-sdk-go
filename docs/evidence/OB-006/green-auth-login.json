@@ -1,0 +1,19 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "-timeout=20s",
+    "./auth",
+    "./internal/authn",
+    "-run",
+    "Test(AppRole|SingleUse|SecretID)"
+  ],
+  "started_at": "2026-09-28T09:13:54.838607+00:00",
+  "finished_at": "2026-09-28T09:13:56.488759+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-006/green-auth-login.log"
+}

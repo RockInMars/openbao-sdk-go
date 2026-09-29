@@ -1,0 +1,18 @@
+{
+  "source_sha256": "1c3eee3944cbcf632c99e5854d708efe763655b603271d213c57ecbf65011217",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/tests",
+    "-p",
+    "test_dependency_check.py",
+    "-v"
+  ],
+  "started_at": "2026-09-28T12:03:46.896632+00:00",
+  "finished_at": "2026-09-28T12:03:47.997700+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-001/resume02-dependency-validator-green.log"
+}

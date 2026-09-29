@@ -1,0 +1,19 @@
+{
+  "source_sha256": "243768a106948e44c58e887d2b9aeea801199051ef492131511389d594446674",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=1",
+    "-run",
+    "Test(PEMRejectsSkipped|PublicRejectsSkipped|TLSRejectsSkipped)",
+    "-timeout=30s",
+    ".",
+    "./internal/pkiutil",
+    "./internal/transitutil"
+  ],
+  "started_at": "2026-09-28T11:08:50.076817+00:00",
+  "finished_at": "2026-09-28T11:08:56.231714+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-010/resume01-strict-pem-red.log"
+}

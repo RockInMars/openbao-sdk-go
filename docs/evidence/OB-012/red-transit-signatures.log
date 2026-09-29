@@ -1,0 +1,9 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+# git.example.com/infra/openbao-sdk-go [git.example.com/infra/openbao-sdk-go.test]
+./transit_client_test.go:44:15: c.Transit undefined (type *Client has no field or method Transit)
+./transit_client_test.go:51: c.Transit undefined (type *Client has no field or method Transit)
+./transit_client_test.go:57: c.Transit undefined (type *Client has no field or method Transit)
+./transit_client_test.go:58:188: c.Transit undefined (type *Client has no field or method Transit)
+./transit_client_test.go:62: c.Transit undefined (type *Client has no field or method Transit)
+FAIL	git.example.com/infra/openbao-sdk-go [build failed]
+FAIL

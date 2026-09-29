@@ -1,0 +1,19 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "GOMAXPROCS=2",
+    "go",
+    "test",
+    "./internal/engine",
+    "-run=^$",
+    "-fuzz=FuzzPath",
+    "-fuzztime=30s",
+    "-parallel=2"
+  ],
+  "started_at": "2026-09-28T09:48:45.134140+00:00",
+  "finished_at": "2026-09-28T09:49:15.569202+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/fuzz-path-30s.log"
+}

@@ -1,0 +1,5 @@
+--- FAIL: TestAmbiguous404WritePreservesUnknown (0.00s)
+    semantics_test.go:105: ambiguous proxy 404 was declared nonexecuted
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go/internal/engine	0.003s
+FAIL

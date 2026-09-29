@@ -1,0 +1,11 @@
+{
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "command": [
+    "make",
+    "tooling-test"
+  ],
+  "started_at": "2026-09-28T10:40:23.633488+00:00",
+  "finished_at": "2026-09-28T10:40:24.297977+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/green-fuzz-make-targets.log"
+}

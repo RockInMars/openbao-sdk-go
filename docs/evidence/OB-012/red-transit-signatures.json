@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-timeout=30s",
+    ".",
+    "-run",
+    "TestTransit"
+  ],
+  "started_at": "2026-09-28T09:27:42.872689+00:00",
+  "finished_at": "2026-09-28T09:27:43.585798+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-012/red-transit-signatures.log"
+}

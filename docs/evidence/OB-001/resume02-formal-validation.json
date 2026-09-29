@@ -1,0 +1,11 @@
+{
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "command": [
+    "make",
+    "normal-test"
+  ],
+  "started_at": "2026-09-28T12:05:23.843399+00:00",
+  "finished_at": "2026-09-28T12:05:30.029897+00:00",
+  "exit_code": 2,
+  "log": "docs/evidence/OB-001/resume02-formal-validation.log"
+}

@@ -1,0 +1,14 @@
+{
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-tags=integration",
+    "-run=^$",
+    "./tests/integration"
+  ],
+  "started_at": "2026-09-28T10:42:02.703358+00:00",
+  "finished_at": "2026-09-28T10:42:03.576158+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-016/delivery-integration-source-compile.log"
+}

@@ -1,0 +1,32 @@
+{
+  "source_sha256": "658af59e4318a08c68b96162777d398001cc23890729f4b65414064a2cc9db21",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=1",
+    "-json",
+    "-timeout=120s",
+    ".",
+    "./auth",
+    "./kv",
+    "./pki",
+    "./transit",
+    "./baoerr",
+    "./sensitive",
+    "./diagnostics",
+    "./observe",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/transitutil",
+    "./internal/testenv",
+    "./internal/testutil",
+    "./examples/..."
+  ],
+  "started_at": "2026-09-28T10:33:33.346561+00:00",
+  "finished_at": "2026-09-28T10:33:40.858557+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/own-tests-final.log"
+}

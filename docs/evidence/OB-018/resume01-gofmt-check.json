@@ -1,0 +1,12 @@
+{
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "command": [
+    "python3",
+    "-c",
+    "import pathlib,subprocess,sys; fs=[str(p) for p in pathlib.Path(\".\").rglob(\"*.go\") if \".artifacts\" not in p.parts]; r=subprocess.run([\"gofmt\",\"-l\",*fs],capture_output=True,text=True); print(r.stdout,end=\"\"); print(r.stderr,end=\"\",file=sys.stderr); print(\"Go files checked:\",len(fs)); sys.exit(r.returncode or bool(r.stdout))"
+  ],
+  "started_at": "2026-09-28T11:32:47.137236+00:00",
+  "finished_at": "2026-09-28T11:32:49.189901+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/resume01-gofmt-check.log"
+}

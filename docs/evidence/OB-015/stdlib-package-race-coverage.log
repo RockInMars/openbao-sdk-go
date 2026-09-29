@@ -1,0 +1,10 @@
+ok  	git.example.com/infra/openbao-sdk-go/auth	1.022s	coverage: 86.5% of statements
+ok  	git.example.com/infra/openbao-sdk-go/baoerr	1.015s	coverage: 65.4% of statements
+ok  	git.example.com/infra/openbao-sdk-go/kv	1.022s	coverage: 88.0% of statements
+ok  	git.example.com/infra/openbao-sdk-go/pki	1.024s	coverage: 82.9% of statements
+ok  	git.example.com/infra/openbao-sdk-go/sensitive	1.013s	coverage: 90.9% of statements
+	git.example.com/infra/openbao-sdk-go/internal/pkiutil		coverage: 0.0% of statements
+	git.example.com/infra/openbao-sdk-go/internal/jsondoc		coverage: 0.0% of statements
+	git.example.com/infra/openbao-sdk-go/internal/transitutil		coverage: 0.0% of statements
+ok  	git.example.com/infra/openbao-sdk-go/internal/engine	1.281s	coverage: 52.6% of statements
+ok  	git.example.com/infra/openbao-sdk-go/internal/authn	1.022s	coverage: 72.8% of statements

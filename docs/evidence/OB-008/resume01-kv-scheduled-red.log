@@ -1,0 +1,11 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+--- FAIL: TestKVFutureDeletionStillReadable (0.10s)
+    --- FAIL: TestKVFutureDeletionStillReadable/exact (0.06s)
+        kv_scheduled_deletion_test.go:47: future scheduled deletion rejected a readable version
+    --- FAIL: TestKVFutureDeletionStillReadable/latest (0.04s)
+        kv_scheduled_deletion_test.go:38: future scheduled deletion rejected a readable version
+--- FAIL: TestKVFutureDeletionDoesNotExplainMissingData (0.04s)
+    kv_scheduled_deletion_test.go:78: future schedule incorrectly used as proof of already deleted data
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go	0.257s
+FAIL

@@ -1,0 +1,13 @@
+test_decode_concatenated_go_json_and_reject_truncated_output (test_dependency_check.DependencyCheckTests.test_decode_concatenated_go_json_and_reject_truncated_output) ... ok
+test_error_or_missing_checksum_never_passes (test_dependency_check.DependencyCheckTests.test_error_or_missing_checksum_never_passes) ... ok
+test_go_sum_must_bind_both_direct_records (test_dependency_check.DependencyCheckTests.test_go_sum_must_bind_both_direct_records) ... ok
+test_module_graph_replacements_and_missing_pin_are_rejected (test_dependency_check.DependencyCheckTests.test_module_graph_replacements_and_missing_pin_are_rejected) ... ok
+test_preflight_cannot_inherit_overlay_or_checksum_bypass (test_dependency_check.DependencyCheckTests.test_preflight_cannot_inherit_overlay_or_checksum_bypass) ... ok
+test_records_real_files_but_does_not_claim_checksum_verification (test_dependency_check.DependencyCheckTests.test_records_real_files_but_does_not_claim_checksum_verification) ... ok
+test_root_module_configuration_and_minimum_go_are_not_guessed (test_dependency_check.DependencyCheckTests.test_root_module_configuration_and_minimum_go_are_not_guessed) ... ok
+test_symlink_or_missing_source_is_rejected (test_dependency_check.DependencyCheckTests.test_symlink_or_missing_source_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.006s
+
+OK

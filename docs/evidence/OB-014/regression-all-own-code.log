@@ -1,0 +1,24 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+?   	git.example.com/infra/openbao-sdk-go/transit	[no test files]
+2026/09/28 09:35:52 http: TLS handshake error from 127.0.0.1:40534: remote error: tls: bad certificate
+2026/09/28 09:35:52 http: TLS handshake error from 127.0.0.1:40536: remote error: tls: bad certificate
+--- FAIL: TestReadyScopedProbe (0.02s)
+    diagnostics_client_test.go:61: probe lost identity
+    diagnostics_client_test.go:61: probe lost identity
+2026/09/28 09:35:52 http: TLS handshake error from 127.0.0.1:49468: read tcp 127.0.0.1:33817->127.0.0.1:49468: use of closed network connection
+2026/09/28 09:35:52 http: TLS handshake error from 127.0.0.1:49450: write tcp 127.0.0.1:33817->127.0.0.1:49450: use of closed network connection
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go	1.557s
+ok  	git.example.com/infra/openbao-sdk-go/auth	1.013s
+ok  	git.example.com/infra/openbao-sdk-go/kv	1.011s
+?   	git.example.com/infra/openbao-sdk-go/diagnostics	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/observe	[no test files]
+ok  	git.example.com/infra/openbao-sdk-go/pki	1.020s
+?   	git.example.com/infra/openbao-sdk-go/internal/jsondoc	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/internal/pkiutil	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/internal/transitutil	[no test files]
+ok  	git.example.com/infra/openbao-sdk-go/baoerr	1.009s
+ok  	git.example.com/infra/openbao-sdk-go/sensitive	1.008s
+ok  	git.example.com/infra/openbao-sdk-go/internal/engine	1.266s
+ok  	git.example.com/infra/openbao-sdk-go/internal/authn	1.011s
+FAIL

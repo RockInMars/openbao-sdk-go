@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    ".",
+    "-run",
+    "Test(ClusterHealth|Ready|Observer)"
+  ],
+  "started_at": "2026-09-28T09:35:26.197654+00:00",
+  "finished_at": "2026-09-28T09:35:27.001325+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-014/red-diagnostics.log"
+}

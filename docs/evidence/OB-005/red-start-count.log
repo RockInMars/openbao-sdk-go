@@ -1,0 +1,8 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+--- FAIL: TestStartSingleFlight (0.00s)
+    client_test.go:133: concurrent Start duplicated
+2026/09/28 09:17:53 http: TLS handshake error from 127.0.0.1:36148: remote error: tls: bad certificate
+2026/09/28 09:17:53 http: TLS handshake error from 127.0.0.1:36162: remote error: tls: bad certificate
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go	0.185s
+FAIL

@@ -1,0 +1,17 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+# git.example.com/infra/openbao-sdk-go/tests/integration_test [git.example.com/infra/openbao-sdk-go/tests/integration.test]
+tests/integration/runtime_test.go:48:39: undefined: sensitive.New
+tests/integration/runtime_test.go:49:119: undefined: sensitive.New
+tests/integration/runtime_test.go:51:22: undefined: sensitive.New
+tests/integration/runtime_test.go:121:40: undefined: baoerr.VersionConflict
+tests/integration/runtime_test.go:145:75: undefined: baoerr.VersionUnavailable
+tests/integration/runtime_test.go:174:61: undefined: baoerr.InvalidArgument
+tests/integration/runtime_test.go:177:81: undefined: baoerr.PermissionDenied
+tests/integration/runtime_test.go:198:68: too many arguments in call to pki.ValidateBundle
+	have (pki.Certificate, sensitive.Bytes, pki.VerifyPolicy)
+	want (pki.IssuedCertificate, pki.VerifyPolicy)
+tests/integration/runtime_test.go:237:24: undefined: sensitive.New
+tests/integration/runtime_test.go:243:139: undefined: baoerr.PermissionDenied
+tests/integration/runtime_test.go:243:139: too many errors
+FAIL	git.example.com/infra/openbao-sdk-go/tests/integration [build failed]
+FAIL

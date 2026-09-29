@@ -1,0 +1,6 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+--- FAIL: TestRunStopsAndRestartsCanceledAttempt (2.00s)
+    lifecycle_test.go:59: authentication loop did not create timer
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go/internal/authn	2.011s
+FAIL

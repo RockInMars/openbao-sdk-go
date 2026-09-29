@@ -1,0 +1,5 @@
+{
+	"Path": "github.com/openbao/openbao/api/v2",
+	"Version": "v2.7.0",
+	"Error": "github.com/openbao/openbao/api/v2@v2.7.0: Get \"https://proxy.golang.org/github.com/openbao/openbao/api/v2/@v/v2.7.0.info\": dial tcp: lookup proxy.golang.org on 168.63.129.16:53: read udp 172.26.39.235:41349-\u003e168.63.129.16:53: read: connection refused"
+}

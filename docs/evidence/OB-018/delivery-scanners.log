@@ -1,0 +1,4 @@
+python3 scripts/security-test.py
+govulncheck: exit 1
+gitleaks: exit 1
+make: *** [Makefile:28: security-test] Error 1

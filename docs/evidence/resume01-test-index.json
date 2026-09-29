@@ -1,0 +1,2561 @@
+{
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "recorded_at": "2026-09-28T11:32:23.851721+00:00",
+  "counting_note": "Direct 64 tests overlap with 118 contract tests; do not add. Fuzz seed execution is not timed fuzzing. Package-level no-test markers are not skipped test cases.",
+  "runs": [
+    {
+      "evidence_class": "DIRECT_OWN_PACKAGES",
+      "metadata": "docs/evidence/OB-018/resume01-final-direct-tests.json",
+      "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+      "exit_code": 0,
+      "top_level_tests_passed": 64,
+      "subtests_and_seed_cases_passed": 48,
+      "fuzz_seed_functions_passed": 6,
+      "test_failures": 0,
+      "test_skips": 0,
+      "packages_without_tests": [
+        "git.example.com/infra/openbao-sdk-go/diagnostics",
+        "git.example.com/infra/openbao-sdk-go/observe",
+        "git.example.com/infra/openbao-sdk-go/transit"
+      ],
+      "tests": [
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestSecretIDGenerationAndUse",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestStaticTokenSnapshots",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestTokenFileAtomicReplacement",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestTokenFileValidation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/baoerr",
+          "name": "TestErrorClassificationAndRedaction",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/baoerr",
+          "name": "TestNilUnknownAndAllCodes",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowGenerationMismatch",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowRecovery",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowRejectsNilStored",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowUnknownDoesNotReissue",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowUnknownKVReconciles",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestRegistrationRequiresBothMaterials",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAppRoleLoginContract",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAppRoleRejectEmptyOrInvalidLease",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAuthCapacityNotStarved",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAuthStateAfterCanceledProvider",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAuthenticationContextBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestBusiness403DoesNotLoginOrReplay",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestExpiredReplyAndLatePublication",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestExpiryAndShutdown",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestExternalProviderFailureBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestRenewSingleFlight",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestRenewUsesLatestTTL",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestRunStopsAndRestartsCanceledAttempt",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestSecretProviderPanicAndInvalidGeneration",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestSingleUseSecretID",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "Test404RejectionRequiresAPIProof",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestAmbiguous404WritePreservesUnknown",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestCanceledBeforeAndAfterSend",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestDecodeAndIdentifierBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestMalformedDeletedMetadata",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestNoWriteReplayHeader",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestPathValidation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestReadRetryBudget",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestResponseBoundAndSafeError",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestRetryAfterLimitsAndCancellation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestSingleAttemptIssue",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestTransportSafetyConstruction",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "TestJSONPreservesValidUnicodeEscapes",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "TestJSONRejectsUnpairedSurrogateEscapes",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "TestStrictTree",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "FuzzDecode",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "FuzzDecode/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "FuzzDecode/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "TestDecodeStartsAtFirstBlock",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestCertificateMaterialBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/certificate-first",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/certificate-middle",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/csr",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/private-key",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPrivateKeyMaterialBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestSerialBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationBinaryDigest",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationEnvironmentInput",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationOptionsFailClosed",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationPolicyIsolation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "TestPublicNormalizationAndSignatureProfiles",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "TestPublicRejectsSkippedMalformedPEM",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "TestStrictWrappedEncoding",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#4",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#5",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#6",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentConstructAndDecode",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentExactNumber",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentIndependentCopy",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentRejectsLossyUnicode",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "TestPKICSRSignature",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "TestPKIMetadataAndMalformedPolicy",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "TestPKITrustAndLifetime",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/10",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/11",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/12",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/13",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/14",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/15",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/16",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/17",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/18",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/19",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/4",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/5",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/6",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/7",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/8",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/9",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveCopyAndZero",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveFormatting",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "evidence_class": "CONTRACT_WITH_TEST_SENDER",
+      "metadata": "docs/evidence/OB-018/resume01-final-contract-tests.json",
+      "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+      "exit_code": 0,
+      "top_level_tests_passed": 118,
+      "subtests_and_seed_cases_passed": 66,
+      "fuzz_seed_functions_passed": 6,
+      "test_failures": 0,
+      "test_skips": 0,
+      "packages_without_tests": [
+        "git.example.com/infra/openbao-sdk-go/diagnostics",
+        "git.example.com/infra/openbao-sdk-go/examples/kv-versioned",
+        "git.example.com/infra/openbao-sdk-go/examples/pki-issue-store",
+        "git.example.com/infra/openbao-sdk-go/examples/service-bootstrap",
+        "git.example.com/infra/openbao-sdk-go/examples/transit-sign",
+        "git.example.com/infra/openbao-sdk-go/internal/testutil",
+        "git.example.com/infra/openbao-sdk-go/observe",
+        "git.example.com/infra/openbao-sdk-go/transit"
+      ],
+      "tests": [
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAcceptedThenDisconnected",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAcceptedThenDisconnected/KV_CREATE",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAcceptedThenDisconnected/PKI_ISSUE",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAcceptedThenDisconnected/TRANSIT_SIGN",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAmbiguousWrite4xxRetainsUnknown",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAmbiguousWrite4xxRetainsUnknown/Bad_Request",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAmbiguousWrite4xxRetainsUnknown/Forbidden",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAmbiguousWrite4xxRetainsUnknown/Unauthorized",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestCloseCancelsHealthBeforeStart",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestCloseDrainAndCancel",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestCloseDuringWrite",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics/200",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics/429",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics/501",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics/503",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestConfigDefaults",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestConfigEnvironmentIgnored",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestCrossNamespaceConcurrency",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestExplicitEmptyCAFileIsNotSystemTrust",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVCASConcurrentWinner",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVCASConflict",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVCreateCASZero",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVDeleteExactVersions",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVDeletedVersion",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVFutureDeletionDoesNotExplainMissingData",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVFutureDeletionStillReadable",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVFutureDeletionStillReadable/exact",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVFutureDeletionStillReadable/latest",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVList404",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVMetadataIsNotVersionHistory",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVReadExactVersion",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVReadRefBinding",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestLimitsRejectIntegerOverflow",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestLoopbackTestConstructor",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestNamespaceExplicit",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestNewNoNetwork",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestObserverRedaction",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKICSRPublicKeyMatch",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIIssueContract",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIPrivateKeyMismatch",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIReadMultiPEMAndChain",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIRevokeReceipt",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIZeroTTLRejected",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPublicKeyDecodeAttemptsNotHTTPStatus",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPublicRuntimeHasNoAdminEscape",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPublicTypeBoundary",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestReadyScopedProbe",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestStartAfterLifetimeCancellationDoesNotReportReady",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestStartResultBelongsToAttempt",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestStartSingleFlight",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSAndPathValidation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSFileRejectsFIFOWithoutBlocking",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSHostAndCARejected",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSRejectsSkippedMalformedPEM",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSRejectsSkippedMalformedPEM/ca",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSRejectsSkippedMalformedPEM/client-cert",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSRejectsSkippedMalformedPEM/client-key",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSStrictPEMPreservesMutualTLS",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitCipherContext",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitCipherVersion",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitHMAC",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitNoKeyCreation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitPublicKeyFormats",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitSignProfiles",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitSignProfiles/ecdsa-p256-sha256-asn1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitSignProfiles/ed25519-message",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitSignProfiles/rsa-pss-sha256-saltlen-hash",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitVerifyFalse",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitVersionPin",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestVoidErrorEnvelope",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestSecretIDGenerationAndUse",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestStaticTokenSnapshots",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestTokenFileAtomicReplacement",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestTokenFileValidation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/baoerr",
+          "name": "TestErrorClassificationAndRedaction",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/baoerr",
+          "name": "TestNilUnknownAndAllCodes",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowGenerationMismatch",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowRecovery",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowRejectsNilStored",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowUnknownDoesNotReissue",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowUnknownKVReconciles",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestRegistrationRequiresBothMaterials",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/internal/bootstrap",
+          "name": "TestExplicitExampleConfiguration",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAppRoleLoginContract",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAppRoleRejectEmptyOrInvalidLease",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAuthCapacityNotStarved",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAuthStateAfterCanceledProvider",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAuthenticationContextBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestBusiness403DoesNotLoginOrReplay",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestExpiredReplyAndLatePublication",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestExpiryAndShutdown",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestExternalProviderFailureBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestRenewSingleFlight",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestRenewUsesLatestTTL",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestRunStopsAndRestartsCanceledAttempt",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestSecretProviderPanicAndInvalidGeneration",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestSingleUseSecretID",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "Test404RejectionRequiresAPIProof",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestAmbiguous404WritePreservesUnknown",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestCanceledBeforeAndAfterSend",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestDecodeAndIdentifierBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestMalformedDeletedMetadata",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestNoWriteReplayHeader",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestPathValidation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestReadRetryBudget",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestResponseBoundAndSafeError",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestRetryAfterLimitsAndCancellation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestSingleAttemptIssue",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestTransportSafetyConstruction",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "TestJSONPreservesValidUnicodeEscapes",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "TestJSONRejectsUnpairedSurrogateEscapes",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "TestStrictTree",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "FuzzDecode",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "FuzzDecode/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "FuzzDecode/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "TestDecodeStartsAtFirstBlock",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestCertificateMaterialBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/certificate-first",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/certificate-middle",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/csr",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/private-key",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPrivateKeyMaterialBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestSerialBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationBinaryDigest",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationEnvironmentInput",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationOptionsFailClosed",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationPolicyIsolation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "TestPublicNormalizationAndSignatureProfiles",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "TestPublicRejectsSkippedMalformedPEM",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "TestStrictWrappedEncoding",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#4",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#5",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#6",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentConstructAndDecode",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentExactNumber",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentIndependentCopy",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentRejectsLossyUnicode",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "TestPKICSRSignature",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "TestPKIMetadataAndMalformedPolicy",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "TestPKITrustAndLifetime",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/10",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/11",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/12",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/13",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/14",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/15",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/16",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/17",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/18",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/19",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/4",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/5",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/6",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/7",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/8",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/9",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveCopyAndZero",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveFormatting",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "evidence_class": "LEAF_COVERAGE_WITH_TEST_SENDER",
+      "metadata": "docs/evidence/OB-018/resume01-leaf-instrumented-contracts.json",
+      "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+      "exit_code": 0,
+      "top_level_tests_passed": 118,
+      "subtests_and_seed_cases_passed": 66,
+      "fuzz_seed_functions_passed": 6,
+      "test_failures": 0,
+      "test_skips": 0,
+      "packages_without_tests": [
+        "git.example.com/infra/openbao-sdk-go/diagnostics",
+        "git.example.com/infra/openbao-sdk-go/examples/kv-versioned",
+        "git.example.com/infra/openbao-sdk-go/examples/pki-issue-store",
+        "git.example.com/infra/openbao-sdk-go/examples/service-bootstrap",
+        "git.example.com/infra/openbao-sdk-go/examples/transit-sign",
+        "git.example.com/infra/openbao-sdk-go/internal/testutil",
+        "git.example.com/infra/openbao-sdk-go/observe",
+        "git.example.com/infra/openbao-sdk-go/transit"
+      ],
+      "tests": [
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAcceptedThenDisconnected",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAcceptedThenDisconnected/KV_CREATE",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAcceptedThenDisconnected/PKI_ISSUE",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAcceptedThenDisconnected/TRANSIT_SIGN",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAmbiguousWrite4xxRetainsUnknown",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAmbiguousWrite4xxRetainsUnknown/Bad_Request",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAmbiguousWrite4xxRetainsUnknown/Forbidden",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestAmbiguousWrite4xxRetainsUnknown/Unauthorized",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestCloseCancelsHealthBeforeStart",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestCloseDrainAndCancel",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestCloseDuringWrite",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics/200",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics/429",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics/501",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestClusterHealthSemantics/503",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestConfigDefaults",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestConfigEnvironmentIgnored",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestCrossNamespaceConcurrency",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestExplicitEmptyCAFileIsNotSystemTrust",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVCASConcurrentWinner",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVCASConflict",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVCreateCASZero",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVDeleteExactVersions",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVDeletedVersion",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVFutureDeletionDoesNotExplainMissingData",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVFutureDeletionStillReadable",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVFutureDeletionStillReadable/exact",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVFutureDeletionStillReadable/latest",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVList404",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVMetadataIsNotVersionHistory",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVReadExactVersion",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestKVReadRefBinding",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestLimitsRejectIntegerOverflow",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestLoopbackTestConstructor",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestNamespaceExplicit",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestNewNoNetwork",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestObserverRedaction",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKICSRPublicKeyMatch",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIIssueContract",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIPrivateKeyMismatch",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIReadMultiPEMAndChain",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIRevokeReceipt",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPKIZeroTTLRejected",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPublicKeyDecodeAttemptsNotHTTPStatus",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPublicRuntimeHasNoAdminEscape",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestPublicTypeBoundary",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestReadyScopedProbe",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestStartAfterLifetimeCancellationDoesNotReportReady",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestStartResultBelongsToAttempt",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestStartSingleFlight",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSAndPathValidation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSFileRejectsFIFOWithoutBlocking",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSHostAndCARejected",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSRejectsSkippedMalformedPEM",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSRejectsSkippedMalformedPEM/ca",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSRejectsSkippedMalformedPEM/client-cert",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSRejectsSkippedMalformedPEM/client-key",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTLSStrictPEMPreservesMutualTLS",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitCipherContext",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitCipherVersion",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitHMAC",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitNoKeyCreation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitPublicKeyFormats",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitSignProfiles",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitSignProfiles/ecdsa-p256-sha256-asn1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitSignProfiles/ed25519-message",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitSignProfiles/rsa-pss-sha256-saltlen-hash",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitVerifyFalse",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestTransitVersionPin",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go",
+          "name": "TestVoidErrorEnvelope",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestSecretIDGenerationAndUse",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestStaticTokenSnapshots",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestTokenFileAtomicReplacement",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/auth",
+          "name": "TestTokenFileValidation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/baoerr",
+          "name": "TestErrorClassificationAndRedaction",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/baoerr",
+          "name": "TestNilUnknownAndAllCodes",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowGenerationMismatch",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowRecovery",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowRejectsNilStored",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowUnknownDoesNotReissue",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestCredentialWorkflowUnknownKVReconciles",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/credentialworkflow",
+          "name": "TestRegistrationRequiresBothMaterials",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/examples/internal/bootstrap",
+          "name": "TestExplicitExampleConfiguration",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAppRoleLoginContract",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAppRoleRejectEmptyOrInvalidLease",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAuthCapacityNotStarved",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAuthStateAfterCanceledProvider",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestAuthenticationContextBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestBusiness403DoesNotLoginOrReplay",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestExpiredReplyAndLatePublication",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestExpiryAndShutdown",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestExternalProviderFailureBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestRenewSingleFlight",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestRenewUsesLatestTTL",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestRunStopsAndRestartsCanceledAttempt",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestSecretProviderPanicAndInvalidGeneration",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/authn",
+          "name": "TestSingleUseSecretID",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "FuzzPath/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "Test404RejectionRequiresAPIProof",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestAmbiguous404WritePreservesUnknown",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestCanceledBeforeAndAfterSend",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestDecodeAndIdentifierBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestMalformedDeletedMetadata",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestNoWriteReplayHeader",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestPathValidation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestReadRetryBudget",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestResponseBoundAndSafeError",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestRetryAfterLimitsAndCancellation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestSingleAttemptIssue",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/engine",
+          "name": "TestTransportSafetyConstruction",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "FuzzJSON/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "TestJSONPreservesValidUnicodeEscapes",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "TestJSONRejectsUnpairedSurrogateEscapes",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/jsondoc",
+          "name": "TestStrictTree",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "FuzzDecode",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "FuzzDecode/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "FuzzDecode/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pemutil",
+          "name": "TestDecodeStartsAtFirstBlock",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestCertificateMaterialBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/certificate-first",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/certificate-middle",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/csr",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPEMRejectsSkippedMalformedBlocks/private-key",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestPrivateKeyMaterialBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/pkiutil",
+          "name": "TestSerialBoundaries",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationBinaryDigest",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationEnvironmentInput",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationOptionsFailClosed",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/testenv",
+          "name": "TestIntegrationPolicyIsolation",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "FuzzEncoding/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "TestPublicNormalizationAndSignatureProfiles",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "TestPublicRejectsSkippedMalformedPEM",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/internal/transitutil",
+          "name": "TestStrictWrappedEncoding",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#4",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#5",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "FuzzDocument/seed#6",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentConstructAndDecode",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentExactNumber",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentIndependentCopy",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/kv",
+          "name": "TestDocumentRejectsLossyUnicode",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR/seed#0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR/seed#1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "FuzzPKICSR/seed#2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "TestPKICSRSignature",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "TestPKIMetadataAndMalformedPolicy",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/pki",
+          "name": "TestPKITrustAndLifetime",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/0",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/1",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/10",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/11",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/12",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/13",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/14",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/15",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/16",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/17",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/18",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/19",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/2",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/3",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/4",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/5",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/6",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/7",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/8",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveConcurrentRead/9",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveCopyAndZero",
+          "status": "pass"
+        },
+        {
+          "package": "git.example.com/infra/openbao-sdk-go/sensitive",
+          "name": "TestSensitiveFormatting",
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

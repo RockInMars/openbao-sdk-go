@@ -1,0 +1,18 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "-timeout=20s",
+    "-v",
+    "./internal/engine",
+    "./baoerr"
+  ],
+  "started_at": "2026-09-28T09:06:21.400060+00:00",
+  "finished_at": "2026-09-28T09:06:41.884753+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-004/executor-diagnosis.log"
+}

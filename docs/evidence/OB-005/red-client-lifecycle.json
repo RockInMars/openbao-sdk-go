@@ -1,0 +1,14 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "."
+  ],
+  "started_at": "2026-09-28T09:16:02.361250+00:00",
+  "finished_at": "2026-09-28T09:16:02.450896+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-005/red-client-lifecycle.log"
+}

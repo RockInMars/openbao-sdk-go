@@ -1,0 +1,7 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+--- FAIL: TestReadyScopedProbe (0.01s)
+    diagnostics_client_test.go:61: probe lost identity
+    diagnostics_client_test.go:61: probe lost identity
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go	0.090s
+FAIL

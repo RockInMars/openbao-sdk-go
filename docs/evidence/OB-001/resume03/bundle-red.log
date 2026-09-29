@@ -1,0 +1,173 @@
+test_archive_corruption_and_wrong_expected_sha_are_rejected (test_dependency_bundle.DependencyBundleTests.test_archive_corruption_and_wrong_expected_sha_are_rejected) ... FAIL
+test_archive_roundtrip_is_integrity_only_not_official_verification (test_dependency_bundle.DependencyBundleTests.test_archive_roundtrip_is_integrity_only_not_official_verification) ... FAIL
+test_archive_symlink_traversal_and_duplicate_are_rejected (test_dependency_bundle.DependencyBundleTests.test_archive_symlink_traversal_and_duplicate_are_rejected) ... FAIL
+test_bundle_paths_cannot_escape_or_carry_code_credentials_or_ziphash (test_dependency_bundle.DependencyBundleTests.test_bundle_paths_cannot_escape_or_carry_code_credentials_or_ziphash) ... FAIL
+test_duplicate_json_keys_are_rejected (test_dependency_bundle.DependencyBundleTests.test_duplicate_json_keys_are_rejected) ... FAIL
+test_environment_uses_fresh_caches_and_no_identity_or_bypass (test_dependency_bundle.DependencyBundleTests.test_environment_uses_fresh_caches_and_no_identity_or_bypass) ... FAIL
+test_existing_output_is_not_overwritten (test_dependency_bundle.DependencyBundleTests.test_existing_output_is_not_overwritten) ... FAIL
+test_failed_export_leaves_no_bundle_or_modified_sdk (test_dependency_bundle.DependencyBundleTests.test_failed_export_leaves_no_bundle_or_modified_sdk) ... FAIL
+test_input_fingerprint_detects_code_and_module_changes (test_dependency_bundle.DependencyBundleTests.test_input_fingerprint_detects_code_and_module_changes) ... FAIL
+test_payload_limits_are_enforced_before_extraction (test_dependency_bundle.DependencyBundleTests.test_payload_limits_are_enforced_before_extraction) ... FAIL
+test_proxy_must_be_one_https_origin_without_credentials_or_fallback (test_dependency_bundle.DependencyBundleTests.test_proxy_must_be_one_https_origin_without_credentials_or_fallback) ... FAIL
+test_real_go_rejects_unsigned_synthetic_sumdb_without_network_fallback (test_dependency_bundle.DependencyBundleTests.test_real_go_rejects_unsigned_synthetic_sumdb_without_network_fallback) ... FAIL
+test_source_snapshot_does_not_copy_secrets_nested_modules_or_seed_sums (test_dependency_bundle.DependencyBundleTests.test_source_snapshot_does_not_copy_secrets_nested_modules_or_seed_sums) ... FAIL
+test_source_symlink_is_rejected_not_followed (test_dependency_bundle.DependencyBundleTests.test_source_symlink_is_rejected_not_followed) ... FAIL
+
+======================================================================
+FAIL: test_archive_corruption_and_wrong_expected_sha_are_rejected (test_dependency_bundle.DependencyBundleTests.test_archive_corruption_and_wrong_expected_sha_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 143, in test_archive_corruption_and_wrong_expected_sha_are_rejected
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_archive_roundtrip_is_integrity_only_not_official_verification (test_dependency_bundle.DependencyBundleTests.test_archive_roundtrip_is_integrity_only_not_official_verification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 130, in test_archive_roundtrip_is_integrity_only_not_official_verification
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_archive_symlink_traversal_and_duplicate_are_rejected (test_dependency_bundle.DependencyBundleTests.test_archive_symlink_traversal_and_duplicate_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 155, in test_archive_symlink_traversal_and_duplicate_are_rejected
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_bundle_paths_cannot_escape_or_carry_code_credentials_or_ziphash (test_dependency_bundle.DependencyBundleTests.test_bundle_paths_cannot_escape_or_carry_code_credentials_or_ziphash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 113, in test_bundle_paths_cannot_escape_or_carry_code_credentials_or_ziphash
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_duplicate_json_keys_are_rejected (test_dependency_bundle.DependencyBundleTests.test_duplicate_json_keys_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 125, in test_duplicate_json_keys_are_rejected
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_environment_uses_fresh_caches_and_no_identity_or_bypass (test_dependency_bundle.DependencyBundleTests.test_environment_uses_fresh_caches_and_no_identity_or_bypass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 56, in test_environment_uses_fresh_caches_and_no_identity_or_bypass
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_existing_output_is_not_overwritten (test_dependency_bundle.DependencyBundleTests.test_existing_output_is_not_overwritten)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 171, in test_existing_output_is_not_overwritten
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_failed_export_leaves_no_bundle_or_modified_sdk (test_dependency_bundle.DependencyBundleTests.test_failed_export_leaves_no_bundle_or_modified_sdk)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 188, in test_failed_export_leaves_no_bundle_or_modified_sdk
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_input_fingerprint_detects_code_and_module_changes (test_dependency_bundle.DependencyBundleTests.test_input_fingerprint_detects_code_and_module_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 103, in test_input_fingerprint_detects_code_and_module_changes
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_payload_limits_are_enforced_before_extraction (test_dependency_bundle.DependencyBundleTests.test_payload_limits_are_enforced_before_extraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 179, in test_payload_limits_are_enforced_before_extraction
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_proxy_must_be_one_https_origin_without_credentials_or_fallback (test_dependency_bundle.DependencyBundleTests.test_proxy_must_be_one_https_origin_without_credentials_or_fallback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 74, in test_proxy_must_be_one_https_origin_without_credentials_or_fallback
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_real_go_rejects_unsigned_synthetic_sumdb_without_network_fallback (test_dependency_bundle.DependencyBundleTests.test_real_go_rejects_unsigned_synthetic_sumdb_without_network_fallback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 200, in test_real_go_rejects_unsigned_synthetic_sumdb_without_network_fallback
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_source_snapshot_does_not_copy_secrets_nested_modules_or_seed_sums (test_dependency_bundle.DependencyBundleTests.test_source_snapshot_does_not_copy_secrets_nested_modules_or_seed_sums)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 83, in test_source_snapshot_does_not_copy_secrets_nested_modules_or_seed_sums
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+======================================================================
+FAIL: test_source_symlink_is_rejected_not_followed (test_dependency_bundle.DependencyBundleTests.test_source_symlink_is_rejected_not_followed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 95, in test_source_symlink_is_rejected_not_followed
+    m = self.load()
+  File "/mnt/data/openbao-r3/openbao-sdk-go/scripts/tests/test_dependency_bundle.py", line 20, in load
+    self.assertTrue(SCRIPT.is_file(), 'OB-001 is missing the isolated public-dependency handoff tool')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : OB-001 is missing the isolated public-dependency handoff tool
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.004s
+
+FAILED (failures=14)

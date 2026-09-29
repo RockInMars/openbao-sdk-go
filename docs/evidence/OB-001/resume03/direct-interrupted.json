@@ -1,0 +1,7 @@
+{
+  "status": "INTERRUPTED",
+  "exit_code": null,
+  "reason": "container execution tool timed out before runner recorded exit; no surviving go/test processes observed",
+  "log": "docs/evidence/OB-001/resume03/direct-interrupted.log",
+  "recorded_at": "2026-09-28T15:41:58.611897+00:00"
+}

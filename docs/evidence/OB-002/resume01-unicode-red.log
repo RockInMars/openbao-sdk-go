@@ -1,0 +1,9 @@
+--- FAIL: TestJSONRejectsUnpairedSurrogateEscapes (0.00s)
+    unicode_regression_test.go:15: unpaired surrogate accepted and would be replaced during decoding
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go/internal/jsondoc	0.099s
+--- FAIL: TestDocumentRejectsLossyUnicode (0.00s)
+    unicode_regression_test.go:9: document accepted a Unicode escape that cannot be decoded losslessly
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go/kv	0.090s
+FAIL

@@ -1,0 +1,8 @@
+{
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "status": "INTERRUPTED",
+  "exit_code": null,
+  "reason": "container command deadline of 45s terminated run during initial build plus fuzz; no completion exit was returned; no child remains",
+  "log": "docs/evidence/OB-015/resume02-fuzz-path-interrupted.log",
+  "recorded_at": "2026-09-28T12:09:36.325247+00:00"
+}

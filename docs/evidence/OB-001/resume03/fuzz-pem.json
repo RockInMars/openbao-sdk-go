@@ -1,0 +1,7 @@
+{
+  "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+  "exit_code": 0,
+  "requested_fuzz_seconds": 30,
+  "log": "docs/evidence/OB-001/resume03/fuzz-pem.log",
+  "recorded_at": "2026-09-28T15:53:15.399320+00:00"
+}

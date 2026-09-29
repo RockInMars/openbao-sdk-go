@@ -1,0 +1,7 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+?   	git.example.com/infra/openbao-sdk-go/examples/kv-versioned	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/examples/pki-issue-store	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/examples/service-bootstrap	[no test files]
+?   	git.example.com/infra/openbao-sdk-go/examples/transit-sign	[no test files]
+ok  	git.example.com/infra/openbao-sdk-go/examples/credentialworkflow	1.009s
+ok  	git.example.com/infra/openbao-sdk-go/examples/internal/bootstrap	1.012s

@@ -1,0 +1,18 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+# git.example.com/infra/openbao-sdk-go/pki [git.example.com/infra/openbao-sdk-go/pki.test]
+pki/validate_test.go:17:10: undefined: ValidateBundle
+pki/validate_test.go:30:11: undefined: ValidateBundle
+pki/validate_test.go:36:10: undefined: ValidateBundle
+pki/validate_test.go:42:10: undefined: ValidateCSR
+pki/validate_test.go:48:10: undefined: ValidateCSR
+pki/validate_test.go:51:10: undefined: ValidateCSR
+pki/validate_test.go:59:8: undefined: ValidateCSR
+# git.example.com/infra/openbao-sdk-go [git.example.com/infra/openbao-sdk-go.test]
+./pki_client_test.go:39:12: c.PKI undefined (type *Client has no field or method PKI)
+./pki_client_test.go:54:12: c.PKI undefined (type *Client has no field or method PKI)
+./pki_client_test.go:71:12: c.PKI undefined (type *Client has no field or method PKI)
+./pki_client_test.go:90:12: c.PKI undefined (type *Client has no field or method PKI)
+./pki_client_test.go:109:12: c.PKI undefined (type *Client has no field or method PKI)
+FAIL	git.example.com/infra/openbao-sdk-go [build failed]
+FAIL	git.example.com/infra/openbao-sdk-go/pki [build failed]
+FAIL

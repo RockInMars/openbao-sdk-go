@@ -1,0 +1,3 @@
+# Use all built-in rules. No broad allowlist for SDK tests or examples.
+[extend]
+useDefault = true

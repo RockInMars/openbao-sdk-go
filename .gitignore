@@ -1,0 +1,12 @@
+.artifacts/
+coverage.out
+*.test
+.env
+.env.*
+!*.example
+*.key
+*.pem
+!tests/testdata/public-*.pem
+__pycache__/
+.tools/
+.pytest_cache/

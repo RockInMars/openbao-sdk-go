@@ -1,0 +1,17 @@
+{
+  "source_sha256": "e3c585944a2c63a2e8b1b5dd3d1133d13ff14ed014a167839a9786ea7d79f000",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "test",
+    "-run",
+    "TestAmbiguous404WritePreservesUnknown",
+    "-count=1",
+    "./internal/engine"
+  ],
+  "started_at": "2026-09-28T10:24:04.228628+00:00",
+  "finished_at": "2026-09-28T10:24:04.733634+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-018/red-404-write-effect.log"
+}

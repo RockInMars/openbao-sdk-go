@@ -1,0 +1,5 @@
+# git.example.com/infra/openbao-sdk-go/tests/dependency
+tests/dependency/dependency_test.go:8:2: missing go.sum entry for module providing package github.com/openbao/openbao/api/v2 (imported by git.example.com/infra/openbao-sdk-go/tests/dependency); to add:
+	go get -t git.example.com/infra/openbao-sdk-go/tests/dependency
+FAIL	git.example.com/infra/openbao-sdk-go/tests/dependency [setup failed]
+FAIL

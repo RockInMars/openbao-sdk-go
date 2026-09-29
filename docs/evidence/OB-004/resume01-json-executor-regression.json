@@ -1,0 +1,16 @@
+{
+  "source_sha256": "6d529a1bed38ca505c2a3b2e0b2be09e270d854d59a595de6758bd30dec0d4f2",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "./internal/engine"
+  ],
+  "started_at": "2026-09-28T11:18:49.128629+00:00",
+  "finished_at": "2026-09-28T11:18:52.960350+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-004/resume01-json-executor-regression.log"
+}

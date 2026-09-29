@@ -1,0 +1,4 @@
+SUPPLEMENTAL_SHARED_MODULE_CONSUMER_CONTRACTS; NOT independent module/build/publication evidence
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+ok  	git.example.com/infra/openbao-sdk-go/.artifacts/consumer-contract-e7i9o8mf/reader	1.179s
+ok  	git.example.com/infra/openbao-sdk-go/.artifacts/consumer-contract-e7i9o8mf/signer	1.187s

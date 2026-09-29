@@ -1,0 +1,30 @@
+{
+  "status": "INTERRUPTED",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=1",
+    "-json",
+    "-timeout=120s",
+    ".",
+    "./auth",
+    "./kv",
+    "./pki",
+    "./transit",
+    "./baoerr",
+    "./sensitive",
+    "./diagnostics",
+    "./observe",
+    "./internal/engine",
+    "./internal/authn",
+    "./internal/jsondoc",
+    "./internal/pkiutil",
+    "./internal/transitutil",
+    "./internal/testenv",
+    "./internal/testutil",
+    "./examples/..."
+  ],
+  "reason": "Tool wall-clock limit during initial cold compilation; no test PASS claimed. No exit code fabricated.",
+  "recorded_at": "2026-09-28T11:03:24.397800+00:00"
+}

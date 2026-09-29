@@ -1,0 +1,16 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "-coverprofile=.artifacts/providers-coverage.out",
+    "./auth"
+  ],
+  "started_at": "2026-09-28T09:11:45.830906+00:00",
+  "finished_at": "2026-09-28T09:11:47.152103+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-005/green-providers.log"
+}

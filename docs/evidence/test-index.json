@@ -1,0 +1,801 @@
+{
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "contract_run": {
+    "top_level_test_functions": 106,
+    "subcases_including_fuzz_seeds": 50,
+    "fuzz_seed_functions": 5,
+    "failed_events": 0,
+    "skipped_tests": 0,
+    "compile_only_packages": 8,
+    "evidence_log": "docs/evidence/OB-018/delivery-own-contracts.log"
+  },
+  "direct_run": {
+    "top_level_test_functions": 57,
+    "subcases_including_fuzz_seeds": 37,
+    "fuzz_seed_functions": 5,
+    "failed_events": 0,
+    "skipped_tests": 0,
+    "compile_only_packages": 0,
+    "evidence_log": "docs/evidence/OB-018/delivery-direct-own-tests.log"
+  },
+  "overlap_warning": "57个直接测试是106个补充测试中的重叠集合，不能相加；子用例和fuzz种子也不当作独立顶层测试数。",
+  "tests": [
+    {
+      "name": "FuzzDocument",
+      "files": [
+        "kv/document_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "FuzzEncoding",
+      "files": [
+        "internal/transitutil/encoding_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "FuzzJSON",
+      "files": [
+        "internal/jsondoc/json_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "FuzzPKICSR",
+      "files": [
+        "pki/validate_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "FuzzPath",
+      "files": [
+        "internal/engine/path_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "Test404RejectionRequiresAPIProof",
+      "files": [
+        "internal/engine/semantics_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestAcceptedThenDisconnected",
+      "files": [
+        "hardening_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestAmbiguous404WritePreservesUnknown",
+      "files": [
+        "internal/engine/semantics_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestAmbiguousWrite4xxRetainsUnknown",
+      "files": [
+        "review_fixes_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestAppRoleLoginContract",
+      "files": [
+        "internal/authn/manager_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestAppRoleRejectEmptyOrInvalidLease",
+      "files": [
+        "internal/authn/manager_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestAuthCapacityNotStarved",
+      "files": [
+        "internal/authn/lifecycle_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestAuthStateAfterCanceledProvider",
+      "files": [
+        "internal/authn/lifecycle_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestAuthenticationContextBoundaries",
+      "files": [
+        "internal/authn/boundary_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestBusiness403DoesNotLoginOrReplay",
+      "files": [
+        "internal/authn/lifecycle_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCanceledBeforeAndAfterSend",
+      "files": [
+        "internal/engine/executor_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCertificateMaterialBoundaries",
+      "files": [
+        "internal/pkiutil/parse_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCloseDrainAndCancel",
+      "files": [
+        "client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCloseDuringWrite",
+      "files": [
+        "hardening_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestClusterHealthSemantics",
+      "files": [
+        "diagnostics_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestConfigDefaults",
+      "files": [
+        "config_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestConfigEnvironmentIgnored",
+      "files": [
+        "client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCredentialWorkflowGenerationMismatch",
+      "files": [
+        "examples/credentialworkflow/workflow_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCredentialWorkflowRecovery",
+      "files": [
+        "examples/credentialworkflow/workflow_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCredentialWorkflowRejectsNilStored",
+      "files": [
+        "examples/credentialworkflow/workflow_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCredentialWorkflowUnknownDoesNotReissue",
+      "files": [
+        "examples/credentialworkflow/workflow_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCredentialWorkflowUnknownKVReconciles",
+      "files": [
+        "examples/credentialworkflow/workflow_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestCrossNamespaceConcurrency",
+      "files": [
+        "hardening_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestDecodeAndIdentifierBoundaries",
+      "files": [
+        "internal/engine/semantics_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestDocumentConstructAndDecode",
+      "files": [
+        "kv/document_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestDocumentExactNumber",
+      "files": [
+        "kv/document_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestDocumentIndependentCopy",
+      "files": [
+        "kv/document_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestErrorClassificationAndRedaction",
+      "files": [
+        "baoerr/error_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestExpiredReplyAndLatePublication",
+      "files": [
+        "internal/authn/boundary_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestExpiryAndShutdown",
+      "files": [
+        "internal/authn/manager_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestExplicitEmptyCAFileIsNotSystemTrust",
+      "files": [
+        "review_fixes_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestExplicitExampleConfiguration",
+      "files": [
+        "examples/internal/bootstrap/config_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestExternalProviderFailureBoundaries",
+      "files": [
+        "internal/authn/boundary_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestIntegrationBinaryDigest",
+      "files": [
+        "internal/testenv/options_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestIntegrationEnvironmentInput",
+      "files": [
+        "internal/testenv/options_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestIntegrationOptionsFailClosed",
+      "files": [
+        "internal/testenv/options_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestIntegrationPolicyIsolation",
+      "files": [
+        "internal/testenv/options_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestKVCASConcurrentWinner",
+      "files": [
+        "kv_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestKVCASConflict",
+      "files": [
+        "kv_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestKVCreateCASZero",
+      "files": [
+        "kv_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestKVDeleteExactVersions",
+      "files": [
+        "kv_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestKVDeletedVersion",
+      "files": [
+        "kv_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestKVList404",
+      "files": [
+        "kv_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestKVMetadataIsNotVersionHistory",
+      "files": [
+        "kv_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestKVReadExactVersion",
+      "files": [
+        "kv_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestKVReadRefBinding",
+      "files": [
+        "kv_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestLimitsRejectIntegerOverflow",
+      "files": [
+        "hardening_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestLoopbackTestConstructor",
+      "files": [
+        "hardening_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestMalformedDeletedMetadata",
+      "files": [
+        "internal/engine/semantics_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestNamespaceExplicit",
+      "files": [
+        "config_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestNewNoNetwork",
+      "files": [
+        "client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestNilUnknownAndAllCodes",
+      "files": [
+        "baoerr/boundary_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestNoWriteReplayHeader",
+      "files": [
+        "internal/engine/executor_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestObserverRedaction",
+      "files": [
+        "diagnostics_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPKICSRPublicKeyMatch",
+      "files": [
+        "pki_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPKICSRSignature",
+      "files": [
+        "pki/validate_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPKIIssueContract",
+      "files": [
+        "pki_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPKIMetadataAndMalformedPolicy",
+      "files": [
+        "pki/validate_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPKIPrivateKeyMismatch",
+      "files": [
+        "pki_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPKIReadMultiPEMAndChain",
+      "files": [
+        "pki_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPKIRevokeReceipt",
+      "files": [
+        "pki_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPKITrustAndLifetime",
+      "files": [
+        "pki/validate_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPKIZeroTTLRejected",
+      "files": [
+        "hardening_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPathValidation",
+      "files": [
+        "internal/engine/path_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPrivateKeyMaterialBoundaries",
+      "files": [
+        "internal/pkiutil/parse_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPublicKeyDecodeAttemptsNotHTTPStatus",
+      "files": [
+        "review_fixes_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPublicNormalizationAndSignatureProfiles",
+      "files": [
+        "internal/transitutil/encoding_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPublicRuntimeHasNoAdminEscape",
+      "files": [
+        "public_contract_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestPublicTypeBoundary",
+      "files": [
+        "public_types_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestReadRetryBudget",
+      "files": [
+        "internal/engine/executor_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestReadyScopedProbe",
+      "files": [
+        "diagnostics_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestRegistrationRequiresBothMaterials",
+      "files": [
+        "examples/credentialworkflow/workflow_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestRenewSingleFlight",
+      "files": [
+        "internal/authn/manager_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestRenewUsesLatestTTL",
+      "files": [
+        "internal/authn/manager_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestResponseBoundAndSafeError",
+      "files": [
+        "internal/engine/executor_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestRetryAfterLimitsAndCancellation",
+      "files": [
+        "internal/engine/semantics_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestRunStopsAndRestartsCanceledAttempt",
+      "files": [
+        "internal/authn/lifecycle_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestSecretIDGenerationAndUse",
+      "files": [
+        "auth/provider_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestSecretProviderPanicAndInvalidGeneration",
+      "files": [
+        "internal/authn/boundary_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestSensitiveConcurrentRead",
+      "files": [
+        "sensitive/bytes_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestSensitiveCopyAndZero",
+      "files": [
+        "sensitive/bytes_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestSensitiveFormatting",
+      "files": [
+        "sensitive/bytes_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestSerialBoundaries",
+      "files": [
+        "internal/pkiutil/parse_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestSingleAttemptIssue",
+      "files": [
+        "internal/engine/executor_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestSingleUseSecretID",
+      "files": [
+        "internal/authn/manager_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestStartAfterLifetimeCancellationDoesNotReportReady",
+      "files": [
+        "review_fixes_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestStartResultBelongsToAttempt",
+      "files": [
+        "hardening_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestStartSingleFlight",
+      "files": [
+        "client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestStaticTokenSnapshots",
+      "files": [
+        "auth/provider_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestStrictTree",
+      "files": [
+        "internal/jsondoc/json_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestStrictWrappedEncoding",
+      "files": [
+        "internal/transitutil/encoding_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTLSAndPathValidation",
+      "files": [
+        "config_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTLSFileRejectsFIFOWithoutBlocking",
+      "files": [
+        "network_linux_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTLSHostAndCARejected",
+      "files": [
+        "client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTokenFileAtomicReplacement",
+      "files": [
+        "auth/provider_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTokenFileValidation",
+      "files": [
+        "auth/provider_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTransitCipherContext",
+      "files": [
+        "transit_cipher_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTransitCipherVersion",
+      "files": [
+        "transit_cipher_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTransitHMAC",
+      "files": [
+        "transit_cipher_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTransitNoKeyCreation",
+      "files": [
+        "transit_cipher_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTransitPublicKeyFormats",
+      "files": [
+        "transit_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTransitSignProfiles",
+      "files": [
+        "transit_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTransitVerifyFalse",
+      "files": [
+        "transit_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTransitVersionPin",
+      "files": [
+        "transit_client_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestTransportSafetyConstruction",
+      "files": [
+        "internal/engine/semantics_test.go"
+      ],
+      "observed_contract_pass": true
+    },
+    {
+      "name": "TestVoidErrorEnvelope",
+      "files": [
+        "hardening_test.go"
+      ],
+      "observed_contract_pass": true
+    }
+  ]
+}

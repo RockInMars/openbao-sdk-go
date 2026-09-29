@@ -1,0 +1,39 @@
+{
+  "evidence_class": "PINNED_SECURITY_SCANNERS",
+  "status": "FAIL",
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "commands": [
+    {
+      "name": "govulncheck",
+      "command": [
+        "go",
+        "run",
+        "golang.org/x/vuln/cmd/govulncheck@v1.1.4",
+        "./..."
+      ],
+      "exit_code": 1,
+      "log": ".artifacts/govulncheck.log"
+    },
+    {
+      "name": "gitleaks",
+      "command": [
+        "go",
+        "run",
+        "github.com/zricethezav/gitleaks/v8@v8.24.3",
+        "dir",
+        "--redact=100",
+        "--no-banner",
+        "--config",
+        "/mnt/data/openbao-sdk-go/deploy/test/gitleaks.toml",
+        "--report-format=json",
+        "--report-path",
+        "/mnt/data/openbao-sdk-go/.artifacts/gitleaks-redacted.json",
+        "/mnt/data/openbao-sdk-go"
+      ],
+      "exit_code": 1,
+      "log": ".artifacts/gitleaks.log"
+    }
+  ],
+  "started_at": "2026-09-28T11:26:41.988504+00:00",
+  "finished_at": "2026-09-28T11:26:47.084510+00:00"
+}

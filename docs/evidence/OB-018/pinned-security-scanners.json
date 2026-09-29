@@ -1,0 +1,11 @@
+{
+  "source_sha256": "d32cbc925470aeb3fe9ee3942e336924368e670375628831bc391edff68bace9",
+  "command": [
+    "make",
+    "security-test"
+  ],
+  "started_at": "2026-09-28T10:20:57.344903+00:00",
+  "finished_at": "2026-09-28T10:21:08.116999+00:00",
+  "exit_code": 2,
+  "log": "docs/evidence/OB-018/pinned-security-scanners.log"
+}

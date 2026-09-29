@@ -1,0 +1,64 @@
+go test -run='^$' -fuzz=FuzzPath -fuzztime=30s -parallel=1 -timeout=90s ./internal/engine
+fuzz: elapsed: 0s, gathering baseline coverage: 0/37 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 37/37 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 29108 (9702/sec), new interesting: 0 (total: 37)
+fuzz: elapsed: 6s, execs: 60065 (10320/sec), new interesting: 0 (total: 37)
+fuzz: elapsed: 9s, execs: 89372 (9769/sec), new interesting: 0 (total: 37)
+fuzz: elapsed: 12s, execs: 118063 (9563/sec), new interesting: 0 (total: 37)
+fuzz: elapsed: 15s, execs: 148160 (10030/sec), new interesting: 0 (total: 37)
+fuzz: elapsed: 18s, execs: 180571 (10806/sec), new interesting: 0 (total: 37)
+fuzz: elapsed: 21s, execs: 212361 (10594/sec), new interesting: 1 (total: 38)
+fuzz: elapsed: 24s, execs: 242724 (10120/sec), new interesting: 1 (total: 38)
+fuzz: elapsed: 27s, execs: 273434 (10240/sec), new interesting: 1 (total: 38)
+fuzz: elapsed: 30s, execs: 304103 (10222/sec), new interesting: 1 (total: 38)
+fuzz: elapsed: 30s, execs: 304103 (0/sec), new interesting: 1 (total: 38)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/internal/engine	30.059s
+go test -run='^$' -fuzz=FuzzDocument -fuzztime=30s -parallel=1 -timeout=90s ./kv
+fuzz: elapsed: 0s, gathering baseline coverage: 0/135 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 135/135 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 76975 (25653/sec), new interesting: 7 (total: 142)
+fuzz: elapsed: 6s, execs: 160960 (27999/sec), new interesting: 12 (total: 147)
+fuzz: elapsed: 9s, execs: 230487 (23171/sec), new interesting: 19 (total: 154)
+fuzz: elapsed: 12s, execs: 230487 (0/sec), new interesting: 19 (total: 154)
+fuzz: elapsed: 15s, execs: 368622 (46073/sec), new interesting: 21 (total: 156)
+fuzz: elapsed: 18s, execs: 448097 (26490/sec), new interesting: 23 (total: 158)
+fuzz: elapsed: 21s, execs: 492085 (14667/sec), new interesting: 32 (total: 167)
+fuzz: elapsed: 24s, execs: 492085 (0/sec), new interesting: 32 (total: 167)
+fuzz: elapsed: 27s, execs: 492085 (0/sec), new interesting: 32 (total: 167)
+fuzz: elapsed: 30s, execs: 492085 (0/sec), new interesting: 32 (total: 167)
+fuzz: elapsed: 31s, execs: 492085 (0/sec), new interesting: 32 (total: 167)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/kv	31.014s
+go test -run='^$' -fuzz=FuzzPKICSR -fuzztime=30s -parallel=1 -timeout=90s ./pki
+fuzz: elapsed: 0s, gathering baseline coverage: 0/78 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 78/78 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 37086 (12361/sec), new interesting: 1 (total: 79)
+fuzz: elapsed: 6s, execs: 78174 (13694/sec), new interesting: 2 (total: 80)
+fuzz: elapsed: 9s, execs: 122106 (14647/sec), new interesting: 3 (total: 81)
+fuzz: elapsed: 12s, execs: 168496 (15462/sec), new interesting: 3 (total: 81)
+fuzz: elapsed: 15s, execs: 215469 (15659/sec), new interesting: 3 (total: 81)
+fuzz: elapsed: 18s, execs: 262433 (15653/sec), new interesting: 6 (total: 84)
+fuzz: elapsed: 21s, execs: 305638 (14392/sec), new interesting: 6 (total: 84)
+fuzz: elapsed: 24s, execs: 351206 (15198/sec), new interesting: 6 (total: 84)
+fuzz: elapsed: 27s, execs: 398119 (15638/sec), new interesting: 8 (total: 86)
+fuzz: elapsed: 30s, execs: 446564 (16138/sec), new interesting: 8 (total: 86)
+fuzz: elapsed: 30s, execs: 446564 (0/sec), new interesting: 8 (total: 86)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/pki	30.097s
+go test -run='^$' -fuzz=FuzzEncoding -fuzztime=30s -parallel=1 -timeout=90s ./internal/transitutil
+fuzz: elapsed: 0s, gathering baseline coverage: 0/68 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 68/68 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 56150 (18715/sec), new interesting: 2 (total: 70)
+fuzz: elapsed: 6s, execs: 116336 (20061/sec), new interesting: 2 (total: 70)
+fuzz: elapsed: 9s, execs: 150691 (11451/sec), new interesting: 4 (total: 72)
+fuzz: elapsed: 12s, execs: 150691 (0/sec), new interesting: 4 (total: 72)
+fuzz: elapsed: 15s, execs: 323169 (57533/sec), new interesting: 6 (total: 74)
+fuzz: elapsed: 18s, execs: 389627 (22154/sec), new interesting: 8 (total: 76)
+fuzz: elapsed: 21s, execs: 456318 (22225/sec), new interesting: 12 (total: 80)
+fuzz: elapsed: 24s, execs: 520333 (21341/sec), new interesting: 12 (total: 80)
+fuzz: elapsed: 27s, execs: 579853 (19843/sec), new interesting: 13 (total: 81)
+fuzz: elapsed: 30s, execs: 647181 (22442/sec), new interesting: 13 (total: 81)
+fuzz: elapsed: 30s, execs: 647181 (0/sec), new interesting: 13 (total: 81)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/internal/transitutil	30.078s

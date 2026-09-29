@@ -1,0 +1,16 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "./sensitive",
+    "./kv"
+  ],
+  "started_at": "2026-09-28T08:56:08.835698+00:00",
+  "finished_at": "2026-09-28T08:56:15.620715+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-002/red-material-types.log"
+}

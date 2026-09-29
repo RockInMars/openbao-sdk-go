@@ -1,0 +1,15 @@
+fuzz: elapsed: 0s, gathering baseline coverage: 0/34 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 34/34 completed, now fuzzing with 1 workers
+fuzz: elapsed: 3s, execs: 19832 (6608/sec), new interesting: 0 (total: 34)
+fuzz: elapsed: 6s, execs: 41904 (7355/sec), new interesting: 0 (total: 34)
+fuzz: elapsed: 9s, execs: 66909 (8338/sec), new interesting: 1 (total: 35)
+fuzz: elapsed: 12s, execs: 89155 (7416/sec), new interesting: 1 (total: 35)
+fuzz: elapsed: 15s, execs: 110004 (6949/sec), new interesting: 1 (total: 35)
+fuzz: elapsed: 18s, execs: 133197 (7732/sec), new interesting: 1 (total: 35)
+fuzz: elapsed: 21s, execs: 153782 (6861/sec), new interesting: 1 (total: 35)
+fuzz: elapsed: 24s, execs: 173817 (6678/sec), new interesting: 1 (total: 35)
+fuzz: elapsed: 27s, execs: 191476 (5886/sec), new interesting: 1 (total: 35)
+fuzz: elapsed: 30s, execs: 209492 (6007/sec), new interesting: 1 (total: 35)
+fuzz: elapsed: 30s, execs: 209492 (0/sec), new interesting: 1 (total: 35)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/internal/engine	30.120s

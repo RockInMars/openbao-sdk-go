@@ -1,0 +1,23 @@
+python3 -m unittest discover -s scripts/tests -v
+test_decode_concatenated_go_json_and_reject_truncated_output (test_dependency_check.DependencyCheckTests.test_decode_concatenated_go_json_and_reject_truncated_output) ... ok
+test_error_or_missing_checksum_never_passes (test_dependency_check.DependencyCheckTests.test_error_or_missing_checksum_never_passes) ... ok
+test_go_sum_must_bind_both_direct_records (test_dependency_check.DependencyCheckTests.test_go_sum_must_bind_both_direct_records) ... ok
+test_module_graph_replacements_and_missing_pin_are_rejected (test_dependency_check.DependencyCheckTests.test_module_graph_replacements_and_missing_pin_are_rejected) ... ok
+test_preflight_cannot_inherit_overlay_or_checksum_bypass (test_dependency_check.DependencyCheckTests.test_preflight_cannot_inherit_overlay_or_checksum_bypass) ... ok
+test_records_real_files_but_does_not_claim_checksum_verification (test_dependency_check.DependencyCheckTests.test_records_real_files_but_does_not_claim_checksum_verification) ... ok
+test_root_module_configuration_and_minimum_go_are_not_guessed (test_dependency_check.DependencyCheckTests.test_root_module_configuration_and_minimum_go_are_not_guessed) ... ok
+test_symlink_or_missing_source_is_rejected (test_dependency_check.DependencyCheckTests.test_symlink_or_missing_source_is_rejected) ... ok
+test_artifact_scan_catches_private_pem_not_a_label (test_tooling.ToolingTests.test_artifact_scan_catches_private_pem_not_a_label) ... ok
+test_coverage_merges_duplicate_blocks_without_inflating_denominator (test_tooling.ToolingTests.test_coverage_merges_duplicate_blocks_without_inflating_denominator) ... ok
+test_fuzz_commands_select_existing_package_targets (test_tooling.ToolingTests.test_fuzz_commands_select_existing_package_targets) ... ok
+test_missing_critical_coverage_is_not_success (test_tooling.ToolingTests.test_missing_critical_coverage_is_not_success) ... ok
+test_missing_integration_fails (test_tooling.ToolingTests.test_missing_integration_fails) ... ok
+test_module_zip_excludes_nested_module_and_private_material (test_tooling.ToolingTests.test_module_zip_excludes_nested_module_and_private_material) ... ok
+test_release_gate_rejects_partial_or_stale_report (test_tooling.ToolingTests.test_release_gate_rejects_partial_or_stale_report) ... ok
+test_release_gate_rejects_unverified (test_tooling.ToolingTests.test_release_gate_rejects_unverified) ... ok
+test_release_requires_real_non_skipped_evidence (test_tooling.ToolingTests.test_release_requires_real_non_skipped_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.007s
+
+OK

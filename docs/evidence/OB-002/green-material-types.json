@@ -1,0 +1,18 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "-coverprofile=.artifacts/material-coverage.out",
+    "./sensitive",
+    "./kv",
+    "./internal/jsondoc"
+  ],
+  "started_at": "2026-09-28T08:58:18.986145+00:00",
+  "finished_at": "2026-09-28T08:58:20.574491+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-002/green-material-types.log"
+}

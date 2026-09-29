@@ -1,0 +1,215 @@
+{
+  "recorded_at": "2026-09-28T11:34:50.451844+00:00",
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "baseline_archive_sha256": "bd4d36a0bad2cdbedacf53e3190c61d0bebee3f8793db6274fad064648088581",
+  "evidence_class": "ARCHIVE_BASED_SOURCE_DIFF",
+  "scope": "Code, tests, build/config scripts only; original evidence and Markdown are not in source patch. Full documents/evidence are in the new ZIP. No .git required; no init/commit/push.",
+  "changes": [
+    {
+      "path": "Makefile",
+      "change": "MODIFIED",
+      "before_sha256": "af58f4563d59bcbed00847ed32a243e6146e12570f87878e34b68b826c231f4f",
+      "after_sha256": "a56df8501e26e5d69a0dc9f9c93c178b2a41bf1b62e92f31a0961390eddac4ba"
+    },
+    {
+      "path": "client.go",
+      "change": "MODIFIED",
+      "before_sha256": "fc9daa8dd19a6fd894afc521dfaa1f56e94ae314b0d2aa1676b769e658d4a82c",
+      "after_sha256": "e0b420846e48184c9bc6836476eb356eeab9d210674b53001a453c4a821348d6"
+    },
+    {
+      "path": "client_shutdown_regression_test.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "80804cdf95789853540b75843e5f2fa3375391364d1b6bebc4ca3318a0f6c731"
+    },
+    {
+      "path": "internal/engine/errors.go",
+      "change": "MODIFIED",
+      "before_sha256": "288e34b7fd445bbbc6701880515cec2662ec718567244472f5d769f307d8f1dc",
+      "after_sha256": "275e4fb2f06173df9b937674b5f0158e16b3447b3de7bbbc387e22da8f2b710c"
+    },
+    {
+      "path": "internal/jsondoc/json.go",
+      "change": "MODIFIED",
+      "before_sha256": "3e168b575e09c9de5035259065347d70b04c52825569a5f1fcf77568037ad9fa",
+      "after_sha256": "3a0cbe7ef650f5fd39234e8ae1ecbb4c9fbd1598f37515cd55ca5d42acadbc98"
+    },
+    {
+      "path": "internal/jsondoc/unicode.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "18737cfdb936042c93ed9f39b0dcab9c748b8f880dae279b0399c7c7cc475f73"
+    },
+    {
+      "path": "internal/jsondoc/unicode_regression_test.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "247209cd578f187b182944f6e648ee6603c51f97074993c79637d972ffef4469"
+    },
+    {
+      "path": "internal/pemutil/decode.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "faef1443444be5de9613d27bd5c9472fd62afee6e5bcf5f09f8650cf9541e984"
+    },
+    {
+      "path": "internal/pemutil/decode_test.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "43e7fd4ad379b574fd5566cf9e63782b18ef8274459527a92e12b040f2edbea0"
+    },
+    {
+      "path": "internal/pkiutil/parse.go",
+      "change": "MODIFIED",
+      "before_sha256": "f9dc39a8e4833e7133e949bc56c6c95ee97aeb832a519d86b9dc53475ba299ed",
+      "after_sha256": "9265dfd3c4f3981d675a4109de0475c42bbca864bdab242a73a0612ef0248c57"
+    },
+    {
+      "path": "internal/pkiutil/strict_pem_regression_test.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "ed0dab1a7fd5947b85f8fc4e5689670a8a0de915aed2cc09ebd3cd0c08ef31e4"
+    },
+    {
+      "path": "internal/testenv/bootstrap.go",
+      "change": "MODIFIED",
+      "before_sha256": "f826d33232077093854d27f335ba43b535d825b3bd84fd8670d1332a9ab8a223",
+      "after_sha256": "5966c77eb714bf78fd55f3992947fe8dd2e687f56a6790f50a2eea4687de8f98"
+    },
+    {
+      "path": "internal/testenv/bootstrap_test.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "bba2886782760f187ce0af3ef0f769e81a8f507b80aba9b7e3c477e1320b2aa5"
+    },
+    {
+      "path": "internal/transitutil/encoding.go",
+      "change": "MODIFIED",
+      "before_sha256": "ee5097e5598fb44c5aa2465b6f6c7f764257ff3544340f4e962a471fdfb4ff67",
+      "after_sha256": "13861645a0433fc66840fcf81902a2176e5a2039739abe655716b19944392d16"
+    },
+    {
+      "path": "internal/transitutil/strict_pem_regression_test.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "d6e5037d7a8c488b44b6e5a4c840d57f1e39a5ad594fc53e6499c39c94748a47"
+    },
+    {
+      "path": "kv/document_test.go",
+      "change": "MODIFIED",
+      "before_sha256": "2c75d73a38f48a1150983844516384953b53a442e000ee0d566035c616e5f0ad",
+      "after_sha256": "6748ab6f86afdeee07528e9535d8288d025cad69420969a9a6b3bb5f4ee87320"
+    },
+    {
+      "path": "kv/types.go",
+      "change": "MODIFIED",
+      "before_sha256": "6457c29661da23c4d8a47999b656d82d24cf646617a710ea4d43f3b85a31e045",
+      "after_sha256": "50411a7e10419d46766d1bf1f2e6c9a55fc4306be51ed8c69c408f21660d4d9b"
+    },
+    {
+      "path": "kv/unicode_regression_test.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "bc9afb91a15c77708277c9dd72a4af8c3a9b3255959dfac441ebea56945f8e8a"
+    },
+    {
+      "path": "kv_client.go",
+      "change": "MODIFIED",
+      "before_sha256": "ada4daae0d48a62b08d2bce0954176860ce08845e88f16767b91b290e54fcec8",
+      "after_sha256": "97806583059ea2074afa0dae8c69ebc1c9ad3b32b676e2698757bb5db4da0d7a"
+    },
+    {
+      "path": "kv_scheduled_deletion_test.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "8a8b28ee2423c558e261b4b17b1b13247e62aa5ae8bbd12c1b7783944469ab80"
+    },
+    {
+      "path": "network.go",
+      "change": "MODIFIED",
+      "before_sha256": "69a86b4401b616d03dfa7f1b8d05c54497ef5cfc6f127163e895b96c6b704cd4",
+      "after_sha256": "bab2b5aa3970e2512f4cc3b11391e29bc37d2e6437a0fa72b702f74601377e02"
+    },
+    {
+      "path": "pki/validate_test.go",
+      "change": "MODIFIED",
+      "before_sha256": "f9f29e9e892a385210948a53cf18045e53e28a778fd6c6c9671e93f469623aa8",
+      "after_sha256": "15ebf5240a29dae82b5bca5543246ffb2b4a979e3608f8ea7d6a1501e0f097c0"
+    },
+    {
+      "path": "scripts/contract-test.py",
+      "change": "MODIFIED",
+      "before_sha256": "3f313237e91337a0c6c696d583c5f69a2c5071b64d0b3021328d0e08d92c000f",
+      "after_sha256": "f1b2c16ed8fb7ca77c2d64da93501f1dd1473d177950e4c4778cb5721cb6ffbb"
+    },
+    {
+      "path": "scripts/integration-test.py",
+      "change": "MODIFIED",
+      "before_sha256": "268f00a013b97e6484c0bdc0dd584b10c3523c4abc93cdc43a3f6c858fbb16a5",
+      "after_sha256": "833cc6c78932706cc906684456a91b347bea49dd11a3e0c929cd7664ce43c79a"
+    },
+    {
+      "path": "scripts/tests/test_tooling.py",
+      "change": "MODIFIED",
+      "before_sha256": "639e5d97cf52bafe80966d364f1ea738f1bfe96798d126b25bcc0beac2ec9565",
+      "after_sha256": "7385616b857d532be9467f9c13b5c2f4806c472a751c276f0094b538688201a8"
+    },
+    {
+      "path": "scripts/tooling.py",
+      "change": "MODIFIED",
+      "before_sha256": "60f9134bc171e21b1b423bb4686bbe78a66650396ad464affe30231bedb534d0",
+      "after_sha256": "73456ffe672ce87b8e9a960b4e74c4bc53872f766326e0b77e0e8d8359b2d27e"
+    },
+    {
+      "path": "tests/integration/runtime_test.go",
+      "change": "MODIFIED",
+      "before_sha256": "69b42a0dcb1dbb5230bcaec885346920d1dc41d0f4fe758c3f45405b3512f07b",
+      "after_sha256": "43012bc1595e6fa80235b028e7163c0f308e9ccbe37412da924e11e9ffa0bb51"
+    },
+    {
+      "path": "tls_pem_regression_test.go",
+      "change": "ADDED",
+      "before_sha256": null,
+      "after_sha256": "d1065cc6040ba5fc6e8079c1d15d2ac9bb80c6397ac327a30572175eba94036c"
+    }
+  ],
+  "change_counts": {
+    "MODIFIED": 17,
+    "ADDED": 11
+  },
+  "diff_command": [
+    "git",
+    "diff",
+    "--no-index",
+    "--binary",
+    "--src-prefix=a/",
+    "--dst-prefix=b/",
+    "old",
+    "new"
+  ],
+  "diff_exit_code": 1,
+  "diff_exit_explanation": "1 means actual differences found, not a verification failure.",
+  "whitespace_check_command": [
+    "git",
+    "diff",
+    "--no-index",
+    "--check",
+    "old",
+    "new"
+  ],
+  "whitespace_check_exit_code": 1,
+  "no_index_check_explanation": "Exit1 indicates differing files; no whitespace diagnostics. Control fixture with whitespace returned3. Strict patch whitespace/application check separately returns0.",
+  "patch_check_command": [
+    "git",
+    "apply",
+    "--check",
+    "--whitespace=error-all",
+    "openbao-sdk-go-resume01.patch"
+  ],
+  "patch_check_exit_code": 0,
+  "patch_actual_application_exit_code": 0,
+  "patched_source_matches_current": true,
+  "patch_sha256": "24a2ba82cdeddf42445979274e5fe9098ec2753c2f4b7114fd4231b3a33f9c33",
+  "patch_bytes": 36315
+}

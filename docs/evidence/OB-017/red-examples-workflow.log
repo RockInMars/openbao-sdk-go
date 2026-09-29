@@ -1,0 +1,20 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+# git.example.com/infra/openbao-sdk-go/examples/internal/bootstrap [git.example.com/infra/openbao-sdk-go/examples/internal/bootstrap.test]
+examples/internal/bootstrap/config_test.go:6:9: undefined: ConfigFrom
+examples/internal/bootstrap/config_test.go:7:49: undefined: ConfigFrom
+examples/internal/bootstrap/config_test.go:8:50: undefined: ConfigFrom
+# git.example.com/infra/openbao-sdk-go/examples/credentialworkflow [git.example.com/infra/openbao-sdk-go/examples/credentialworkflow.test]
+examples/credentialworkflow/workflow_test.go:12:50: undefined: Generation
+examples/credentialworkflow/workflow_test.go:13:35: undefined: Stored
+examples/credentialworkflow/workflow_test.go:14:51: undefined: Generation
+examples/credentialworkflow/workflow_test.go:14:64: undefined: Stored
+examples/credentialworkflow/workflow_test.go:15:53: undefined: Generation
+examples/credentialworkflow/workflow_test.go:15:84: undefined: Stored
+examples/credentialworkflow/workflow_test.go:16:35: undefined: Record
+examples/credentialworkflow/workflow_test.go:17:51: undefined: Generation
+examples/credentialworkflow/workflow_test.go:17:64: undefined: Record
+examples/credentialworkflow/workflow_test.go:18:51: undefined: Record
+examples/credentialworkflow/workflow_test.go:18:51: too many errors
+FAIL	git.example.com/infra/openbao-sdk-go/examples/credentialworkflow [build failed]
+FAIL	git.example.com/infra/openbao-sdk-go/examples/internal/bootstrap [build failed]
+FAIL

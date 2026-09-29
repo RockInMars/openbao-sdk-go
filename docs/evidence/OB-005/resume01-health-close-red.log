@@ -1,0 +1,6 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+--- FAIL: TestCloseCancelsHealthBeforeStart (1.08s)
+    client_shutdown_regression_test.go:48: pre-Start health request survived Close cancellation
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go	1.188s
+FAIL

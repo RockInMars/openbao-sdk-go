@@ -1,0 +1,5 @@
+{
+	"GOARCH": "amd64",
+	"GOOS": "linux",
+	"GOVERSION": "go1.23.2"
+}

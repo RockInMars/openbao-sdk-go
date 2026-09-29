@@ -1,0 +1,16 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    ".",
+    "./internal/engine"
+  ],
+  "started_at": "2026-09-28T09:01:43.479362+00:00",
+  "finished_at": "2026-09-28T09:01:52.198885+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-003/green-config-path.log"
+}

@@ -1,0 +1,17 @@
+{
+  "source_sha256": "daa736688b5ffec032f4ef56b92945f0bf2030aceb28e1e76ff32b52d9c0252e",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=1",
+    "-run",
+    "^TestKV",
+    "-timeout=60s",
+    "."
+  ],
+  "started_at": "2026-09-28T11:13:36.045711+00:00",
+  "finished_at": "2026-09-28T11:13:44.216394+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-008/resume01-kv-scheduled-green.log"
+}

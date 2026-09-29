@@ -1,0 +1,46 @@
+name: SDK verification (no publishing)
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GOWORK: 'off'
+      GOFLAGS: ''
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        with:
+          go-version-file: go.mod
+          cache: false
+      - run: make tooling-test
+      - run: go mod download
+      - run: make normal-test
+      - run: make fuzz-test
+      - run: make consumer-test
+      - run: make security-test
+  real-integration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      BAO_TEST_IMAGE: ${{ vars.BAO_TEST_IMAGE }} # Must include @sha256:<verified digest>
+      BAO_TEST_VERSION: ${{ vars.BAO_TEST_VERSION }} # Exact server version
+      GOWORK: 'off'
+      GOFLAGS: ''
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5
+        with:
+          go-version-file: go.mod
+          cache: false
+      # Missing environment fails this job. No skip and no root-only assertions.
+      - run: make integration-test

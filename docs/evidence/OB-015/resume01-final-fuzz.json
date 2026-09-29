@@ -1,0 +1,13 @@
+{
+  "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "command": [
+    "timeout",
+    "420s",
+    "make",
+    "fuzz-test"
+  ],
+  "started_at": "2026-09-28T11:22:36.181441+00:00",
+  "finished_at": "2026-09-28T11:26:13.427867+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-015/resume01-final-fuzz.log"
+}

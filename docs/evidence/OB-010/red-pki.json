@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-timeout=30s",
+    ".",
+    "./pki",
+    "-run",
+    "TestPKI"
+  ],
+  "started_at": "2026-09-28T09:23:06.476333+00:00",
+  "finished_at": "2026-09-28T09:23:07.189987+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-010/red-pki.log"
+}

@@ -1,0 +1,19 @@
+{
+  "source_sha256": "b53db439b6eea8825735ac9daed98e712c517af6fbf0370ce640b04b9a00c809",
+  "command": [
+    "env",
+    "GOWORK=off",
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-run",
+    "Test(JSONRejectsUnpaired|JSONPreservesValid|DocumentRejectsLossy)",
+    "./internal/jsondoc",
+    "./kv"
+  ],
+  "started_at": "2026-09-28T11:18:11.597584+00:00",
+  "finished_at": "2026-09-28T11:18:13.300147+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-002/resume01-unicode-red.log"
+}

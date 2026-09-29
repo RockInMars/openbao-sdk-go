@@ -1,0 +1,1 @@
+go: github.com/zricethezav/gitleaks/v8@v8.24.3: github.com/zricethezav/gitleaks/v8@v8.24.3: Get "https://proxy.golang.org/github.com/zricethezav/gitleaks/v8/@v/v8.24.3.info": dial tcp: lookup proxy.golang.org on 168.63.129.16:53: read udp 172.26.39.246:54135->168.63.129.16:53: i/o timeout

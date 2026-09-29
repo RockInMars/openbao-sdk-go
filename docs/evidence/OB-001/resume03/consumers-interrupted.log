@@ -1,0 +1,2 @@
+python3 scripts/consumer-test.py
+make: *** [Makefile:30: consumer-test] Terminated

@@ -1,0 +1,15 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+# git.example.com/infra/openbao-sdk-go [git.example.com/infra/openbao-sdk-go.test]
+./transit_cipher_test.go:131:13: tr.Encrypt undefined (type *TransitClient has no field or method Encrypt)
+./transit_cipher_test.go:135:13: tr.Decrypt undefined (type *TransitClient has no field or method Decrypt)
+./transit_cipher_test.go:140:14: tr.Rewrap undefined (type *TransitClient has no field or method Rewrap)
+./transit_cipher_test.go:144:12: tr.Decrypt undefined (type *TransitClient has no field or method Decrypt)
+./transit_cipher_test.go:150:12: tr.Encrypt undefined (type *TransitClient has no field or method Encrypt)
+./transit_cipher_test.go:156:12: tr.Decrypt undefined (type *TransitClient has no field or method Decrypt)
+./transit_cipher_test.go:165:13: tr.Encrypt undefined (type *TransitClient has no field or method Encrypt)
+./transit_cipher_test.go:169:12: tr.Decrypt undefined (type *TransitClient has no field or method Decrypt)
+./transit_cipher_test.go:173:13: tr.Decrypt undefined (type *TransitClient has no field or method Decrypt)
+./transit_cipher_test.go:179:12: tr.Encrypt undefined (type *TransitClient has no field or method Encrypt)
+./transit_cipher_test.go:179:12: too many errors
+FAIL	git.example.com/infra/openbao-sdk-go [build failed]
+FAIL

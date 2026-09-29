@@ -1,0 +1,15 @@
+{
+  "status": "INTERRUPTED_BY_TOOL_TIMEOUT",
+  "exit_code": null,
+  "command": [
+    "go",
+    "test",
+    "./internal/transitutil",
+    "-run=^$",
+    "-fuzz=FuzzEncoding",
+    "-fuzztime=30s",
+    "-parallel=2"
+  ],
+  "log": "docs/evidence/OB-015/fuzz-encoding-interrupted.log",
+  "note": "Tool killed command before Go returned; no PASS/FAIL inferred. Reproduce with an explicit Go test timeout and shorter minimization budget."
+}

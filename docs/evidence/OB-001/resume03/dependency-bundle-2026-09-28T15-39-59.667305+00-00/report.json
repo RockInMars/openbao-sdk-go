@@ -1,0 +1,61 @@
+{
+  "evidence_class": "PUBLIC_DEPENDENCY_EXPORT",
+  "status": "BLOCKED",
+  "started_at": "2026-09-28T15:39:59.667375+00:00",
+  "commands": [
+    {
+      "name": "toolchain",
+      "command": [
+        "go",
+        "env",
+        "-json",
+        "GOVERSION",
+        "GOOS",
+        "GOARCH"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-28T15:39:59.684006+00:00",
+      "finished_at": "2026-09-28T15:39:59.689896+00:00",
+      "log": "toolchain.log"
+    },
+    {
+      "name": "root",
+      "command": [
+        "go",
+        "mod",
+        "edit",
+        "-json"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-28T15:39:59.689969+00:00",
+      "finished_at": "2026-09-28T15:39:59.697812+00:00",
+      "log": "root.log"
+    },
+    {
+      "name": "official-download",
+      "command": [
+        "go",
+        "mod",
+        "download",
+        "-json",
+        "github.com/openbao/openbao/api/v2@v2.7.0"
+      ],
+      "exit_code": 1,
+      "started_at": "2026-09-28T15:39:59.697876+00:00",
+      "finished_at": "2026-09-28T15:39:59.707350+00:00",
+      "log": "official-download.log"
+    }
+  ],
+  "sdk_compile_verified": false,
+  "server_verified": false,
+  "module": "github.com/openbao/openbao/api/v2",
+  "version": "v2.7.0",
+  "input_sha256": "105c9e9c5333bf81135e98e767d337561fa784cb02265128e5b0f6fbcbf17b67",
+  "toolchain": {
+    "GOARCH": "amd64",
+    "GOOS": "linux",
+    "GOVERSION": "go1.23.2"
+  },
+  "reason": "Export incomplete; inspect logs. No dependency success or SDK build is claimed.",
+  "finished_at": "2026-09-28T15:39:59.709833+00:00"
+}

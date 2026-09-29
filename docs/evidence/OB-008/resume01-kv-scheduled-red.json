@@ -1,0 +1,17 @@
+{
+  "source_sha256": "919b1123debfa755b03c17bb2e6c1d214fab8c1986c976b51f95a10fc46fb776",
+  "command": [
+    "python3",
+    "scripts/contract-test.py",
+    "-race",
+    "-count=1",
+    "-run",
+    "^TestKVFutureDeletion",
+    "-timeout=30s",
+    "."
+  ],
+  "started_at": "2026-09-28T11:12:46.017324+00:00",
+  "finished_at": "2026-09-28T11:12:51.589825+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-008/resume01-kv-scheduled-red.log"
+}

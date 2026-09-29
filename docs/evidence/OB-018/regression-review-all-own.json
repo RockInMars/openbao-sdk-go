@@ -1,0 +1,11 @@
+{
+  "source_sha256": "afcae065c22b100967a26f9162eca81faeb7bdedccc33c4fa3580a2030e7479e",
+  "command": [
+    "python3",
+    "scripts/contract-test.py"
+  ],
+  "started_at": "2026-09-28T10:17:51.124053+00:00",
+  "finished_at": "2026-09-28T10:17:56.528610+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/regression-review-all-own.log"
+}

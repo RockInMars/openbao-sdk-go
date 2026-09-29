@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "scripts/contract-test.py",
+    "-race",
+    "-run=Test(ExplicitEmpty|StartAfterLifetime|PublicKeyDecodeAttempts|AmbiguousWrite)",
+    "."
+  ],
+  "started_at": "2026-09-28T10:08:21.886075+00:00",
+  "finished_at": "2026-09-28T10:08:23.645798+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-018/red-review-findings.log"
+}

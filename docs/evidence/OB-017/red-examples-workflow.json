@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "scripts/contract-test.py",
+    "-race",
+    "./examples/..."
+  ],
+  "started_at": "2026-09-28T10:01:26.044892+00:00",
+  "finished_at": "2026-09-28T10:01:26.860087+00:00",
+  "exit_code": 1,
+  "log": "docs/evidence/OB-017/red-examples-workflow.log"
+}

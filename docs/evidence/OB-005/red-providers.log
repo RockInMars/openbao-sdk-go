@@ -1,0 +1,10 @@
+# git.example.com/infra/openbao-sdk-go/auth [git.example.com/infra/openbao-sdk-go/auth.test]
+auth/provider_test.go:12:57: undefined: NewStaticToken
+auth/provider_test.go:16:11: undefined: NewStaticToken
+auth/provider_test.go:20:9: undefined: NewTokenFile
+auth/provider_test.go:28:56: undefined: NewTokenFile
+auth/provider_test.go:32:11: undefined: NewTokenFile
+auth/provider_test.go:37:9: undefined: NewSecretIDFile
+auth/provider_test.go:40:11: undefined: NewSecretIDFile
+FAIL	git.example.com/infra/openbao-sdk-go/auth [build failed]
+FAIL

@@ -1,0 +1,105 @@
+{
+  "threshold": 85.0,
+  "unit": "Go statements",
+  "passed": false,
+  "groups": [
+    {
+      "name": "package:.",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:internal/engine",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:internal/authn",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:auth",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:kv",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:pki",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:baoerr",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:sensitive",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:internal/jsondoc",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:internal/pkiutil",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "package:internal/transitutil",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "domain:kv",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "domain:pki",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    },
+    {
+      "name": "domain:transit",
+      "covered_statements": 0,
+      "statements": 0,
+      "percentage": null,
+      "status": "MISSING"
+    }
+  ]
+}

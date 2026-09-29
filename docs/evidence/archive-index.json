@@ -1,0 +1,69 @@
+{
+  "note": "原始报告中的.artifacts路径按此表映射；原始报告的exit_code/status未修改。临时缓存及运行时材料不打包。",
+  "entries": [
+    {
+      "original": ".artifacts/normal-report.json",
+      "archived": "docs/evidence/OB-018/formal-artifacts/normal-report.json"
+    },
+    {
+      "original": ".artifacts/coverage-report.json",
+      "archived": "docs/evidence/OB-018/formal-artifacts/coverage-report.json"
+    },
+    {
+      "original": ".artifacts/integration-report.json",
+      "archived": "docs/evidence/OB-016/formal-artifacts/integration-report.json"
+    },
+    {
+      "original": ".artifacts/consumer-report.json",
+      "archived": "docs/evidence/OB-017/formal-artifacts/consumer-report.json"
+    },
+    {
+      "original": ".artifacts/security-report.json",
+      "archived": "docs/evidence/OB-018/formal-artifacts/security-report.json"
+    },
+    {
+      "original": ".artifacts/normal-unit.log",
+      "archived": "docs/evidence/OB-018/formal-artifacts/normal-unit.log"
+    },
+    {
+      "original": ".artifacts/normal-modules.log",
+      "archived": "docs/evidence/OB-018/formal-artifacts/normal-modules.log"
+    },
+    {
+      "original": ".artifacts/normal-test-list.log",
+      "archived": "docs/evidence/OB-018/formal-artifacts/normal-test-list.log"
+    },
+    {
+      "original": ".artifacts/normal-vet.log",
+      "archived": "docs/evidence/OB-018/formal-artifacts/normal-vet.log"
+    },
+    {
+      "original": ".artifacts/normal-race-coverage.log",
+      "archived": "docs/evidence/OB-018/formal-artifacts/normal-race-coverage.log"
+    },
+    {
+      "original": ".artifacts/normal-build.log",
+      "archived": "docs/evidence/OB-018/formal-artifacts/normal-build.log"
+    },
+    {
+      "original": ".artifacts/normal-module-graph.log",
+      "archived": "docs/evidence/OB-018/formal-artifacts/normal-module-graph.log"
+    },
+    {
+      "original": ".artifacts/consumer-reader-0.log",
+      "archived": "docs/evidence/OB-017/formal-artifacts/consumer-reader-0.log"
+    },
+    {
+      "original": ".artifacts/consumer-signer-0.log",
+      "archived": "docs/evidence/OB-017/formal-artifacts/consumer-signer-0.log"
+    },
+    {
+      "original": ".artifacts/govulncheck.log",
+      "archived": "docs/evidence/OB-018/formal-artifacts/govulncheck.log"
+    },
+    {
+      "original": ".artifacts/gitleaks.log",
+      "archived": "docs/evidence/OB-018/formal-artifacts/gitleaks.log"
+    }
+  ]
+}

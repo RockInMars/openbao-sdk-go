@@ -1,0 +1,6 @@
+{
+  "status": "INTERRUPTED_BY_OUTER_TOOL",
+  "exit_code": null,
+  "note": "log includes completed fuzz output but wrapper did not record an exit. Only the subsequent recorded exit-0 run is counted.",
+  "log": "docs/evidence/OB-001/resume03/fuzz-path-first.log"
+}

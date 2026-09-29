@@ -1,0 +1,17 @@
+{
+  "command": [
+    "env",
+    "GOWORK=off",
+    "GOTOOLCHAIN=local",
+    "go",
+    "test",
+    "-race",
+    "-cover",
+    "./pki",
+    "./internal/pkiutil"
+  ],
+  "started_at": "2026-09-28T10:10:29.455703+00:00",
+  "finished_at": "2026-09-28T10:10:30.988065+00:00",
+  "exit_code": 0,
+  "log": "docs/evidence/OB-018/direct-pki-validation-boundaries.log"
+}

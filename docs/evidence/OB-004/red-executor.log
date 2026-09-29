@@ -1,0 +1,5 @@
+# git.example.com/infra/openbao-sdk-go/internal/testutil [git.example.com/infra/openbao-sdk-go/internal/engine.test]
+internal/testutil/http_sender.go:10:107: undefined: engine.TransportFailure
+internal/testutil/http_sender.go:14:74: undefined: engine.TransportFailure
+FAIL	git.example.com/infra/openbao-sdk-go/internal/engine [build failed]
+FAIL

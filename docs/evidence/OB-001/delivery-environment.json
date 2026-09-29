@@ -1,0 +1,58 @@
+{
+  "recorded_at": "2026-09-28T10:46:44.260853+00:00",
+  "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
+  "cwd": "/mnt/data/openbao-sdk-go",
+  "tools": {
+    "go": "/usr/local/go/bin/go",
+    "git": "/usr/bin/git",
+    "gcc": "/usr/bin/gcc",
+    "make": "/usr/bin/make",
+    "python3": "/opt/pyvenv/bin/python3",
+    "docker": null,
+    "podman": null,
+    "bao": null
+  },
+  "actual_business_repository_provided": false,
+  "module_path": "git.example.com/infra/openbao-sdk-go",
+  "module_path_status": "PROVISIONAL_NOT_PUBLISHED",
+  "official_client_candidate": "github.com/openbao/openbao/api/v2@v2.7.0",
+  "official_client_module_verified": false,
+  "go_sum_size_bytes": 0,
+  "server_version": null,
+  "server_image_digest": null,
+  "remote_ci_executed": false,
+  "review_mode": "AUTHOR_SELF_REVIEW_NO_INDEPENDENT_REVIEWER",
+  "go_version": {
+    "command": [
+      "go",
+      "version"
+    ],
+    "exit_code": 0,
+    "first_line": "go version go1.23.2 linux/amd64"
+  },
+  "git_version": {
+    "command": [
+      "git",
+      "--version"
+    ],
+    "exit_code": 0,
+    "first_line": "git version 2.47.3"
+  },
+  "gcc_version": {
+    "command": [
+      "gcc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "first_line": "gcc (Debian 14.2.0-19) 14.2.0"
+  },
+  "branch": {
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit_code": 0,
+    "first_line": "implement/runtime-v1"
+  }
+}

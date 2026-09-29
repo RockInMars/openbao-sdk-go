@@ -1,0 +1,14 @@
+# git.example.com/infra/openbao-sdk-go/baoerr [git.example.com/infra/openbao-sdk-go/baoerr.test]
+baoerr/error_test.go:4:6: undefined: Error
+baoerr/error_test.go:4:17: undefined: CodeDeadlineExceeded
+baoerr/error_test.go:4:67: undefined: EffectUnknown
+baoerr/error_test.go:6:52: undefined: HasUnknownOutcome
+baoerr/error_test.go:6:81: undefined: IsCode
+baoerr/error_test.go:6:96: undefined: CodeDeadlineExceeded
+baoerr/error_test.go:9:7: undefined: Error
+baoerr/error_test.go:9:18: undefined: CodeCanceled
+baoerr/error_test.go:10:5: undefined: HasUnknownOutcome
+baoerr/error_test.go:10:29: undefined: IsCode
+baoerr/error_test.go:10:29: too many errors
+FAIL	git.example.com/infra/openbao-sdk-go/baoerr [build failed]
+FAIL

@@ -1,0 +1,9 @@
+{
+  "evidence_class": "REAL_OPENBAO",
+  "status": "BLOCKED",
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "started_at": "2026-09-28T12:07:26.369609+00:00",
+  "exit_code": 2,
+  "reason": "Set exact BAO_TEST_VERSION and ONE verified binary or digest-pinned image",
+  "finished_at": "2026-09-28T12:07:26.369739+00:00"
+}

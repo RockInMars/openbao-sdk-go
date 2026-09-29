@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-09-28T12:17:08.347470+00:00",
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "changes": [
+    {
+      "path": "Makefile",
+      "kind": "modify",
+      "sha256": "fb50609913ddbc5ff2e1ea68e1f4b3ecd960ecd5345181f8394fcdcec38000e2"
+    },
+    {
+      "path": "scripts/dependency-check.py",
+      "kind": "add",
+      "sha256": "12241991c8b432a50b6f1572c564362f95e68d69d85ca8ead1b817c0a25f4227"
+    },
+    {
+      "path": "scripts/tests/test_dependency_check.py",
+      "kind": "add",
+      "sha256": "8c2a6fc1269f288d6f9d9c0464258f5198088315e9b226c58ae8ff57c2876374"
+    }
+  ],
+  "patch_sha256": "e1216a580ffb39a27ae4b175882e82c061e17e74deeeef31963e9a2fea3f5d2b",
+  "git_apply_check_exit": 0,
+  "git_apply_exit": 0,
+  "patched_source_hash_matches": true,
+  "scope": "source/build/tooling changes only; updated reports, ledgers and evidence are in full ZIP",
+  "go_files_changed": 0,
+  "go_mod_changed": false,
+  "go_sum_changed": false,
+  "raw_git_diff_check_exit": 129
+}

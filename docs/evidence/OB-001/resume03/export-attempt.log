@@ -1,0 +1,7 @@
+python3 scripts/dependency-bundle.py export --output .artifacts/openbao-public-dependencies.zip
+toolchain: exit 0
+root: exit 0
+official-download: exit 1
+PUBLIC_DEPENDENCY_EXPORT: BLOCKED
+Report: /mnt/data/openbao-r3/openbao-sdk-go/.artifacts/dependency-bundle-2026-09-28T15-39-59.667305+00-00/report.json
+make: *** [Makefile:19: dependency-export] Error 1

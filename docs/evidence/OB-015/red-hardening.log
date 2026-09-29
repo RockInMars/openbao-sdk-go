@@ -1,0 +1,19 @@
+EVIDENCE_CLASS=CONTRACT_WITH_TEST_SENDER; official api/v2 factory NOT EXECUTED; vet NOT RUN (Go 1.23 overlay limitation)
+--- FAIL: TestLimitsRejectIntegerOverflow (0.00s)
+    hardening_test.go:27: response limit +1 can overflow
+--- FAIL: TestPKIZeroTTLRejected (0.02s)
+    hardening_test.go:39: Issue zero TTL did not fail locally
+--- FAIL: TestVoidErrorEnvelope (0.01s)
+    hardening_test.go:52: void write accepted error envelope as success
+--- FAIL: TestStartResultBelongsToAttempt (0.00s)
+    hardening_test.go:100: waiter observed a later attempt result
+2026/09/28 09:39:14 http: TLS handshake error from 127.0.0.1:35238: read tcp 127.0.0.1:41775->127.0.0.1:35238: use of closed network connection
+2026/09/28 09:39:14 http: TLS handshake error from 127.0.0.1:35146: read tcp 127.0.0.1:41775->127.0.0.1:35146: use of closed network connection
+2026/09/28 09:39:14 http: TLS handshake error from 127.0.0.1:35158: read tcp 127.0.0.1:41775->127.0.0.1:35158: use of closed network connection
+2026/09/28 09:39:14 http: TLS handshake error from 127.0.0.1:35266: read tcp 127.0.0.1:41775->127.0.0.1:35266: use of closed network connection
+2026/09/28 09:39:14 http: TLS handshake error from 127.0.0.1:35224: read tcp 127.0.0.1:41775->127.0.0.1:35224: use of closed network connection
+2026/09/28 09:39:14 http: TLS handshake error from 127.0.0.1:35212: write tcp 127.0.0.1:41775->127.0.0.1:35212: use of closed network connection
+2026/09/28 09:39:14 http: TLS handshake error from 127.0.0.1:35720: write tcp 127.0.0.1:41775->127.0.0.1:35720: use of closed network connection
+FAIL
+FAIL	git.example.com/infra/openbao-sdk-go	0.755s
+FAIL

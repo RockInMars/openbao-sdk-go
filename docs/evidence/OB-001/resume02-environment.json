@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-09-28T12:12:53.798307+00:00",
+  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "baseline_archive_sha256": "5c0c1121ed591c93f709e57a772915dd3947c41b57e9eb4387222bb7dc84dc4f",
+  "baseline_source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
+  "go_version": "go1.23.2 linux/amd64",
+  "restored_directory": "/mnt/data/openbao-r2/openbao-sdk-go",
+  "git_metadata_present": false,
+  "all_go_files_unchanged": 98,
+  "preserved_spec_and_historical_evidence_files": 342,
+  "official_module_downloaded": false,
+  "official_minimum_go": null,
+  "official_module_sum": null,
+  "official_go_mod_sum": null,
+  "go_sum_bytes": 0,
+  "codex_registered_environments": 0,
+  "temporary_openbao_available": false,
+  "go_or_runtime_configuration_changed": false,
+  "download_tool_attempts": [
+    {
+      "url": "https://proxy.golang.org/github.com/openbao/openbao/api/v2/@v/v2.7.0.mod",
+      "result": "URL visibility prerequisite failed after browser could not load URL"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openbao/openbao/api/v2.7.0/api/client.go",
+      "result": "download tool failed; browser text available only"
+    }
+  ]
+}

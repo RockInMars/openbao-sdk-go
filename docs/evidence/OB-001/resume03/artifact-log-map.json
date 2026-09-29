@@ -1,0 +1,13 @@
+{
+  ".artifacts/normal-test-list.log": "docs/evidence/OB-001/resume03/normal-test-list.log",
+  ".artifacts/consumer-reader-0.log": "docs/evidence/OB-001/resume03/consumer-reader-0.log",
+  ".artifacts/normal-module-graph.log": "docs/evidence/OB-001/resume03/normal-module-graph.log",
+  ".artifacts/gitleaks.log": "docs/evidence/OB-001/resume03/gitleaks.log",
+  ".artifacts/govulncheck.log": "docs/evidence/OB-001/resume03/govulncheck.log",
+  ".artifacts/normal-build.log": "docs/evidence/OB-001/resume03/normal-build.log",
+  ".artifacts/normal-race-coverage.log": "docs/evidence/OB-001/resume03/normal-race-coverage.log",
+  ".artifacts/normal-vet.log": "docs/evidence/OB-001/resume03/normal-vet.log",
+  ".artifacts/normal-modules.log": "docs/evidence/OB-001/resume03/normal-modules.log",
+  ".artifacts/consumer-signer-0.log": "docs/evidence/OB-001/resume03/consumer-signer-0.log",
+  ".artifacts/normal-unit.log": "docs/evidence/OB-001/resume03/normal-unit.log"
+}
