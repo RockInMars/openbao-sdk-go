@@ -44,6 +44,15 @@ func TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission(t *testing.T) {
 			if args["policy"] != controlPolicy() {
 				t.Error("control policy widened")
 			}
+			policy, ok := args["policy"].(string)
+			if !ok || !strings.Contains(policy, `path "transit/verify/mac/sha2-256" { capabilities = ["update"] }`) {
+				t.Error("control policy must grant the exact HMAC verification endpoint")
+			}
+			for _, forbidden := range []string{`path "transit/verify/mac"`, `path "transit/verify/mac/*"`, `path "transit/verify/*"`} {
+				if strings.Contains(policy, forbidden) {
+					t.Error("control policy grants an unused or broad HMAC verification endpoint")
+				}
+			}
 		}
 		response := map[string]any{}
 		switch {

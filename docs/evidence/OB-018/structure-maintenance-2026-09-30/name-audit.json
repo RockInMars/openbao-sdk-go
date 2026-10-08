@@ -1,0 +1,28 @@
+{
+  "scope": "Windows root-package top-level Go test names and 12 migrated regression tests",
+  "before": {
+    "source_sha256": "e9b3708f980b041559c11cb1818ea03284848c2e78e6290bf974f836db995685",
+    "test_run_receipt": ".artifacts/runs/structure-maintenance-20260930-pre/root-baseline-root-baseline-01.json",
+    "test_list_receipt": ".artifacts/runs/structure-maintenance-20260930-pre/root-list-root-list-01.json",
+    "top_level_names": 69,
+    "migrated_target_run_pass": "12/12"
+  },
+  "first_comparison": {
+    "source_sha256": "4cf97b5e036b2c28aa2494f91a9c4ea7faa46d7fb0555775cabbee7016b1c938",
+    "test_list_receipt": ".artifacts/runs/structure-maintenance-20260930-pre/root-list-after-root-list-after-01.json",
+    "comparison_exit_code": 1,
+    "top_level_names": 68,
+    "missing": ["TestCloseCancelsHealthBeforeStart"],
+    "cause": "Add File on an existing tracked target replaced its original test; detected by full name-set comparison"
+  },
+  "recovered": {
+    "source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5",
+    "test_list_receipt": ".artifacts/runs/structure-maintenance-20260930-pre/root-list-after-root-list-after-02.json",
+    "top_level_names": 69,
+    "removed": [],
+    "added": [],
+    "restored_test_focused_result": "PASS with natural exit 0",
+    "root_package_result": "PASS with natural exit 0"
+  },
+  "platform_note": "network_linux_test.go defines one additional Linux-only root-package test that is not listed by Windows go test -list"
+}

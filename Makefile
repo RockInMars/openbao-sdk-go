@@ -33,10 +33,6 @@ security-test:
 tooling-test:
 	python3 -m unittest discover -s scripts/tests -v
 fuzz-test:
-	go test -run='^$$' -fuzz=FuzzPath -fuzztime=30s -parallel=1 -timeout=90s ./internal/engine
-	go test -run='^$$' -fuzz=FuzzDocument -fuzztime=30s -parallel=1 -timeout=90s ./kv
-	go test -run='^$$' -fuzz=FuzzPKICSR -fuzztime=30s -parallel=1 -timeout=90s ./pki
-	go test -run='^$$' -fuzz=FuzzEncoding -fuzztime=30s -parallel=1 -timeout=90s ./internal/transitutil
-	go test -run='^$$' -fuzz=FuzzDecode -fuzztime=30s -parallel=1 -timeout=90s ./internal/pemutil
+	python3 scripts/fuzz-test.py
 release-check:
 	python3 scripts/verify-release.py

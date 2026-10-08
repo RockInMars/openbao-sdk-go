@@ -27,9 +27,9 @@ class DependencyCheckTests(unittest.TestCase):
         source = p / 'source'
         source.mkdir()
         for name in ('client.go', 'request.go', 'response.go'):
-            (source / name).write_text('// synthetic validator fixture, NOT OpenBao source\n')
+            (source / name).write_text('// synthetic validator fixture, NOT OpenBao source\n', encoding='utf-8')
         mod = p / 'upstream.mod'
-        mod.write_text('module ' + MODULE + '\n\ngo 1.23.2\n')
+        mod.write_text('module ' + MODULE + '\n\ngo 1.23.2\n', encoding='utf-8')
         zipped = p / 'upstream.zip'
         zipped.write_bytes(b'synthetic validator fixture, NOT a module ZIP')
         return dict(Path=MODULE, Version=VERSION, Sum=SUM, GoModSum=MODSUM,
@@ -83,7 +83,7 @@ class DependencyCheckTests(unittest.TestCase):
     def test_module_graph_replacements_and_missing_pin_are_rejected(self):
         m = self.load()
         upstream = dict(Path=MODULE, Version=VERSION)
-        root = {'Path': 'git.example.com/infra/openbao-sdk-go', 'Main': True}
+        root = {'Path': 'github.com/RockInMars/openbao-sdk-go', 'Main': True}
         m.validate_graph([root, upstream])
         for graph in ([root], [root, {**upstream, 'Version': 'v2.6.0'}],
                       [root, {**upstream, 'Replace': {'Dir': '/tmp/fake'}}],

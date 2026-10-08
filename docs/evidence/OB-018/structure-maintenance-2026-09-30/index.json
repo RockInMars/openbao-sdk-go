@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-30T15:02:54.087431+00:00",
+  "scope": "Task 1-4 structure maintenance; Windows local validation only; no current-source remote run",
+  "head": "6d8251658e76f88aec5935126f303b2c59497691",
+  "branch": "master",
+  "source_identity": {
+    "source_hash_version": 2,
+    "source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5",
+    "input_count": 175
+  },
+  "previous_source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b",
+  "formal_reports": {
+    "normal": {
+      "path": ".artifacts/runs/2026-09-30T105643.005724Z-32c835a94e3b42babc7621ecc92f9fe9/normal/report-007.json",
+      "status": "PASS",
+      "run_id": "2026-09-30T105643.005724Z-32c835a94e3b42babc7621ecc92f9fe9",
+      "source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5"
+    },
+    "fuzz": {
+      "path": ".artifacts/runs/2026-09-30T110029.905207Z-3ac740dad32d4acd9c8613318679e220/fuzz/report-006.json",
+      "status": "PASS",
+      "run_id": "2026-09-30T110029.905207Z-3ac740dad32d4acd9c8613318679e220",
+      "source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5"
+    },
+    "consumer": {
+      "path": ".artifacts/runs/2026-09-30T110435.874052Z-47db4e32da064837aeda7beef24cdaee/consumer/report-007.json",
+      "status": "PASS",
+      "run_id": "2026-09-30T110435.874052Z-47db4e32da064837aeda7beef24cdaee",
+      "source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5"
+    },
+    "benchmark": {
+      "path": ".artifacts/runs/2026-09-30T110648.016068Z-7eba31c81f7f4a2882efd922375f114c/benchmark/report-002.json",
+      "status": "PASS",
+      "run_id": "2026-09-30T110648.016068Z-7eba31c81f7f4a2882efd922375f114c",
+      "source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5"
+    },
+    "integration": {
+      "path": ".artifacts/runs/2026-09-30T141027.493234Z-679c8128476c42269f3001b84feb1527/integration/report-001.json",
+      "status": "BLOCKED",
+      "run_id": "2026-09-30T141027.493234Z-679c8128476c42269f3001b84feb1527",
+      "source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5"
+    },
+    "security": {
+      "path": ".artifacts/runs/2026-09-30T141044.523769Z-f2caf1b36bb04adfb0152bbb98a635af/security/report-001.json",
+      "status": "BLOCKED",
+      "run_id": "2026-09-30T141044.523769Z-f2caf1b36bb04adfb0152bbb98a635af",
+      "source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5"
+    }
+  },
+  "tooling": {
+    "path": ".artifacts/runs/structure-maintenance-20260930-final/tooling-tooling-01.json",
+    "status": "PASS",
+    "tests": 118
+  },
+  "coverage": {
+    "path": ".artifacts/runs/structure-maintenance-20260930-final/coverage-analysis.json",
+    "race_profile": {
+      "path": ".artifacts/runs/2026-09-30T105643.005724Z-32c835a94e3b42babc7621ecc92f9fe9/normal/coverage.out",
+      "sha256": "2b48058fbc08f8b1d68d9d2d4476c2ca3b287887389e2718d00acdf3774bf669",
+      "run_id": "2026-09-30T105643.005724Z-32c835a94e3b42babc7621ecc92f9fe9"
+    },
+    "groups_passed": 15,
+    "groups_total": 15
+  },
+  "remote_tag_compile": {
+    "path": ".artifacts/runs/structure-maintenance-20260930-final/remote-tag/remote.test.exe",
+    "status": "PASS",
+    "executed": false
+  },
+  "release_gate": {
+    "path": ".artifacts/runs/structure-maintenance-20260930-final/release-release-02.json",
+    "status": "FAIL",
+    "process_exit_code": 1,
+    "refusals": 25
+  },
+  "historical_remote": {
+    "source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b",
+    "path": ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+    "current_source_status": "NOT_RUN"
+  },
+  "first_failure_and_recovery": "docs/evidence/OB-018/structure-maintenance-2026-09-30/name-audit.json",
+  "independent_review": "docs/evidence/OB-018/structure-maintenance-2026-09-30/independent-review.md",
+  "files": [
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-pre/remote-baseline-remote-baseline-01.json",
+      "sha256": "a8f3e754146942e30eb1195360370b415ab6e50e90bb82e708aacad97c956fd8",
+      "bytes": 1500
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-pre/root-baseline-root-baseline-01.json",
+      "sha256": "b89ff5b94324dcb97a117812cee0b4d5120a9ee3c8a1672e1566abfb40960b74",
+      "bytes": 1482
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-pre/root-list-root-list-01.json",
+      "sha256": "96035fbefce8d1c83ff71d51e4b69e32c6c5faf82fa5d99249091a397120ab91",
+      "bytes": 1466
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-pre/root-list-after-root-list-after-01.json",
+      "sha256": "86d1797045b7c8745c597e4b310d72473f66bb3b70cfb36b31ce4268a4277bd6",
+      "bytes": 1484
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-pre/root-list-after-root-list-after-02.json",
+      "sha256": "63c1300043524d22906a4c26c42a8b332a7a567ff490d7c4e24790c9655a6d15",
+      "bytes": 1483
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-final/tooling-tooling-01.json",
+      "sha256": "08a07307ea64c0ecc8596b24dbbdb546c9e9cfd1d7ed6a9e4cac820438d3d15a",
+      "bytes": 1500
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-final/coverage-analysis.json",
+      "sha256": "f7bad76a14e50b79e2b6aa25ef2fd9eae148ed9e019f9a003bcfd200515d76a5",
+      "bytes": 3529
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-final/remote-tag/remote.test.exe",
+      "sha256": "600e4ec4518c35cd0f1ecc72c707130d381793d7386b6e6b85bf5a2f4165c44f",
+      "bytes": 13425152
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-final/release-release-01.json",
+      "sha256": "382b403f7ac224b7c54d91f8462a95867a896810c73a4e7720c400d5108c5bf5",
+      "bytes": 1430
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-final/release-release-01.log",
+      "sha256": "78bd0a50edf0dc9a353e65b34c841e6f386dea00def59c4b86a15acf21318452",
+      "bytes": 742
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-final/release-release-02.json",
+      "sha256": "e415addaa3e5aab8b5ad01bd9f572ad12babbce0204a96ffe60b5a5b4f48adf5",
+      "bytes": 1429
+    },
+    {
+      "path": ".artifacts/runs/structure-maintenance-20260930-final/release-release-02.log",
+      "sha256": "78bd0a50edf0dc9a353e65b34c841e6f386dea00def59c4b86a15acf21318452",
+      "bytes": 742
+    },
+    {
+      "path": "docs/evidence/OB-018/structure-maintenance-2026-09-30/independent-review.md",
+      "sha256": "67e0f9537a19b9e32a35eff136bda5be1623444382a19fa7efdf081e18a3f0d2",
+      "bytes": 1514
+    },
+    {
+      "path": "docs/evidence/OB-018/structure-maintenance-2026-09-30/static-review-96a62a.json",
+      "sha256": "94db55d61c74527337a6bd357edb1df6e8c4113f08515f88974e68506fbfe9a3",
+      "bytes": 2228
+    },
+    {
+      "path": "docs/evidence/OB-018/structure-maintenance-2026-09-30/source-manifest.json",
+      "sha256": "e0f02723cd524a6b98fdc1b5026f6876154ea1f14bcb51b1f8448b0a3cd259e4",
+      "bytes": 28418
+    },
+    {
+      "path": "docs/evidence/OB-018/structure-maintenance-2026-09-30/name-audit.json",
+      "sha256": "c54e16afd8c55dcfa3811c17fbb01554d8d27384a6a060fd4351883cd2888da7",
+      "bytes": 1510
+    },
+    {
+      "path": ".artifacts/runs/2026-09-30T105643.005724Z-32c835a94e3b42babc7621ecc92f9fe9/normal/report-007.json",
+      "sha256": "937456709912e3ea03521b906ee6883bd3916a0df2f79145c83ee9979c969dcd",
+      "bytes": 6181
+    },
+    {
+      "path": ".artifacts/runs/2026-09-30T110029.905207Z-3ac740dad32d4acd9c8613318679e220/fuzz/report-006.json",
+      "sha256": "cc41c1b0fd551b29a421680e185485d9b27b0aabee7a7977060492ff43498b6a",
+      "bytes": 5675
+    },
+    {
+      "path": ".artifacts/runs/2026-09-30T110435.874052Z-47db4e32da064837aeda7beef24cdaee/consumer/report-007.json",
+      "sha256": "75f089eca449119d7e2da3943e5d7871f42e526004a6abcf4860b4f1f473f366",
+      "bytes": 8075
+    },
+    {
+      "path": ".artifacts/runs/2026-09-30T110648.016068Z-7eba31c81f7f4a2882efd922375f114c/benchmark/report-002.json",
+      "sha256": "1ee0438fd5681437bbced8c1f7f87c31f05186739d72bda2b0c2e33190cc98d1",
+      "bytes": 5830
+    },
+    {
+      "path": ".artifacts/runs/2026-09-30T141027.493234Z-679c8128476c42269f3001b84feb1527/integration/report-001.json",
+      "sha256": "53bd6bd899b931dbe7b62908a96f7fc2c4ce19a7e4e4647b9fff2b3164aae8ba",
+      "bytes": 1758
+    },
+    {
+      "path": ".artifacts/runs/2026-09-30T141044.523769Z-f2caf1b36bb04adfb0152bbb98a635af/security/report-001.json",
+      "sha256": "dddf2bdff3a0c790a77f2b97301b0df2e52d57688f948e1af2b3990160ea23e1",
+      "bytes": 1765
+    },
+    {
+      "path": ".artifacts/runs/2026-09-30T105643.005724Z-32c835a94e3b42babc7621ecc92f9fe9/normal/coverage.out",
+      "sha256": "2b48058fbc08f8b1d68d9d2d4476c2ca3b287887389e2718d00acdf3774bf669",
+      "bytes": 192418
+    }
+  ]
+}

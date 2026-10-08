@@ -8,7 +8,7 @@ import (
 	"encoding/hex"
 	"encoding/pem"
 	"errors"
-	"git.example.com/infra/openbao-sdk-go/internal/pemutil"
+	"github.com/RockInMars/openbao-sdk-go/internal/pemutil"
 	"math/big"
 	"strings"
 )

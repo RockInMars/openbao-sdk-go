@@ -1,3 +1,36 @@
 # Use all built-in rules. No broad allowlist for SDK tests or examples.
 [extend]
 useDefault = true
+
+# Only root-generated downloads, tool caches and runtime reports are excluded.
+# The runner scans "." from the repository root, so paths are repository-relative.
+# SDK source, tests, examples and committed evidence remain subject to every rule.
+[allowlist]
+paths = ['''^\.artifacts[/\\]''']
+
+[[rules]]
+id = "generic-api-key"
+[[rules.allowlists]]
+description = "Exact public file digests in the immutable resume03 baseline"
+condition = "AND"
+paths = ['''(?:^|[/\\])docs[/\\]evidence[/\\]OB-001[/\\]resume03[/\\]baseline\.json$''']
+regexes = [
+  '''^a05ae87d77d438bf522669a7ebc12d5934c5a020e044a6e913dcd55e2d4a7319$''',
+  '''^0c8458209c3f4fbb7ce78faed68016084e243800b98c58045c218f9aa04776b6$''',
+  '''^85e162eae1acb2855004898b943c2a59007408e61a807065ae450a310b4d0a16$''',
+  '''^592edb18fac489e88515b35dcc09a5dbb66a0093ae86eefd013b31a9aee16b0c$''',
+  '''^09c3df51754d68519c150342e3c5ced0a56b6238102809e1ddfe6408a5636c09$''',
+  '''^19c36af2d5eb742b9034053c43cde0bb10aef75f56511e113903097a40b3e62d$''',
+  '''^282328aeebc4284f4e2121e28dbcbeb3d0c592118da9b5140c617dbce303f291$''',
+  '''^9fd6af2507dbb9aaaeeafa39144a7f271ee67c0cb0179372e05c9fe5d815b197$''',
+  '''^07721b360e50454e4c543ebda43a6e1ab19cef107bbe34def13169202a5a5b8b$''',
+  '''^efd086b556da172cd5421168f46da1bec10cc7ded945a9d8965932d4fcca121d$''',
+  '''^1cff850a2c5cc22c22c06d65f320aedf886cd3ff60addd79e2e59a985a47cb97$''',
+  '''^7661e87a0c4908704b615d71acd915ee7c7b6191de7065a3356b4bfa8f48c821$''',
+]
+
+[[rules.allowlists]]
+description = "Public OpenBao signing subkey fingerprint from official installation docs"
+condition = "AND"
+paths = ['''(?:^|[/\\])docs[/\\]evidence[/\\]OB-018[/\\]release-validation-2026-10-01[/\\]tool-provenance\.json$''']
+regexes = ['''^E617DCD4065C2AFC0B2CF7A7BA8BC08C0F691F94$''']

@@ -6,15 +6,33 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"encoding/pem"
-	"git.example.com/infra/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/auth"
 	"net/http"
 	"net/http/httptest"
+	"os"
+	"path/filepath"
 	"testing"
 
-	"git.example.com/infra/openbao-sdk-go/internal/testutil"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/testutil"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 )
 
+func TestExplicitEmptyCAFileIsNotSystemTrust(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "empty-ca.pem")
+	if e := os.WriteFile(path, nil, 0600); e != nil {
+		t.Fatal(e)
+	}
+	cfg := testConfig()
+	cfg.TLS.CAFile = path
+	c, e := New(cfg)
+	if c != nil {
+		defer c.Close(context.Background())
+	}
+	if !baoerr.IsCode(e, baoerr.CodeInvalidArgument) {
+		t.Fatal("explicit empty CA file silently fell back to system trust")
+	}
+}
 func corruptPEMPrefix(kind string, valid []byte) []byte {
 	return append([]byte("-----BEGIN "+kind+"-----\n!\n-----END "+kind+"-----\n"), valid...)
 }

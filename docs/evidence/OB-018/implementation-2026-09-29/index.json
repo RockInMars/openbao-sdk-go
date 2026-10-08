@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "note": "归档为UTF-8文本副本，JSON内容与原始运行报告相同；原始字节摘要另列。所有run_id、source_identity和收据值保持原记录。原始日志/profile仍保留在列出的不可变.artifacts路径，搬移交付时须一并保留；不能用本索引或静态复核代替运行。",
+  "reports": [
+    {
+      "original": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/report-007.json",
+      "archive": "docs/evidence/OB-018/implementation-2026-09-29/normal-report.json",
+      "original_sha256": "a7472017a385f6f63c92ada3a225fbcdede0b5ef78421b0226278b93512aa173",
+      "archive_sha256": "a7472017a385f6f63c92ada3a225fbcdede0b5ef78421b0226278b93512aa173",
+      "run_id": "2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0",
+      "evidence_class": "NORMAL_OFFICIAL_CLIENT",
+      "status": "PASS"
+    },
+    {
+      "original": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/report-007.json",
+      "archive": "docs/evidence/OB-017/implementation-2026-09-29/consumer-report.json",
+      "original_sha256": "bb1d0d2d93ed41e34bcb1e7ff307e26c94c6fe2dbed8d67cbf3d72d1882d65ad",
+      "archive_sha256": "bb1d0d2d93ed41e34bcb1e7ff307e26c94c6fe2dbed8d67cbf3d72d1882d65ad",
+      "run_id": "2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b",
+      "evidence_class": "INDEPENDENT_CONSUMERS",
+      "status": "PASS"
+    },
+    {
+      "original": ".artifacts/runs/2026-09-29T044957.087058Z-6f5ea1c8ed2147bea733b6101a53f621/integration/report-001.json",
+      "archive": "docs/evidence/OB-016/implementation-2026-09-29/integration-report.json",
+      "original_sha256": "5f143796508e1a88e363cd63f0072f6827f4d76e1a3afeee54232b1753f83e3e",
+      "archive_sha256": "5f143796508e1a88e363cd63f0072f6827f4d76e1a3afeee54232b1753f83e3e",
+      "run_id": "2026-09-29T044957.087058Z-6f5ea1c8ed2147bea733b6101a53f621",
+      "evidence_class": "REAL_OPENBAO",
+      "status": "BLOCKED"
+    },
+    {
+      "original": ".artifacts/runs/2026-09-29T045004.061824Z-9853d84e370c46ebb43a81300dc6fd86/security/report-001.json",
+      "archive": "docs/evidence/OB-018/implementation-2026-09-29/security-report.json",
+      "original_sha256": "18bfe5c3246832daa9b21c152ec5bcca7615f485919c9c31c1518be3065e0b25",
+      "archive_sha256": "18bfe5c3246832daa9b21c152ec5bcca7615f485919c9c31c1518be3065e0b25",
+      "run_id": "2026-09-29T045004.061824Z-9853d84e370c46ebb43a81300dc6fd86",
+      "evidence_class": "PINNED_SECURITY_SCANNERS",
+      "status": "BLOCKED"
+    },
+    {
+      "original": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/report-006.json",
+      "archive": "docs/evidence/OB-015/implementation-2026-09-29/fuzz-report.json",
+      "original_sha256": "29ea5b10d2a474ae7a438747927f0a425e2598838c192797a3d7b998670b5c1d",
+      "archive_sha256": "29ea5b10d2a474ae7a438747927f0a425e2598838c192797a3d7b998670b5c1d",
+      "run_id": "2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5",
+      "evidence_class": "FUZZ_RUNTIME",
+      "status": "PASS"
+    },
+    {
+      "original": ".artifacts/runs/2026-09-29T045525.159880Z-3ffd362d9448484692ba27a31370767b/benchmark/report-002.json",
+      "archive": "docs/evidence/OB-015/implementation-2026-09-29/benchmark-report.json",
+      "original_sha256": "de96b3e1b3602b4c8ed466ebd9cf0dfd4270a178ea8594ced2d8246ea762590d",
+      "archive_sha256": "de96b3e1b3602b4c8ed466ebd9cf0dfd4270a178ea8594ced2d8246ea762590d",
+      "run_id": "2026-09-29T045525.159880Z-3ffd362d9448484692ba27a31370767b",
+      "evidence_class": "BENCHMARK_BASELINE",
+      "status": "PASS"
+    },
+    {
+      "original": ".artifacts/runs/final-tools/tooling-windows-05.json",
+      "archive": "docs/evidence/OB-018/implementation-2026-09-29/tooling-report.json",
+      "original_sha256": "eb5b99203b44db5866af5c3e5022dd3073b39a905938bb94e85675a3b4b79f6f",
+      "archive_sha256": "eb5b99203b44db5866af5c3e5022dd3073b39a905938bb94e85675a3b4b79f6f",
+      "run_id": "windows-05",
+      "evidence_class": "COMMAND_TOOLING",
+      "status": "PASS"
+    },
+    {
+      "original": ".artifacts/runs/final-supplemental/coverage-analysis-v2.json",
+      "archive": "docs/evidence/OB-015/implementation-2026-09-29/coverage-analysis.json",
+      "original_sha256": "85c1cadbb6e514a807234890a9c6ef5463e8457eb6922c940d24014c46894f3e",
+      "archive_sha256": "e71ec63355396be82489f36a7443a6a2e531ff1c6f3451d406b47fa4eb2ee3e5",
+      "run_id": null,
+      "evidence_class": "COVERAGE_ANALYSIS",
+      "status": "PASS"
+    },
+    {
+      "original": ".artifacts/runs/final-release/verify-release-release-01.json",
+      "archive": "docs/evidence/OB-018/implementation-2026-09-29/verify-release.json",
+      "original_sha256": "77804535c5ee2ea79b4171a93ff6fe68294d3dd2044f3dec66d1fbc20d2556ba",
+      "archive_sha256": "77804535c5ee2ea79b4171a93ff6fe68294d3dd2044f3dec66d1fbc20d2556ba",
+      "run_id": "release-01",
+      "evidence_class": "COMMAND_RECEIPT",
+      "status": "FAIL"
+    },
+    {
+      "original": ".artifacts/runs/final-supplemental/local-ci-summary-v2.json",
+      "archive": "docs/evidence/OB-018/implementation-2026-09-29/local-ci-summary.json",
+      "original_sha256": "ea0ab6df3571cb890258ad396cf88af613c3fa0b9877f7499cbc8d47bbb238f3",
+      "archive_sha256": "5602f2015d14e445297c9469dad6bfed81159cccd0245db5b315b296765a76f7",
+      "run_id": null,
+      "evidence_class": "CI_SUMMARY",
+      "status": "FAIL"
+    },
+    {
+      "original": ".artifacts/runs/final-supplemental/ci-yaml-ci-02.json",
+      "archive": "docs/evidence/OB-018/implementation-2026-09-29/ci-yaml.json",
+      "original_sha256": "61ead09e2112f9e8da19062769d6d7ebc0af51795aebe270b6c7fb3f68059f54",
+      "archive_sha256": "61ead09e2112f9e8da19062769d6d7ebc0af51795aebe270b6c7fb3f68059f54",
+      "run_id": "ci-02",
+      "evidence_class": "COMMAND_RECEIPT",
+      "status": "PASS"
+    },
+    {
+      "original": ".artifacts/runs/final-supplemental/examples-test-examples-03.json",
+      "archive": "docs/evidence/OB-014/implementation-2026-09-29/examples-test.json",
+      "original_sha256": "d4c47a4f2c2ea542e09fb9a84b42d5d9484b30ace8d1c28b644cb02dccd33801",
+      "archive_sha256": "d4c47a4f2c2ea542e09fb9a84b42d5d9484b30ace8d1c28b644cb02dccd33801",
+      "run_id": "examples-03",
+      "evidence_class": "COMMAND_RECEIPT",
+      "status": "PASS"
+    },
+    {
+      "original": ".artifacts/runs/final-supplemental/examples-build-examples-04.json",
+      "archive": "docs/evidence/OB-014/implementation-2026-09-29/examples-build.json",
+      "original_sha256": "8df99df610a7f5c2c9da93fc9520f3523b15cd2446ad173be7d6cb4f03b669e3",
+      "archive_sha256": "8df99df610a7f5c2c9da93fc9520f3523b15cd2446ad173be7d6cb4f03b669e3",
+      "run_id": "examples-04",
+      "evidence_class": "COMMAND_RECEIPT",
+      "status": "PASS"
+    }
+  ],
+  "raw_artifacts": [
+    {
+      "path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/coverage.out",
+      "bytes": 149309,
+      "sha256": "db34a47ec6d08cbffef27faf51ef4ffb3d7f4ac6fb565e310c5fe02fec4d62b8"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/go-version.log",
+      "bytes": 34,
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/module-graph.log",
+      "bytes": 22345,
+      "sha256": "e2c9fc8c4ef5858544167913ef48e46b43ed61fc3ac4c3b544c72d83bb41adf6"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/modules.log",
+      "bytes": 21,
+      "sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/race-coverage.log",
+      "bytes": 2238,
+      "sha256": "911dc79eb56aec219a77f79551de367ad3990d9817ba35c84d117043b9e8c075"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/unit.log",
+      "bytes": 263939,
+      "sha256": "09190f9b54325828f75fb11814f53f0dfd18ab3699a51229db3da9bd6a69751e"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/vet.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T044957.087058Z-6f5ea1c8ed2147bea733b6101a53f621/integration/go-version.log",
+      "bytes": 34,
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045004.061824Z-9853d84e370c46ebb43a81300dc6fd86/security/go-version.log",
+      "bytes": 34,
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzDecode.log",
+      "bytes": 1089,
+      "sha256": "48bf4e60b3b53c01a153aabf408e28513a417a4f292d6613f7dbe3fd0b9b1cbb"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzDocument.log",
+      "bytes": 1027,
+      "sha256": "436a709cb82c627209a558128f82743bbf83bdfa2576d2ca3157d7c89c0908f5"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzEncoding.log",
+      "bytes": 1079,
+      "sha256": "9267de0ff0c1d20b7ce983e135d244c0322c0544cde3906797e5eca88e1a107d"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzPKICSR.log",
+      "bytes": 1047,
+      "sha256": "2fb18d156c0bcc182e96847ab20137877c5a5090cb915aec3ead192c3717f4d5"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzPath.log",
+      "bytes": 1059,
+      "sha256": "49cd9b895bb8255c721f47d9459c6dac952d65337ee722b6630e516b0256c15d"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/go-version.log",
+      "bytes": 34,
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045525.159880Z-3ffd362d9448484692ba27a31370767b/benchmark/benchmark.log",
+      "bytes": 3146,
+      "sha256": "61e01115a16b873f0785efc95c4748b752b32e343bc15ad20dfac846a3dc6aaf"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045525.159880Z-3ffd362d9448484692ba27a31370767b/benchmark/go-version.log",
+      "bytes": 34,
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/go-version.log",
+      "bytes": 34,
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/reader-test.log",
+      "bytes": 1106,
+      "sha256": "90170223527d303a9a29b7b44cb4c66b88e25e8c808848f123a362be0a0e5e13"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/reader-tidy.log",
+      "bytes": 1469,
+      "sha256": "c2447ac47a6e1e0fbf6e9e34faf557d4ea34cb1707dbcb87783b3c0f9f4d75f7"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/signer-test.log",
+      "bytes": 1105,
+      "sha256": "502efedd5b129d872ccbe5ddaab04403c3cdc79c58c34650212d667a37944033"
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/signer-tidy.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".artifacts/runs/final-release/verify-release-release-01.log",
+      "bytes": 742,
+      "sha256": "78bd0a50edf0dc9a353e65b34c841e6f386dea00def59c4b86a15acf21318452"
+    },
+    {
+      "path": ".artifacts/runs/final-supplemental/ci-yaml-ci-02.log",
+      "bytes": 114,
+      "sha256": "7d5b47b0e7c096747990ef26258b9c09f22ff5c0ba3485093dd149ddcfc7fd60"
+    },
+    {
+      "path": ".artifacts/runs/final-supplemental/examples-build-examples-04.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".artifacts/runs/final-supplemental/examples-test-examples-03.log",
+      "bytes": 555,
+      "sha256": "99adad70790aada13dcb652c1f4c42a5925123bb465befbc6a9ea51ea65aece3"
+    },
+    {
+      "path": ".artifacts/runs/final-tools/tooling-windows-05.log",
+      "bytes": 13418,
+      "sha256": "2a6d1680643f28fc1a5634683326e05633640ce8aa4d5b1b4cbc64efc2118ae5"
+    }
+  ],
+  "history_preserved": [
+    ".artifacts/runs/baseline-python-1803d892ccca46d58d85019a295c8612.log",
+    ".artifacts/runs/review-red/",
+    ".artifacts/runs/review-green/",
+    ".artifacts/runs/normal-parser-red/",
+    ".artifacts/runs/normal-parser-green/",
+    ".artifacts/runs/consumer-offline-red/",
+    ".artifacts/runs/consumer-offline-green/",
+    ".artifacts/runs/consumer-offline-prepare/",
+    "docs/evidence/OB-001/resume03/"
+  ],
+  "final_workspace_audit": {
+    "report": ".artifacts/runs/final-audit/final-workspace-workspace-01.json",
+    "sha256": "62ae799eaf076a6cba7de1c174bc74fed24ba372476550a765fad7d1cb230d0b",
+    "log": ".artifacts/runs/final-audit/final-workspace-workspace-01.log",
+    "log_sha256": "fe24560a39cb41caad2cf7782d2ac58b00de40d0ee1550117bf0965cd1c266f0"
+  }
+}

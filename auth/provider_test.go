@@ -2,7 +2,7 @@ package auth
 
 import (
 	"context"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 	"os"
 	"path/filepath"
 	"strings"

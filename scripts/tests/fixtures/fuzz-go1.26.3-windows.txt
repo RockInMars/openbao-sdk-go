@@ -1,0 +1,5 @@
+fuzz: elapsed: 0s, gathering baseline coverage: 0/7 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 7/7 completed, now fuzzing with 1 workers
+fuzz: elapsed: 1s, execs: 11743 (11645/sec), new interesting: 49 (total: 56)
+PASS
+ok  	git.example.com/infra/openbao-sdk-go/kv	1.582s

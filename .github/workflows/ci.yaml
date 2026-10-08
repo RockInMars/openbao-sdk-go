@@ -5,42 +5,324 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+env:
+  GOWORK: 'off'
+  GOFLAGS: ''
+  GOENV: 'off'
+  GOTOOLCHAIN: local
+  CGO_ENABLED: '1'
+  PYTHONUTF8: '0'
+  PYTHONIOENCODING: utf-8
+  # Same source bytes on Linux/Windows without changing persistent Git settings.
+  GIT_CONFIG_COUNT: '1'
+  GIT_CONFIG_KEY_0: core.autocrlf
+  GIT_CONFIG_VALUE_0: 'false'
 jobs:
-  runtime:
-    runs-on: ubuntu-24.04
+  tooling:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: linux
+            os: ubuntu-24.04
+          - platform: windows
+            os: windows-2022
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 30
-    env:
-      GOWORK: 'off'
-      GOFLAGS: ''
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
       - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
-          go-version-file: go.mod
+          go-version: '1.26.8'
           cache: false
-      - run: make tooling-test
+      - run: python -B scripts/record.py --evidence-class COMMAND_TOOLING --output-dir .artifacts --run-id ci-${{ github.run_id }}-${{ github.run_attempt }} OB-018 tooling -- python -B -m unittest discover -s scripts/tests -v
+      - name: Prepare allowed evidence
+        if: always()
+        run: python -B scripts/ci-summary.py --package-report .artifacts/tooling-report.json --output .artifacts/ci-upload/tooling-${{ matrix.platform }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: verify-tooling-${{ matrix.platform }}
+          path: .artifacts/ci-upload/tooling-${{ matrix.platform }}
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  normal:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: linux
+            os: ubuntu-24.04
+          - platform: windows
+            os: windows-2022
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        with:
+          go-version: '1.26.8'
+          cache: false
       - run: go mod download
-      - run: make normal-test
+      - run: git diff --exit-code -- go.mod go.sum
+      - run: python -B scripts/normal-test.py
+      - name: Prepare allowed evidence
+        if: always()
+        run: python -B scripts/ci-summary.py --package-report .artifacts/normal-report.json --output .artifacts/ci-upload/normal-${{ matrix.platform }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: verify-normal-${{ matrix.platform }}
+          path: .artifacts/ci-upload/normal-${{ matrix.platform }}
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  minimum-go:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: linux
+            os: ubuntu-24.04
+            profile: normal
+            arguments: ''
+          - platform: windows
+            os: windows-2022
+            profile: normal
+            arguments: ''
+          - platform: linux
+            os: ubuntu-24.04
+            profile: consumer
+            arguments: --allow-network
+          - platform: windows
+            os: windows-2022
+            profile: consumer
+            arguments: --allow-network
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        with:
+          go-version: '1.25.0'
+          cache: false
+      - run: go mod download
+        if: matrix.profile == 'normal'
+      - run: git diff --exit-code -- go.mod go.sum
+      - run: python -B scripts/${{ matrix.profile }}-test.py --profile minimum-go ${{ matrix.arguments }}
+      - name: Prepare allowed evidence
+        if: always()
+        run: python -B scripts/ci-summary.py --package-report .artifacts/minimum-${{ matrix.profile }}-${{ matrix.platform }}-report.json --output .artifacts/ci-upload/minimum-${{ matrix.profile }}-${{ matrix.platform }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: verify-minimum-${{ matrix.profile }}-${{ matrix.platform }}
+          path: .artifacts/ci-upload/minimum-${{ matrix.profile }}-${{ matrix.platform }}
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  fuzz:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        with:
+          go-version: '1.26.8'
+          cache: false
+      - run: go mod download
+      - run: git diff --exit-code -- go.mod go.sum
       - run: make fuzz-test
-      - run: make consumer-test
-      - run: make security-test
+      - name: Prepare allowed evidence
+        if: always()
+        run: python -B scripts/ci-summary.py --package-report .artifacts/fuzz-report.json --output .artifacts/ci-upload/fuzz
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: verify-fuzz
+          path: .artifacts/ci-upload/fuzz
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  consumers:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        with:
+          go-version: '1.26.8'
+          cache: false
+      - run: python -B scripts/consumer-test.py --allow-network
+      - name: Prepare allowed evidence
+        if: always()
+        run: python -B scripts/ci-summary.py --package-report .artifacts/consumer-report.json --output .artifacts/ci-upload/consumers
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: verify-consumers
+          path: .artifacts/ci-upload/consumers
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  security:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        with:
+          go-version: '1.26.8'
+          cache: false
+      - run: python -B scripts/security-test.py --allow-network
+      - name: Prepare allowed evidence
+        if: always()
+        run: python -B scripts/ci-summary.py --package-report .artifacts/security-report.json --output .artifacts/ci-upload/security
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: verify-security
+          path: .artifacts/ci-upload/security
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
   real-integration:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
-      BAO_TEST_IMAGE: ${{ vars.BAO_TEST_IMAGE }} # Must include @sha256:<verified digest>
-      BAO_TEST_VERSION: ${{ vars.BAO_TEST_VERSION }} # Exact server version
-      GOWORK: 'off'
-      GOFLAGS: ''
+      BAO_TEST_IMAGE: ''
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
-      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
-          go-version-file: go.mod
+          go-version: '1.26.8'
           cache: false
-      # Missing environment fails this job. No skip and no root-only assertions.
-      - run: make integration-test
+      - run: go mod download
+      - run: git diff --exit-code -- go.mod go.sum
+      - name: Prepare verified OpenBao fixture
+        shell: bash
+        run: |
+          set -euo pipefail
+          fixture="$RUNNER_TEMP/openbao-sdk-fixture"
+          mkdir "$fixture"
+          curl --fail --location --retry 2 --connect-timeout 15 --max-time 180 \
+            --output "$fixture/openbao.tar.gz" \
+            https://github.com/openbao/openbao/releases/download/v2.6.3/openbao_2.6.3_linux_amd64.tar.gz
+          echo "c6463ddd4fdc4214b62a7ffdeaa0fc6df170f7e6b75c6dea2c5e525bdc932ed3  $fixture/openbao.tar.gz" | sha256sum --check --status
+          tar -xzf "$fixture/openbao.tar.gz" -C "$fixture" bao
+          BAO_FIXTURE_BINARY="$fixture/bao" python - <<'PY'
+          import hashlib, json, os, pathlib
+          lock = json.loads(pathlib.Path('deploy/test/server-lock.json').read_text(encoding='utf-8'))
+          binary = pathlib.Path(os.environ['BAO_FIXTURE_BINARY']).resolve()
+          assert lock['status'] == 'PINNED' and lock['version'] == '2.6.3' and lock['image'] is None
+          with binary.open('rb') as source:
+              digest = hashlib.file_digest(source, 'sha256').hexdigest()
+          assert digest == lock['binary_sha256'], 'fixture binary does not match server lock'
+          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as output:
+              output.write(f"BAO_TEST_BINARY={binary}\nBAO_TEST_BINARY_SHA256={digest}\nBAO_TEST_VERSION={lock['version']}\n")
+          PY
+      - run: python -B scripts/integration-test.py
+      - name: Prepare allowed evidence
+        if: always()
+        run: python -B scripts/ci-summary.py --package-report .artifacts/integration-report.json --output .artifacts/ci-upload/real-integration
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: verify-real-integration
+          path: .artifacts/ci-upload/real-integration
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  summary:
+    needs: [tooling, normal, minimum-go, fuzz, consumers, security, real-integration]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-tooling-linux
+          path: .artifacts/downloads/tooling-linux
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-tooling-windows
+          path: .artifacts/downloads/tooling-windows
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-normal-linux
+          path: .artifacts/downloads/normal-linux
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-normal-windows
+          path: .artifacts/downloads/normal-windows
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-fuzz
+          path: .artifacts/downloads/fuzz
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-minimum-normal-linux
+          path: .artifacts/downloads/minimum-normal-linux
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-minimum-normal-windows
+          path: .artifacts/downloads/minimum-normal-windows
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-minimum-consumer-linux
+          path: .artifacts/downloads/minimum-consumer-linux
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-minimum-consumer-windows
+          path: .artifacts/downloads/minimum-consumer-windows
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-consumers
+          path: .artifacts/downloads/consumers
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-security
+          path: .artifacts/downloads/security
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: always()
+        with:
+          name: verify-real-integration
+          path: .artifacts/downloads/real-integration
+      - name: Verify all required job evidence
+        if: always()
+        run: python -B scripts/ci-summary.py --artifacts .artifacts/downloads --output .artifacts/ci-summary.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: verification-summary
+          path: .artifacts/ci-summary.json
+          if-no-files-found: error

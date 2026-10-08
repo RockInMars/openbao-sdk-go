@@ -2,10 +2,10 @@ package bao
 
 import (
 	"crypto/tls"
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 	"math"
 	"net/url"
 	"reflect"
@@ -71,11 +71,6 @@ func normalizeConfig(c Config, allowLoopbackHTTP bool) (Config, error) {
 		if c.Auth.AppRole == nil || c.Auth.TokenProvider != nil || engine.ValidatePath(c.Auth.AppRole.Mount) != nil || c.Auth.AppRole.RoleID.Len() == 0 || nilInterface(c.Auth.AppRole.SecretIDProvider) {
 			return fail()
 		}
-		a := *c.Auth.AppRole
-		b := a.RoleID.RevealCopy()
-		a.RoleID = sensitive.NewBytes(b)
-		clear(b)
-		c.Auth.AppRole = &a
 	default:
 		return fail()
 	}
@@ -93,11 +88,6 @@ func normalizeConfig(c Config, allowLoopbackHTTP bool) (Config, error) {
 	if c.TLS.MinVersion != tls.VersionTLS12 && c.TLS.MinVersion != tls.VersionTLS13 {
 		return fail()
 	}
-	c.TLS.CAPEM = append([]byte(nil), c.TLS.CAPEM...)
-	c.TLS.ClientCertPEM = append([]byte(nil), c.TLS.ClientCertPEM...)
-	b := c.TLS.ClientKeyPEM.RevealCopy()
-	c.TLS.ClientKeyPEM = sensitive.NewBytes(b)
-	clear(b)
 	if strings.ContainsAny(c.TLS.ServerName, "\x00\r\n") {
 		return fail()
 	}
@@ -145,5 +135,28 @@ func normalizeConfig(c Config, allowLoopbackHTTP bool) (Config, error) {
 	if c.ReadRetry.MaxAttempts > 3 || c.ReadRetry.BaseDelay > c.ReadRetry.MaxDelay {
 		return fail()
 	}
+	// Do not create owned secrets until all configuration validation succeeds.
+	// The caller keeps its original handles; the returned copies have one owner.
+	if c.Auth.AppRole != nil {
+		a := *c.Auth.AppRole
+		b := a.RoleID.RevealCopy()
+		a.RoleID = sensitive.NewBytes(b)
+		clear(b)
+		c.Auth.AppRole = &a
+	}
+	c.TLS.CAPEM = append([]byte(nil), c.TLS.CAPEM...)
+	c.TLS.ClientCertPEM = append([]byte(nil), c.TLS.ClientCertPEM...)
+	b := c.TLS.ClientKeyPEM.RevealCopy()
+	c.TLS.ClientKeyPEM = sensitive.NewBytes(b)
+	clear(b)
 	return c, nil
+}
+
+// zeroConfigSecrets applies only to copies returned by normalizeConfig, never
+// caller-owned input. Value copies intentionally share each erasure handle.
+func zeroConfigSecrets(c Config) {
+	if c.Auth.AppRole != nil {
+		c.Auth.AppRole.RoleID.Zero()
+	}
+	c.TLS.ClientKeyPEM.Zero()
 }

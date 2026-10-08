@@ -3,8 +3,8 @@ package pki
 import (
 	"crypto/x509"
 	"encoding/pem"
-	"git.example.com/infra/openbao-sdk-go/internal/testutil"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/internal/testutil"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 	"testing"
 	"time"
 )

@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
 )
 
 func TestRetryAfterLimitsAndCancellation(t *testing.T) {

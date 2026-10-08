@@ -1,0 +1,119 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "771ac8fe1964aaebc7dd258d1060a34bbb8781e823ea86b182f8a465d9f8be0c",
+  "profile": {
+    "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/coverage.out",
+    "sha256": "72614acdda4703c02566322bc21966fa367e247d07d5433afee2a83c37cbab39",
+    "run_id": "2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7"
+  },
+  "threshold": 85.0,
+  "unit": "Go statements",
+  "passed": true,
+  "groups": [
+    {
+      "name": "package:.",
+      "covered_statements": 1073,
+      "statements": 1255,
+      "percentage": 85.4980079681275,
+      "status": "PASS"
+    },
+    {
+      "name": "package:internal/engine",
+      "covered_statements": 349,
+      "statements": 365,
+      "percentage": 95.61643835616438,
+      "status": "PASS"
+    },
+    {
+      "name": "package:internal/authn",
+      "covered_statements": 270,
+      "statements": 298,
+      "percentage": 90.60402684563758,
+      "status": "PASS"
+    },
+    {
+      "name": "package:auth",
+      "covered_statements": 64,
+      "statements": 74,
+      "percentage": 86.48648648648648,
+      "status": "PASS"
+    },
+    {
+      "name": "package:kv",
+      "covered_statements": 22,
+      "statements": 25,
+      "percentage": 88.0,
+      "status": "PASS"
+    },
+    {
+      "name": "package:pki",
+      "covered_statements": 69,
+      "statements": 70,
+      "percentage": 98.57142857142857,
+      "status": "PASS"
+    },
+    {
+      "name": "package:baoerr",
+      "covered_statements": 26,
+      "statements": 26,
+      "percentage": 100.0,
+      "status": "PASS"
+    },
+    {
+      "name": "package:sensitive",
+      "covered_statements": 20,
+      "statements": 22,
+      "percentage": 90.9090909090909,
+      "status": "PASS"
+    },
+    {
+      "name": "package:internal/jsondoc",
+      "covered_statements": 82,
+      "statements": 91,
+      "percentage": 90.10989010989012,
+      "status": "PASS"
+    },
+    {
+      "name": "package:internal/pkiutil",
+      "covered_statements": 79,
+      "statements": 87,
+      "percentage": 90.80459770114942,
+      "status": "PASS"
+    },
+    {
+      "name": "package:internal/transitutil",
+      "covered_statements": 83,
+      "statements": 87,
+      "percentage": 95.40229885057471,
+      "status": "PASS"
+    },
+    {
+      "name": "package:internal/pemutil",
+      "covered_statements": 10,
+      "statements": 10,
+      "percentage": 100.0,
+      "status": "PASS"
+    },
+    {
+      "name": "domain:kv",
+      "covered_statements": 215,
+      "statements": 234,
+      "percentage": 91.88034188034187,
+      "status": "PASS"
+    },
+    {
+      "name": "domain:pki",
+      "covered_statements": 352,
+      "statements": 389,
+      "percentage": 90.48843187660668,
+      "status": "PASS"
+    },
+    {
+      "name": "domain:transit",
+      "covered_statements": 372,
+      "statements": 426,
+      "percentage": 87.32394366197182,
+      "status": "PASS"
+    }
+  ]
+}

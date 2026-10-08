@@ -1,6 +1,6 @@
 package bao
 
-import "git.example.com/infra/openbao-sdk-go/observe"
+import "github.com/RockInMars/openbao-sdk-go/observe"
 
 // Option can only be created through SDK-defined helpers.
 type Option struct{ apply func(*clientOptions) error }

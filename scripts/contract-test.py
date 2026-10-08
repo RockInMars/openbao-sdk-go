@@ -5,10 +5,10 @@ root=pathlib.Path(__file__).resolve().parents[1]
 with tempfile.TemporaryDirectory(prefix='bao-contract-overlay-') as tmp:
     d=pathlib.Path(tmp);sender=d/'official_sender.go'
     sender.write_text('''package bao
-import ("net/http"; "git.example.com/infra/openbao-sdk-go/internal/engine"; "git.example.com/infra/openbao-sdk-go/internal/testutil")
+import ("net/http"; "github.com/RockInMars/openbao-sdk-go/internal/engine"; "github.com/RockInMars/openbao-sdk-go/internal/testutil")
 func newProtocolSender(address,namespace string,h *http.Client,t *engine.Transport)(engine.Sender,error){return testutil.NewHTTPSender(address,namespace,h,t),nil}
-''')
-    overlay=d/'overlay.json';overlay.write_text(json.dumps({'Replace':{str(root/'official_sender.go'):str(sender)}}))
+''', encoding='utf-8')
+    overlay=d/'overlay.json';overlay.write_text(json.dumps({'Replace':{str(root/'official_sender.go'):str(sender)}}), encoding='utf-8')
     args=sys.argv[1:]
     if not args:
         args=['-race','-timeout=90s','.','./auth','./kv','./pki','./transit','./baoerr','./sensitive','./diagnostics','./observe','./internal/engine','./internal/authn','./internal/jsondoc','./internal/pkiutil','./internal/pemutil','./internal/transitutil','./internal/testenv','./internal/testutil','./examples/...']

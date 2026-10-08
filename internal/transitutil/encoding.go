@@ -15,12 +15,12 @@ import (
 	"encoding/base64"
 	"encoding/pem"
 	"errors"
-	"git.example.com/infra/openbao-sdk-go/internal/pemutil"
+	"github.com/RockInMars/openbao-sdk-go/internal/pemutil"
 	"math/big"
 	"strconv"
 	"strings"
 
-	"git.example.com/infra/openbao-sdk-go/transit"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 var errEncoding = errors.New("invalid transit encoding")
@@ -66,7 +66,8 @@ func WireProfile(p transit.Profile, digest bool) map[string]any {
 		b["signature_algorithm"] = "pss"
 		b["salt_length"] = "hash"
 	case transit.Ed25519Message:
-		b["hash_algorithm"] = "none"
+		// Ed25519 signs the original input. OpenBao 2.6.3 rejects an explicit
+		// "none" via its RSA-only guard, so leave the optional hash field unset.
 	}
 	return b
 }

@@ -7,7 +7,7 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
 )
 
 const futureDeletionTime = "9999-01-01T00:00:00Z"

@@ -26,11 +26,11 @@ class DependencyBundleTests(unittest.TestCase):
     def fixture(self, folder):
         root = folder / 'sdk'
         root.mkdir()
-        (root / 'go.mod').write_text('module example.com/synthetic-sdk\n\ngo 1.23.2\n\nrequire github.com/openbao/openbao/api/v2 v2.7.0\n')
-        (root / 'go.sum').write_text('untrusted-seeded-content\n')
-        (root / 'main.go').write_text('package sdk\n')
-        (root / '.env').write_text('test-secret-must-not-be-copied\n')
-        (root / 'private.key').write_text('test-secret-must-not-be-copied\n')
+        (root / 'go.mod').write_text('module example.com/synthetic-sdk\n\ngo 1.23.2\n\nrequire github.com/openbao/openbao/api/v2 v2.7.0\n', encoding='utf-8')
+        (root / 'go.sum').write_text('untrusted-seeded-content\n', encoding='utf-8')
+        (root / 'main.go').write_text('package sdk\n', encoding='utf-8')
+        (root / '.env').write_text('test-secret-must-not-be-copied\n', encoding='utf-8')
+        (root / 'private.key').write_text('test-secret-must-not-be-copied\n', encoding='utf-8')
         return root
 
     def payload(self, folder):
@@ -55,15 +55,18 @@ class DependencyBundleTests(unittest.TestCase):
     def test_environment_uses_fresh_caches_and_no_identity_or_bypass(self):
         m = self.load()
         env = m.clean_environment({'PATH': os.environ['PATH'], 'HOME': '/personal',
+                                   'APPDATA': '/personal-config', 'XDG_CONFIG_HOME': '/personal-config',
                                    'GOSUMDB': 'off', 'GONOSUMDB': '*', 'GONOPROXY': '*',
                                    'GOWORK': '/other/go.work', 'GOFLAGS': '-overlay=fake',
                                    'BAO_TOKEN': 'fixture-token', 'VAULT_TOKEN': 'fixture-token',
                                    'HTTP_PROXY': 'http://user:password@proxy.invalid'}, Path('/isolated'), 'https://proxy.golang.org')
         self.assertEqual(env['GOSUMDB'], 'sum.golang.org')
         self.assertEqual(env['GOTOOLCHAIN'], 'local')
-        self.assertEqual(env['GOMODCACHE'], '/isolated/modcache')
-        self.assertEqual(env['GOPATH'], '/isolated/gopath')
-        self.assertEqual(env['HOME'], '/isolated/home')
+        self.assertEqual(env['GOMODCACHE'], str(Path('/isolated') / 'modcache'))
+        self.assertEqual(env['GOPATH'], str(Path('/isolated') / 'gopath'))
+        self.assertEqual(env['HOME'], str(Path('/isolated') / 'home'))
+        self.assertEqual(env['APPDATA'], str(Path('/isolated') / 'config'))
+        self.assertEqual(env['XDG_CONFIG_HOME'], str(Path('/isolated') / 'config'))
         self.assertEqual(env['GOWORK'], 'off')
         for key in ('GOFLAGS', 'GONOPROXY', 'GONOSUMDB', 'GOPRIVATE', 'GOINSECURE'):
             self.assertEqual(env[key], '')
@@ -84,8 +87,8 @@ class DependencyBundleTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             base = Path(td); root = self.fixture(base)
             nested = root / 'consumer'; nested.mkdir()
-            (nested / 'go.mod').write_text('module example.com/nested\n')
-            (nested / 'main.go').write_text('package nested\n')
+            (nested / 'go.mod').write_text('module example.com/nested\n', encoding='utf-8')
+            (nested / 'main.go').write_text('package nested\n', encoding='utf-8')
             work = base / 'work'
             m.copy_sdk_inputs(root, work)
             self.assertEqual({x.relative_to(work).as_posix() for x in work.rglob('*') if x.is_file()}, {'main.go', 'go.mod'})
@@ -104,9 +107,9 @@ class DependencyBundleTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             root = self.fixture(Path(td))
             before = m.input_fingerprint(root)
-            (root / '.env').write_text('other secret')
+            (root / '.env').write_text('other secret', encoding='utf-8')
             self.assertEqual(m.input_fingerprint(root), before)
-            (root / 'main.go').write_text('package changed\n')
+            (root / 'main.go').write_text('package changed\n', encoding='utf-8')
             self.assertNotEqual(m.input_fingerprint(root), before)
 
     def test_bundle_paths_cannot_escape_or_carry_code_credentials_or_ziphash(self):
@@ -188,8 +191,10 @@ class DependencyBundleTests(unittest.TestCase):
         m = self.load()
         with tempfile.TemporaryDirectory() as td:
             base=Path(td); root=self.fixture(base); before=m.input_fingerprint(root)
-            with patch.object(m, 'run_go', side_effect=ValueError('simulated download failure')):
+            with patch.object(m, 'run_go', side_effect=ValueError('simulated preparation failure')) as command:
                 report=m.export_bundle(root,base/'bundle.zip','https://proxy.golang.org',base/'report')
+            command.assert_called_once()
+            self.assertEqual(command.call_args.args[:2], ('export-telemetry-off', ['telemetry', 'off']))
             self.assertEqual(report['status'],'BLOCKED')
             self.assertFalse(report['sdk_compile_verified'])
             self.assertFalse((base/'bundle.zip').exists())
@@ -203,6 +208,12 @@ class DependencyBundleTests(unittest.TestCase):
             env=m.clean_environment(os.environ,scratch,(stage/'proxy').as_uri())
             work=scratch/'work';work.mkdir()
             (work/'go.mod').write_bytes((stage/'resolved/go.mod').read_bytes())
+            # Keep short-lived Go telemetry sidecars out of this disposable HOME.
+            preparation = {'commands': []}
+            m.run_go('fixture-telemetry-off', ['telemetry', 'off'], work, env, preparation, base/'logs')
+            mode = m.run_go('fixture-telemetry-mode', ['env', 'GOTELEMETRY'], work, env, preparation, base/'logs')
+            self.assertEqual(mode.strip(), 'off')
+            self.assertTrue(all(item['exit_code'] == 0 for item in preparation['commands']))
             result=subprocess.run(['go','mod','download','-json','example.com/fixture@v1.0.0'],cwd=work,env=env,
                                   capture_output=True,text=True,timeout=20)
             self.assertNotEqual(result.returncode,0)
@@ -245,7 +256,13 @@ class DependencyBundleTests(unittest.TestCase):
         m = self.load()
         with tempfile.TemporaryDirectory() as td:
             base = Path(td); stage = self.payload(base)
+            calls = []
             def inspect(name, args, work, env, report, logs):
+                calls.append(name)
+                if name == 'replay-telemetry-off':
+                    self.assertEqual(args, ['telemetry', 'off'])
+                    return ''
+                self.assertEqual(calls, ['replay-telemetry-off', 'replay-root'])
                 self.assertEqual(name, 'replay-root')
                 self.assertFalse((work/'go.sum').exists())
                 self.assertFalse(Path(env['GOMODCACHE']).exists())
@@ -256,6 +273,21 @@ class DependencyBundleTests(unittest.TestCase):
             with patch.object(m, 'run_go', side_effect=inspect):
                 with self.assertRaisesRegex(ValueError, 'authentication inputs'):
                     m.offline_replay(stage, base/'replay', [], {'commands': []}, base/'logs')
+
+    def test_verify_preparation_failure_leaves_destination_absent(self):
+        m = self.load()
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td); root = self.fixture(base); stage = self.payload(base)
+            archive = base/'bundle.zip'; destination = base/'published'
+            m.write_bundle(stage, archive, {'input_sha256': m.input_fingerprint(root),
+                                          'modules': [], 'go_version': 'go1.26.8'})
+            with patch.object(m, 'run_go', side_effect=ValueError('simulated preparation failure')) as command:
+                report = m.verify_bundle(root, archive, hashlib.sha256(archive.read_bytes()).hexdigest(),
+                                         destination, base/'logs')
+            command.assert_called_once()
+            self.assertEqual(command.call_args.args[:2], ('verify-telemetry-off', ['telemetry', 'off']))
+            self.assertEqual(report['status'], 'BLOCKED')
+            self.assertFalse(destination.exists())
 
     def test_payload_hash_rejects_tampering_even_with_new_archive_sha(self):
         m = self.load()

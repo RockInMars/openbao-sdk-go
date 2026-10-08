@@ -3,7 +3,7 @@ package pki
 
 import (
 	"crypto/x509"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 	"net/netip"
 	"time"
 )

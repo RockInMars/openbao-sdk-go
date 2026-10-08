@@ -3,11 +3,21 @@ package bao
 import (
 	"context"
 	"crypto/tls"
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
+	"math"
 	"testing"
 	"time"
 )
+
+func TestLimitsRejectIntegerOverflow(t *testing.T) {
+	c := testConfig()
+	c.Limits.MaxResponseBytes = math.MaxInt64
+	if _, e := New(c); !baoerr.IsCode(e, baoerr.CodeInvalidArgument) {
+		t.Fatal("response limit +1 can overflow")
+	}
+}
 
 type localTokenProvider struct{}
 

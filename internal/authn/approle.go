@@ -3,14 +3,15 @@ package authn
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"math"
 	"math/rand/v2"
 	"time"
 
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 )
 
 func (m *Manager) login(parent context.Context) error {
@@ -20,7 +21,10 @@ func (m *Manager) login(parent context.Context) error {
 	if m.cfg.AppRole == nil {
 		return providerError(ctx)
 	}
-	snap, err := safeSecretSnapshot(ctx, m.cfg.AppRole.SecretIDProvider)
+	snap, owned, err := safeSecretSnapshot(ctx, m.cfg.AppRole.SecretIDProvider)
+	if owned {
+		defer snap.SecretID.Zero()
+	}
 	if err != nil {
 		return providerError(ctx)
 	}
@@ -50,7 +54,7 @@ func (m *Manager) login(parent context.Context) error {
 		return providerError(ctx)
 	}
 	defer clear(body)
-	resp, err := m.executor.Execute(ctx, engine.Call{Operation: engine.AppRoleLogin, Path: "/v1/auth/" + m.cfg.AppRole.Mount + "/login", Payload: body})
+	resp, err := m.executeAuth(ctx, engine.Call{Operation: engine.AppRoleLogin, Path: "/v1/auth/" + m.cfg.AppRole.Mount + "/login", Payload: body})
 	if resp != nil {
 		defer resp.Zero()
 	}
@@ -63,7 +67,7 @@ func (m *Manager) renew(parent context.Context, token []byte, seq uint64) error 
 	ctx, cancel := context.WithTimeout(parent, m.executor.Budget(engine.TokenRenew))
 	defer cancel()
 	started := m.clock.Now()
-	resp, err := m.executor.Execute(ctx, engine.Call{Operation: engine.TokenRenew, Path: "/v1/auth/token/renew-self", Payload: []byte(`{}`), Credential: func(context.Context) (string, error) { return string(token), nil }})
+	resp, err := m.executeAuth(ctx, engine.Call{Operation: engine.TokenRenew, Path: "/v1/auth/token/renew-self", Payload: []byte(`{}`), Credential: func(context.Context) (string, error) { return string(token), nil }})
 	if resp != nil {
 		defer resp.Zero()
 	}
@@ -71,6 +75,26 @@ func (m *Manager) renew(parent context.Context, token []byte, seq uint64) error 
 		return err
 	}
 	return m.publish(resp, engine.TokenRenew, started, seq)
+}
+func (m *Manager) executeAuth(ctx context.Context, call engine.Call) (*engine.Response, error) {
+	resp, err := m.executor.Execute(ctx, call)
+	if m.onAttempt != nil {
+		attempts := 0
+		if resp != nil {
+			attempts = resp.Attempts
+		}
+		if attempts == 0 {
+			var be *baoerr.Error
+			if errors.As(err, &be) && be != nil {
+				attempts = be.Attempts
+			}
+		}
+		func() {
+			defer func() { _ = recover() }()
+			m.onAttempt(ctx, call.Operation, attempts)
+		}()
+	}
+	return resp, err
 }
 func (m *Manager) publish(r *engine.Response, op engine.Operation, started time.Time, expected uint64) error {
 	root, err := engine.DecodeObject(r, op)

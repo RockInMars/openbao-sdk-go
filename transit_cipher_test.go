@@ -15,10 +15,10 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/transitutil"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/transitutil"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 // This is a protocol fixture using standard-library crypto, not a fake report of

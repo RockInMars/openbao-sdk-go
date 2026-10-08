@@ -1,10 +1,10 @@
 package bao
 
 import (
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/kv"
-	"git.example.com/infra/openbao-sdk-go/pki"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/kv"
+	"github.com/RockInMars/openbao-sdk-go/pki"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 	"reflect"
 	"strings"
 	"testing"

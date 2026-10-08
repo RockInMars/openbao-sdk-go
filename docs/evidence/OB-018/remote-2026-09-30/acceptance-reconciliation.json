@@ -1,0 +1,697 @@
+{
+  "source_identity": {
+    "source_hash_version": 2,
+    "source_sha256": "32dfe9e8dbfa041033bb2ae2ce10488af173b9fceb4fda8388f7af450764471e"
+  },
+  "recorded_at": "2026-09-29T17:07:13.443514+00:00",
+  "counts": {
+    "PARTIAL": 3,
+    "PASS": 66,
+    "NOT_RUN": 3
+  },
+  "results": [
+    {
+      "id": "AC-001",
+      "status": "PARTIAL",
+      "matched_groups": 2,
+      "missing_classes": [
+        [
+          "REAL_OPENBAO"
+        ]
+      ],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json",
+        ".artifacts/runs/2026-09-29T165724.705236Z-ae37b218786b49619756b12f17e616cb/integration/report-001.json",
+        "docs/evidence/OB-018/remote-2026-09-30/static-review.json"
+      ]
+    },
+    {
+      "id": "AC-002",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-003",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-004",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-005",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-006",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-007",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-008",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-009",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-010",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-011",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-012",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-013",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-014",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-015",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-016",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-017",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-018",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-019",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-020",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-021",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-022",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-023",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-024",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-025",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-026",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-027",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-028",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-029",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-030",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-031",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-032",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-033",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-034",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-035",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-036",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-037",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-038",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-039",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-040",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-041",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-042",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-043",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-044",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-045",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-046",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-047",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-048",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-049",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-050",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-051",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-052",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-053",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-054",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-055",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-056",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-057",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-058",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-059",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-060",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-061",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-062",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-063",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-064",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165920.872032Z-bb1573c765134ef38fd77e27c7c1fc07/fuzz/report-006.json"
+      ]
+    },
+    {
+      "id": "AC-065",
+      "status": "NOT_RUN",
+      "matched_groups": 0,
+      "missing_classes": [
+        [
+          "REAL_OPENBAO"
+        ]
+      ],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165724.705236Z-ae37b218786b49619756b12f17e616cb/integration/report-001.json"
+      ]
+    },
+    {
+      "id": "AC-066",
+      "status": "PARTIAL",
+      "matched_groups": 1,
+      "missing_classes": [
+        [
+          "REAL_OPENBAO"
+        ]
+      ],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json",
+        ".artifacts/runs/2026-09-29T165724.705236Z-ae37b218786b49619756b12f17e616cb/integration/report-001.json"
+      ]
+    },
+    {
+      "id": "AC-067",
+      "status": "PASS",
+      "matched_groups": 1,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T170426.812059Z-1fd03f7c7a4c44dd9b17e77d81f40356/consumer/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-068",
+      "status": "PASS",
+      "matched_groups": 2,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json",
+        ".artifacts/runs/2026-09-29T170426.812059Z-1fd03f7c7a4c44dd9b17e77d81f40356/consumer/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-069",
+      "status": "PASS",
+      "matched_groups": 2,
+      "missing_classes": [],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json",
+        ".artifacts/runs/2026-09-29T170426.812059Z-1fd03f7c7a4c44dd9b17e77d81f40356/consumer/report-007.json"
+      ]
+    },
+    {
+      "id": "AC-070",
+      "status": "PARTIAL",
+      "matched_groups": 3,
+      "missing_classes": [
+        [
+          "REAL_OPENBAO"
+        ],
+        [
+          "PINNED_SECURITY_SCANNERS"
+        ]
+      ],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165725.812263Z-321c6ee572ef4288a8bc00025afa68c9/normal/report-007.json",
+        ".artifacts/runs/2026-09-29T165724.705236Z-ae37b218786b49619756b12f17e616cb/integration/report-001.json",
+        ".artifacts/runs/2026-09-29T170426.812059Z-1fd03f7c7a4c44dd9b17e77d81f40356/consumer/report-007.json",
+        ".artifacts/runs/2026-09-29T165732.324781Z-4b722c1f2e7a441f938363a59f229292/security/report-001.json",
+        "docs/evidence/OB-018/remote-2026-09-30/static-review.json"
+      ]
+    },
+    {
+      "id": "AC-071",
+      "status": "NOT_RUN",
+      "matched_groups": 0,
+      "missing_classes": [
+        [
+          "PINNED_SECURITY_SCANNERS"
+        ]
+      ],
+      "evidence": [
+        ".artifacts/runs/2026-09-29T165732.324781Z-4b722c1f2e7a441f938363a59f229292/security/report-001.json"
+      ]
+    },
+    {
+      "id": "AC-072",
+      "status": "NOT_RUN",
+      "matched_groups": 0,
+      "missing_classes": [
+        [
+          "BUSINESS_MIGRATION_OUT_OF_SCOPE"
+        ]
+      ],
+      "evidence": []
+    }
+  ],
+  "method": "Reparse current immutable reports against unchanged acceptance-rules. No runtime report hash was edited."
+}

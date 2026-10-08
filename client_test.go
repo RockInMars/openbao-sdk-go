@@ -4,10 +4,10 @@ import (
 	"context"
 	"encoding/pem"
 	"errors"
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 	"net/http"
 	"net/http/httptest"
 	"sync"
@@ -15,6 +15,73 @@ import (
 	"testing"
 	"time"
 )
+
+func TestCrossNamespaceConcurrency(t *testing.T) {
+	var bad atomic.Int32
+	cfg := serverConfig(t, func(w http.ResponseWriter, r *http.Request) {
+		ns := r.Header.Get("X-Vault-Namespace")
+		tok := r.Header.Get("X-Vault-Token")
+		if (ns == "a" && tok != "fixture-a") || (ns == "b" && tok != "fixture-b") || (ns != "a" && ns != "b") {
+			bad.Add(1)
+		}
+		jsonData(w, map[string]any{"data": map[string]any{"scope": ns}, "metadata": map[string]any{"version": 1, "created_time": "2026-01-01T00:00:00Z", "deletion_time": "", "destroyed": false}})
+	})
+	clients := make(map[string]*Client)
+	for _, ns := range []string{"a", "b"} {
+		cc := cfg
+		cc.Namespace = NamespaceConfig{Mode: NamespaceNamed, Path: ns}
+		tok, _ := auth.NewStaticToken(sensitive.NewBytes([]byte("fixture-" + ns)))
+		cc.Auth.TokenProvider = tok
+		clients[ns] = startedClient(t, cc)
+	}
+	var wg sync.WaitGroup
+	for i := 0; i < 100; i++ {
+		for _, ns := range []string{"a", "b"} {
+			wg.Add(1)
+			go func(ns string) {
+				defer wg.Done()
+				k, _ := clients[ns].KVv2("secret")
+				r, e := k.ReadVersion(context.Background(), "same-path", 1)
+				if e != nil {
+					t.Error("scoped read failed")
+					return
+				}
+				defer r.Data.Zero()
+				var data struct {
+					Scope string `json:"scope"`
+				}
+				if r.Data.Decode(&data) != nil || data.Scope != ns {
+					t.Error("cross namespace response")
+				}
+			}(ns)
+		}
+	}
+	wg.Wait()
+	if bad.Load() != 0 {
+		t.Fatal("cross namespace identity")
+	}
+}
+func TestLoopbackTestConstructor(t *testing.T) {
+	for _, addr := range []string{"http://example.com:8200", "http://192.168.1.1:8200", "http://localhost:8200"} {
+		cfg := testConfig()
+		cfg.Address = addr
+		if _, e := newClient(cfg, true); !baoerr.IsCode(e, baoerr.CodeInvalidArgument) {
+			t.Fatal("test constructor escapes literal loopback")
+		}
+	}
+	for _, addr := range []string{"http://127.0.0.1:8200", "http://[::1]:8200"} {
+		cfg := testConfig()
+		cfg.Address = addr
+		c, e := newClient(cfg, true)
+		if e != nil {
+			t.Fatal("loopback exception unavailable")
+		}
+		c.Close(context.Background())
+		if _, e = New(cfg); !baoerr.IsCode(e, baoerr.CodeInvalidArgument) {
+			t.Fatal("public HTTP exception")
+		}
+	}
+}
 
 func serverConfig(t *testing.T, h http.HandlerFunc) Config {
 	t.Helper()

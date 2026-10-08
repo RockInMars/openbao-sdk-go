@@ -2,8 +2,8 @@ package pki
 
 import (
 	"crypto/x509"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/pkiutil"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/pkiutil"
 	"strings"
 	"time"
 )

@@ -69,6 +69,7 @@ def clean_environment(original, scratch, proxy):
                'SSL_CERT_FILE', 'SSL_CERT_DIR')
     env = {k: original[k] for k in allowed if k in original}
     env.update(HOME=str(scratch/'home'), USERPROFILE=str(scratch/'home'),
+               APPDATA=str(scratch/'config'), XDG_CONFIG_HOME=str(scratch/'config'),
                GOENV='off', GOWORK='off', GOFLAGS='', GO111MODULE='on', GOTOOLCHAIN='local',
                GOSUMDB=SUMDB, GONOSUMDB='', GONOPROXY='', GOPRIVATE='', GOINSECURE='',
                GOAUTH='off', GOVCS='*:off', GOPROXY=proxy,
@@ -242,7 +243,7 @@ def run_go(name, args, work, env, report, logs):
     start = now()
     try:
         result = subprocess.run(['go', *args], cwd=work, env=env, capture_output=True,
-                                text=True, timeout=180)
+                                text=True, encoding='utf-8', timeout=180)
         code, stdout, stderr = result.returncode, result.stdout, result.stderr
     except subprocess.TimeoutExpired:
         code, stdout, stderr = 124, '', 'Go command exceeded the deadline\n'
@@ -250,7 +251,7 @@ def run_go(name, args, work, env, report, logs):
         code, stdout, stderr = 127, '', 'Go command is unavailable\n'
     safe = re.sub(r'(https?://)[^/\s\"]*@', r'\1[REDACTED]@', stdout+stderr)
     safe = re.sub(r'(https?://[^\s\"?]+)\?[^\s\"]+', r'\1?[REDACTED]', safe)
-    (logs/(name+'.log')).write_text(safe)
+    (logs/(name+'.log')).write_text(safe, encoding='utf-8')
     report['commands'].append({'name': name, 'command': ['go', *args], 'exit_code': code,
                                'started_at': start, 'finished_at': now(), 'log': name+'.log'})
     print(name+': exit '+str(code), flush=True)
@@ -302,6 +303,8 @@ def offline_replay(stage, scratch, expected_modules, report, logs):
     work = scratch/'work'; work.mkdir(parents=True)
     env = clean_environment(os.environ, scratch, (stage/'proxy').resolve().as_uri())
     (work/'go.mod').write_bytes((stage/'resolved/go.mod').read_bytes())
+    # Disable sidecars before commands that may exit before this scratch is removed.
+    run_go('replay-telemetry-off', ['telemetry', 'off'], work, env, report, logs)
     # Never install supplied go.sum or .ziphash into the verification workspace.
     # Go must consult the signed sumdb records and recompute module hashes.
     parsed = strict_json(run_go('replay-root', ['mod', 'edit', '-json'], work, env, report, logs))
@@ -312,8 +315,8 @@ def offline_replay(stage, scratch, expected_modules, report, logs):
     graph = preflight.decode_stream(run_go('replay-graph', ['list', '-m', '-json', 'all'], work, env, report, logs))
     preflight.validate_graph(graph)
     run_go('replay-verify', ['mod', 'verify'], work, env, report, logs)
-    exported = {tuple(x.split()) for x in (stage/'resolved/go.sum').read_text().splitlines()}
-    generated = {tuple(x.split()) for x in (work/'go.sum').read_text().splitlines()}
+    exported = {tuple(x.split()) for x in (stage/'resolved/go.sum').read_text(encoding='utf-8').splitlines()}
+    generated = {tuple(x.split()) for x in (work/'go.sum').read_text(encoding='utf-8').splitlines()}
     if not generated or not generated.issubset(exported):
         raise ValueError('exported go.sum differs from authenticated replay')
 
@@ -326,7 +329,7 @@ def new_report(kind):
 def save_report(report, logs):
     logs.mkdir(parents=True, exist_ok=True)
     report['finished_at'] = now()
-    (logs/'report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
+    (logs/'report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     print(report['evidence_class']+': '+report['status'], flush=True)
     return report
 
@@ -342,6 +345,7 @@ def export_bundle(root, target, proxy, logs):
             scratch = Path(td); work = scratch/'work'; stage = scratch/'payload'
             copy_sdk_inputs(root, work)
             env = clean_environment(os.environ, scratch, proxy)
+            run_go('export-telemetry-off', ['telemetry', 'off'], work, env, report, logs)
             tc = strict_json(run_go('toolchain', ['env', '-json', 'GOVERSION', 'GOOS', 'GOARCH'], work, env, report, logs))
             report['toolchain'] = tc
             parsed = strict_json(run_go('root', ['mod', 'edit', '-json'], work, env, report, logs))
@@ -355,7 +359,7 @@ def export_bundle(root, target, proxy, logs):
             records = module_records(run_go('downloads', ['mod', 'download', '-json', 'all'], work, env, report, logs))
             preflight.validate_graph(preflight.decode_stream(run_go('graph', ['list', '-m', '-json', 'all'], work, env, report, logs)))
             run_go('verify', ['mod', 'verify'], work, env, report, logs)
-            preflight.validate_sums((work/'go.sum').read_text(), record)
+            preflight.validate_sums((work/'go.sum').read_text(encoding='utf-8'), record)
             collect_proxy(scratch, stage)
             (stage/'resolved').mkdir()
             for name in ('go.mod', 'go.sum'):
@@ -386,6 +390,7 @@ def verify_bundle(root, archive, expected_sha256, destination, logs):
             if manifest['input_sha256'] != before:
                 raise ValueError('bundle does not match the local SDK source inputs')
             env = clean_environment(os.environ, scratch/'probe', (stage/'proxy').as_uri())
+            run_go('verify-telemetry-off', ['telemetry', 'off'], stage, env, report, logs)
             tc = strict_json(run_go('toolchain', ['env', '-json', 'GOVERSION', 'GOOS', 'GOARCH'], stage, env, report, logs))
             report['toolchain'] = tc
             if tc['GOVERSION'] != manifest.get('go_version'):

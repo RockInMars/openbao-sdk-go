@@ -1,9 +1,13 @@
-// Package bao contains the public SDK contract types.
+// Package bao provides a runtime OpenBao client for KV v2, PKI, and Transit.
+// New fixes the cluster, namespace, and authentication scope. Start with a
+// service-lifetime context, then Close with a separate shutdown context.
+// Runtime clients do not provision mounts, roles, or keys. Callers own returned
+// sensitive values and must reconcile writes whose baoerr effect is unknown.
 package bao
 
 import (
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 	"time"
 )
 

@@ -1,0 +1,173 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "evidence_class": "FUZZ_RUNTIME",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T04:52:03.956863+00:00",
+  "platform": "windows",
+  "python_version": "3.13.13",
+  "run_id": "2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5",
+  "commands": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-run=^$",
+        "-fuzz=FuzzPath",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./internal/engine"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzPath.log",
+      "started_at": "2026-09-29T04:52:04.365012+00:00",
+      "timeout_s": 120,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 58988,
+      "finished_at": "2026-09-29T04:52:37.455039+00:00",
+      "elapsed_s": 33.09,
+      "log_sha256": "49cd9b895bb8255c721f47d9459c6dac952d65337ee722b6630e516b0256c15d",
+      "name": "FuzzPath"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-run=^$",
+        "-fuzz=FuzzDocument",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./kv"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzDocument.log",
+      "started_at": "2026-09-29T04:52:37.678471+00:00",
+      "timeout_s": 120,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 25724,
+      "finished_at": "2026-09-29T04:53:11.162933+00:00",
+      "elapsed_s": 33.484,
+      "log_sha256": "436a709cb82c627209a558128f82743bbf83bdfa2576d2ca3157d7c89c0908f5",
+      "name": "FuzzDocument"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-run=^$",
+        "-fuzz=FuzzPKICSR",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./pki"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzPKICSR.log",
+      "started_at": "2026-09-29T04:53:11.474317+00:00",
+      "timeout_s": 120,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 32648,
+      "finished_at": "2026-09-29T04:53:46.960241+00:00",
+      "elapsed_s": 35.486,
+      "log_sha256": "2fb18d156c0bcc182e96847ab20137877c5a5090cb915aec3ead192c3717f4d5",
+      "name": "FuzzPKICSR"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-run=^$",
+        "-fuzz=FuzzEncoding",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./internal/transitutil"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzEncoding.log",
+      "started_at": "2026-09-29T04:53:47.480194+00:00",
+      "timeout_s": 120,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 86132,
+      "finished_at": "2026-09-29T04:54:21.550283+00:00",
+      "elapsed_s": 34.07,
+      "log_sha256": "9267de0ff0c1d20b7ce983e135d244c0322c0544cde3906797e5eca88e1a107d",
+      "name": "FuzzEncoding"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-run=^$",
+        "-fuzz=FuzzDecode",
+        "-fuzztime=30s",
+        "-parallel=1",
+        "-timeout=90s",
+        "./internal/pemutil"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/FuzzDecode.log",
+      "started_at": "2026-09-29T04:54:21.839141+00:00",
+      "timeout_s": 120,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 15664,
+      "finished_at": "2026-09-29T04:54:54.643931+00:00",
+      "elapsed_s": 32.805,
+      "log_sha256": "48bf4e60b3b53c01a153aabf408e28513a417a4f292d6613f7dbe3fd0b9b1cbb",
+      "name": "FuzzDecode"
+    }
+  ],
+  "environment_commands": [
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/go-version.log",
+      "started_at": "2026-09-29T04:52:04.146318+00:00",
+      "timeout_s": 30,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 23192,
+      "finished_at": "2026-09-29T04:52:04.359541+00:00",
+      "elapsed_s": 0.213,
+      "log_sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "name": "go-version"
+    }
+  ],
+  "tool_versions": {
+    "python": "3.13.13",
+    "go": "go version go1.26.3 windows/amd64"
+  },
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "finished_at": "2026-09-29T04:54:55.170033+00:00",
+  "report_path": ".artifacts/runs/2026-09-29T045204.143287Z-bff743dbbd5a407e8faa9301567115a5/fuzz/report-006.json",
+  "passed_targets": [
+    "FuzzDecode",
+    "FuzzDocument",
+    "FuzzEncoding",
+    "FuzzPKICSR",
+    "FuzzPath"
+  ]
+}

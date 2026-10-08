@@ -20,15 +20,15 @@ import (
 	"testing"
 	"time"
 
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/diagnostics"
-	"git.example.com/infra/openbao-sdk-go/internal/testenv"
-	"git.example.com/infra/openbao-sdk-go/kv"
-	"git.example.com/infra/openbao-sdk-go/pki"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/diagnostics"
+	"github.com/RockInMars/openbao-sdk-go/internal/testenv"
+	"github.com/RockInMars/openbao-sdk-go/kv"
+	"github.com/RockInMars/openbao-sdk-go/pki"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 type secretProvider struct {
@@ -97,7 +97,9 @@ func TestIntegrationRuntime(t *testing.T) {
 		if e != nil {
 			t.Fatal(e)
 		}
-		doc, e := kv.ParseDocument([]byte(`{"integer":9007199254740993,"operation_id":"owned"}`))
+		// This lifecycle fixture uses a number the pinned backend preserves.
+		// TestDocumentExactNumber independently covers the SDK's full-precision JSON contract.
+		doc, e := kv.ParseDocument([]byte(`{"integer":9007199254740991,"operation_id":"owned"}`))
 		if e != nil {
 			t.Fatal(e)
 		}
@@ -136,7 +138,7 @@ func TestIntegrationRuntime(t *testing.T) {
 		if e = r.Data.Decode(&data); e != nil {
 			t.Fatal(e)
 		}
-		if data["integer"] != json.Number("9007199254740993") {
+		if data["integer"] != json.Number("9007199254740991") {
 			t.Fatal("integer precision")
 		}
 		if e = k.DeleteVersions(ctx, "fixture/kv", []int{1}); e != nil {
@@ -359,17 +361,24 @@ func TestIntegrationRuntime(t *testing.T) {
 			}
 			plain.Plaintext.Zero()
 		}
-		mac, e := tr.HMAC(ctx, transit.HMACRequest{KeyName: "mac", KeyVersion: 1, Message: msg})
+		// Pinned HMAC metadata has no version history; only latest is available.
+		if old, e := tr.HMAC(ctx, transit.HMACRequest{KeyName: "mac", KeyVersion: 1, Message: msg}); old != nil || !baoerr.IsCode(e, baoerr.CodeVersionUnavailable) {
+			t.Fatal("unlisted historical HMAC version accepted", e)
+		}
+		mac, e := tr.HMAC(ctx, transit.HMACRequest{KeyName: "mac", KeyVersion: 2, Message: msg})
 		if e != nil {
 			t.Fatal(e)
 		}
-		v, e := tr.HMACVerify(ctx, transit.HMACVerifyRequest{KeyName: "mac", ExpectedVersion: 1, Message: msg, WrappedHMAC: mac.Wrapped})
+		if mac.Version != 2 {
+			t.Fatal("HMAC version differs from requested latest")
+		}
+		v, e := tr.HMACVerify(ctx, transit.HMACVerifyRequest{KeyName: "mac", ExpectedVersion: 2, Message: msg, WrappedHMAC: mac.Wrapped})
 		if e != nil || !v.Valid {
 			t.Fatal("HMAC", e)
 		}
 		altered := sensitive.NewBytes([]byte("altered message"))
 		defer altered.Zero()
-		v, e = tr.HMACVerify(ctx, transit.HMACVerifyRequest{KeyName: "mac", ExpectedVersion: 1, Message: altered, WrappedHMAC: mac.Wrapped})
+		v, e = tr.HMACVerify(ctx, transit.HMACVerifyRequest{KeyName: "mac", ExpectedVersion: 2, Message: altered, WrappedHMAC: mac.Wrapped})
 		if e != nil || v.Valid {
 			t.Fatal("invalid HMAC", e)
 		}
@@ -411,6 +420,7 @@ func TestIntegrationRuntime(t *testing.T) {
 		defer deadline.Stop()
 		tick := time.NewTicker(time.Second)
 		defer tick.Stop()
+		lastReadSucceeded := make([]bool, len(clients))
 	loop:
 		for {
 			select {
@@ -424,10 +434,18 @@ func TestIntegrationRuntime(t *testing.T) {
 					if e != nil {
 						t.Fatal(e)
 					}
+					expires := c.State().TokenExpiresAt
 					r, e := k.ReadVersion(ctx, "fixture/shared", 1)
 					if e != nil {
-						t.Fatal(e)
+						// A bounded refresh backoff can cross the old token's expiry.
+						// Only that fail-closed gap is allowed; other errors still fail.
+						if !baoerr.IsCode(e, baoerr.CodeAuthenticationFailed) || expires == nil || time.Now().Before(*expires) {
+							t.Fatal(e)
+						}
+						lastReadSucceeded[i] = false
+						continue
 					}
+					lastReadSucceeded[i] = true
 					var data map[string]any
 					e = r.Data.Decode(&data)
 					r.Data.Zero()
@@ -437,9 +455,12 @@ func TestIntegrationRuntime(t *testing.T) {
 				}
 			}
 		}
-		for _, p := range providers {
+		for i, p := range providers {
 			if p.calls.Load() < 2 {
 				t.Fatal("real AppRole re-login not observed")
+			}
+			if !lastReadSucceeded[i] {
+				t.Fatal("read did not recover after AppRole re-login")
 			}
 		}
 		// External atomic token file replacement uses two genuine restricted tokens.

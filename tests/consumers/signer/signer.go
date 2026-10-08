@@ -3,9 +3,9 @@ package signer
 
 import (
 	"context"
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 type Signer struct {

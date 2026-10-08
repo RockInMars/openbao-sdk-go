@@ -3,10 +3,10 @@ package bao
 import (
 	"context"
 	"encoding/json"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/testutil"
-	"git.example.com/infra/openbao-sdk-go/pki"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/testutil"
+	"github.com/RockInMars/openbao-sdk-go/pki"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 	"net/http"
 	"strings"
 	"sync/atomic"
@@ -14,6 +14,24 @@ import (
 	"time"
 )
 
+func TestPKIZeroTTLRejected(t *testing.T) {
+	f := testutil.NewPKIFixture(t)
+	var n atomic.Int32
+	c := startedClient(t, serverConfig(t, func(w http.ResponseWriter, r *http.Request) {
+		n.Add(1)
+		jsonData(w, map[string]any{"certificate": string(f.CertificatePEM), "private_key": string(f.PrivateKeyPEM), "issuing_ca": string(f.CAPEM), "serial_number": "01:01", "expiration": f.Leaf.NotAfter.Unix()})
+	}))
+	p, _ := c.PKI("pki")
+	if _, e := p.Issue(context.Background(), pki.IssueRequest{Role: "terminal", CommonName: "terminal.test"}); !baoerr.IsCode(e, baoerr.CodeInvalidArgument) {
+		t.Fatal("Issue zero TTL did not fail locally")
+	}
+	if _, e := p.SignCSR(context.Background(), pki.SignCSRRequest{Role: "terminal", CSRPEM: sensitive.NewBytes(f.CSRPEM)}); !baoerr.IsCode(e, baoerr.CodeInvalidArgument) {
+		t.Fatal("SignCSR zero TTL did not fail locally")
+	}
+	if n.Load() != 0 {
+		t.Fatal("zero TTL reached service")
+	}
+}
 func pkiReply(f *testutil.PKIFixture, key bool) []byte {
 	m := map[string]any{"certificate": string(f.CertificatePEM), "issuing_ca": string(f.CAPEM), "ca_chain": []string{string(f.CAPEM)}, "serial_number": "01:01", "expiration": f.Leaf.NotAfter.Unix()}
 	if key {

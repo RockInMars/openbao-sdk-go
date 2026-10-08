@@ -48,7 +48,7 @@ type Definition struct {
 }
 
 var operations = map[Operation]Definition{
-	KVCreate: {"POST", Mutation, false}, KVCAS: {"POST", Mutation, false}, KVReadVersion: {"GET", SafeRead, false}, KVReadLatest: {"GET", SafeRead, false}, KVMetadata: {"GET", SafeRead, false}, KVList: {"LIST", SafeRead, false}, KVDelete: {"POST", Mutation, true}, KVUndelete: {"POST", Mutation, true},
+	KVCreate: {"POST", Mutation, false}, KVCAS: {"POST", Mutation, false}, KVReadVersion: {"GET", SafeRead, false}, KVReadLatest: {"GET", SafeRead, false}, KVMetadata: {"GET", SafeRead, false}, KVList: {"GET", SafeRead, false}, KVDelete: {"POST", Mutation, true}, KVUndelete: {"POST", Mutation, true},
 	PKIIssue: {"POST", Mutation, false}, PKISignCSR: {"POST", Mutation, false}, PKIRead: {"GET", SafeRead, false}, PKIChain: {"GET", SafeRead, false}, PKIRevoke: {"POST", Mutation, false},
 	TransitSign: {"POST", Crypto, false}, TransitSignDigest: {"POST", Crypto, false}, TransitVerify: {"POST", Verification, false}, TransitVerifyDigest: {"POST", Verification, false}, TransitPublicKey: {"GET", SafeRead, false}, TransitMetadata: {"GET", SafeRead, false}, TransitEncrypt: {"POST", Crypto, false}, TransitDecrypt: {"POST", Verification, false}, TransitRewrap: {"POST", Crypto, false}, TransitHMAC: {"POST", Crypto, false}, TransitHMACVerify: {"POST", Verification, false},
 	AppRoleLogin: {"POST", AuthAction, false}, TokenRenew: {"POST", AuthAction, false}, ClusterHealth: {"GET", HealthProbe, false},

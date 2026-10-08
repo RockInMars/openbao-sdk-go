@@ -4,10 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 	"net/http"
 	"sync"
 	"sync/atomic"
@@ -66,6 +66,47 @@ func TestAppRoleLoginContract(t *testing.T) {
 	}
 	if !m.State().Ready {
 		t.Fatal("not ready")
+	}
+}
+func TestManagedAuthAttemptObserverCountsLoginAndRenew(t *testing.T) {
+	clock := newFakeClock()
+	var sent atomic.Int32
+	var observed []engine.Operation
+	m := New(auth.Config{Mode: auth.ManagedAppRole, AppRole: &auth.AppRoleConfig{Mount: "custom-role", RoleID: sensitive.NewBytes([]byte("fixture-role")), SecretIDProvider: &sidProvider{g: "g", use: auth.ReusableSecretID}}},
+		authExecutor(func(context.Context, engine.Request) (*engine.Response, error) {
+			sent.Add(1)
+			return authReply(60, true), nil
+		}), clock, func(_ context.Context, op engine.Operation, attempts int) {
+			if attempts != 1 {
+				t.Errorf("auth attempts = %d", attempts)
+			}
+			observed = append(observed, op)
+		})
+	if err := m.Refresh(context.Background()); err != nil {
+		t.Fatal(err)
+	}
+	clock.advance(40 * time.Second)
+	if err := m.Refresh(context.Background()); err != nil {
+		t.Fatal(err)
+	}
+	if sent.Load() != 2 || len(observed) != 2 || observed[0] != engine.AppRoleLogin || observed[1] != engine.TokenRenew {
+		t.Fatalf("sent=%d observed=%v", sent.Load(), observed)
+	}
+}
+func TestManagedAuthAttemptObserverCountsTransportFailure(t *testing.T) {
+	var observed int
+	m := New(auth.Config{Mode: auth.ManagedAppRole, AppRole: &auth.AppRoleConfig{Mount: "custom-role", RoleID: sensitive.NewBytes([]byte("fixture-role")), SecretIDProvider: &sidProvider{g: "g", use: auth.ReusableSecretID}}},
+		authExecutor(func(context.Context, engine.Request) (*engine.Response, error) {
+			return nil, &engine.TransportFailure{Cause: errors.New("fixture transport lost"), Sent: true}
+		}), nil, func(_ context.Context, op engine.Operation, attempts int) {
+			if op != engine.AppRoleLogin {
+				t.Errorf("unexpected auth operation %s", op)
+			}
+			observed += attempts
+			panic("observer failure must not affect auth")
+		})
+	if err := m.Refresh(context.Background()); !baoerr.HasUnknownOutcome(err) || observed != 1 {
+		t.Fatalf("failed auth attempts=%d, unknown=%t", observed, baoerr.HasUnknownOutcome(err))
 	}
 }
 func TestAppRoleRejectEmptyOrInvalidLease(t *testing.T) {

@@ -1,4 +1,4 @@
-module git.example.com/infra/openbao-sdk-go
+module github.com/RockInMars/openbao-sdk-go
 
 go 1.25.0
 

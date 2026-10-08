@@ -6,10 +6,10 @@ import (
 	"sort"
 	"strconv"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/internal/transitutil"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/internal/transitutil"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 // TransitClient binds cryptographic operations to one fixed mount. Keys must be
@@ -89,9 +89,16 @@ func (t *TransitClient) readKey(ctx context.Context, name string, op engine.Oper
 				return bad()
 			}
 		}
-		keys, ok := d["keys"].(map[string]any)
-		if !ok || len(keys) == 0 {
-			return bad()
+		rawKeys, present := d["keys"]
+		var keys map[string]any
+		if !present && kind == "hmac" {
+			// HMAC-only key metadata can omit creation timestamps for versions.
+			keys = map[string]any{}
+		} else {
+			keys, ok = rawKeys.(map[string]any)
+			if !ok || len(keys) == 0 && kind != "hmac" {
+				return bad()
+			}
 		}
 		for k := range keys {
 			v, e := strconv.Atoi(k)

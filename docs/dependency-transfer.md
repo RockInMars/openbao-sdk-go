@@ -2,11 +2,15 @@
 
 本工具实现 R2 交接中允许的“经校验的公共依赖离线材料”路径，不更改 SDK 接口、官方候选版本、安全语义或验收要求。
 
-**本轮状态：工具本地测试通过；当前环境实际导出在 DNS 阶段失败，没有生成真实依赖包。完整官方依赖导出、签名材料正向重放及 SDK 正式编译均未验证。**
+当前工具链与验证结果见[兼容性](compatibility.md)和[实施交接](implementation-handoff.md)；下方 R3 的失败与未验证记录保留历史含义。
+
+依赖导出、离线验证和内部重放各使用独立临时 HOME、缓存和配置目录。`APPDATA` 与 `XDG_CONFIG_HOME` 指向该 scratch 的 `config`，不会继承个人配置。每个临时环境在首个普通 Go 命令之前，先通过既有日志入口执行 `go telemetry off`，分别记录 `export-telemetry-off`、`verify-telemetry-off`、`replay-telemetry-off`；准备失败即中止。该设置只作用于对应临时目录，避免短命令结束后的遥测子进程与目录清理竞争，不修改全局 Go 设置、不放宽清理或签名校验。命令含义见 [Go 官方遥测说明](https://go.dev/doc/telemetry)。
+
+**R3 历史状态：工具本地测试通过；当时环境实际导出在 DNS 阶段失败，没有生成真实依赖包。完整官方依赖导出、签名材料正向重放及 SDK 正式编译均未验证。**
 
 ## 1. 在能联网的隔离开发机运行
 
-使用本交付包的 SDK 源码目录。需要 Python 3.10+、Make、经过来源核验的固定 Go 工具链以及能访问公共 Go 模块代理和校验数据库的网络。官方候选仍为 `github.com/openbao/openbao/api/v2@v2.7.0`。当前 SDK 内的 Go 1.23.2 不是已核实的上游最低版本。
+使用本交付包的 SDK 源码目录。需要 Python 3.10+、Make、经过来源核验的固定 Go 工具链以及能访问公共 Go 模块代理和校验数据库的网络。官方候选仍为 `github.com/openbao/openbao/api/v2@v2.7.0`。R3 当时 SDK 内的 Go 1.23.2 不是已核实的上游最低版本；当前声明下限为 Go 1.25.0，主验证版本见兼容性表。
 
 ```bash
 cd openbao-sdk-go

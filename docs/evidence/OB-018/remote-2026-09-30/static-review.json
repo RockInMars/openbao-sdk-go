@@ -1,0 +1,71 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "32dfe9e8dbfa041033bb2ae2ce10488af173b9fceb4fda8388f7af450764471e",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "32dfe9e8dbfa041033bb2ae2ce10488af173b9fceb4fda8388f7af450764471e"
+  },
+  "evidence_class": "STATIC_REVIEW",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T17:03:48.249583+00:00",
+  "run_id": "remote-static-review-20260930",
+  "reviewed_at": "2026-09-29T17:03:48.249631+00:00",
+  "reviewer": "primary agent; current static document and change-impact review, not runtime or independent review",
+  "rationale": "Reviewed current remote CLI and build-tag boundary, fixed target and namespace inputs, secret isolation, immutable receipts, recovery commitments and supplemental classification. Existing SDK Go files, module, dependency declarations, LICENSE and fixture lock are unchanged from the initial snapshot. Rechecked testing/release restrictions and retained external blockers; no runtime evidence is reused.",
+  "documents": [
+    {
+      "path": "go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "afa6d84a2c28186898e805739b1e187424210ba1f492ad35f3ed5fb8ee16396b"
+    },
+    {
+      "path": "deploy/test/server-lock.json",
+      "sha256": "0dbab82ba3ff06e80a8ec6be03340aece6dde7589cecb541d4e7b820e8bd789a"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "30efc66e9504a778efe800b6978f464e51682b52d0e47921ebf1ead20fce7cf6"
+    },
+    {
+      "path": "docs/testing.md",
+      "sha256": "c392f6696fc46f9768d5dff97bd3ac1aa267bf65f213c061e68c65d23fa50a9d"
+    },
+    {
+      "path": "docs/release.md",
+      "sha256": "dba5d4336c11c8d395afc23fd1f7edca9fc4038131c2e03d5342f11e324cb675"
+    },
+    {
+      "path": "README.md",
+      "sha256": "41fcc1755f965616bab8f8123ac2882a4439bbde1553b9cafcd4f23c2bf6baef"
+    },
+    {
+      "path": "docs/observability.md",
+      "sha256": "492941d96d13b84dbbd6523130a1f9487c0b81836d80add29de0db8fca77017e"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "45b17e49a4bf8ca4e9791ee5b12feb1dbf095bfb15a3478a23834c39df1ba5ed"
+    },
+    {
+      "path": "docs/remote-testing.md",
+      "sha256": "82dc2c42259f5f60e5b94e4441eda6098559952917b9ee0f9a80cd3324bf8228"
+    },
+    {
+      "path": "docs/evidence/OB-018/remote-2026-09-30/independent-review.md",
+      "sha256": "5a20a9724246256e007ddd58b33f4b16d3fb13808a8e579fb84b6ef1dca12daa"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    }
+  ],
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "32dfe9e8dbfa041033bb2ae2ce10488af173b9fceb4fda8388f7af450764471e"
+  },
+  "finished_at": "2026-09-29T17:03:48.906176+00:00"
+}

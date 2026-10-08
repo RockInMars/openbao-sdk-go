@@ -1,0 +1,1350 @@
+{
+  "schema_version": 1,
+  "static_revalidation_allowlist": [],
+  "rules": {
+    "AC-001": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "tests/dependency",
+              "name": "TestDependencyBaseline"
+            }
+          ]
+        },
+        {
+          "allowed_classes": [
+            "REAL_OPENBAO"
+          ]
+        },
+        {
+          "allowed_classes": [
+            "STATIC_REVIEW"
+          ],
+          "documents": [
+            "go.mod",
+            "go.sum",
+            "deploy/test/server-lock.json",
+            "docs/compatibility.md"
+          ]
+        }
+      ]
+    },
+    "AC-002": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestPublicTypeBoundary"
+            },
+            {
+              "package": ".",
+              "name": "TestPublicRuntimeHasNoAdminEscape"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-003": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "sensitive",
+              "name": "TestSensitiveFormatting"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-004": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "sensitive",
+              "name": "TestSensitiveFormatting"
+            },
+            {
+              "package": "kv",
+              "name": "TestDocumentConstructAndDecode"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-005": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "sensitive",
+              "name": "TestSensitiveCopyAndZero"
+            },
+            {
+              "package": "kv",
+              "name": "TestDocumentIndependentCopy"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-006": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "kv",
+              "name": "TestDocumentExactNumber"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-007": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/jsondoc",
+              "name": "TestStrictTree"
+            },
+            {
+              "package": "kv",
+              "name": "TestDocumentConstructAndDecode"
+            },
+            {
+              "package": "internal/jsondoc",
+              "name": "TestJSONRejectsUnpairedSurrogateEscapes"
+            },
+            {
+              "package": "internal/jsondoc",
+              "name": "TestJSONPreservesValidUnicodeEscapes"
+            },
+            {
+              "package": "kv",
+              "name": "TestDocumentRejectsLossyUnicode"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-008": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestConfigEnvironmentIgnored"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-009": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestNamespaceExplicit"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-010": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTLSHostAndCARejected"
+            },
+            {
+              "package": ".",
+              "name": "TestTLSRejectsSkippedMalformedPEM"
+            },
+            {
+              "package": ".",
+              "name": "TestTLSStrictPEMPreservesMutualTLS"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-011": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTLSAndPathValidation"
+            },
+            {
+              "package": ".",
+              "name": "TestExplicitEmptyCAFileIsNotSystemTrust"
+            },
+            {
+              "package": ".",
+              "name": "TestTLSRejectsSkippedMalformedPEM"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-012": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/engine",
+              "name": "TestPathValidation"
+            },
+            {
+              "package": ".",
+              "name": "TestTLSAndPathValidation"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-013": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/engine",
+              "name": "TestReadRetryBudget"
+            },
+            {
+              "package": "internal/engine",
+              "name": "TestRetryAfterLimitsAndCancellation"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-014": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/engine",
+              "name": "TestSingleAttemptIssue"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-015": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestAcceptedThenDisconnected"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-016": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestRedirectNeverLeaksToken"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-017": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/engine",
+              "name": "TestNoWriteReplayHeader"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-018": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestVoidErrorEnvelope"
+            },
+            {
+              "package": "internal/engine",
+              "name": "TestDecodeAndIdentifierBoundaries"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-019": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/engine",
+              "name": "TestResponseBoundAndSafeError"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-020": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/engine",
+              "name": "TestCanceledBeforeAndAfterSend"
+            },
+            {
+              "package": "internal/authn",
+              "name": "TestAuthenticationContextBoundaries"
+            },
+            {
+              "package": ".",
+              "name": "TestCloseCancelsHealthBeforeStart"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-021": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestKVCASConflict"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-022": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestNewNoNetwork"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-023": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestStartSingleFlight"
+            },
+            {
+              "package": ".",
+              "name": "TestCloseDrainAndCancel"
+            },
+            {
+              "package": ".",
+              "name": "TestStartResultBelongsToAttempt"
+            },
+            {
+              "package": ".",
+              "name": "TestCloseCancelsHealthBeforeStart"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-024": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "auth",
+              "name": "TestTokenFileAtomicReplacement"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-025": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "auth",
+              "name": "TestTokenFileValidation"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-026": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestCloseDrainAndCancel"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-027": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/authn",
+              "name": "TestAppRoleLoginContract"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-028": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/authn",
+              "name": "TestAppRoleRejectEmptyOrInvalidLease"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-029": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/authn",
+              "name": "TestSingleUseSecretID"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-030": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/authn",
+              "name": "TestBusiness403DoesNotLoginOrReplay"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-031": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/authn",
+              "name": "TestRenewUsesLatestTTL"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-032": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/authn",
+              "name": "TestRenewSingleFlight"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-033": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/authn",
+              "name": "TestExpiryAndShutdown"
+            },
+            {
+              "package": "internal/authn",
+              "name": "TestExpiredReplyAndLatePublication"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-034": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/authn",
+              "name": "TestAuthCapacityNotStarved"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-035": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestKVCreateCASZero"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-036": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestKVReadExactVersion"
+            },
+            {
+              "package": ".",
+              "name": "TestKVFutureDeletionStillReadable"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-037": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestKVReadRefBinding"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-038": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestKVDeletedVersion"
+            },
+            {
+              "package": "internal/engine",
+              "name": "TestMalformedDeletedMetadata"
+            },
+            {
+              "package": ".",
+              "name": "TestKVFutureDeletionStillReadable"
+            },
+            {
+              "package": ".",
+              "name": "TestKVFutureDeletionDoesNotExplainMissingData"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-039": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestKVCASConcurrentWinner"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-040": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestKVMetadataIsNotVersionHistory"
+            },
+            {
+              "package": ".",
+              "name": "TestKVFutureDeletionStillReadable"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-041": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestKVDeleteExactVersions"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-042": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestKVList404"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-043": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestPKIIssueContract"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-044": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestPKIIssueContract"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-045": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestPKIPrivateKeyMismatch"
+            },
+            {
+              "package": "internal/pkiutil",
+              "name": "TestPEMRejectsSkippedMalformedBlocks"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-046": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestPKICSRPublicKeyMatch"
+            },
+            {
+              "package": "pki",
+              "name": "TestPKICSRSignature"
+            },
+            {
+              "package": "internal/pkiutil",
+              "name": "TestPEMRejectsSkippedMalformedBlocks"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-047": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "pki",
+              "name": "TestPKITrustAndLifetime"
+            },
+            {
+              "package": "pki",
+              "name": "TestPKIMetadataAndMalformedPolicy"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-048": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestPKIMissingCertificateDoesNotReadPrivateKey"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-049": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestPKIReadMultiPEMAndChain"
+            },
+            {
+              "package": "internal/pkiutil",
+              "name": "TestCertificateMaterialBoundaries"
+            },
+            {
+              "package": "internal/pkiutil",
+              "name": "TestPEMRejectsSkippedMalformedBlocks"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-050": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestPKIRevokeReceipt"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-051": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTransitVersionPin"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-052": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTransitVersionPin"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-053": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTransitSignProfiles"
+            },
+            {
+              "package": "internal/transitutil",
+              "name": "TestPublicNormalizationAndSignatureProfiles"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-054": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTransitPublicKeyFormats"
+            },
+            {
+              "package": "internal/transitutil",
+              "name": "TestPublicNormalizationAndSignatureProfiles"
+            },
+            {
+              "package": "internal/transitutil",
+              "name": "TestPublicRejectsSkippedMalformedPEM"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-055": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTransitVerifyFalse"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-056": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTransitCipherVersion"
+            },
+            {
+              "package": ".",
+              "name": "TestTransitCipherContext"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-057": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTransitNoKeyCreation"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-058": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestTransitHMAC"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-059": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestClusterHealthSemantics"
+            },
+            {
+              "package": ".",
+              "name": "TestCloseCancelsHealthBeforeStart"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-060": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestReadyScopedProbe"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-061": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestObserverRedaction"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-062": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestCrossNamespaceConcurrency"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-063": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": ".",
+              "name": "TestCloseDuringWrite"
+            },
+            {
+              "package": ".",
+              "name": "TestCloseCancelsHealthBeforeStart"
+            }
+          ]
+        }
+      ]
+    },
+    "AC-064": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "FUZZ_RUNTIME"
+          ],
+          "fuzz_targets": [
+            "FuzzPath",
+            "FuzzDocument",
+            "FuzzPKICSR",
+            "FuzzEncoding",
+            "FuzzDecode"
+          ]
+        }
+      ]
+    },
+    "AC-065": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "REAL_OPENBAO"
+          ]
+        }
+      ]
+    },
+    "AC-066": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "internal/testenv",
+              "name": "TestIntegrationOptionsFailClosed"
+            },
+            {
+              "package": "internal/testenv",
+              "name": "TestBootstrapSchedulesDeletionWithoutRuntimeAdminPermission"
+            }
+          ]
+        },
+        {
+          "allowed_classes": [
+            "REAL_OPENBAO"
+          ]
+        }
+      ]
+    },
+    "AC-067": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "INDEPENDENT_CONSUMERS"
+          ],
+          "commands": [
+            "reader",
+            "signer"
+          ]
+        }
+      ]
+    },
+    "AC-068": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "examples/credentialworkflow",
+              "name": "TestCredentialWorkflowRecovery"
+            },
+            {
+              "package": "examples/credentialworkflow",
+              "name": "TestCredentialWorkflowUnknownDoesNotReissue"
+            },
+            {
+              "package": "examples/credentialworkflow",
+              "name": "TestCredentialWorkflowUnknownKVReconciles"
+            }
+          ]
+        },
+        {
+          "allowed_classes": [
+            "INDEPENDENT_CONSUMERS"
+          ],
+          "commands": [
+            "reader",
+            "signer"
+          ]
+        }
+      ]
+    },
+    "AC-069": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ],
+          "tests": [
+            {
+              "package": "examples/credentialworkflow",
+              "name": "TestRegistrationRequiresBothMaterials"
+            }
+          ]
+        },
+        {
+          "allowed_classes": [
+            "INDEPENDENT_CONSUMERS"
+          ],
+          "commands": [
+            "reader",
+            "signer"
+          ]
+        }
+      ]
+    },
+    "AC-070": {
+      "kind": "static",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "NORMAL_OFFICIAL_CLIENT"
+          ]
+        },
+        {
+          "allowed_classes": [
+            "REAL_OPENBAO"
+          ]
+        },
+        {
+          "allowed_classes": [
+            "INDEPENDENT_CONSUMERS"
+          ]
+        },
+        {
+          "allowed_classes": [
+            "PINNED_SECURITY_SCANNERS"
+          ]
+        },
+        {
+          "allowed_classes": [
+            "STATIC_REVIEW"
+          ],
+          "documents": [
+            "docs/testing.md",
+            "docs/release.md"
+          ]
+        }
+      ]
+    },
+    "AC-071": {
+      "kind": "runtime",
+      "required_evidence": [
+        {
+          "allowed_classes": [
+            "PINNED_SECURITY_SCANNERS"
+          ],
+          "commands": [
+            "govulncheck",
+            "gitleaks"
+          ]
+        }
+      ]
+    }
+  }
+}

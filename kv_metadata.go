@@ -4,9 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/kv"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/kv"
+	"net/url"
 	"sort"
 	"strconv"
 	"strings"
@@ -51,6 +52,9 @@ func versionMetadata(m map[string]any, v int) (kv.VersionMetadata, error) {
 	}
 	return out, nil
 }
+
+// ReadMetadata reads key-level metadata, not a snapshot of any secret version.
+// It requires metadata read permission; a future DeletedAt is a deletion schedule.
 func (k *KVClient) ReadMetadata(ctx context.Context, path string) (*kv.Metadata, error) {
 	op := engine.KVMetadata
 	if engine.ValidatePath(path) != nil {
@@ -134,13 +138,20 @@ func (k *KVClient) ReadMetadata(ctx context.Context, path string) (*kv.Metadata,
 	}
 	return result, nil
 }
+
+// List lists one metadata prefix using GET with list=true. It requires list
+// permission on the metadata path and does not recurse into returned folders.
 func (k *KVClient) List(ctx context.Context, prefix string) (*kv.ListResult, error) {
 	op := engine.KVList
 	if prefix != "" && engine.ValidatePath(prefix) != nil {
 		return nil, invalid(string(op))
 	}
+	path := "/v1/" + k.mount + "/metadata/"
+	if prefix != "" {
+		path += prefix + "/"
+	}
 	var result *kv.ListResult
-	err := k.client.execute(ctx, engine.Call{Operation: op, Path: "/v1/" + k.mount + "/metadata/" + prefix}, k.mount, func(r *engine.Response) error {
+	err := k.client.execute(ctx, engine.Call{Operation: op, Path: path, Query: url.Values{"list": {"true"}}}, k.mount, func(r *engine.Response) error {
 		d, e := engine.Data(r, op)
 		if e != nil {
 			return e

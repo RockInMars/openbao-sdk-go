@@ -1,0 +1,47 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "evidence_class": "COMMAND_TOOLING",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T04:47:37.596855+00:00",
+  "platform": "windows",
+  "tool_versions": {
+    "python": "3.13.13"
+  },
+  "run_id": "windows-05",
+  "commands": [
+    {
+      "command": [
+        "E:\\Programs\\scoop\\apps\\python313\\current\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-v"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/final-tools/tooling-windows-05.log",
+      "started_at": "2026-09-29T04:47:37.781207+00:00",
+      "timeout_s": 180.0,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 73244,
+      "finished_at": "2026-09-29T04:48:43.982673+00:00",
+      "elapsed_s": 66.201,
+      "log_sha256": "2a6d1680643f28fc1a5634683326e05633640ce8aa4d5b1b4cbc64efc2118ae5",
+      "name": "tooling"
+    }
+  ],
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "finished_at": "2026-09-29T04:48:44.348684+00:00"
+}

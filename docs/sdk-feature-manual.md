@@ -1,10 +1,10 @@
 # OpenBao Go SDK 功能手册与调用示例
 
-**文档修订：R3-D1｜2026-09-29｜对应 R3 源码，不是软件发布版本**
+**文档修订：2026-09-29 工程改进｜不是软件发布版本**
 
 本文是运行时接口手册，面向需要查询“做什么、怎么调用、返回什么、失败时怎么办”的开发者。安装与启动见 [接入说明](sdk-integration-guide.md)，按顺序试用见 [首次使用指南](first-use-guide.md)。
 
-> **状态说明**：以下“有实现”只表示 R3 中存在对应实现，不代表已经通过完整官方依赖编译或真实 OpenBao 验收。R3 状态为 8 PASS / 59 PARTIAL / 5 NOT_RUN，OB-001 仍阻塞。本次仅增加文档，不把功能条目标为新 PASS。本文示例是文档中的调用组合，不是新增 SDK API。
+> **状态说明**：“有实现”、本地验证、真实 OpenBao 验收和发布是不同结论。本轮已同步正式 module 地址，当前逐项状态及证据见 [验收结果](../acceptance-results.json) 与 [实施交接](implementation-handoff.md)。R3 的 8 PASS / 59 PARTIAL / 5 NOT_RUN 保留为历史；本文代码组合不新增 SDK API。
 
 ## 1. 功能目录和证据入口
 
@@ -60,7 +60,7 @@
 | `TokenProvider.Snapshot(ctx)` | → `auth.TokenSnapshot, error` | 自定义外部身份提供器 |
 | `SecretIDProvider.Current(ctx)` | → `auth.SecretIDSnapshot, error` | 自定义可更新 SecretID 来源 |
 
-TokenSnapshot 字段为 `Token`、`Generation`、`ValidUntil`；SecretIDSnapshot 字段为 `SecretID`、`Generation`、`Use`。提供器返回的秘密必须独立持有，Generation 不是秘密内容。调用必须响应 Context，异常不得带出 Token 或文件内容。
+TokenSnapshot 字段为 `Token`、`Generation`、`ValidUntil`；SecretIDSnapshot 字段为 `SecretID`、`Generation`、`Use`。Generation 不是秘密内容。内建 provider 的独立快照交付消费者清理；自定义 provider 默认保留句柄所有权，SDK 不直接 Zero，只有显式所有权协议允许转移。共享与包装场景、直接调用和错误返回的责任见[快照所有权](authentication.md#快照所有权)。调用必须响应 Context，异常不得带出 Token 或文件内容。
 
 `auth.Config` 的 ExternalToken 与 ManagedAppRole 互斥；两种模式不得同时配置。ManagedAppRole 中 RoleID 是 `sensitive.Bytes`，Mount 相对 auth/，SecretID 的复用模式必须明确。SDK 没有公开 `Login()`、`RenewToken()` 或 `SetToken()` 方法，认证由 Start 和内部生命周期管理。
 
@@ -102,7 +102,7 @@ TokenSnapshot 字段为 `Token`、`Generation`、`ValidUntil`；SecretIDSnapshot
 
 普通 `json.Marshal(doc)` 会返回错误，不会序列化出秘密。格式化输出为脱敏内容。值复制共享清理句柄，所以不能在一个副本 Zero 后继续依赖另一个副本。
 
-以下文档示例用 Create→ReadRef→CAS 展示版本关系。它产生两次真实写入，不可在生产使用演示路径，也不能在失败后盲目重新运行整个函数。
+以下文档示例用 Create→ReadRef→CAS 展示版本关系。它产生两次真实写入，不可在生产使用演示路径，也不能在失败后盲目重新运行整个函数。示例将大整数保存为字符串，以保留经过真实后端往返后的精度；本地 Document 对 JSON 数字的精度保证不代表后端具有相同保证，详见[兼容性边界](compatibility.md)。
 
 ```go
 package integration
@@ -111,15 +111,15 @@ import (
 	"context"
 	"errors"
 
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/kv"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/kv"
 )
 
 func CreateReadUpdate(ctx context.Context, store *bao.KVClient, path string) (kv.Ref, error) {
 	if ctx == nil || store == nil {
 		return kv.Ref{}, errors.New("context and store are required")
 	}
-	initial, err := kv.ParseDocument([]byte(`{"schema_version":1,"large_integer":9007199254740993}`))
+	initial, err := kv.ParseDocument([]byte(`{"schema_version":1,"large_integer":"9007199254740993"}`))
 	if err != nil {
 		return kv.Ref{}, err
 	}
@@ -133,7 +133,7 @@ func CreateReadUpdate(ctx context.Context, store *bao.KVClient, path string) (kv
 		return kv.Ref{}, err
 	}
 	defer read.Data.Zero()
-	updated, err := kv.ParseDocument([]byte(`{"schema_version":2,"large_integer":9007199254740993}`))
+	updated, err := kv.ParseDocument([]byte(`{"schema_version":2,"large_integer":"9007199254740993"}`))
 	if err != nil {
 		return kv.Ref{}, err
 	}
@@ -213,8 +213,8 @@ import (
 	"errors"
 	"time"
 
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/pki"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/pki"
 )
 
 func IssueForClient(ctx context.Context, issuer *bao.PKIClient, role, cn string, roots [][]byte) (*pki.IssuedCertificate, error) {
@@ -290,9 +290,9 @@ import (
 	"context"
 	"errors"
 
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 func SignAndVerify(ctx context.Context, tr *bao.TransitClient, name string, version int, payload []byte) (transit.Signature, error) {
@@ -345,9 +345,9 @@ import (
 	"context"
 	"errors"
 
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 func EncryptAndRead(ctx context.Context, tr *bao.TransitClient, name string, version int, plain []byte, consume func([]byte) error) error {
@@ -382,7 +382,7 @@ Rewrap 只改变密文对应的加密版本，不向业务返回明文，也不�
 
 当前固定 SHA-256。HMACRequest 为 `KeyName, KeyVersion, Message`，返回 `Wrapped, Version, RequestID`。HMACVerifyRequest 为 `KeyName, ExpectedVersion, Message, WrappedHMAC`，返回 VerifyResult。
 
-当前 HMAC 请求类型没有派生 Context 字段，代码拒绝 derived key；返回 MAC 解包后要求32字节。验证请求路径带 `/sha2-256`，现有 control fixture 的 verify/mac 权限却不带后缀，必须在真实集成时核对修复，不能把现有模板作为 HMAC 已通过的证据。来源：[transit_hmac.go](../transit_hmac.go)、[control 权限](../deploy/test/policies/control.hcl)。
+当前 HMAC 请求类型没有派生 Context 字段，代码拒绝 derived key；返回 MAC 解包后要求32字节。服务端元数据未提供历史版本列表时，只允许使用明确的 latest 版本，不猜测旧版本可用。验证请求与 control fixture 均使用精确的 `transit/verify/mac/sha2-256` 权限；真实集成结果以当前正式报告为准。来源：[transit_hmac.go](../transit_hmac.go)、[control 权限](../deploy/test/policies/control.hcl)、[集成诊断](evidence/OB-018/release-validation-2026-10-01/integration-diagnosis.md)。
 
 ## 7. Diagnostics 与 Observe
 
@@ -461,8 +461,8 @@ Effect 独立于 Code：`none` 表示当前单次操作可以确认无效果，`
 | `make tooling-test`、`make fuzz-test` | 工具和模糊测试 | 不替代功能验收 |
 | `make release-check` | 检查台账和当前正式证据 | 不自动把记录改为通过 |
 
-`make contract-test` 是历史补充模式，不用于首次业务接入或发布门禁。消费者脚本当前不会自动使用调用方 file proxy；纯离线消费仍有待验证和修正。TLS 文件在 New 时加载，当前没有证书热加载 API；运行中更改 CA 文件不等于现存 Client 已更新信任。
+`make contract-test` 是历史补充模式，不用于首次业务接入或发布门禁。消费者脚本通过显式 `--offline-proxy` 使用含签名 sumdb 镜像的本地代理，不回退公网；联网模式需显式 `--allow-network`，结果见当前正式消费者报告。TLS 文件在 New 时加载，当前没有证书热加载 API；运行中更改 CA 文件不等于现存 Client 已更新信任。
 
-本次按源码核对但未修复的两项示例/配置差异：HMAC verify 权限后缀不一致；PKI 演示存储材料及回读检查不是完整业务交付方案。它们没有被“文档完善”掩盖或擅自改为验收通过。
+HMAC verify 夹具权限后缀已按接口契约同步。PKI 演示存储材料及回读检查仍不等于完整业务交付方案；业务接入需按自身持久化和恢复要求验收。
 
 更多来源：[R3报告](../IMPLEMENTATION_REPORT_R3.md)、[依赖转移限制](dependency-transfer.md)、[发布检查](release.md)。

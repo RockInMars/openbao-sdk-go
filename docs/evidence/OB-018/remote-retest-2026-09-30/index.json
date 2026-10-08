@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "source_hash_version": 2,
+  "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+  "scope": "Current Windows local evidence and authorized nonproduction sdk-test fixture08; formal integration and scanners remain blocked, no release",
+  "remote_checkpoint": {
+    "target": "https://kms.jiup9.com:443",
+    "namespace": "sdk-test",
+    "status": "PASS",
+    "evidence_class": "supplemental sdk-test, not REAL_OPENBAO",
+    "requests": 112,
+    "request_limit": 120,
+    "core_cases": "39/39",
+    "transit_cases": "22/22",
+    "owned_resources_removed": "9/9",
+    "cleanup": "PASS",
+    "report": ".artifacts/runs/remote-full-fixture-20260930-08/report.json"
+  },
+  "release_gate": {
+    "status": "FAIL",
+    "exit_code": 1,
+    "refusals": 25,
+    "receipt": ".artifacts/runs/remote-retest-20260930-final/release-remote-retest-01.json",
+    "note": "Formal integration, pinned scans, five AC and eighteen OB remain unsatisfied; no source mismatch refusal"
+  },
+  "formal_reports": {
+    "normal": ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json",
+    "fuzz": ".artifacts/runs/2026-09-30T161043.539990Z-012707c728174601ac6ba00ac252326b/fuzz/report-006.json",
+    "consumer": ".artifacts/runs/2026-09-30T160830.023273Z-b181217a1e4d493381f626701e10c1fb/consumer/report-007.json",
+    "benchmark": ".artifacts/runs/2026-09-30T160721.774300Z-4bd2411f551c46a18f093740d31adcd9/benchmark/report-002.json",
+    "integration": ".artifacts/runs/2026-09-30T155544.732585Z-ab47c9c6b1db4853ac0727bfbf9737cb/integration/report-001.json",
+    "security": ".artifacts/runs/2026-09-30T155558.335355Z-3d22cc4dc5d34cb0bb2aa5bc8ad58136/security/report-001.json",
+    "static": "docs/evidence/OB-018/remote-retest-2026-09-30/static-review-e9d371.json"
+  },
+  "reports": [
+    {"path": ".artifacts/runs/remote-full-fixture-20260930-08/fixture.py", "sha256": "a1528a19931aa19d89f320b721a791967950bdc24d62131b4f5de578d9698e33", "bytes": 39717},
+    {"path": ".artifacts/runs/remote-full-fixture-20260930-08/report.json", "sha256": "5fbec9f73c7ad8aa6bcdcfb9cfeff0e9b73e859c875752bc63cbfd67fd14cfb2", "bytes": 9714, "status": "PASS"},
+    {"path": ".artifacts/runs/remote-sdk-full-20260930-07-core/remote/report-004.json", "sha256": "ecb9b809e47197b5c2876fae4c216bd32f06fe9bf57da16482d1dbe9ca977bb8", "bytes": 6211, "status": "PASS"},
+    {"path": ".artifacts/runs/remote-sdk-full-20260930-07-core/remote/result.json", "sha256": "93bb88d74ba558913efca491d812985b1eb5efb9a513a6a8bcca158260cec537", "bytes": 3097, "status": "PASS"},
+    {"path": ".artifacts/runs/remote-sdk-full-20260930-07-transit/remote/report-004.json", "sha256": "e06219d171cfc583d81d5bee85f98ca226b389108d49a3cec69930fcb8c8ec88", "bytes": 5141, "status": "PASS"},
+    {"path": ".artifacts/runs/remote-sdk-full-20260930-07-transit/remote/result.json", "sha256": "d893e3d2816025800cfd6909075fd3e17d8ebffee283c99f3bc31df0194cf481", "bytes": 1850, "status": "PASS"},
+    {"path": ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json", "sha256": "aa9014d773c0a5c49cfebc1260f486a021f369afc93c31b3760c235baba85e6f", "bytes": 6184, "status": "PASS"},
+    {"path": ".artifacts/runs/2026-09-30T161043.539990Z-012707c728174601ac6ba00ac252326b/fuzz/report-006.json", "sha256": "e63b585e0de45d13ddc86b4c940f1642b25effe35780c412c7fb61a3b19ecc12", "bytes": 5674, "status": "PASS"},
+    {"path": ".artifacts/runs/2026-09-30T160517.126193Z-7f176a108aa548a78c31ff0c04b06e52/consumer/report-007.json", "sha256": "36725e03ec95287931f54edf6c8a88e46e0bb7af56e420e12ad33131e7a6e357", "bytes": 8960, "status": "FAIL", "note": "First isolated TEMP path was inside workspace; retained before corrected rerun"},
+    {"path": ".artifacts/runs/2026-09-30T160830.023273Z-b181217a1e4d493381f626701e10c1fb/consumer/report-007.json", "sha256": "5447ed2517a02145b884640127df94b878efea82b64bb9a6970d2e44b1949b0e", "bytes": 8071, "status": "PASS"},
+    {"path": ".artifacts/runs/2026-09-30T160721.774300Z-4bd2411f551c46a18f093740d31adcd9/benchmark/report-002.json", "sha256": "2eb03694c608c4e4eda0f7a75185fe9c978cc335c390d58bc328fdd8b002c472", "bytes": 5835, "status": "PASS"},
+    {"path": ".artifacts/runs/2026-09-30T155544.732585Z-ab47c9c6b1db4853ac0727bfbf9737cb/integration/report-001.json", "sha256": "12bce6e99702e2d1284d00d24da799b6ffbf01b6532624d980f00414fa79a574", "bytes": 1758, "status": "BLOCKED"},
+    {"path": ".artifacts/runs/2026-09-30T155558.335355Z-3d22cc4dc5d34cb0bb2aa5bc8ad58136/security/report-001.json", "sha256": "c34d9575735838c8cb8f54f545b27a8d818236cc568986c48461aa3eb97ae6e5", "bytes": 1765, "status": "BLOCKED"},
+    {"path": "docs/evidence/OB-018/remote-retest-2026-09-30/static-review-e9d371.json", "sha256": "02baeef704b399ca7310bec552efee64120c769bf2032537400808e2d8f9f2a7", "bytes": 2212, "status": "PASS"},
+    {"path": "docs/evidence/OB-018/remote-retest-2026-09-30/independent-review.md", "sha256": "4cfe747589e28a6e17515e21af456f14616b110d859dd6914095f2a9ff68f62e", "bytes": 2241},
+    {"path": ".artifacts/runs/remote-retest-20260930-final/release-remote-retest-01.json", "sha256": "618bb7611f79f796bc6af61994de6b23d622141b822cfbaf32ffe1b27c33ecfa", "bytes": 1433, "status": "FAIL"},
+    {"path": ".artifacts/runs/remote-retest-20260930-final/release-remote-retest-01.log", "sha256": "78bd0a50edf0dc9a353e65b34c841e6f386dea00def59c4b86a15acf21318452", "bytes": 742}
+  ],
+  "independent_review": "docs/evidence/OB-018/remote-retest-2026-09-30/independent-review.md",
+  "prior_checkpoint": "docs/evidence/OB-018/structure-maintenance-2026-09-30/index.json"
+}

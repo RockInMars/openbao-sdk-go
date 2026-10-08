@@ -6,11 +6,11 @@ import (
 	"strings"
 	"testing"
 
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/diagnostics"
-	"git.example.com/infra/openbao-sdk-go/kv"
-	"git.example.com/infra/openbao-sdk-go/pki"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/diagnostics"
+	"github.com/RockInMars/openbao-sdk-go/kv"
+	"github.com/RockInMars/openbao-sdk-go/pki"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 // These compile-time consumer contracts pin every specified runtime method.

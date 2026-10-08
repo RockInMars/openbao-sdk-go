@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/examples/internal/bootstrap"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/examples/internal/bootstrap"
 	"os"
 )
 

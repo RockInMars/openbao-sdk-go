@@ -12,8 +12,8 @@ import (
 	"strings"
 	"sync"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 )
 
 const maxCredentialBytes = 64 << 10
@@ -66,6 +66,9 @@ type staticToken struct {
 }
 
 // NewStaticToken copies the token; it does not assume an unlimited lifetime or renew it.
+// Each Snapshot returns an independent value owned by its consumer. Direct callers
+// must Zero that snapshot after use. Closing a client does not erase the provider,
+// which may be shared by other clients.
 func NewStaticToken(token sensitive.Bytes) (TokenProvider, error) {
 	raw := token.RevealCopy()
 	defer clear(raw)
@@ -87,6 +90,13 @@ func (p *staticToken) Snapshot(ctx context.Context) (TokenSnapshot, error) {
 	return TokenSnapshot{Token: sensitive.NewBytes(raw), Generation: p.generation}, nil
 }
 
+// SnapshotOwnedByConsumer checks exact identity so an embedding wrapper cannot
+// accidentally transfer ownership of a different Snapshot implementation.
+func (p *staticToken) SnapshotOwnedByConsumer(actual any) bool {
+	q, ok := actual.(*staticToken)
+	return ok && q == p
+}
+
 type tokenFile struct{ path string }
 type secretIDFile struct {
 	path string
@@ -99,12 +109,16 @@ func validFilePath(path string) bool {
 
 // NewTokenFile accepts a trusted deployment path, including trusted symlink mounts.
 // The path's parent directory must not be writable by an untrusted local principal.
+// Each successful Snapshot is independent and must be Zeroed by its consumer.
 func NewTokenFile(path string) (TokenProvider, error) {
 	if !validFilePath(path) {
 		return nil, credentialError(baoerr.CodeInvalidArgument)
 	}
 	return &tokenFile{path: path}, nil
 }
+
+// NewSecretIDFile reads a trusted deployment file on each Current call. Each
+// successful snapshot is independent and must be Zeroed by its consumer.
 func NewSecretIDFile(path string, use SecretIDUse) (SecretIDProvider, error) {
 	if !validFilePath(path) || (use != ReusableSecretID && use != SingleUseSecretID) {
 		return nil, credentialError(baoerr.CodeInvalidArgument)
@@ -155,10 +169,21 @@ func (p *tokenFile) Snapshot(ctx context.Context) (TokenSnapshot, error) {
 	}
 	return TokenSnapshot{Token: b, Generation: g}, nil
 }
+
+func (p *tokenFile) SnapshotOwnedByConsumer(actual any) bool {
+	q, ok := actual.(*tokenFile)
+	return ok && q == p
+}
+
 func (p *secretIDFile) Current(ctx context.Context) (SecretIDSnapshot, error) {
 	b, g, err := readCredential(ctx, p.path)
 	if err != nil {
 		return SecretIDSnapshot{}, err
 	}
 	return SecretIDSnapshot{SecretID: b, Generation: g, Use: p.use}, nil
+}
+
+func (p *secretIDFile) SnapshotOwnedByConsumer(actual any) bool {
+	q, ok := actual.(*secretIDFile)
+	return ok && q == p
 }

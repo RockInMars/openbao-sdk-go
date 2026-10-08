@@ -1,0 +1,43 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "evidence_class": "COMMAND_RECEIPT",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T04:52:26.382879+00:00",
+  "platform": "windows",
+  "tool_versions": {
+    "python": "3.13.13"
+  },
+  "run_id": "ci-02",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-c",
+        "from pathlib import Path;import yaml,re;d=yaml.safe_load(Path('.github/workflows/ci.yaml').read_text(encoding='utf-8'));j=d['jobs'];assert set(j)=={'tooling','normal','fuzz','consumers','security','real-integration','summary'};assert j['summary']['if']=='always()';assert set(j['summary']['needs'])==set(j)-{'summary'};uses=[s['uses'] for job in j.values() for s in job.get('steps',[]) if 'uses' in s];assert all(re.fullmatch(r'actions/[a-z-]+@[0-9a-f]{40}',u) for u in uses);assert sum('download-artifact@' in s.get('uses','') for s in j['summary']['steps'])==8;assert d['permissions']=={'contents':'read'};print('PASS: YAML parsed; seven logical jobs; eight fixed downloads; always summary; pinned actions; contents read only')"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/final-supplemental/ci-yaml-ci-02.log",
+      "started_at": "2026-09-29T04:52:26.477646+00:00",
+      "timeout_s": 60.0,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 41540,
+      "finished_at": "2026-09-29T04:52:26.881348+00:00",
+      "elapsed_s": 0.404,
+      "log_sha256": "7d5b47b0e7c096747990ef26258b9c09f22ff5c0ba3485093dd149ddcfc7fd60",
+      "name": "command"
+    }
+  ],
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "finished_at": "2026-09-29T04:52:27.128069+00:00"
+}

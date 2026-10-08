@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "source_hash_version": 2,
+  "source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b",
+  "recorded_at": "2026-09-30T04:37:37+00:00",
+  "scope": "Original OB/AC ledger reconciliation on Windows Go 1.26.3; sdk-test run is supplemental only",
+  "overall_status": "BLOCKED",
+  "acceptance_counts": {
+    "PASS": 66,
+    "PARTIAL": 3,
+    "NOT_RUN": 3
+  },
+  "task_counts": {
+    "BLOCKED": 19
+  },
+  "supplemental_remote": {
+    "status": "PASS",
+    "target": "https://kms.jiup9.com:443",
+    "namespace": "sdk-test",
+    "report": ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+    "core_cases": "39/39",
+    "transit_cases": "22/22",
+    "request_count": "112/120 EXACT",
+    "owned_resources": "9/9 removed",
+    "formal_class_substitution": false
+  },
+  "formal_evidence": {
+    "normal": ".artifacts/runs/2026-09-30T040616.117162Z-7582862938784f7fa40424b5bc4900dc/normal/report-007.json",
+    "fuzz": ".artifacts/runs/2026-09-30T040730.684857Z-3544922cb3c047ffb6c245aa6339a1c4/fuzz/report-006.json",
+    "consumer": ".artifacts/runs/2026-09-30T041038.162482Z-6279a23c28194e25ad63d636533e27d8/consumer/report-007.json",
+    "tooling": ".artifacts/runs/remote-20260930-current/tooling-tooling-20260930-03.json",
+    "static": "docs/evidence/OB-018/remote-2026-09-30/static-review-dee54e.json",
+    "integration": ".artifacts/runs/2026-09-30T041201.992465Z-fcc2d88df3ea479c8dc1ae4c486cc9b3/integration/report-001.json",
+    "scans": ".artifacts/runs/2026-09-30T041213.812598Z-d275ea4aa02b4639b8638d8e5876059d/security/report-001.json"
+  },
+  "release_gate": {
+    "command": "rtk proxy python -B scripts/verify-release.py",
+    "completion": "exited",
+    "exit_code": 1,
+    "refusals": 25,
+    "receipt": ".artifacts/runs/remote-20260930-current/verify-release-release-20260930-03.json",
+    "log": ".artifacts/runs/remote-20260930-current/verify-release-release-20260930-03.log",
+    "categories": [
+      "integration BLOCKED",
+      "scans BLOCKED",
+      "AC-001/065/066/070/071 not PASS",
+      "OB-001 through OB-018 not VERIFIED"
+    ],
+    "stale_current_identity_refusals": 0
+  },
+  "historical_failures_retained": [
+    ".artifacts/runs/remote-full-fixture-20260930-06/report.json",
+    ".artifacts/runs/remote-hmac-shape-diagnostic-20260930-01/report.json",
+    ".artifacts/runs/remote-hmac-shape-diagnostic-20260930-02/report.json"
+  ],
+  "external_inputs": [
+    "trusted exact OpenBao server artifact version and binary SHA256 or image digest",
+    "prepared pinned scanner tools and vulnerability database or explicit preparation authorization",
+    "isolated Linux/Go 1.25.0 platform and separately authorized remote CI"
+  ]
+}

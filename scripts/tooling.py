@@ -1,24 +1,64 @@
 """Small stdlib-only validation helpers. Not a substitute for Go or security scanners."""
 from __future__ import annotations
-import hashlib, json, os, pathlib, re, zipfile
+import datetime, hashlib, json, os, pathlib, re, zipfile
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-EXCLUDED={'.git','.artifacts','__pycache__','.tools','.pytest_cache'}
+EXCLUDED={'.git','.artifacts','__pycache__','.tools','.pytest_cache','.codex','.serena','.code-review-graph'}
+SOURCE_HASH_VERSION=2
+SOURCE_DIRS={'auth','baoerr','diagnostics','examples','internal','kv','observe','pki','sensitive','tests','transit'}
+
+def _source_input(rel):
+    if any(part in EXCLUDED for part in rel.parts):return False
+    if len(rel.parts)==1:return rel.suffix=='.go' or rel.name in ('go.mod','go.sum','Makefile')
+    if rel.parts[0] in SOURCE_DIRS:
+        return rel.suffix=='.go' or rel.name in ('go.mod','go.sum') or 'testdata' in rel.parts
+    if rel.parts[0]=='scripts':
+        return rel.suffix=='.py' or rel.as_posix()=='scripts/acceptance-rules.json' or rel.parts[:3]==('scripts','tests','fixtures')
+    if rel.parts[:2]==('.github','workflows'):return rel.suffix in ('.yaml','.yml')
+    if rel.parts[:2]==('deploy','test'):return rel.suffix in ('.hcl','.yaml','.yml','.toml') or rel.name=='server-lock.json'
+    return False
 
 def source_files(root: pathlib.Path):
-    for p in sorted(root.rglob('*')):
-        if not p.is_file() or p.is_symlink(): continue
-        rel=p.relative_to(root)
-        if any(s in EXCLUDED for s in rel.parts): continue
-        if rel.parts[:2] in (('docs','evidence'),('docs','spec')): continue
-        if p.suffix in ('.go','.py','.hcl','.yaml','.toml') or p.name in ('go.mod','go.sum','Makefile'):
-            yield p
+    selected=[]
+    for base,dirs,files in os.walk(root,followlinks=False):
+        directory=pathlib.Path(base)
+        for name in list(dirs):
+            p=directory/name;rel=p.relative_to(root)
+            if name in EXCLUDED:dirs.remove(name)
+            elif p.is_symlink():
+                if rel.parts[0] in SOURCE_DIRS|{'scripts','.github','deploy'}:
+                    raise ValueError('source symlink rejected: '+rel.as_posix())
+                dirs.remove(name)
+        for name in files:
+            p=directory/name;rel=p.relative_to(root)
+            if not _source_input(rel):continue
+            if p.is_symlink():raise ValueError('source symlink rejected: '+rel.as_posix())
+            if p.is_file():selected.append(p)
+    yield from sorted(selected,key=lambda p:p.relative_to(root).as_posix())
 
 def source_hash(root=ROOT):
-    h=hashlib.sha256()
+    root=pathlib.Path(root)
+    h=hashlib.sha256(b'openbao-sdk-go/source-hash/v2\0')
     for p in source_files(root):
-        h.update(str(p.relative_to(root)).encode());h.update(b'\0');h.update(p.read_bytes());h.update(b'\0')
+        h.update(p.relative_to(root).as_posix().encode('utf-8'));h.update(b'\0');h.update(p.read_bytes());h.update(b'\0')
     return h.hexdigest()
+
+def source_identity(root=ROOT):
+    return {'source_hash_version':SOURCE_HASH_VERSION,'source_sha256':source_hash(root)}
+
+def start_report(kind,root=ROOT):
+    identity=source_identity(root)
+    return {**identity,'source_before':identity.copy(),'evidence_class':kind,'status':'NOT_RUN',
+            'working_directory':str(pathlib.Path(root).resolve()),
+            'started_at':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+
+def finish_report(report,root=ROOT):
+    report['source_after']=source_identity(root)
+    report['finished_at']=datetime.datetime.now(datetime.timezone.utc).isoformat()
+    if report.get('source_before')!=report['source_after']:
+        if 'baseline_changed' not in report.setdefault('problems',[]):report['problems'].append('baseline_changed')
+    if 'baseline_changed' in report.get('problems',[]):report['status']='FAIL'
+    return report
 
 def integration_lock(env):
     if env.get('BAO_TEST_ADDRESS') or env.get('BAO_TEST_TOKEN'):
@@ -37,42 +77,46 @@ def integration_lock(env):
         with p.open('rb') as f:
             for block in iter(lambda:f.read(1024*1024),b''):h.update(block)
         if h.hexdigest()!=digest: raise ValueError('OpenBao binary checksum mismatch')
-    return {'version':version,'image':image or None,'binary_sha256':digest or None,'mode':'binary' if binary else 'docker'}
+    baseline={'version':version,'image':image or None,'binary_sha256':digest or None,'mode':'binary' if binary else 'docker'}
+    try:
+        locked=json.loads((ROOT/'deploy/test/server-lock.json').read_text(encoding='utf-8'))
+    except (OSError,ValueError):raise ValueError('server lock is missing or invalid') from None
+    if not isinstance(locked,dict) or locked.get('status')!='PINNED' or any(locked.get(k)!=baseline[k] for k in ('version','image','binary_sha256')):
+        raise ValueError('server lock does not match the explicitly pinned input')
+    return baseline
 
 def go_test_passes(events,required):
     failed=any(x.get('Action') in ('fail','skip') for x in events)
     passed={x.get('Test') for x in events if x.get('Action')=='pass'}
     return not failed and all(x in passed for x in required)
 
+def module_proxy_path(module):
+    if not re.fullmatch(r'[A-Za-z0-9./_-]+',module) or any(p in ('','.','..') for p in module.split('/')):
+        raise ValueError('unsupported module path')
+    return ''.join('!'+c.lower() if c.isupper() else c for c in module)
+
 def module_zip(root,out,module,version):
-    if not re.fullmatch(r'[a-z0-9./_-]+',module) or not re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9.-]+)?',version):
+    module_proxy_path(module)
+    if not re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9.-]+)?',version):
         raise ValueError('unsupported module/version')
-    nested=[p.parent.relative_to(root) for p in root.rglob('go.mod') if p.parent!=root and not any(s in EXCLUDED for s in p.relative_to(root).parts)]
+    selected=[]
+    for base,dirs,files in os.walk(root,followlinks=False):
+        directory=pathlib.Path(base)
+        dirs[:]=[name for name in dirs if name not in EXCLUDED and not (directory/name).is_symlink()]
+        if directory!=root and 'go.mod' in files:
+            dirs.clear()
+            continue
+        for name in files:
+            p=directory/name
+            if p.suffix!='.go' and name not in ('go.mod','go.sum','README.md','LICENSE','SECURITY.md','CHANGELOG.md'):continue
+            if p.is_file() and not p.is_symlink():selected.append(p)
     with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
-        for p in sorted(root.rglob('*')):
-            if not p.is_file() or p.is_symlink():continue
+        for p in sorted(selected):
             rel=p.relative_to(root)
-            if any(x in EXCLUDED for x in rel.parts) or any(rel.is_relative_to(n) for n in nested):continue
-            if p.suffix!='.go' and p.name not in ('go.mod','go.sum','README.md','LICENSE','SECURITY.md','CHANGELOG.md'):continue
             z.writestr(module+'@'+version+'/'+rel.as_posix(),p.read_bytes())
 
 def forbidden_material(raw):
     return bool(re.search(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----\s+[A-Za-z0-9+/=]{20,}',raw))
-
-def release_problems(ledger,acceptance,reports,current_hash):
-    problems=[]
-    tasks={t.get('id'):t for t in ledger.get('tasks',[])}
-    for i in range(1,19):
-        if tasks.get(f'OB-{i:03}',{}).get('status')!='VERIFIED':problems.append(f'OB-{i:03} not VERIFIED')
-    ac={x.get('id'):x for x in acceptance.get('results',[])}
-    for i in range(1,72):
-        if ac.get(f'AC-{i:03}',{}).get('status')!='PASS':problems.append(f'AC-{i:03} not PASS')
-    expected={'integration':'REAL_OPENBAO','consumers':'INDEPENDENT_CONSUMERS','normal':'NORMAL_OFFICIAL_CLIENT','scans':'PINNED_SECURITY_SCANNERS'}
-    for name,kind in expected.items():
-        r=reports.get(name,{})
-        if r.get('status')!='PASS' or r.get('evidence_class')!=kind or r.get('source_sha256')!=current_hash:
-            problems.append(name+' evidence missing, unsuccessful, supplemental or stale')
-    return problems
 
 def parse_coverage(raw: str):
     """Merge Go coverage blocks (multiple test binaries may cover the same block)."""

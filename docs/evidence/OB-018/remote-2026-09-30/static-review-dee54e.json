@@ -1,0 +1,45 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b"
+  },
+  "evidence_class": "STATIC_REVIEW",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "run_id": "remote-static-review-dee54e",
+  "reviewed_at": "2026-09-30T04:25:45+00:00",
+  "reviewer": "primary agent; current static document review, not runtime or independent review",
+  "rationale": "Re-read the current module and api/v2 v2.7.0 checksums, the NOT_VERIFIED test server lock, and compatibility, testing and release guidance; recomputed each listed document's raw-byte SHA256. The sdk-test supplemental fixture passed 61 fixed scenarios with 112/120 requests and full resource cleanup, but its server-reported 2.6.2 is not a trusted binary/image digest. Formal independent fixture, pinned scanners, Linux/minimum-Go and remote CI remain blocked or not run. No previous report hash is reused as current runtime evidence.",
+  "documents": [
+    {
+      "path": "go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "afa6d84a2c28186898e805739b1e187424210ba1f492ad35f3ed5fb8ee16396b"
+    },
+    {
+      "path": "deploy/test/server-lock.json",
+      "sha256": "0dbab82ba3ff06e80a8ec6be03340aece6dde7589cecb541d4e7b820e8bd789a"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "444703a541f61d3471eb6ddbe629d60fe33232800d7edc9838912fea63295b70"
+    },
+    {
+      "path": "docs/testing.md",
+      "sha256": "ee212fdee2060cbbca244ba16d5f66329181b682f367e275a6b191ef23e34df9"
+    },
+    {
+      "path": "docs/release.md",
+      "sha256": "dba5d4336c11c8d395afc23fd1f7edca9fc4038131c2e03d5342f11e324cb675"
+    }
+  ],
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b"
+  }
+}

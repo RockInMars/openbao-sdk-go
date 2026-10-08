@@ -5,8 +5,8 @@ package credentialworkflow
 import (
 	"context"
 	"errors"
-	"git.example.com/infra/openbao-sdk-go/kv"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/kv"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 	"time"
 )
 

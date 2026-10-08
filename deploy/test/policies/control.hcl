@@ -19,4 +19,4 @@ path "transit/encrypt/derived" { capabilities = ["update"] }
 path "transit/decrypt/derived" { capabilities = ["update"] }
 path "transit/rewrap/derived" { capabilities = ["update"] }
 path "transit/hmac/mac/sha2-256" { capabilities = ["update"] }
-path "transit/verify/mac" { capabilities = ["update"] }
+path "transit/verify/mac/sha2-256" { capabilities = ["update"] }

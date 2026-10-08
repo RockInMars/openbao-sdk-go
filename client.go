@@ -3,12 +3,11 @@ package bao
 import (
 	"context"
 	"errors"
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/diagnostics"
-	"git.example.com/infra/openbao-sdk-go/internal/authn"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/observe"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/diagnostics"
+	"github.com/RockInMars/openbao-sdk-go/internal/authn"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/observe"
 	"sync"
 	"time"
 )
@@ -36,18 +35,32 @@ type startAttempt struct {
 	err  error
 }
 
+// New validates configuration and prepares a client without network I/O or
+// background goroutines. It copies configured RoleID and in-memory TLS secrets;
+// failed construction clears those copies, leaving caller-owned values intact.
+// Call Start before business operations and Close when the client is no longer used.
 func New(cfg Config, opts ...Option) (*Client, error) { return newClient(cfg, false, opts...) }
 func newClient(cfg Config, loopbackHTTP bool, opts ...Option) (*Client, error) {
 	c, err := normalizeConfig(cfg, loopbackHTTP)
 	if err != nil {
 		return nil, err
 	}
+	return newClientFromConfig(c, opts...)
+}
+
+// newClientFromConfig takes ownership of the copies made by normalizeConfig.
+func newClientFromConfig(c Config, opts ...Option) (client *Client, err error) {
+	defer func() {
+		if client == nil {
+			zeroConfigSecrets(c)
+		}
+	}()
 	settings := clientOptions{}
 	for _, o := range opts {
 		if o.apply == nil {
 			return nil, invalid("OPTION")
 		}
-		if err = o.apply(&settings); err != nil {
+		if err := o.apply(&settings); err != nil {
 			return nil, err
 		}
 	}
@@ -78,7 +91,12 @@ func newClient(cfg Config, loopbackHTTP bool, opts ...Option) (*Client, error) {
 	// This context owns requests even before Start (unauthenticated health).
 	// Constructing it does not start a goroutine or perform any network I/O.
 	requests, cancelRequests := context.WithCancel(context.Background())
-	return &Client{cfg: c, engine: ex, health: hx, manager: authn.New(c.Auth, ex, nil), observer: settings.observer, lifecycle: "CREATED", requests: requests, cancelRequests: cancelRequests}, nil
+	manager := authn.New(c.Auth, ex, nil, func(ctx context.Context, op engine.Operation, attempts int) {
+		if settings.observer != nil {
+			settings.observer.Observe(ctx, observe.Event{Operation: string(op), ClusterAlias: c.ClusterAlias, Attempts: attempts})
+		}
+	})
+	return &Client{cfg: c, engine: ex, health: hx, manager: manager, observer: settings.observer, lifecycle: "CREATED", requests: requests, cancelRequests: cancelRequests}, nil
 }
 func contextErr(ctx context.Context, op engine.Operation) error {
 	if ctx == nil {
@@ -92,6 +110,11 @@ func contextErr(ctx context.Context, op engine.Operation) error {
 	}
 	return nil
 }
+
+// Start initializes authentication. Its non-nil context owns the client's running
+// lifetime, so use a service-lifetime context, not a short request context.
+// ExternalToken checks the provider snapshot locally; success does not prove
+// server reachability or permissions. ManagedAppRole logs in and manages refresh.
 func (c *Client) Start(ctx context.Context) error {
 	if err := contextErr(ctx, "START"); err != nil {
 		return err
@@ -161,6 +184,11 @@ func (c *Client) signalDrain() {
 		}
 	}
 }
+
+// Close stops admission, drains operations within ctx, cancels remaining work,
+// and clears SDK-owned credentials. It is safe to call repeatedly, including
+// before Start. Use a separate non-nil shutdown context. Close does not revoke
+// server credentials or erase shared providers, caller inputs, or revealed copies.
 func (c *Client) Close(ctx context.Context) error {
 	if ctx == nil {
 		return invalid("CLOSE")
@@ -207,10 +235,7 @@ func (c *Client) Close(ctx context.Context) error {
 	c.engine.CloseIdleConnections()
 	c.health.CloseIdleConnections()
 	c.manager.Zero()
-	if c.cfg.Auth.Mode == auth.ManagedAppRole {
-		c.cfg.Auth.AppRole.RoleID.Zero()
-	}
-	c.cfg.TLS.ClientKeyPEM.Zero()
+	zeroConfigSecrets(c.cfg)
 	c.mu.Lock()
 	c.lifecycle = "CLOSED"
 	close(c.closeDone)
@@ -220,6 +245,9 @@ func (c *Client) Close(ctx context.Context) error {
 	}
 	return stopErr
 }
+
+// State returns a local lifecycle/authentication snapshot without network I/O.
+// Ready is not proof that any particular server operation is authorized.
 func (c *Client) State() diagnostics.ClientState {
 	c.mu.Lock()
 	defer c.mu.Unlock()

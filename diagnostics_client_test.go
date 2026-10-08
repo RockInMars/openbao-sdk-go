@@ -10,11 +10,53 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/diagnostics"
-	"git.example.com/infra/openbao-sdk-go/kv"
-	"git.example.com/infra/openbao-sdk-go/observe"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/diagnostics"
+	"github.com/RockInMars/openbao-sdk-go/kv"
+	"github.com/RockInMars/openbao-sdk-go/observe"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 )
+
+type fixtureSecretIDProvider struct{}
+
+func (fixtureSecretIDProvider) Current(context.Context) (auth.SecretIDSnapshot, error) {
+	return auth.SecretIDSnapshot{SecretID: sensitive.NewBytes([]byte("fixture-app-secret")), Generation: "fixture", Use: auth.ReusableSecretID}, nil
+}
+
+func TestManagedAppRoleObserverCountsLoginWithoutSecrets(t *testing.T) {
+	var sent atomic.Int32
+	cfg := serverConfig(t, func(w http.ResponseWriter, r *http.Request) {
+		sent.Add(1)
+		if r.URL.Path != "/v1/auth/approle/login" || r.Header.Get("X-Vault-Token") != "" {
+			t.Error("login request changed")
+		}
+		_, _ = w.Write([]byte(`{"auth":{"client_token":"fixture-session","lease_duration":60,"renewable":false}}`))
+	})
+	cfg.Auth = auth.Config{Mode: auth.ManagedAppRole, AppRole: &auth.AppRoleConfig{Mount: "approle", RoleID: sensitive.NewBytes([]byte("fixture-role")), SecretIDProvider: fixtureSecretIDProvider{}}}
+	o := &recordingObserver{panicOn: true}
+	c, err := New(cfg, WithObserver(o))
+	if err != nil {
+		t.Fatal(err)
+	}
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	if err := c.Start(ctx); err != nil {
+		t.Fatal(err)
+	}
+	if err := c.Close(context.Background()); err != nil {
+		t.Fatal(err)
+	}
+	o.mu.Lock()
+	defer o.mu.Unlock()
+	if sent.Load() != 1 || len(o.events) != 1 || o.events[0].Operation != "APPROLE_LOGIN" || o.events[0].Attempts != 1 {
+		t.Fatalf("sent=%d events=%v", sent.Load(), o.events)
+	}
+	raw, _ := json.Marshal(o.events)
+	if strings.Contains(string(raw), "fixture-role") || strings.Contains(string(raw), "fixture-app-secret") || strings.Contains(string(raw), "fixture-session") {
+		t.Fatal("auth observer leaked a secret")
+	}
+}
 
 func TestClusterHealthSemantics(t *testing.T) {
 	for _, s := range []struct {

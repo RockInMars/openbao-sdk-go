@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/diagnostics"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/diagnostics"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 )
 
 type flight struct {
@@ -24,6 +24,7 @@ type Manager struct {
 	cfg                auth.Config
 	executor           *engine.Executor
 	clock              Clock
+	onAttempt          func(context.Context, engine.Operation, int)
 	mu                 sync.Mutex
 	token              sensitive.Bytes
 	expires, next      time.Time
@@ -41,11 +42,15 @@ type Manager struct {
 	closed             bool
 }
 
-func New(c auth.Config, e *engine.Executor, clock Clock) *Manager {
+func New(c auth.Config, e *engine.Executor, clock Clock, onAttempt ...func(context.Context, engine.Operation, int)) *Manager {
 	if clock == nil {
 		clock = realClock{}
 	}
-	return &Manager{cfg: c, executor: e, clock: clock, used: make(map[string]struct{})}
+	m := &Manager{cfg: c, executor: e, clock: clock, used: make(map[string]struct{})}
+	if len(onAttempt) > 0 {
+		m.onAttempt = onAttempt[0]
+	}
+	return m
 }
 func safeContext(ctx context.Context) error {
 	if ctx == nil {
@@ -76,21 +81,34 @@ func validSecret(s []byte) bool {
 	}
 	return true
 }
-func safeTokenSnapshot(ctx context.Context, p auth.TokenProvider) (s auth.TokenSnapshot, err error) {
-	defer func() {
-		if recover() != nil {
-			err = providerError(ctx)
-		}
-	}()
-	return p.Snapshot(ctx)
+
+type snapshotOwnership interface {
+	SnapshotOwnedByConsumer(actual any) bool
 }
-func safeSecretSnapshot(ctx context.Context, p auth.SecretIDProvider) (s auth.SecretIDSnapshot, err error) {
+
+func safeTokenSnapshot(ctx context.Context, p auth.TokenProvider) (s auth.TokenSnapshot, owned bool, err error) {
 	defer func() {
 		if recover() != nil {
 			err = providerError(ctx)
 		}
 	}()
-	return p.Current(ctx)
+	if marker, ok := p.(snapshotOwnership); ok {
+		owned = marker.SnapshotOwnedByConsumer(p)
+	}
+	s, err = p.Snapshot(ctx)
+	return
+}
+func safeSecretSnapshot(ctx context.Context, p auth.SecretIDProvider) (s auth.SecretIDSnapshot, owned bool, err error) {
+	defer func() {
+		if recover() != nil {
+			err = providerError(ctx)
+		}
+	}()
+	if marker, ok := p.(snapshotOwnership); ok {
+		owned = marker.SnapshotOwnedByConsumer(p)
+	}
+	s, err = p.Current(ctx)
+	return
 }
 func (m *Manager) Credential(ctx context.Context) (string, error) {
 	if e := safeContext(ctx); e != nil {
@@ -103,7 +121,10 @@ func (m *Manager) Credential(ctx context.Context) (string, error) {
 	}
 	m.mu.Unlock()
 	if m.cfg.Mode == auth.ExternalToken {
-		s, err := safeTokenSnapshot(ctx, m.cfg.TokenProvider)
+		s, owned, err := safeTokenSnapshot(ctx, m.cfg.TokenProvider)
+		if owned {
+			defer s.Token.Zero()
+		}
 		if err != nil {
 			e := providerError(ctx)
 			m.recordExternal(false, time.Time{}, e)

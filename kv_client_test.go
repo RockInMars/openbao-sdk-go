@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/kv"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/kv"
 	"net/http"
 	"strings"
 	"sync"
@@ -215,7 +215,7 @@ func TestKVDeleteExactVersions(t *testing.T) {
 }
 func TestKVList404(t *testing.T) {
 	c := startedClient(t, serverConfig(t, func(w http.ResponseWriter, r *http.Request) {
-		if r.Method != "LIST" || r.URL.Path != "/v1/secret/metadata/" {
+		if r.Method != http.MethodGet || r.URL.Path != "/v1/secret/metadata/" || r.URL.RawQuery != "list=true" {
 			t.Error("root list route")
 		}
 		w.WriteHeader(404)
@@ -224,5 +224,22 @@ func TestKVList404(t *testing.T) {
 	k, _ := c.KVv2("secret")
 	if r, e := k.List(context.Background(), ""); r != nil || !baoerr.IsCode(e, baoerr.CodeNotFoundOrHidden) {
 		t.Fatal("404 converted to empty list")
+	}
+}
+
+func TestKVListNestedFolderRoute(t *testing.T) {
+	var actualMethod, actualPath, actualQuery string
+	c := startedClient(t, serverConfig(t, func(w http.ResponseWriter, r *http.Request) {
+		actualMethod, actualPath, actualQuery = r.Method, r.URL.Path, r.URL.RawQuery
+		if r.Method != http.MethodGet || r.URL.Path != "/v1/secret/metadata/sdk-validation/owned/" || r.URL.RawQuery != "list=true" {
+			w.WriteHeader(http.StatusTeapot)
+			return
+		}
+		_, _ = w.Write([]byte(`{"data":{"keys":["seed"]}}`))
+	}))
+	k, _ := c.KVv2("secret")
+	got, err := k.List(context.Background(), "sdk-validation/owned")
+	if err != nil || got == nil || len(got.Entries) != 1 || got.Entries[0].Name != "seed" || got.Entries[0].IsFolder {
+		t.Fatalf("nested folder list failed: method=%q path=%q query=%q err=%v", actualMethod, actualPath, actualQuery, err)
 	}
 }

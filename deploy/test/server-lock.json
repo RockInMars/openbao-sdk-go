@@ -1,7 +1,7 @@
 {
-  "status": "NOT_VERIFIED",
-  "version": null,
+  "status": "PINNED",
+  "version": "2.6.3",
   "image": null,
-  "binary_sha256": null,
-  "reason": "No verified OpenBao executable/image was obtainable in the implementation environment. The integration runner requires explicit checksum-pinned inputs and verifies them before launch. This is not a passing baseline."
+  "binary_sha256": "34528cdb5d41193fa2ed4a4b03a0527716ede248fa868f6061fee8b3b4e1e860",
+  "reason": "Linux amd64 OpenBao 2.6.3 binary from the official release archive, verified against the GPG-signed checksums with the first-party published key fingerprint. Provenance: docs/evidence/OB-018/release-validation-2026-10-01/tool-provenance.json. PINNED identifies the fixture input; it does not assert integration or release success."
 }

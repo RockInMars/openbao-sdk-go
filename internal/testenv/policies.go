@@ -33,6 +33,6 @@ func controlPolicy() string {
 		}
 	}
 	b.WriteString("path \"transit/hmac/mac/sha2-256\" { capabilities = [\"update\"] }\n")
-	b.WriteString("path \"transit/verify/mac\" { capabilities = [\"update\"] }\n")
+	b.WriteString("path \"transit/verify/mac/sha2-256\" { capabilities = [\"update\"] }\n")
 	return b.String()
 }

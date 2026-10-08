@@ -1,0 +1,29 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e"
+  },
+  "evidence_class": "STATIC_REVIEW",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "run_id": "remote-retest-static-e9d371-01",
+  "reviewed_at": "2026-09-30T16:16:17+00:00",
+  "reviewer": "primary agent document review and independent read-only risk_reviewer source and evidence review",
+  "rationale": "Reviewed the current module and checksum inputs, unverified server lock, compatibility/testing/release guidance, README navigation, and independent fixed-scope sdk-test preflight and post-run review. The current e9d371 source identity has a separate supplemental sdk-test PASS report, while formal independent OpenBao integration and pinned scanners remain BLOCKED; Linux/minimum Go/remote CI remain unverified. Document hashes bind this static review only; runtime evidence is separate.",
+  "documents": [
+    {"path": "go.mod", "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54"},
+    {"path": "go.sum", "sha256": "afa6d84a2c28186898e805739b1e187424210ba1f492ad35f3ed5fb8ee16396b"},
+    {"path": "deploy/test/server-lock.json", "sha256": "0dbab82ba3ff06e80a8ec6be03340aece6dde7589cecb541d4e7b820e8bd789a"},
+    {"path": "README.md", "sha256": "4b0e82e16fc248e3bd12f832491c84879e46b9e54dc54ca698e89e0bfebf8780"},
+    {"path": "docs/compatibility.md", "sha256": "3c8ead114043e45a84db833893e4b17ebfea354dbe73c4c1e507ab7a267935bd"},
+    {"path": "docs/testing.md", "sha256": "a2bba60922aee4de9d06188178ed26af5a215d1c7e8da5206d461aef055f828f"},
+    {"path": "docs/release.md", "sha256": "dba5d4336c11c8d395afc23fd1f7edca9fc4038131c2e03d5342f11e324cb675"},
+    {"path": "docs/evidence/OB-018/remote-retest-2026-09-30/independent-review.md", "sha256": "4cfe747589e28a6e17515e21af456f14616b110d859dd6914095f2a9ff68f62e"}
+  ],
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e"
+  }
+}

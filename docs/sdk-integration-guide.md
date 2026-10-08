@@ -1,10 +1,10 @@
 # OpenBao Go SDK 接入说明
 
-**文档修订：R3-D1｜2026-09-29｜适用代码：R3 实施快照**
+**文档修订：2026-09-29 工程改进｜原 R3-D1 文档记录保留**
 
 本文面向接入 SDK 的 Go 服务开发者，说明准备条件、依赖引用、认证、初始化、调用、退出和故障处理。它描述本包真实公开接口与当前实现，不是上线许可或已发布版本公告。
 
-> **当前可用性边界**：R3 的 OB-001 仍阻塞，完整官方依赖、正式 SDK 编译、真实 OpenBao 集成、独立消费者与安全扫描未通过。本文中的代码是按源码编写的接入示例；本次仅检查语法与源码接口对应关系，不宣称这些示例已完成官方依赖编译或真实调用。先在隔离开发/测试环境执行，不能据此直接投产。
+> **当前可用性边界**：正式 module 和现有许可已确认；主 Go 1.26.8、最低 Go 1.25.0、独立消费者、真实 OpenBao fixture 和固定扫描的当前证据见 [实施交接](implementation-handoff.md)。测试使用隔离临时资源，未发布本轮快照。本文代码不构成生产可用证明。
 >
 > 原验收不变：SDK 发布要求 AC-001～AC-071 满足相应门禁；业务接入另看 AC-072。文档增补不改变任务状态。
 
@@ -33,9 +33,9 @@ SDK 是一个 Go 库，不是独立 HTTP 服务。根包为 `bao`，提供 Clien
 
 | 项目 | 必须明确的内容 | 当前包中的状态 |
 |---|---|---|
-| SDK 模块地址 | 真实代码仓库、版本或提交 | `git.example.com/infra/openbao-sdk-go` 仍是占位地址，未发布 |
-| 官方依赖 | `github.com/openbao/openbao/api/v2@v2.7.0` 的完整模块及校验 | 候选 pin 已写入，未取得完整依赖 |
-| Go 工具链 | 实际依赖要求的固定版本 | `go 1.23.2` 不是已核实的官方最低要求 |
+| SDK 模块地址 | 真实代码仓库、已核验快照/版本 | `github.com/RockInMars/openbao-sdk-go` 已确认；本轮源码未推送或发布 |
+| 官方依赖 | `github.com/openbao/openbao/api/v2@v2.7.0` 的完整模块及校验 | 已有模块缓存与 go.sum，固定不升级 |
+| Go 工具链 | 声明下限与实际验证分开 | go.mod 1.25.0；主验证固定 1.26.8，最低版本与平台结果见兼容矩阵 |
 | OpenBao 地址 | HTTPS origin，例如测试网关地址 | 不接受含 `/v1` 或其它路径前缀的 Address |
 | Namespace | 明确 root，或确认存在的 named 路径 | 不根据 `xyouting-test` 名称猜测部署形态 |
 | TLS 信任 | 系统信任，或受信 CA 文件/PEM | 私有 CA 必须明确配置；不关闭验证 |
@@ -50,17 +50,16 @@ SDK 是一个 Go 库，不是独立 HTTP 服务。根包为 `bao`，提供 Clien
 在 SDK 根目录运行；遇到失败先定位并修复，不删除检查：
 
 ```bash
-make dependency-check
-make normal-test
+python -B scripts/normal-test.py
 ```
 
-`dependency-check` 会在真实下载后读取上游 go.mod、执行 tidy 并检查依赖图和校验记录；它不是 SDK 完成判定。固定 Go 不足时依据实际上游材料切换工具链，不擅自升级业务仓库。
+依赖缓存不足时，先按授权单独准备并核对模块校验，再冻结输入。`dependency-check --prepare` 属于会更新模块的准备步骤，不能混入冻结后的验证；普通门禁默认不下载，不擅自升级工具链。
 
 只能在另一台联网机器取得依赖时，使用 [公共依赖转移说明](dependency-transfer.md) 的 `make dependency-export` 和接收端 verify 流程。依赖 ZIP 不包含 OpenBao 服务端、Go 工具链或扫描器；消费者脚本仍有独立的离线限制。
 
 ### 3.2 正式模块引用
 
-下面是**正式仓库已经确定并发布后**的命令模板，不能对占位域名假装安装成功：
+下面是维护者发布并核实目标版本后使用的命令模板；本轮没有创建发布版本，也未验证从远端取得当前未提交源码：
 
 ```bash
 # 在调用项目根目录，按真实已发布值填写。
@@ -71,7 +70,7 @@ GOWORK=off go mod tidy
 GOWORK=off go test ./...
 ```
 
-若最终 module 路径不同，需要先在 SDK 根 go.mod、SDK 内导入、示例和消费者中一致替换，并重新验证。本文 Go 代码保留当前占位 import，避免伪造已存在的仓库。
+module/import 和消费者 require 已同步为维护者确认的地址，保留 `RockInMars` 大小写。后续改变地址必须重新验证，不能沿用当前证据。
 
 不将本地 `replace`、共享 go.work 或 `make contract-test` 的补充结果当作独立发布依赖可用的证据。正式独立消费者由 `make consumer-test` 验证。来源：[发布检查](release.md)、[Makefile](../Makefile)。
 
@@ -89,7 +88,7 @@ GOWORK=off go test ./...
 |---|---|---|
 | Token 文件 | `auth.NewTokenFile(path)` | 每次取快照读取文件；原子替换后读取新值；读取失败不无限复用旧值 |
 | 静态 Token | `auth.NewStaticToken(token)` | 显式传入 `sensitive.Bytes`，不硬编码；不自动轮换或续期 |
-| 自定义 | 实现 `auth.TokenProvider` | `Snapshot(ctx)` 返回独立秘密快照、Generation、可选 ValidUntil；遵守 Context |
+| 自定义 | 实现 `auth.TokenProvider` | 返回快照、Generation、可选 ValidUntil；默认保留句柄所有权，可显式交付独立快照；遵守 Context，见[所有权说明](authentication.md#快照所有权) |
 
 `NewTokenFile` 只检查路径字符串，实际文件内容在取快照时读取。受保护的常规文件及其父目录由部署侧管理，建议权限 `0600`；当前读取内容限制 64 KiB，trim 后必须为非空可打印 ASCII 凭据。ValidUntil 零值表示“未知”，不是永久有效。
 
@@ -103,9 +102,9 @@ GOWORK=off go test ./...
 package integration
 
 import (
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 )
 
 func NewManagedClient(
@@ -149,9 +148,9 @@ import (
 	"errors"
 	"time"
 
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/auth"
-	"git.example.com/infra/openbao-sdk-go/kv"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/auth"
+	"github.com/RockInMars/openbao-sdk-go/kv"
 )
 
 func WithExactSecret(
@@ -264,8 +263,8 @@ import (
 	"context"
 	"errors"
 
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/diagnostics"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/diagnostics"
 )
 
 func RequireReadable(ctx context.Context, client *bao.Client, probe diagnostics.ReadProbe) error {
@@ -318,7 +317,7 @@ import (
 	"context"
 	"errors"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
 )
 
 // ErrorAction 仅返回业务分类，不执行自动重试，也不改变原始 err。
@@ -386,4 +385,4 @@ func ErrorAction(err error) string {
 
 ## 14. 本次文档增补的边界
 
-新增说明不改变任何 .go、go.mod、go.sum、原方案、任务台账或72项验收状态。本次文档检查与 SDK 运行时检查分别记录于 [文档验证记录](documentation-validation-R3-D1.json)；R3 软件状态继续以 [R3报告](../IMPLEMENTATION_REPORT_R3.md) 和原始验收为准。
+原 R3-D1 文档验证记录保留在 [历史记录](documentation-validation-R3-D1.json)；本轮 module、示例、测试和工具改动以 [实施交接](implementation-handoff.md)、原任务台账与逐项验收为准，历史记录不转记为当前 PASS。

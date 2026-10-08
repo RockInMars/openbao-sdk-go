@@ -1,21 +1,316 @@
 {
+  "remote_retest_2026_09_30": {
+    "status": "TARGET_FIXED_SCOPE_PASS_DELIVERY_BLOCKED",
+    "target": "https://kms.jiup9.com:443, nonproduction sdk-test, AppRole auth/approle",
+    "authorization": "One serial run, at most 120 API requests in 20 minutes and nine owned resources",
+    "baseline_source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5",
+    "source_identity": {
+      "source_hash_version": 2,
+      "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+      "input_count": 175
+    },
+    "fixture": ".artifacts/runs/remote-full-fixture-20260930-08/fixture.py",
+    "remote_report": ".artifacts/runs/remote-full-fixture-20260930-08/report.json",
+    "core_result": ".artifacts/runs/remote-sdk-full-20260930-07-core/remote/result.json",
+    "transit_result": ".artifacts/runs/remote-sdk-full-20260930-07-transit/remote/result.json",
+    "remote_result": "PASS: 112/120 exact requests, Core 39/39, Transit 22/22, nine owned resources removed, cleanup PASS; no pending cleanup",
+    "remote_evidence_class": "Supplemental sdk-test; not formal REAL_OPENBAO",
+    "local_evidence": {
+      "normal": ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json",
+      "fuzz": ".artifacts/runs/2026-09-30T161043.539990Z-012707c728174601ac6ba00ac252326b/fuzz/report-006.json",
+      "consumer": ".artifacts/runs/2026-09-30T160830.023273Z-b181217a1e4d493381f626701e10c1fb/consumer/report-007.json",
+      "benchmark": ".artifacts/runs/2026-09-30T160721.774300Z-4bd2411f551c46a18f093740d31adcd9/benchmark/report-002.json",
+      "integration": ".artifacts/runs/2026-09-30T155544.732585Z-ab47c9c6b1db4853ac0727bfbf9737cb/integration/report-001.json",
+      "security": ".artifacts/runs/2026-09-30T155558.335355Z-3d22cc4dc5d34cb0bb2aa5bc8ad58136/security/report-001.json",
+      "static": "docs/evidence/OB-018/remote-retest-2026-09-30/static-review-e9d371.json"
+    },
+    "first_local_consumer_failure": ".artifacts/runs/2026-09-30T160517.126193Z-7f176a108aa548a78c31ff0c04b06e52/consumer/report-007.json",
+    "review": "docs/evidence/OB-018/remote-retest-2026-09-30/independent-review.md",
+    "evidence_index": "docs/evidence/OB-018/remote-retest-2026-09-30/index.json",
+    "formal_integration": "BLOCKED: no trusted exact OpenBao version and release digest or binary SHA256",
+    "pinned_scanners": "BLOCKED: no authorized pinned scanner and database environment",
+    "linux_minimum_go_remote_ci": "NOT_RUN",
+    "release_gate": {"status": "FAIL", "exit_code": 1, "refusals": 25, "receipt": ".artifacts/runs/remote-retest-20260930-final/release-remote-retest-01.json"},
+    "remote_finished_at": "2026-09-30T15:48:36.598613+00:00",
+    "reconciled_at": "2026-09-30T16:50:40Z"
+  },
+  "structure_maintenance_2026_09_30": {
+    "status": "LOCAL_COMPLETE_DELIVERY_BLOCKED",
+    "plan": "docs/code-structure-maintenance-plan-2026-09-30.md",
+    "task_id": "OB-018",
+    "completed_at": "2026-09-30T14:44:44+00:00",
+    "baseline": {
+      "branch": "master",
+      "head": "6d8251658e76f88aec5935126f303b2c59497691",
+      "source_hash_version": 2,
+      "source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b",
+      "input_count": 173
+    },
+    "source_identity": {
+      "source_hash_version": 2,
+      "source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5",
+      "input_count": 175
+    },
+    "steps": [
+      {"task": 1, "status": "COMPLETE", "result": "README existing project structure navigation updated"},
+      {"task": 2, "status": "COMPLETE", "result": "remote runner budget, preflight and KV fixture split in same package; baseline and focused tests passed"},
+      {"task": 3, "status": "COMPLETE", "result": "12 tests and dedicated helper moved by behavior; original 69 Windows top-level names preserved after recovery"},
+      {"task": 4, "status": "LOCAL_COMPLETE_DELIVERY_BLOCKED", "result": "current-source local validation and independent review complete; external delivery gates remain blocked"}
+    ],
+    "verification": {
+      "tooling_tests": 118,
+      "normal_status": "PASS",
+      "normal_test_and_subtest_results": 349,
+      "coverage_groups_passed": "15/15",
+      "fuzz_targets_passed": "5/5",
+      "offline_consumers_passed": "2/2",
+      "benchmark_subcases_three_rounds": "6/6",
+      "remote_tag_compile": "PASS_NOT_EXECUTED",
+      "formal_integration": "BLOCKED",
+      "pinned_scanners": "BLOCKED",
+      "linux_minimum_go_remote_ci": "NOT_RUN",
+      "current_source_sdk_test": "NOT_RUN"
+    },
+    "first_failure": "docs/evidence/OB-018/structure-maintenance-2026-09-30/name-audit.json",
+    "review": "docs/evidence/OB-018/structure-maintenance-2026-09-30/independent-review.md",
+    "evidence_index": "docs/evidence/OB-018/structure-maintenance-2026-09-30/index.json",
+    "release_gate": {"status": "FAIL", "exit_code": 1, "refusals": 25, "receipt": ".artifacts/runs/structure-maintenance-20260930-final/release-release-02.json"},
+    "rulings": [
+      "User-authorized existing worktree and original task-status/acceptance entrypoints supersede the executing-plans skill defaults for worktree, separate ledger and commits.",
+      "Behavior-preserving movement uses pre/post existing regressions and name-set comparison; no artificial failing behavior test was introduced.",
+      "Prior-source sdk-test success is historical only; no new remote request or resource budget was granted."
+    ],
+    "next_step": "Obtain trusted OpenBao release version and digest or binary SHA256, isolated pinned scanner environment, Linux/minimum Go and separately authorized remote CI; new sdk-test budget is required for current-source remote claims."
+  },
+  "remote_execution_2026_09_30": {
+    "status": "TARGET_FIXED_SCOPE_PASS_DELIVERY_BLOCKED",
+    "latest_checkpoint": {
+      "source_hash_version": 2,
+      "source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b",
+      "remote_scope": "https://kms.jiup9.com:443, sdk-test only, AppRole auth/approle",
+      "remote_result": "sdk-test owned full fixture07 PASS: Core 39/39, Transit 22/22, HMAC keys absent observed; prior failures retained",
+      "contract_decision": "APPROVED and implemented: KV List fixed GET ?list=true, no fallback; HMAC missing/empty keys handled conservatively",
+      "latest_request_window": "112/120 exact serial requests, 20-minute approved window completed; no balance carries forward",
+      "remote_cleanup": "PASS: all nine fixture07 owned resources removed; no pending cleanup",
+      "remote_evidence": [
+        ".artifacts/runs/remote-full-fixture-20260930-03/report.json",
+        ".artifacts/runs/remote-full-fixture-20260930-06/report.json",
+        ".artifacts/runs/remote-hmac-shape-diagnostic-20260930-01/report.json",
+        ".artifacts/runs/remote-hmac-shape-diagnostic-20260930-02/report.json",
+        ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+        ".artifacts/runs/remote-sdk-full-20260930-06-core/remote/result.json",
+        ".artifacts/runs/remote-sdk-full-20260930-06-transit/remote/result.json"
+      ],
+      "current_local_evidence": [
+        ".artifacts/runs/2026-09-30T040616.117162Z-7582862938784f7fa40424b5bc4900dc/normal/report-007.json",
+        ".artifacts/runs/2026-09-30T040730.684857Z-3544922cb3c047ffb6c245aa6339a1c4/fuzz/report-006.json",
+        ".artifacts/runs/2026-09-30T041038.162482Z-6279a23c28194e25ad63d636533e27d8/consumer/report-007.json",
+        ".artifacts/runs/2026-09-30T041120.578170Z-b3f2d9e30a3e4d85a6d157c8235d7fc1/benchmark/report-002.json",
+        ".artifacts/runs/2026-09-30T041201.992465Z-fcc2d88df3ea479c8dc1ae4c486cc9b3/integration/report-001.json",
+        ".artifacts/runs/2026-09-30T041213.812598Z-d275ea4aa02b4639b8638d8e5876059d/security/report-001.json",
+        ".artifacts/runs/remote-20260930-current/tooling-tooling-20260930-03.json",
+        "docs/evidence/OB-018/remote-2026-09-30/static-review-dee54e.json"
+      ],
+      "local_result": "Go ./... PASS; Python tooling 118 PASS; normal 349 test results and 15 coverage groups PASS; five fuzz targets, two offline consumers, six benchmark subcases x three rounds PASS; formal fixture and scanners BLOCKED",
+      "formal_gate": "FAIL: current verify-release exited 1 with 25 substantive refusals (integration, scans, five AC and 18 OB); no stale current identity; Linux/minimum Go and remote CI not run",
+      "historical_fields_note": "prior_review_* and prior_* retain their original historical source identities; current fields reflect fixture07"
+    },
+    "plan": "docs/openbao-remote-test-plan-2026-09-29.md",
+    "task_ids": [
+      "OB-003",
+      "OB-016",
+      "OB-018"
+    ],
+    "baseline_snapshot": ".artifacts/runs/remote-20260930-start/baseline.json",
+    "initial_source_sha256": "771ac8fe1964aaebc7dd258d1060a34bbb8781e823ea86b182f8a465d9f8be0c",
+    "current_step": "sdk-test fixture07 passed 61/61, 112/120 exact requests and nine owned resources removed; current local reports, original AC/OB and verify-release reconciled",
+    "next_step": "Provide trusted exact OpenBao server version and digest/binary, pinned scanner environment, then run formal isolated integration, security, Linux/minimum Go and authorized remote CI",
+    "units": [
+      {
+        "name": "Remote input validation and secret isolation",
+        "acceptance": "Missing inputs fail before network; compiler receives no remote credentials",
+        "status": "PASS",
+        "note": "Local implementation and evidence completed"
+      },
+      {
+        "name": "SDK remote scenarios and local HTTP regressions",
+        "acceptance": "TLS, health, identity, exact-version KV, isolated CAS and cleanup, optional Transit/PKI; ordinary Go tests remain local",
+        "status": "PASS",
+        "note": "Local implementation and evidence completed"
+      },
+      {
+        "name": "Independent review and frozen checks",
+        "acceptance": "Review actual snapshot diff; fix established findings; fresh formal reports match final identity",
+        "status": "PASS",
+        "note": "Local implementation and evidence completed"
+      },
+      {
+        "name": "Remote run and evidence reconciliation",
+        "acceptance": "Run only confirmed scenarios; retain real blockers, resource journal and original OB/AC semantics",
+        "status": "PASS",
+        "note": "fixture07 real target scope 61/61 PASS, 112 requests, nine owned resources removed; formal gates separate"
+      }
+    ],
+    "rulings": [
+      "Use existing workspace and original ledger; no skill-default commits, worktrees, cleanup or parallel task system.",
+      "User authorized full scenarios with a test account; namespace, specific resources and controlled token injection remain required and are not inferred from that authorization.",
+      "Keep independent fixture and acceptance-rules unchanged; external service results are supplemental, never REAL_OPENBAO."
+    ],
+    "input_checkpoint": {
+      "remote_token_injected": false,
+      "remote_resource_inputs_present": true,
+      "namespace": "sdk-test",
+      "interactive_credential_checks": 2,
+      "remote_requests_made": 112
+    },
+    "source_identity": {
+      "source_hash_version": 2,
+      "source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b"
+    },
+    "completed_at": "2026-09-30T04:32:28+00:00",
+    "execution_report": "docs/openbao-remote-test-report-2026-09-30.md",
+    "evidence_index": "docs/evidence/OB-018/remote-2026-09-30/index.json",
+    "local_verification": {
+      "tooling_tests": 118,
+      "normal_passed_tests": 349,
+      "coverage_groups": 15,
+      "minimum_statement_coverage": 86.49,
+      "fuzz_targets": 5,
+      "benchmark_enabled_subcases": 6,
+      "benchmark_rounds": 3,
+      "independent_consumers": 2,
+      "examples_passed_tests": 9,
+      "remote_tagged_compile": "PASS"
+    },
+    "remote_execution": "TARGET_SCENARIOS_PASS_FORMAL_BLOCKED",
+    "remote_requests": 112,
+    "remote_resources_created": 9,
+    "pending_remote_cleanup": 0,
+    "connectivity_evidence": [
+      ".artifacts/runs/remote-connect-20260930-01/report.json",
+      ".artifacts/runs/remote-connect-20260930-02/report.json"
+    ],
+    "release_gate": "BLOCKED_FORMAL_EXTERNAL_INPUTS",
+    "release_rejection_count": 25,
+    "review": "docs/evidence/OB-018/remote-2026-09-30/independent-review.md",
+    "workspace_audit": "docs/evidence/OB-018/remote-2026-09-30/workspace-audit-dee54e.json"
+  },
   "schema_version": 1,
+  "structure_refactor_2026_09_29": {
+    "status": "LOCAL_COMPLETE_DELIVERY_BLOCKED",
+    "task_id": "OB-018",
+    "review": "docs/code-structure-review-2026-09-29.md",
+    "baseline_snapshot": ".artifacts/runs/structure-refactor-20260929-start/baseline.json",
+    "initial_source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+    "current_step": "All executable local structure work, regression, independent review and evidence reconciliation completed",
+    "next_step": "External inputs only: exact OpenBao artifact; approved scanner/database preparation; isolated Linux/minimum-Go and separate remote authorization",
+    "steps": {
+      "1": "COMPLETE",
+      "2": "COMPLETE",
+      "3": "COMPLETE",
+      "4": "COMPLETE",
+      "5": "DEFERRED_UNTOUCHED",
+      "6": "DEFERRED_UNTOUCHED"
+    },
+    "step_2_3_evidence": [
+      ".artifacts/runs/structure-refactor-20260929-start/validators-validators-green-01.json",
+      ".artifacts/runs/structure-refactor-20260929-start/fixture-fixture-red-01.json",
+      ".artifacts/runs/structure-refactor-20260929-start/provenance-fixture-provenance-01.json",
+      ".artifacts/runs/structure-refactor-20260929-start/ci-fixture-ci-01.json",
+      ".artifacts/runs/structure-refactor-20260929-start/combined-fixture-combined-01.json"
+    ],
+    "step_4_red_evidence": ".artifacts/runs/structure-refactor-20260929-start/recording-recording-red-01.json",
+    "step_1_evidence": [
+      ".artifacts/runs/structure-refactor-20260929-start/boundary-boundary-red-01.json",
+      ".artifacts/runs/structure-refactor-20260929-start/direction-direction-green-01.json"
+    ],
+    "rulings": [
+      "Use the existing working tree and ledger; no skill-created worktree, commits or parallel status system.",
+      "Keep source identity helpers in tooling: removing its evidence forwarding edge suffices; further leaf modules are unnecessary.",
+      "Go config and historical test files are outside the actual tool-layer changes, so recommendations 5/6 are deferred without changing OB-003 evidence claims."
+    ],
+    "source_identity": {
+      "source_hash_version": 2,
+      "source_sha256": "771ac8fe1964aaebc7dd258d1060a34bbb8781e823ea86b182f8a465d9f8be0c"
+    },
+    "source_file_count": 163,
+    "independent_review": "docs/evidence/OB-018/structure-refactor-2026-09-29/independent-review.md",
+    "completed_local_at": "2026-09-29T14:16:26.721062+00:00",
+    "evidence_index": "docs/evidence/OB-018/structure-refactor-2026-09-29/index.json",
+    "execution_report": "docs/code-structure-refactor-report-2026-09-29.md",
+    "release_gate": {
+      "status": "FAIL",
+      "exit_code": 1,
+      "reason_count": 25,
+      "receipt": ".artifacts/runs/structure-refactor-20260929-final/verify-release-structure-release-final-01.json"
+    },
+    "step_4_evidence": [
+      ".artifacts/runs/structure-refactor-20260929-start/recording-recording-green-01.json",
+      ".artifacts/runs/structure-refactor-20260929-start/record-full-record-full-01.json",
+      ".artifacts/runs/structure-refactor-20260929-start/record-cli-record-cli-green-02.json",
+      ".artifacts/runs/structure-refactor-20260929-final/tooling-structure-tools-final-01.json"
+    ]
+  },
+  "execution_2026_09_29": {
+    "plan": "docs/implementation-plan-2026-09-29.md",
+    "status": "LOCAL_COMPLETE",
+    "baseline_commit": "6d8251658e76f88aec5935126f303b2c59497691",
+    "current_step": "本地改进、当前正式验证、独立审查及证据整理完成；交付门禁BLOCKED",
+    "next_step": "维护者提供固定OpenBao发布物、扫描准备授权与隔离平台条件；受影响输入改变后重新冻结并验证",
+    "preflight": [
+      "Stage 1 source_identity v2 feeds every producer and Stage 2 release checks.",
+      "Stage 4 command receipts must satisfy Stage 2 evidence rules and CI summary.",
+      "Stage 3/5 source and test additions must precede Stage 6 final snapshot."
+    ],
+    "rulings": [
+      "Ruling: use this existing ledger and working tree, without skill scratch ledger, commits or worktrees; user explicitly requires one task system and preservation of current changes.",
+      "Ruling: all seven phases including optional examples/benchmarks are in scope under the execution request; external input only blocks dependent verification."
+    ],
+    "checkpoints": [
+      "Windows baseline: 35 Python tests, 1 failure and 1 error; .artifacts/runs/baseline-python-1803d892ccca46d58d85019a295c8612.log.",
+      "Source identity: 5 new regressions failed then passed; initial full Python suite 40/40 passed after encoding/path fixes.",
+      "Release provenance: 10 tests passed after reproducing stale evidence false positives; current real ledger remains unqualified.",
+      "Runner: 6 tests passed (natural exit, timeout, owned child cleanup, interruption, unavailable and overwrite rejection). Coverage CLI 2 tests, record CLI 1 and server lock 1 passed after observed failures.",
+      "Go diagnostic race succeeded after replacing the failed relative profile path with an absolute path. 5/15 coverage groups remain below 85%; artifacts in .artifacts/runs/coverage-baseline-a3e9c7b0d10941d89683154e8e84e3fe/.",
+      "User confirmed github.com/RockInMars/openbao-sdk-go. Existing upstream LICENSE fetched from main, Git blob 261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64; module migration still pending.",
+      "Ruling: preserve SDK example AC-068/069 separately from real migration AC-072; rules require example tests plus both independent consumers, not a claim of deployed business verification.",
+      "Ruling: consumers/security runners require explicit --allow-network for isolated dependency/tool/database downloads; current task forbids implicit installation. Missing authorization blocks only those executions.",
+      "Python checkpoint: 69 tests passed in 21.737s; .artifacts/runs/tooling-checkpoint/tooling-scripts-01.json and .log. New CI summary 6 synthetic artifact cases passed; new action pins resolved from official GitHub tag APIs.",
+      "Six new Go test files cover KV/PKI/Transit malformed responses, redirects, engine queue/cancel/error classification and gzip limits. Focused root and engine checks passed; updated race coverage is in progress.",
+      "Ruling: coverage additions characterize existing behavior without deliberately breaking production code. The initial PKI missing-certificate test used ':' in the route; pki_read.go explicitly converts canonical serials to '-', so only that incorrect test expectation was corrected.",
+      "Boundary diagnostic race passed; 15/15 Go statement coverage groups meet 85%. Profile .artifacts/runs/coverage-boundary-e8a6748760134a4fb56466ee78b9c208/coverage.out. This precedes final module/example snapshot and is not final release evidence.",
+      "Observer option-forwarding RED compile failure preserved in .artifacts/runs/observer-red/. First GREEN attempt found an incorrect uppercase error fixture; fixed the test to use existing baoerr.CodePermissionDenied. Race example tests then passed in .artifacts/runs/observer-green/observer-green-options-03.json.",
+      "First benchmark shell invocation split -bench=. into two arguments and ran zero benchmarks despite process exit 0; .artifacts/runs/bench-checkpoint/benchmark-bench-01.json is only a process receipt and is rejected as a performance baseline. Added explicit argv runner and zero/missing-round rejection tests.",
+      "Independent review found argv/cwd substitution, A-B-A baseline latch, raw/dynamic-name CI disclosure, tree cleanup confirmation, server lock summary and Go-version provenance gaps. Main agent added observed RED regressions, repaired them and obtained read-only closure from risk_reviewer; actual findings and logs will be indexed in the execution report.",
+      "Module/import/consumer require synchronized to github.com/RockInMars/openbao-sdk-go; official api/v2 v2.7.0 and Go declaration 1.25.0 unchanged. LICENSE matches confirmed upstream Git blob. Historical spec/evidence and real fuzz output retain their original identities.",
+      "Before final freeze, benchmark runner observed all six enabled sub-benchmarks three times with positive iterations and 256 independent latency samples per concurrent round. Final source reports are being rebuilt after review fixes.",
+      "Frozen 156 input files at v2 91d2b8cff8904f58529a9e2a70c784333638591ed421c1013d493efa9e297b96. Windows final tooling uses PYTHONUTF8=0; main Go normal run in progress. WSL inventory contains only stopped rancher-desktop/rancher-desktop-data, not a usable authorized Linux validation host; neither was started. Go1.25.0 executable/cache absent.",
+      "Final v2 cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2, 159 input files: Windows Python UTF8=0 90 tests PASS; normal six commands and 15 coverage groups PASS; five fuzz and six benchmark subcases x3 PASS.",
+      "Offline consumer restored with pre-existing public module/signed sumdb cache prepared before freeze. Fresh GOMODCACHE/GOPATH, no preseeded go.sum, file-only checksum URL; both independent race consumers PASS. Earlier reports preserved.",
+      "Independent review closed resolved-UNC offline boundary; four targeted tests and final full tooling PASS. No remaining established review findings.",
+      "Final release check naturally exited 1 with 25 explicit reasons: two unavailable formal classes, five incomplete ACs and 18 dependency-blocked OBs. All 66 PASS AC records match current v2 rules and receipts. No stale-identity or missing-target failure among PASS records. Original reports and archive hashes indexed in docs/evidence/OB-018/implementation-2026-09-29/index.json."
+    ],
+    "source_identity": {
+      "source_hash_version": 2,
+      "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+    },
+    "completed_local_at": "2026-09-29T05:13:03.786961+00:00"
+  },
   "plan_version": "1.0",
-  "implementation_status": "IN_PROGRESS",
+  "implementation_status": "IMPLEMENTED",
   "tasks": [
     {
       "id": "OB-001",
       "title": "固定依赖基线与公开类型",
       "depends_on": [],
-      "status": "BLOCKED",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/dependency-report.json",
-        "docs/evidence/OB-001/resume03/export-attempt.log",
-        "docs/evidence/OB-001/resume03/tooling.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+        "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
       ],
-      "implementation_note": "R3新增公共依赖联网导出/离线独立校验工具及18项测试。真实导出在DNS阶段失败，无真实依赖包；98个Go源码和go.mod/go.sum未变。未编译官方适配器，保持BLOCKED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Fixed api/v2 v2.7.0 and go.mod Go 1.25.0 are unchanged. Main/minimum Linux and Windows checks and trusted OpenBao 2.6.3 fixture are verified. Dependency transfer initializes telemetry off in each temporary HOME with isolated configuration; setup failure stops before dependency commands.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-001",
         "AC-002"
@@ -39,10 +334,13 @@
         "docs/dependency-bootstrap.md",
         "scripts/dependency-bundle.py",
         "scripts/tests/test_dependency_bundle.py",
-        "docs/dependency-transfer.md"
+        "docs/dependency-transfer.md",
+        "LICENSE",
+        "scripts/tooling.py",
+        "scripts/tests/test_source_identity.py"
       ],
-      "remaining_gate": "公开类型已编写并检查；官方依赖完整模块、最低Go版本、go.sum和服务镜像基线未核实。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -83,6 +381,50 @@
           "docs/evidence/OB-001/resume02-reference-review.md"
         ],
         "implementation_note": "R2实际下载及保留TLS的网络探测仍失败；新建严格真实依赖预检入口并通过8个解析/拒绝单测。未取得完整go.mod、最低Go和checksum，未编译官方适配器。98个Go源码及go.mod/go.sum均未修改。"
+      },
+      "prior_review_r3": {
+        "status": "BLOCKED",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/dependency-report.json",
+          "docs/evidence/OB-001/resume03/export-attempt.log",
+          "docs/evidence/OB-001/resume03/tooling.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3新增公共依赖联网导出/离线独立校验工具及18项测试。真实导出在DNS阶段失败，无真实依赖包；98个Go源码和go.mod/go.sum未变。未编译官方适配器，保持BLOCKED。",
+        "remaining_gate": "公开类型已编写并检查；官方依赖完整模块、最低Go版本、go.sum和服务镜像基线未核实。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json",
+          ".artifacts/runs/2026-09-30T155544.732585Z-ab47c9c6b1db4853ac0727bfbf9737cb/integration/report-001.json",
+          "docs/evidence/OB-018/remote-retest-2026-09-30/static-review-e9d371.json"
+        ],
+        "implementation_note": "确认并同步 github.com/RockInMars/openbao-sdk-go 与上游 Apache-2.0 LICENSE；api/v2 v2.7.0、Go1.25.0声明下限不变。Go1.26.3本地验证已完成，真实服务版本/digest和最低工具链验证未完成。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Associated acceptance not verified: AC-001",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PARTIAL"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json",
+          ".artifacts/runs/2026-09-30T191859.984298Z-f8d35041e88246e68f0411015791b468/integration/report-001.json",
+          "docs/evidence/OB-018/project-improvement-2026-10-01/static-review-security-contact-01.json"
+        ],
+        "remaining_gate": "Associated acceptance not verified: AC-001",
+        "implementation_note": "Module, dependency pins and Go 1.25.0 declaration are unchanged. Main Go 1.26.3 checks passed; trusted server artifact and actual Go 1.25.0/Linux verification remain unavailable."
       }
     },
     {
@@ -91,15 +433,12 @@
       "depends_on": [
         "OB-001"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Local Document exact-number guarantee is unchanged. Real OpenBao 2.6.3 KV may round integers beyond binary64 exact range; the backend limitation and raw probe are documented.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-003",
         "AC-004",
@@ -118,8 +457,8 @@
         "sensitive/bytes.go",
         "sensitive/bytes_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -158,6 +497,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-001",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-001",
+        "implementation_note": "Configuration validation precedes secret cloning; constructor failure clears only newly owned SDK copies. Focused regression and current formal checks passed."
       }
     },
     {
@@ -167,15 +546,12 @@
         "OB-001",
         "OB-002"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Constructor failure cleanup and successful client lifecycle preserve caller-owned RoleID/TLS inputs; public signatures and lifecycle are unchanged.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-008",
         "AC-009",
@@ -194,8 +570,8 @@
         "network_linux_test.go",
         "tls_pem_regression_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -233,6 +609,73 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "supplemental_remote_evidence": [
+        ".artifacts/runs/remote-isolated-preflight-20260930-01/remote/report-001.json",
+        ".artifacts/runs/remote-connect-20260930-01/report.json",
+        ".artifacts/runs/remote-connect-20260930-02/report.json",
+        "docs/evidence/OB-018/remote-2026-09-30/independent-review.md",
+        ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+        ".artifacts/runs/remote-sdk-full-20260930-06-core/remote/result.json",
+        ".artifacts/runs/remote-sdk-full-20260930-06-transit/remote/result.json",
+        ".artifacts/runs/remote-full-fixture-20260930-08/report.json",
+        ".artifacts/runs/remote-sdk-full-20260930-07-core/remote/result.json",
+        ".artifacts/runs/remote-sdk-full-20260930-07-transit/remote/result.json"
+      ],
+      "remote_execution_note": "Historical e9d371 source sdk-test reports remain supplemental; current manifest execution NOT_RUN because there is no new run authorization. Formal integration remains separate.",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-001,OB-002",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS",
+        "supplemental_remote_evidence": [
+          ".artifacts/runs/remote-isolated-preflight-20260930-01/remote/report-001.json",
+          ".artifacts/runs/remote-connect-20260930-01/report.json",
+          ".artifacts/runs/remote-connect-20260930-02/report.json",
+          "docs/evidence/OB-018/remote-2026-09-30/independent-review.md",
+          ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+          ".artifacts/runs/remote-sdk-full-20260930-06-core/remote/result.json",
+          ".artifacts/runs/remote-sdk-full-20260930-06-transit/remote/result.json",
+          ".artifacts/runs/remote-full-fixture-20260930-08/report.json",
+          ".artifacts/runs/remote-sdk-full-20260930-07-core/remote/result.json",
+          ".artifacts/runs/remote-sdk-full-20260930-07-transit/remote/result.json"
+        ],
+        "remote_execution_note": "Current-source sdk-test owned fixture08 passed 61/61 cases, 112/120 requests; nine resources removed. Prior fixture07 is historical. Both are supplemental, not REAL_OPENBAO; formal acceptance dependencies remain blocked."
+      },
+      "supplemental_remote_scope": "Historical source only; not current-source validation.",
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-001,OB-002",
+        "implementation_note": "Constructor failure cleanup and successful client lifecycle preserve caller-owned RoleID/TLS inputs; public signatures and lifecycle are unchanged."
       }
     },
     {
@@ -241,15 +684,12 @@
       "depends_on": [
         "OB-003"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-013",
         "AC-014",
@@ -276,10 +716,13 @@
         "internal/engine/transport.go",
         "internal/engine/types.go",
         "internal/testutil/http_sender.go",
-        "official_sender.go"
+        "official_sender.go",
+        "redirect_boundary_test.go",
+        "internal/engine/executor_boundary_test.go",
+        "internal/engine/transport_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -321,6 +764,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-003",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-003",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -329,15 +812,12 @@
       "depends_on": [
         "OB-004"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Optional provider snapshot ownership transfer is explicit and instance-bound; unknown custom providers keep ownership. Constructor and snapshot regressions passed.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-022",
         "AC-023",
@@ -354,8 +834,8 @@
         "internal/authn/manager.go",
         "options.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -398,6 +878,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-004",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-004",
+        "implementation_note": "Optional provider snapshot ownership transfer is explicit and instance-bound; unknown custom providers keep ownership. Constructor and snapshot regressions passed."
       }
     },
     {
@@ -406,15 +926,12 @@
       "depends_on": [
         "OB-005"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Owned token snapshots are cleared after use on success, failure and cancellation; borrowed custom snapshots remain usable. Current auth race and formal coverage passed.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-027",
         "AC-028",
@@ -427,8 +944,8 @@
         "internal/authn/manager.go",
         "internal/authn/manager_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -464,6 +981,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-005",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-005",
+        "implementation_note": "Owned token snapshots are cleared after use on success, failure and cancellation; borrowed custom snapshots remain usable. Current auth race and formal coverage passed."
       }
     },
     {
@@ -472,15 +1029,12 @@
       "depends_on": [
         "OB-006"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Existing managed-auth fail-closed expiry and relogin contract is unchanged; real fixture permits only the observed expired-snapshot authentication failure and requires recovery.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-031",
         "AC-032",
@@ -495,8 +1049,8 @@
         "internal/authn/manager.go",
         "internal/authn/manager_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -531,6 +1085,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-006",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-006",
+        "implementation_note": "Owned SecretID snapshots are cleared after login on success, error and cancellation; shared custom handles remain borrowed. Public error and retry semantics remain unchanged."
       }
     },
     {
@@ -539,15 +1133,12 @@
       "depends_on": [
         "OB-005"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-035",
         "AC-036",
@@ -560,8 +1151,8 @@
         "kv_client_test.go",
         "kv_scheduled_deletion_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -600,6 +1191,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-005",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-005",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -608,15 +1239,12 @@
       "depends_on": [
         "OB-008"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-039",
         "AC-040",
@@ -625,10 +1253,11 @@
       ],
       "files": [
         "kv_client_test.go",
-        "kv_metadata.go"
+        "kv_metadata.go",
+        "kv_response_boundary_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -663,6 +1292,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-008",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-008",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -671,15 +1340,12 @@
       "depends_on": [
         "OB-008"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-043",
         "AC-044",
@@ -697,8 +1363,8 @@
         "pki_client.go",
         "pki_client_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -737,6 +1403,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-008",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-008",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -745,15 +1451,12 @@
       "depends_on": [
         "OB-010"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-048",
         "AC-049",
@@ -761,10 +1464,11 @@
       ],
       "files": [
         "pki_client_test.go",
-        "pki_read.go"
+        "pki_read.go",
+        "pki_response_boundary_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -799,6 +1503,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-010",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-010",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -807,15 +1551,12 @@
       "depends_on": [
         "OB-007"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Ed25519 raw-message wire requests omit hash_algorithm while retaining prehashed=false. HTTP regression and the real signature fixture passed on this source.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-051",
         "AC-052",
@@ -831,8 +1572,8 @@
         "transit_client_test.go",
         "transit_keys.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -868,6 +1609,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-007",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-007",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -876,15 +1657,12 @@
       "depends_on": [
         "OB-012"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "HMAC latest-only guard is unchanged; the real fixture uses v2, rejects unlisted v1 and grants only the exact SHA-256 verify ACL.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-056",
         "AC-057",
@@ -893,10 +1671,11 @@
       "files": [
         "transit_cipher.go",
         "transit_cipher_test.go",
-        "transit_hmac.go"
+        "transit_hmac.go",
+        "transit_response_boundary_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -932,6 +1711,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-012",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-012",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -942,15 +1761,12 @@
         "OB-011",
         "OB-013"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "新增固定六桶、原子计数和脱敏输出的Observer示例；只扩展示例内部helper透传Option，保留旧调用。",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-059",
         "AC-060",
@@ -960,10 +1776,13 @@
         "diagnostics/types.go",
         "diagnostics_client.go",
         "diagnostics_client_test.go",
-        "observe/observer.go"
+        "observe/observer.go",
+        "examples/observer/main.go",
+        "examples/observer/main_test.go",
+        "examples/internal/bootstrap/options_test.go"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1002,6 +1821,46 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "新增固定六桶、原子计数和脱敏输出的Observer示例；只扩展示例内部helper透传Option，保留旧调用。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-009,OB-011,OB-013",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-009,OB-011,OB-013",
+        "implementation_note": "新增固定六桶、原子计数和脱敏输出的Observer示例；只扩展示例内部helper透传Option，保留旧调用。"
       }
     },
     {
@@ -1010,15 +1869,13 @@
       "depends_on": [
         "OB-014"
       ],
-      "status": "IN_PROGRESS",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+        ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Current normal coverage meets all 15 existing 85 percent groups; five fuzz targets execute their full budgets. Historical benchmark receipts remain historical; no new performance benchmark claim.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-062",
         "AC-063",
@@ -1039,10 +1896,17 @@
         "kv/document_test.go",
         "pki/validate_test.go",
         "review_fixes_test.go",
-        "scripts/tests/test_tooling.py"
+        "scripts/tests/test_tooling.py",
+        "kv/document_bench_test.go",
+        "internal/pkiutil/verify_bench_test.go",
+        "internal/transitutil/encoding_bench_test.go",
+        "internal/engine/executor_bench_test.go",
+        "scripts/benchmark-test.py",
+        "scripts/fuzz-test.py",
+        "scripts/coverage-check.py"
       ],
-      "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1104,6 +1968,48 @@
           "docs/evidence/OB-015/resume02-fuzz-pem.json"
         ],
         "implementation_note": "R2保留原实现，98个Go文件均与R1一致；本轮无overlay及替代发送器。可独立自有包直接测试已重跑，但官方完整模块/根包正式验证和原依赖链未满足，不标VERIFIED。"
+      },
+      "prior_review_r3": {
+        "status": "IN_PROGRESS",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "该任务及原依赖链仍需正式官方客户端/真实环境验证；本地补充通过不等于VERIFIED。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json",
+          ".artifacts/runs/2026-09-30T161043.539990Z-012707c728174601ac6ba00ac252326b/fuzz/report-006.json"
+        ],
+        "implementation_note": "补充边界回归，15组语句覆盖率均>=85%；五fuzz各30秒；四benchmark六子项三轮并独立采分位数，无新增发布性能阈值。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-014",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json",
+          ".artifacts/runs/2026-09-30T192425.196615Z-278574adbb7d462294459ea17f1e1c54/fuzz/report-006.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-014",
+        "implementation_note": "Current 15 coverage groups meet the existing 85 percent floor and five fuzz targets execute for 30 seconds each. Existing benchmark results remain historical; no new benchmark or performance claim is made."
       }
     },
     {
@@ -1112,15 +2018,13 @@
       "depends_on": [
         "OB-015"
       ],
-      "status": "BLOCKED",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Formal independent OpenBao 2.6.3 fixture passed with the signed binary input and reported cleanup. No old remote server budget was used.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-065",
         "AC-066"
@@ -1143,8 +2047,8 @@
         "scripts/integration-test.py",
         "tests/integration/runtime_test.go"
       ],
-      "remaining_gate": "临时环境/受限身份/真实集成测试代码已编写；无可核验OpenBao程序或digest镜像，真实测试未运行。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1191,6 +2095,75 @@
           "docs/evidence/OB-001/resume02-formal-validation.json"
         ],
         "implementation_note": "R2实际运行集成入口，缺少来源核验的服务程序/镜像，专用入口非零退出；未执行真实服务用例。"
+      },
+      "prior_review_r3": {
+        "status": "BLOCKED",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "临时环境/受限身份/真实集成测试代码已编写；无可核验OpenBao程序或digest镜像，真实测试未运行。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "supplemental_remote_evidence": [
+        ".artifacts/runs/remote-isolated-preflight-20260930-01/remote/report-001.json",
+        ".artifacts/runs/remote-connect-20260930-01/report.json",
+        ".artifacts/runs/remote-connect-20260930-02/report.json",
+        "docs/evidence/OB-018/remote-2026-09-30/independent-review.md",
+        ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+        ".artifacts/runs/remote-sdk-full-20260930-06-core/remote/result.json",
+        ".artifacts/runs/remote-sdk-full-20260930-06-transit/remote/result.json",
+        ".artifacts/runs/remote-full-fixture-20260930-08/report.json",
+        ".artifacts/runs/remote-sdk-full-20260930-07-core/remote/result.json",
+        ".artifacts/runs/remote-sdk-full-20260930-07-transit/remote/result.json"
+      ],
+      "remote_execution_note": "Historical e9d371 source sdk-test reports remain supplemental; current manifest execution NOT_RUN because there is no new run authorization. Formal integration remains separate.",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155544.732585Z-ab47c9c6b1db4853ac0727bfbf9737cb/integration/report-001.json",
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Associated acceptance not verified: AC-065,AC-066",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PARTIAL",
+        "supplemental_remote_evidence": [
+          ".artifacts/runs/remote-isolated-preflight-20260930-01/remote/report-001.json",
+          ".artifacts/runs/remote-connect-20260930-01/report.json",
+          ".artifacts/runs/remote-connect-20260930-02/report.json",
+          "docs/evidence/OB-018/remote-2026-09-30/independent-review.md",
+          ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+          ".artifacts/runs/remote-sdk-full-20260930-06-core/remote/result.json",
+          ".artifacts/runs/remote-sdk-full-20260930-06-transit/remote/result.json",
+          ".artifacts/runs/remote-full-fixture-20260930-08/report.json",
+          ".artifacts/runs/remote-sdk-full-20260930-07-core/remote/result.json",
+          ".artifacts/runs/remote-sdk-full-20260930-07-transit/remote/result.json"
+        ],
+        "remote_execution_note": "Current-source sdk-test owned fixture08 passed 61/61 cases, 112/120 requests; nine resources removed. Prior fixture07 is historical. Both are supplemental, not REAL_OPENBAO; formal acceptance dependencies remain blocked."
+      },
+      "supplemental_remote_scope": "Historical source only; not current-source validation.",
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191859.984298Z-f8d35041e88246e68f0411015791b468/integration/report-001.json",
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Associated acceptance not verified: AC-065,AC-066; Dependencies not verified: OB-015",
+        "implementation_note": "Formal independent integration is BLOCKED by missing trusted server artifact inputs; local boundary checks passed. The new remote manifest has local validation only and no new remote authorization."
       }
     },
     {
@@ -1199,15 +2172,13 @@
       "depends_on": [
         "OB-016"
       ],
-      "status": "BLOCKED",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Fresh-cache reader/signer consumers passed with signed offline dependencies, on main Linux and both minimum-Go platforms. Packaging prunes excluded and nested trees before walking; exported source rules are unchanged.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-067",
         "AC-068",
@@ -1230,10 +2201,11 @@
         "tests/consumers/reader/reader_test.go",
         "tests/consumers/signer/go.mod",
         "tests/consumers/signer/signer.go",
-        "tests/consumers/signer/signer_test.go"
+        "tests/consumers/signer/signer_test.go",
+        "scripts/tests/test_consumer_offline.py"
       ],
-      "remaining_gate": "四类示例、恢复示例和两个消费者源码已编写并有补充证据；真正独立模块构建在上游下载失败，依赖OB-016未通过。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1272,6 +2244,48 @@
           "docs/evidence/OB-018/resume02-direct-vet.json"
         ],
         "implementation_note": "R2独立go.mod消费者实际运行，两者均在上游模块下载阶段失败；本轮纯编排示例自有逻辑测试通过，不代表独立消费或迁移成功。"
+      },
+      "prior_review_r3": {
+        "status": "BLOCKED",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "四类示例、恢复示例和两个消费者源码已编写并有补充证据；真正独立模块构建在上游下载失败，依赖OB-016未通过。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T160830.023273Z-b181217a1e4d493381f626701e10c1fb/consumer/report-007.json",
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json"
+        ],
+        "implementation_note": "两个独立模块由临时SDK代理及本地公开签名代理加载，在fresh缓存中由Go验签；不预置go.sum、不用replace或关闭SUMDB。独立race目标通过；未验证远端分发。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Task dependencies not verified: OB-016",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PASS"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T192144.367029Z-46c1719b8c5e4ec3947301d79f5b0156/consumer/report-007.json",
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json"
+        ],
+        "remaining_gate": "Dependencies not verified: OB-016",
+        "implementation_note": "Two independent fresh-cache consumers passed via the prepared signed local proxy, without replace or prefilled go.sum. Four executable offline Examples and lifecycle/API GoDoc were added; remote distribution remains unverified."
       }
     },
     {
@@ -1280,15 +2294,16 @@
       "depends_on": [
         "OB-017"
       ],
-      "status": "BLOCKED",
+      "status": "VERIFIED",
       "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+        ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
+        ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json",
+        "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
       ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "implementation_note": "Both-platform tooling/normal, four minimum-Go jobs, Linux fuzz/consumers/scanners/real-integration and the local 12-job summary are verified. Hosted CI, publishing and security policy commitments remain separate external work.",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-070",
         "AC-071"
@@ -1319,10 +2334,26 @@
         "scripts/security-test.py",
         "scripts/tests/test_tooling.py",
         "scripts/tooling.py",
-        "scripts/verify-release.py"
+        "scripts/verify-release.py",
+        "scripts/evidence.py",
+        "scripts/acceptance-rules.json",
+        "scripts/command_runner.py",
+        "scripts/reporting.py",
+        "scripts/ci_export.py",
+        "scripts/ci-summary.py",
+        "docs/implementation-execution-report-2026-09-29.md",
+        "scripts/fuzz-test.py",
+        "scripts/benchmark-test.py",
+        "scripts/tests/evidence_fixture.py",
+        "scripts/tests/test_evidence_fixture.py",
+        "scripts/tests/test_module_boundaries.py",
+        "scripts/tests/test_reporting.py",
+        "scripts/tests/test_release_provenance.py",
+        "scripts/tests/test_ci_summary.py",
+        "scripts/tests/test_record_cli.py"
       ],
-      "remaining_gate": "CI、命令门禁、固定扫描调用、文档和作者自审已编写；正式测试/扫描/覆盖率/发布门禁未通过，未远端发布。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1414,6 +2445,83 @@
           "docs/evidence/OB-018/resume02-direct-vet.json"
         ],
         "implementation_note": "R2新增依赖预检工具，工具测试17项通过；正式normal、独立消费、扫描仍失败；没有发布。"
+      },
+      "prior_review_r3": {
+        "status": "BLOCKED",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "CI、命令门禁、固定扫描调用、文档和作者自审已编写；正式测试/扫描/覆盖率/发布门禁未通过，未远端发布。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "IMPLEMENTED",
+      "local_validation_status": "PASS",
+      "structure_refactor_note": "完成四项工具结构调整；独立审查无发现。公开契约未改，正式门禁仍阻塞。",
+      "supplemental_remote_evidence": [
+        ".artifacts/runs/remote-isolated-preflight-20260930-01/remote/report-001.json",
+        ".artifacts/runs/remote-connect-20260930-01/report.json",
+        ".artifacts/runs/remote-connect-20260930-02/report.json",
+        "docs/evidence/OB-018/remote-2026-09-30/independent-review.md",
+        ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+        ".artifacts/runs/remote-sdk-full-20260930-06-core/remote/result.json",
+        ".artifacts/runs/remote-sdk-full-20260930-06-transit/remote/result.json",
+        ".artifacts/runs/remote-full-fixture-20260930-08/report.json",
+        ".artifacts/runs/remote-sdk-full-20260930-07-core/remote/result.json",
+        ".artifacts/runs/remote-sdk-full-20260930-07-transit/remote/result.json"
+      ],
+      "remote_execution_note": "Historical e9d371 source sdk-test reports remain supplemental; current manifest execution NOT_RUN because there is no new run authorization. Formal integration remains separate.",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T155913.905445Z-66c28dbd51fa4db6829e4660abe5e089/normal/report-007.json",
+          ".artifacts/runs/2026-09-30T155544.732585Z-ab47c9c6b1db4853ac0727bfbf9737cb/integration/report-001.json",
+          ".artifacts/runs/2026-09-30T160830.023273Z-b181217a1e4d493381f626701e10c1fb/consumer/report-007.json",
+          ".artifacts/runs/2026-09-30T155558.335355Z-3d22cc4dc5d34cb0bb2aa5bc8ad58136/security/report-001.json",
+          "docs/evidence/OB-018/remote-retest-2026-09-30/static-review-e9d371.json"
+        ],
+        "implementation_note": "版本化指纹、严格OB/AC门禁、有限执行器、CI脱敏汇总及文档已实施；90项工具回归通过。真实集成、固定扫描器和不可用平台仍阻塞。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Associated acceptance not verified: AC-070,AC-071",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "IMPLEMENTED",
+        "local_validation_status": "PARTIAL",
+        "structure_refactor_note": "完成四项工具结构调整；独立审查无发现。公开契约未改，正式门禁仍阻塞。",
+        "supplemental_remote_evidence": [
+          ".artifacts/runs/remote-isolated-preflight-20260930-01/remote/report-001.json",
+          ".artifacts/runs/remote-connect-20260930-01/report.json",
+          ".artifacts/runs/remote-connect-20260930-02/report.json",
+          "docs/evidence/OB-018/remote-2026-09-30/independent-review.md",
+          ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+          ".artifacts/runs/remote-sdk-full-20260930-06-core/remote/result.json",
+          ".artifacts/runs/remote-sdk-full-20260930-06-transit/remote/result.json",
+          ".artifacts/runs/remote-full-fixture-20260930-08/report.json",
+          ".artifacts/runs/remote-sdk-full-20260930-07-core/remote/result.json",
+          ".artifacts/runs/remote-sdk-full-20260930-07-transit/remote/result.json"
+        ],
+        "remote_execution_note": "Current-source sdk-test owned fixture08 passed 61/61 cases, 112/120 requests; nine resources removed. Prior fixture07 belongs to historical source dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b. Supplemental only, not REAL_OPENBAO; formal acceptance dependencies remain blocked."
+      },
+      "supplemental_remote_scope": "Historical source only; not current-source validation.",
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [
+          ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json",
+          ".artifacts/runs/2026-09-30T191859.984298Z-f8d35041e88246e68f0411015791b468/integration/report-001.json",
+          ".artifacts/runs/2026-09-30T192144.367029Z-46c1719b8c5e4ec3947301d79f5b0156/consumer/report-007.json",
+          ".artifacts/runs/2026-09-30T191903.883803Z-03201bb350c14c09ba20d1943b179b0d/security/report-001.json",
+          "docs/evidence/OB-018/project-improvement-2026-10-01/static-review-security-contact-01.json"
+        ],
+        "remaining_gate": "Associated acceptance not verified: AC-070,AC-071; Dependencies not verified: OB-017",
+        "implementation_note": "Current summary, minimum-Go evidence/CI jobs, reusable remote manifest, pinned scanner provenance and findings digest checks are implemented. 152 tooling tests passed; the independent findings-digest issue was fixed and rechecked. Formal integration, scanner and platform gates remain blocked."
       }
     },
     {
@@ -1423,22 +2531,17 @@
         "OB-018"
       ],
       "status": "BLOCKED",
-      "evidence": [
-        "docs/evidence/OB-001/resume03/formal.json",
-        "docs/evidence/OB-001/resume03/direct.json",
-        "docs/evidence/OB-001/resume03/direct-vet.json",
-        "docs/evidence/OB-001/resume03/runtime-unchanged.json"
-      ],
-      "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
-      "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+      "evidence": [],
+      "implementation_note": "未执行生产迁移或修改业务数据；保留原任务和历史记录。",
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
       "acceptance_ids": [
         "AC-072"
       ],
       "files": [
         "docs/integration-and-rollback.md"
       ],
-      "remaining_gate": "仅编写接入与回滚说明；真实业务仓库与迁移环境缺失，未进行实际接入。",
-      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "remaining_gate": "AC-072 real business migration is outside this task; an actual consumer project is required.",
+      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [],
@@ -1463,23 +2566,513 @@
           "docs/evidence/OB-001/resume02-environment.json"
         ],
         "implementation_note": "R2仍无真实调用项目源码和隔离迁移条件；未执行迁移及远端动作。"
+      },
+      "prior_review_r3": {
+        "status": "BLOCKED",
+        "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
+        "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+        "evidence": [
+          "docs/evidence/OB-001/resume03/formal.json",
+          "docs/evidence/OB-001/resume03/direct.json",
+          "docs/evidence/OB-001/resume03/direct-vet.json",
+          "docs/evidence/OB-001/resume03/runtime-unchanged.json"
+        ],
+        "implementation_note": "R3保留运行时源码，正式全库仍受官方依赖缺失阻塞；自有包64项Test及race、35项工具测试、五项30秒fuzz已重新验证。依赖链与对应真实集成/消费/扫描/接入门禁未满足，不标VERIFIED。",
+        "remaining_gate": "仅编写接入与回滚说明；真实业务仓库与迁移环境缺失，未进行实际接入。"
+      },
+      "source_hash_version": 2,
+      "implementation_status": "OUT_OF_SCOPE",
+      "local_validation_status": "NOT_RUN",
+      "scope": "OUT_OF_SCOPE",
+      "prior_project_improvement": {
+        "status": "BLOCKED",
+        "evidence": [],
+        "implementation_note": "未执行生产迁移或修改业务数据；保留原任务和历史记录。",
+        "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+        "remaining_gate": "Associated acceptance not verified: AC-072",
+        "recorded_at": "2026-09-30T14:30:57.556Z",
+        "source_hash_version": 2,
+        "implementation_status": "OUT_OF_SCOPE",
+        "local_validation_status": "NOT_RUN",
+        "scope": "OUT_OF_SCOPE"
+      },
+      "prior_release_validation_2026_10_01": {
+        "source_hash_version": 2,
+        "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+        "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+        "status": "BLOCKED",
+        "evidence": [],
+        "remaining_gate": "Associated acceptance not verified: AC-072; Dependencies not verified: OB-018",
+        "scope": "OUT_OF_SCOPE",
+        "implementation_note": "未执行生产迁移或修改业务数据；保留原任务和历史记录。"
       }
     }
   ],
-  "recorded_at": "2026-09-28T12:14:26.469651+00:00",
-  "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+  "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+  "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
   "release_status": "BLOCKED",
-  "business_migration_status": "BLOCKED",
-  "status_rule": "保留原始依赖；VERIFIED要求本任务及依赖门禁满足。自有代码通过不等于官方/服务/发布通过。",
+  "business_migration_status": "OUT_OF_SCOPE",
+  "status_rule": "VERIFIED要求本任务关联AC及原依赖均满足；本地实现、验证、正式交付与远端发布分别记录。",
   "task_status_counts": {
-    "BLOCKED": 5,
-    "IN_PROGRESS": 14
+    "VERIFIED": 18,
+    "BLOCKED": 1
   },
   "continuation": {
-    "round": "R3",
-    "recorded_at": "2026-09-28T15:53:15.399320+00:00",
-    "scope": "OB-001 public dependency transfer tooling; no runtime rewrite",
-    "official_dependency_status": "BLOCKED"
+    "round": "transit-preflight-2026-10-04",
+    "scope": "Authorized Transit implementation, current-source Windows verification and delivery preparation completed. Remaining Linux, real-fixture and scanning evidence is source-stale; publication and business migration are not authorized.",
+    "entrypoint": "docs/implementation-handoff.md"
   },
-  "previous_source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d"
+  "transit_preflight_2026_10_04": {
+    "status": "IMPLEMENTED_LOCAL_VERIFIED_FORMAL_VALIDATION_BLOCKED",
+    "plan": "docs/implementation-handoff.md",
+    "input": "docs/project-assessment-2026-10-04.md",
+    "baseline": {
+      "head": "6d8251658e76f88aec5935126f303b2c59497691",
+      "branch": "master",
+      "source_hash_version": 2,
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "tracked_changes": 113,
+      "untracked_entries": 85,
+      "staged_changes": 0,
+      "snapshot": ".artifacts/transit-preflight-20261004/baseline.json"
+    },
+    "candidate": {
+      "source_hash_version": 2,
+      "source_sha256": "46985fc2ffc7b508cc60d32df8092ad20da79754dc66b18a6a853eb89d3f5aa9",
+      "source_changes": [
+        "transit_client.go",
+        "transit_cipher.go",
+        "transit_hmac.go",
+        "transit_request_boundary_test.go"
+      ],
+      "source_inputs": 192,
+      "manifest": ".artifacts/transit-preflight-20261004/candidate-source-manifest.json",
+      "increment_patch": ".artifacts/transit-preflight-20261004/candidate-source-increment.patch",
+      "final_audit": ".artifacts/transit-preflight-20261004/final-audit.json",
+      "publication_status": "NOT_PUBLISHED"
+    },
+    "regression": {
+      "red_exit_code": 1,
+      "red_leaf_cases_passed": 36,
+      "red_leaf_cases_failed": 36,
+      "red_log": ".artifacts/transit-preflight-20261004/red.jsonl",
+      "green_exit_code": 0,
+      "green_leaf_cases_passed": 72,
+      "green_leaf_cases_failed": 0,
+      "green_log": ".artifacts/transit-preflight-20261004/green.jsonl"
+    },
+    "verification": {
+      "status": "PASS_AUTHORIZED_LOCAL_SCOPE",
+      "summary": ".artifacts/transit-preflight-20261004/summary.json",
+      "focused_log": ".artifacts/transit-preflight-20261004/focused-go1268.jsonl",
+      "affected_log": ".artifacts/transit-preflight-20261004/affected-go1268.jsonl",
+      "focused_leaf_tests": 72,
+      "affected_leaf_tests": 301,
+      "normal_windows": ".artifacts/runs/2026-10-04T053341.351166Z-bec8ef1311e24c72bf060dbe8d01747f/normal/report-007.json",
+      "minimum_normal_windows": ".artifacts/runs/2026-10-04T053630.043636Z-a1a48259831843fe8c701ee59a60972e/minimum-normal-windows/report-007.json",
+      "consumer_windows": ".artifacts/runs/2026-10-04T053929.386573Z-073d54a6e25e4cdfb89c27506ff66377/consumer/report-007.json",
+      "minimum_consumer_windows": ".artifacts/runs/2026-10-04T054026.824374Z-0baf0063a3d54847896301226ed199a7/minimum-consumer-windows/report-007.json",
+      "coverage": ".artifacts/transit-preflight-20261004/coverage-current.json",
+      "windows_toolchains": ["Go 1.26.8", "Go 1.25.0"],
+      "unit_pass_events_per_toolchain": 482,
+      "unit_leaf_tests_per_toolchain": 432,
+      "unit_skip_events_per_toolchain": 0,
+      "coverage_groups_passed": 15,
+      "coverage_groups_total": 15,
+      "coverage_minimum_percent": 87.5,
+      "tooling_tests": "NOT_RUN: project scripts unchanged; no new full Python run was needed."
+    },
+    "review": {
+      "contract_preflight": "PASS_STATIC",
+      "contract_post_change": "PASS_STATIC",
+      "independent_code_review": "NO_CONFIRMED_CODE_FINDINGS_IN_AUTHORIZED_INCREMENT",
+      "limitations": "Static reviews do not replace runtime validation, current-source formal evidence or publication approval."
+    },
+    "release_gate": {
+      "status": "FAIL",
+      "exit_code": 1,
+      "refusals": 95,
+      "log": ".artifacts/transit-preflight-20261004/release-gate.log",
+      "reason": "Historical d318 OB/AC/index bindings and four unrefreshed formal reports are source-stale; refusal count is not a count of code defects."
+    },
+    "status_summary_check": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": ".artifacts/transit-preflight-20261004/status-check.log"
+    },
+    "formal_evidence_current": false,
+    "historical_ledger_note": "Top-level source identity, OB/AC states and earlier reports remain bound to d3183d2e; they do not verify the changed candidate and are not re-stamped.",
+    "remaining_prerequisites": [
+      {
+        "affected": ["REAL_OPENBAO"],
+        "missing": "Current-round authorization and an isolated pinned OpenBao 2.6.3 fixture with owned resources.",
+        "unblock": "Authorize the exact non-production fixture lifecycle and operations, then run the existing integration entrypoint."
+      },
+      {
+        "affected": ["PINNED_SECURITY_SCANNERS"],
+        "missing": "Current-round scanning authorization and permitted pinned tools/official vulnerability-database access.",
+        "unblock": "Authorize the existing security runner and its exact database/network scope; do not reuse historical PASS."
+      },
+      {
+        "affected": ["minimum-normal-linux", "minimum-consumer-linux", "Linux current-source matrix"],
+        "missing": "An already available authorized isolated Linux execution environment or separately approved preparation.",
+        "unblock": "Provide the isolated Linux environment with pinned Go and signed offline consumer material, then run the existing entrypoints."
+      },
+      {
+        "affected": ["current OB/AC and evidence-index bindings"],
+        "missing": "Required current-source formal reports and applicable actual static/evidence checks.",
+        "unblock": "After real checks complete, update bindings using their actual immutable reports; do not replace historical source hashes."
+      },
+      {
+        "affected": ["remote module acquisition"],
+        "missing": "An actually published target SHA/version and explicit Git delivery/module acquisition authorization.",
+        "unblock": "Follow the fresh-consumer verification steps in the implementation handoff."
+      },
+      {
+        "affected": ["OB-019", "AC-072"],
+        "missing": "Actual business repository, approved persistence/generation contract, isolated resources and migration authorization.",
+        "unblock": "Provide the minimum scoped inputs listed in docs/integration-and-rollback.md; SDK verification alone is insufficient."
+      }
+    ],
+    "current_action": "Authorized local work completed; mandatory formal validation remains blocked by the listed prerequisites.",
+    "next_action": "Resume from the first newly authorized formal evidence step, then bind actual evidence. Do not redo completed Transit implementation or unchanged Windows checks."
+  },
+  "previous_source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+  "prior_review_r3": {
+    "schema_version": 1,
+    "plan_version": "1.0",
+    "implementation_status": "IN_PROGRESS",
+    "recorded_at": "2026-09-28T12:14:26.469651+00:00",
+    "source_sha256": "9836c0a2597520bea011b8673f3e5bfadd43515912209e6e37d5b59b0d4ca854",
+    "release_status": "BLOCKED",
+    "business_migration_status": "BLOCKED",
+    "status_rule": "保留原始依赖；VERIFIED要求本任务及依赖门禁满足。自有代码通过不等于官方/服务/发布通过。",
+    "task_status_counts": {
+      "BLOCKED": 5,
+      "IN_PROGRESS": 14
+    },
+    "continuation": {
+      "round": "R3",
+      "recorded_at": "2026-09-28T15:53:15.399320+00:00",
+      "scope": "OB-001 public dependency transfer tooling; no runtime rewrite",
+      "official_dependency_status": "BLOCKED"
+    },
+    "previous_source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d"
+  },
+  "source_hash_version": 2,
+  "evidence_index": "docs/evidence/OB-018/release-validation-2026-10-01/index.json",
+  "execution_report": "docs/implementation-handoff.md",
+  "external_blockers": [
+    {
+      "affected": [
+        "OB-019",
+        "AC-072"
+      ],
+      "missing": "Actual business consumer repository and migration authorization.",
+      "unblock": "Provide the real consumer project under a separately scoped migration task."
+    },
+    {
+      "affected": [
+        "hosted_ci",
+        "remote_distribution",
+        "publication"
+      ],
+      "missing": "Remote execution and publishing authorization; no hosted CI or distribution run was performed.",
+      "unblock": "Explicitly authorize a separate remote delivery task. The checked-in CI already prepares the pinned binary with archive and binary digest verification."
+    },
+    {
+      "affected": [
+        "security_support_policy"
+      ],
+      "missing": "Maintainer-approved supported versions and response-time commitments.",
+      "unblock": "Maintainer decision; the private report address remains git@whereisit.cc."
+    }
+  ],
+  "prior_structure_refactor": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+    "recorded_at": "2026-09-29T05:13:03.786961+00:00",
+    "complete_snapshot": ".artifacts/runs/structure-refactor-20260929-start/source/task-status.json"
+  },
+  "prior_remote_execution": {
+    "source_hash_version": 2,
+    "source_sha256": "771ac8fe1964aaebc7dd258d1060a34bbb8781e823ea86b182f8a465d9f8be0c",
+    "complete_snapshot": ".artifacts/runs/remote-20260930-start/source/task-status.json"
+  },
+  "prior_project_improvement": {
+    "source_hash_version": 2,
+    "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e",
+    "recorded_at": "2026-09-30T16:50:40Z",
+    "continuation": {
+      "round": "remote-retest-2026-09-30",
+      "scope": "Current-source sdk-test full fixture and local validation completed; formal integration, pinned scanners and delivery remain blocked",
+      "entrypoint": "docs/implementation-handoff.md"
+    },
+    "previous_source_sha256": "96a62a5230ff7e114831e39ab62b7c280e0708ac806b85fa19a053bc36be91f5",
+    "evidence_index": "docs/evidence/OB-018/remote-retest-2026-09-30/index.json",
+    "external_blockers": [
+      {
+        "affected": [
+          "OB-001",
+          "OB-016",
+          "AC-001",
+          "AC-065",
+          "AC-066",
+          "AC-070"
+        ],
+        "missing": "精确OpenBao版本及可信镜像digest或可用本地binary SHA256",
+        "checked": [
+          "deploy/test/server-lock.json",
+          "当前环境输入与PATH",
+          "docs/compatibility.md"
+        ],
+        "unblock": "提供并核验发布物，冻结前固定PINNED锁；重新冻结并生成受影响的实际验证报告。",
+        "current_checkpoint": "docs/openbao-remote-test-report-2026-09-30.md"
+      },
+      {
+        "affected": [
+          "OB-018",
+          "AC-070",
+          "AC-071"
+        ],
+        "missing": "固定govulncheck/gitleaks及真实漏洞数据库",
+        "checked": [
+          "PATH、go/bin及常规扫描数据库缓存",
+          "scripts/security-test.py"
+        ],
+        "unblock": "提供准备好的隔离扫描环境，或明确授权非生产工具/数据库准备；之后真实扫描。",
+        "current_checkpoint": "docs/openbao-remote-test-report-2026-09-30.md"
+      },
+      {
+        "affected": [
+          "OB-001",
+          "OB-018",
+          "AC-001",
+          "AC-070"
+        ],
+        "missing": "Linux、最低Go1.25.0与远端CI/分发执行条件",
+        "checked": [
+          "wsl --list --verbose：两个Stopped Rancher发行版",
+          "PATH和已有Go工具链缓存",
+          ".github/workflows/ci.yaml"
+        ],
+        "unblock": "提供可用隔离平台与现有工具链，同字节源码运行；远端操作另行授权。",
+        "current_checkpoint": "docs/openbao-remote-test-report-2026-09-30.md"
+      }
+    ],
+    "release_status": "BLOCKED"
+  },
+  "improvement_2026_10_01": {
+    "status": "LOCAL_COMPLETE_DELIVERY_BLOCKED",
+    "plan": "docs/implementation-handoff.md",
+    "scope_prompt": "docs/project-improvement-prompt-2026-10-01.md",
+    "baseline": {
+      "branch": "master",
+      "head": "6d8251658e76f88aec5935126f303b2c59497691",
+      "source_hash_version": 2,
+      "source_sha256": "e9d371d3a35385803a651db667a05cbd8fb3bb6cd36b03b23bf24ffd6139f14e"
+    },
+    "source_identity": {
+      "source_hash_version": 2,
+      "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f"
+    },
+    "completed_at": "2026-09-30T19:31:13.356313+00:00",
+    "current_step": "All authorized independent local implementation, verification, review and evidence reconciliation completed; external release gates remain blocked.",
+    "next_step": "Only external inputs: trusted service artifact, approved scanner/toolchain preparation, Linux/CI environment and separately authorized remote manifest.",
+    "steps": [
+      {
+        "round": 1,
+        "status": "PASS",
+        "scope": "constructor-owned secret cleanup"
+      },
+      {
+        "round": 2,
+        "status": "PASS",
+        "scope": "compatible snapshot ownership and contract review"
+      },
+      {
+        "round": 3,
+        "status": "PASS",
+        "scope": "local summary and manifest/harness validation",
+        "remote_execution": "NOT_RUN"
+      },
+      {
+        "round": 4,
+        "status": "PASS",
+        "scope": "minimum-Go jobs/evidence and scanner provenance implementation",
+        "external_execution": "BLOCKED"
+      },
+      {
+        "round": 5,
+        "status": "PASS",
+        "scope": "GoDoc, offline Examples and unreleased preparation materials"
+      }
+    ],
+    "local_evidence": {
+      "normal": ".artifacts/runs/2026-09-30T191954.317430Z-1ea9dcc1bd1f4c02b712e52715999e8d/normal/report-007.json",
+      "consumer": ".artifacts/runs/2026-09-30T192144.367029Z-46c1719b8c5e4ec3947301d79f5b0156/consumer/report-007.json",
+      "fuzz": ".artifacts/runs/2026-09-30T192425.196615Z-278574adbb7d462294459ea17f1e1c54/fuzz/report-006.json",
+      "integration": ".artifacts/runs/2026-09-30T191859.984298Z-f8d35041e88246e68f0411015791b468/integration/report-001.json",
+      "security": ".artifacts/runs/2026-09-30T191903.883803Z-03201bb350c14c09ba20d1943b179b0d/security/report-001.json",
+      "minimum-normal-windows": ".artifacts/runs/2026-09-30T191907.734196Z-0a07a49c13ad44928b0b2c5f679301a3/minimum-normal-windows/report-001.json",
+      "minimum-consumer-windows": ".artifacts/runs/2026-09-30T191911.424285Z-fca7b3e2015049958bedbc854c3d838b/minimum-consumer-windows/report-001.json",
+      "tooling": ".artifacts/improvement-20261001/tooling-final-tooling-02.json",
+      "static": "docs/evidence/OB-018/project-improvement-2026-10-01/static-review-security-contact-01.json",
+      "coverage": ".artifacts/improvement-20261001/retry2-coverage.json",
+      "ci_summary": ".artifacts/improvement-20261001/ci-summary-8a1b53.json"
+    },
+    "review": "docs/evidence/OB-018/project-improvement-2026-10-01/independent-review.md",
+    "evidence_index": "docs/evidence/OB-018/project-improvement-2026-10-01/index-security-contact-01.json",
+    "remaining": {
+      "integration": "BLOCKED",
+      "security": "BLOCKED",
+      "minimum_go_windows": "BLOCKED",
+      "minimum_go_linux": "NOT_RUN",
+      "main_linux": "NOT_RUN",
+      "remote_ci": "NOT_RUN",
+      "new_remote_manifest": "NOT_RUN",
+      "benchmark": "NOT_RUN: unchanged benchmark targets; no new performance claim",
+      "private_security_contact": "CONFIRMED"
+    },
+    "release_gate": {
+      "status": "FAIL",
+      "exit_code": 1,
+      "refusals": 29,
+      "receipt": ".artifacts/improvement-20261001/release-security-contact-01.json"
+    },
+    "prior_frozen_candidate": {
+      "source_sha256": "846b34e8e83b6f39ffcf300760e9d16d535a7f6c4dd01272eeaeaf7f1f770ad4",
+      "normal": "PASS",
+      "consumer": "PASS",
+      "fuzz": "PASS",
+      "tooling": "NOT_RUN",
+      "superseded_reason": "independent review found a missing scanner findings digest check; all prior receipts retained."
+    }
+  },
+  "security_contact_confirmation": {
+    "email": "git@whereisit.cc",
+    "source": "explicit maintainer reply in this conversation",
+    "recorded_at": "2026-10-01T04:34:59.614047+00:00",
+    "source_identity": {
+      "source_hash_version": 2,
+      "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f"
+    },
+    "previous_contact_status": "PENDING_MAINTAINER",
+    "document_review": "docs/evidence/OB-018/project-improvement-2026-10-01/static-review-security-contact-01.json",
+    "previous_document_review": "docs/evidence/OB-018/project-improvement-2026-10-01/static-review-8a1b53.json",
+    "previous_evidence_index": "docs/evidence/OB-018/project-improvement-2026-10-01/index.json",
+    "support_policy": "PENDING_MAINTAINER",
+    "response_time": "PENDING_MAINTAINER",
+    "environment_preparation": "BLOCKED_BY_MAINTAINER_CHOICE: no expanded download, installation or network scanner authorization"
+  },
+  "prior_release_validation_2026_10_01": {
+    "source_hash_version": 2,
+    "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+    "recorded_at": "2026-09-30T19:31:13.356313+00:00",
+    "task_status_counts": {
+      "BLOCKED": 19
+    },
+    "release_status": "BLOCKED",
+    "external_blockers": [
+      {
+        "affected": [
+          "OB-001",
+          "OB-016",
+          "AC-001",
+          "AC-065",
+          "AC-066",
+          "AC-070"
+        ],
+        "missing": "精确OpenBao版本及可信镜像digest或可用本地binary SHA256",
+        "checked": [
+          "deploy/test/server-lock.json",
+          "当前环境输入与PATH",
+          "docs/compatibility.md"
+        ],
+        "unblock": "提供并核验发布物，冻结前固定PINNED锁；重新冻结并生成受影响的实际验证报告。",
+        "current_checkpoint": "docs/release.md#2026-10-01-验证环境准备方案尚未执行"
+      },
+      {
+        "affected": [
+          "OB-018",
+          "AC-070",
+          "AC-071"
+        ],
+        "missing": "固定govulncheck/gitleaks及真实漏洞数据库",
+        "checked": [
+          "PATH、go/bin及常规扫描数据库缓存",
+          "scripts/security-test.py"
+        ],
+        "unblock": "提供准备好的隔离扫描环境，或明确授权非生产工具/数据库准备；之后真实扫描。",
+        "current_checkpoint": "docs/release.md#2026-10-01-验证环境准备方案尚未执行"
+      },
+      {
+        "affected": [
+          "OB-001",
+          "OB-018",
+          "AC-001",
+          "AC-070"
+        ],
+        "missing": "Linux、最低Go1.25.0与远端CI/分发执行条件",
+        "checked": [
+          "wsl --list --verbose：两个Stopped Rancher发行版",
+          "PATH和已有Go工具链缓存",
+          ".github/workflows/ci.yaml"
+        ],
+        "unblock": "提供可用隔离平台与现有工具链，同字节源码运行；远端操作另行授权。",
+        "current_checkpoint": "docs/release.md#2026-10-01-验证环境准备方案尚未执行"
+      }
+    ],
+    "evidence_index": "docs/evidence/OB-018/project-improvement-2026-10-01/index-security-contact-01.json",
+    "continuation": {
+      "round": "project-improvement-2026-10-01",
+      "scope": "Authorized independent implementation and current-source local validation complete; formal external gates remain blocked.",
+      "entrypoint": "docs/implementation-handoff.md"
+    }
+  },
+  "release_scope": "Local engineering gate only; not publication approval or hosted GitHub Actions execution.",
+  "publication_status": "NOT_PUBLISHED",
+  "release_validation_2026_10_01": {
+    "status": "LOCAL_ENGINEERING_VERIFIED_NOT_PUBLISHED",
+    "plan": "docs/implementation-handoff.md",
+    "source_identity": {
+      "source_hash_version": 2,
+      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233"
+    },
+    "completed_at": "2026-10-01T17:00:25.636918+00:00",
+    "starting_source": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+    "formal_reports": {
+      "normal": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+      "consumer": ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
+      "fuzz": ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json",
+      "integration": ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+      "security": ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json",
+      "minimum-normal-linux": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/report-007.json",
+      "minimum-normal-windows": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/report-007.json",
+      "minimum-consumer-linux": ".artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/report-007.json",
+      "minimum-consumer-windows": ".artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/report-007.json",
+      "tooling": ".artifacts/tooling-release-linux-20261001-final04.json",
+      "static": "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+    },
+    "ci_summary": ".artifacts/release-validation-20261001/ci-summary-final.json",
+    "coverage": ".artifacts/release-validation-20261001/coverage-final.json",
+    "review": "docs/evidence/OB-018/release-validation-2026-10-01/independent-review.md",
+    "evidence_index": "docs/evidence/OB-018/release-validation-2026-10-01/index.json",
+    "current_step": "Local validation and review complete; final gate and resource cleanup are recorded in the evidence index.",
+    "next_step": "Only separately authorized hosted CI/distribution, maintainer policy decisions or real business migration.",
+    "not_run": [
+      "hosted GitHub Actions",
+      "current remote manifest",
+      "business migration",
+      "new benchmark",
+      "publishing"
+    ],
+    "prior_candidates": [
+      "8f63b2b4a65dde5737a22ba4faff2bd4a69c07cd43bf8a2cfbbf7a398b8918c5",
+      "8352aef4d57a886741a387688c0b79210cb2ab0c9ed5ad76e7456da0c820b39d",
+      "20508f793a1b992b546d1309065000882144399edb0fc9d021ffb50d952ea231",
+      "169b03d2c6c75080611990c3c9234adc6edc87c8464ace94eff2e4764486b077",
+      "e60e3d4b8dad675867e6105a5b81a110bc36dd429c1a226c471656ad03079540"
+    ]
+  }
 }

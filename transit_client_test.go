@@ -15,9 +15,9 @@ import (
 	"encoding/json"
 	"encoding/pem"
 	"fmt"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 	"net/http"
 	"strings"
 	"sync/atomic"
@@ -157,6 +157,61 @@ func TestTransitSignProfiles(t *testing.T) {
 		})
 	}
 }
+func TestTransitEd25519MessageWireCompatibility(t *testing.T) {
+	pub, private, err := ed25519.GenerateKey(rand.Reader)
+	if err != nil {
+		t.Fatal(err)
+	}
+	message := []byte("Ed25519 signs the original message")
+	signature := ed25519.Sign(private, message)
+	wrapped := "vault:v2:" + base64.StdEncoding.EncodeToString(signature)
+	var writes atomic.Int32
+	c := startedClient(t, serverConfig(t, func(w http.ResponseWriter, r *http.Request) {
+		if r.Method == http.MethodGet {
+			jsonData(w, keyMeta("signer", "ed25519", map[string]any{"2": map[string]any{"public_key": base64.StdEncoding.EncodeToString(pub)}}, false))
+			return
+		}
+		writes.Add(1)
+		var body map[string]any
+		if json.NewDecoder(r.Body).Decode(&body) != nil {
+			t.Error("invalid signature request")
+		}
+		// OpenBao 2.6.3 applies this RSA-only guard before selecting Ed25519.
+		if body["hash_algorithm"] == "none" {
+			w.WriteHeader(http.StatusBadRequest)
+			_, _ = w.Write([]byte(`{"errors":["hash_algorithm=none requires both prehashed=true and signature_algorithm=pkcs1v15"]}`))
+			return
+		}
+		input, _ := base64.StdEncoding.DecodeString(body["input"].(string))
+		if !bytes.Equal(input, message) || body["prehashed"] != false {
+			t.Error("Ed25519 message was prehashed or transformed")
+		}
+		switch r.URL.Path {
+		case "/v1/transit/sign/signer":
+			jsonData(w, map[string]any{"signature": wrapped, "key_version": 2})
+		case "/v1/transit/verify/signer":
+			jsonData(w, map[string]any{"valid": body["signature"] == wrapped && ed25519.Verify(pub, input, signature)})
+		default:
+			t.Error("unexpected signature path")
+			w.WriteHeader(http.StatusNotFound)
+		}
+	}))
+	tr, err := c.Transit("transit")
+	if err != nil {
+		t.Fatal(err)
+	}
+	msg := sensitive.NewBytes(message)
+	defer msg.Zero()
+	signed, err := tr.Sign(context.Background(), transit.SignRequest{KeyName: "signer", KeyVersion: 2, Profile: transit.Ed25519Message, Message: msg})
+	if err != nil {
+		t.Fatal(err)
+	}
+	verified, err := tr.Verify(context.Background(), transit.VerifyRequest{KeyName: "signer", ExpectedVersion: 2, Profile: transit.Ed25519Message, Message: msg, Signature: signed.Signature})
+	if err != nil || !verified.Valid || writes.Load() != 2 {
+		t.Fatalf("Ed25519 message round trip: %v", err)
+	}
+}
+
 func TestTransitVersionPin(t *testing.T) {
 	f := signFixtures(t)[0]
 	pub := publicText(t, f.key.Public(), f.typ)

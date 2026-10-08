@@ -3,8 +3,8 @@ package reader
 
 import (
 	"context"
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/kv"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/kv"
 )
 
 type Reader struct{ k *bao.KVClient }

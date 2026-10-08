@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"testing"
 
-	"git.example.com/infra/openbao-sdk-go/internal/pkiutil"
-	"git.example.com/infra/openbao-sdk-go/internal/testutil"
+	"github.com/RockInMars/openbao-sdk-go/internal/pkiutil"
+	"github.com/RockInMars/openbao-sdk-go/internal/testutil"
 )
 
 func malformedPEMThenValid(kind string, valid []byte) []byte {

@@ -3,13 +3,12 @@ package bao
 import (
 	"context"
 	"encoding/base64"
-	"encoding/json"
 	"strconv"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/internal/transitutil"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/internal/transitutil"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 func (t *TransitClient) hmacKey(ctx context.Context, name string, v int, sign bool, op engine.Operation) error {
@@ -17,7 +16,12 @@ func (t *TransitClient) hmacKey(ctx context.Context, name string, v int, sign bo
 	if e != nil {
 		return e
 	}
-	if _, ok := d.keys[strconv.Itoa(v)]; !ok || v <= 0 || sign && v < d.metadata.MinEncryptionVersion || !sign && v < d.metadata.MinDecryptionVersion {
+	_, listed := d.keys[strconv.Itoa(v)]
+	if !listed && d.metadata.Type == "hmac" && len(d.keys) == 0 {
+		// Without a version list, only the reported current version is known.
+		listed = v == d.metadata.LatestVersion
+	}
+	if !listed || v <= 0 || sign && v < d.metadata.MinEncryptionVersion || !sign && v < d.metadata.MinDecryptionVersion {
 		return engine.SafeError(baoerr.CodeVersionUnavailable, op, 0, baoerr.EffectNone)
 	}
 	// This V1 contract has no derivation-context field for HMAC.
@@ -26,6 +30,10 @@ func (t *TransitClient) hmacKey(ctx context.Context, name string, v int, sign bo
 	}
 	return nil
 }
+
+// HMAC computes SHA-256 HMAC using explicit KeyVersion. Message remains
+// caller-owned. Grant key metadata read and hmac permission; missing version
+// metadata is handled conservatively, not as proof of historical key availability.
 func (t *TransitClient) HMAC(parent context.Context, r transit.HMACRequest) (*transit.HMACResult, error) {
 	op := engine.TransitHMAC
 	raw := r.Message.RevealCopy()
@@ -33,6 +41,11 @@ func (t *TransitClient) HMAC(parent context.Context, r transit.HMACRequest) (*tr
 	if engine.ValidateSegment(r.KeyName) != nil || r.KeyVersion <= 0 || int64(len(raw)) > t.client.cfg.Limits.MaxRequestBytes {
 		return nil, invalid(string(op))
 	}
+	payload, e := t.requestPayload(map[string]any{"input": base64.StdEncoding.EncodeToString(raw), "key_version": r.KeyVersion}, op)
+	if e != nil {
+		return nil, e
+	}
+	defer clear(payload)
 	ctx, cancel, e := t.operationContext(parent, op)
 	if e != nil {
 		return nil, e
@@ -41,11 +54,6 @@ func (t *TransitClient) HMAC(parent context.Context, r transit.HMACRequest) (*tr
 	if e = t.hmacKey(ctx, r.KeyName, r.KeyVersion, true, op); e != nil {
 		return nil, e
 	}
-	payload, e := json.Marshal(map[string]any{"input": base64.StdEncoding.EncodeToString(raw), "key_version": r.KeyVersion})
-	if e != nil {
-		return nil, invalid(string(op))
-	}
-	defer clear(payload)
 	var out *transit.HMACResult
 	e = t.client.execute(ctx, engine.Call{Operation: op, Path: "/v1/" + t.mount + "/hmac/" + r.KeyName + "/sha2-256", Payload: payload}, t.mount, func(resp *engine.Response) error {
 		d, e := engine.Data(resp, op)
@@ -69,6 +77,9 @@ func (t *TransitClient) HMAC(parent context.Context, r transit.HMACRequest) (*tr
 	}
 	return out, nil
 }
+
+// HMACVerify verifies a wrapped SHA-256 HMAC for ExpectedVersion. A successful
+// response with Valid=false is distinct from a transport or permission error.
 func (t *TransitClient) HMACVerify(parent context.Context, r transit.HMACVerifyRequest) (*transit.VerifyResult, error) {
 	op := engine.TransitHMACVerify
 	raw := r.Message.RevealCopy()
@@ -78,6 +89,11 @@ func (t *TransitClient) HMACVerify(parent context.Context, r transit.HMACVerifyR
 	if engine.ValidateSegment(r.KeyName) != nil || r.ExpectedVersion <= 0 || int64(len(raw)) > t.client.cfg.Limits.MaxRequestBytes || e != nil || v != r.ExpectedVersion || len(mac) != 32 {
 		return nil, invalid(string(op))
 	}
+	payload, e := t.requestPayload(map[string]any{"input": base64.StdEncoding.EncodeToString(raw), "hmac": r.WrappedHMAC}, op)
+	if e != nil {
+		return nil, e
+	}
+	defer clear(payload)
 	ctx, cancel, e := t.operationContext(parent, op)
 	if e != nil {
 		return nil, e
@@ -86,5 +102,5 @@ func (t *TransitClient) HMACVerify(parent context.Context, r transit.HMACVerifyR
 	if e = t.hmacKey(ctx, r.KeyName, r.ExpectedVersion, false, op); e != nil {
 		return nil, e
 	}
-	return t.verifyPayload(ctx, r.KeyName, "/sha2-256", map[string]any{"input": base64.StdEncoding.EncodeToString(raw), "hmac": r.WrappedHMAC}, op)
+	return t.verifyPayload(ctx, r.KeyName, "/sha2-256", payload, op)
 }

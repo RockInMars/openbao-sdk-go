@@ -4,7 +4,7 @@ package testutil
 import (
 	"bytes"
 	"context"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
 	"net/http"
 )
 

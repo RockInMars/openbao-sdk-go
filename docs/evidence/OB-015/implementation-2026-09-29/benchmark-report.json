@@ -1,0 +1,224 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "evidence_class": "BENCHMARK_BASELINE",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T04:55:24.986590+00:00",
+  "platform": "windows",
+  "python_version": "3.13.13",
+  "run_id": "2026-09-29T045525.159880Z-3ffd362d9448484692ba27a31370767b",
+  "commands": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-run=^$",
+        "-bench=.",
+        "-benchmem",
+        "-benchtime=1s",
+        "-count=3",
+        "./kv",
+        "./internal/pkiutil",
+        "./internal/transitutil",
+        "./internal/engine"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045525.159880Z-3ffd362d9448484692ba27a31370767b/benchmark/benchmark.log",
+      "started_at": "2026-09-29T04:55:25.593946+00:00",
+      "timeout_s": 240,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 44372,
+      "finished_at": "2026-09-29T04:56:05.823619+00:00",
+      "elapsed_s": 40.23,
+      "log_sha256": "61e01115a16b873f0785efc95c4748b752b32e343bc15ad20dfac846a3dc6aaf",
+      "name": "benchmark"
+    }
+  ],
+  "environment_commands": [
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045525.159880Z-3ffd362d9448484692ba27a31370767b/benchmark/go-version.log",
+      "started_at": "2026-09-29T04:55:25.163710+00:00",
+      "timeout_s": 30,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 22652,
+      "finished_at": "2026-09-29T04:55:25.560537+00:00",
+      "elapsed_s": 0.397,
+      "log_sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "name": "go-version"
+    }
+  ],
+  "tool_versions": {
+    "python": "3.13.13",
+    "go": "go version go1.26.3 windows/amd64"
+  },
+  "cpu": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel",
+  "machine": "AMD64",
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "finished_at": "2026-09-29T04:56:06.315579+00:00",
+  "report_path": ".artifacts/runs/2026-09-29T045525.159880Z-3ffd362d9448484692ba27a31370767b/benchmark/report-002.json",
+  "benchmarks": {
+    "BenchmarkDocument/small_64": [
+      {
+        "iterations": 89660,
+        "ns/op": 12719.0,
+        "MB/s": 6.92,
+        "B/op": 3064.0,
+        "allocs/op": 45.0
+      },
+      {
+        "iterations": 115935,
+        "ns/op": 10669.0,
+        "MB/s": 8.25,
+        "B/op": 3064.0,
+        "allocs/op": 45.0
+      },
+      {
+        "iterations": 119088,
+        "ns/op": 11252.0,
+        "MB/s": 7.82,
+        "B/op": 3064.0,
+        "allocs/op": 45.0
+      }
+    ],
+    "BenchmarkDocument/large_65536": [
+      {
+        "iterations": 360,
+        "ns/op": 2895988.0,
+        "MB/s": 22.64,
+        "B/op": 800443.0,
+        "allocs/op": 59.0
+      },
+      {
+        "iterations": 468,
+        "ns/op": 3057672.0,
+        "MB/s": 21.44,
+        "B/op": 800442.0,
+        "allocs/op": 59.0
+      },
+      {
+        "iterations": 430,
+        "ns/op": 3486375.0,
+        "MB/s": 18.8,
+        "B/op": 800446.0,
+        "allocs/op": 59.0
+      }
+    ],
+    "BenchmarkCertificateValidation/p256_chain2": [
+      {
+        "iterations": 4108,
+        "ns/op": 297211.0,
+        "MB/s": 3.2,
+        "B/op": 13073.0,
+        "allocs/op": 121.0
+      },
+      {
+        "iterations": 3480,
+        "ns/op": 315183.0,
+        "MB/s": 3.01,
+        "B/op": 13072.0,
+        "allocs/op": 121.0
+      },
+      {
+        "iterations": 4365,
+        "ns/op": 337488.0,
+        "MB/s": 2.81,
+        "B/op": 13072.0,
+        "allocs/op": 121.0
+      }
+    ],
+    "BenchmarkTransitEncoding/payload_32": [
+      {
+        "iterations": 855430,
+        "ns/op": 1694.0,
+        "MB/s": 18.89,
+        "B/op": 352.0,
+        "allocs/op": 7.0
+      },
+      {
+        "iterations": 736118,
+        "ns/op": 2708.0,
+        "MB/s": 11.82,
+        "B/op": 352.0,
+        "allocs/op": 7.0
+      },
+      {
+        "iterations": 434736,
+        "ns/op": 3312.0,
+        "MB/s": 9.66,
+        "B/op": 352.0,
+        "allocs/op": 7.0
+      }
+    ],
+    "BenchmarkTransitEncoding/payload_4096": [
+      {
+        "iterations": 13558,
+        "ns/op": 117824.0,
+        "MB/s": 34.76,
+        "B/op": 35632.0,
+        "allocs/op": 7.0
+      },
+      {
+        "iterations": 23784,
+        "ns/op": 50522.0,
+        "MB/s": 81.07,
+        "B/op": 35632.0,
+        "allocs/op": 7.0
+      },
+      {
+        "iterations": 24832,
+        "ns/op": 57487.0,
+        "MB/s": 71.25,
+        "B/op": 35632.0,
+        "allocs/op": 7.0
+      }
+    ],
+    "BenchmarkExecutorConcurrent/slots8": [
+      {
+        "iterations": 996,
+        "ns/op": 1177492.0,
+        "latency-samples": 256.0,
+        "p50-ns": 14264300.0,
+        "p95-ns": 51037900.0,
+        "workers": 12.0,
+        "B/op": 63783.0,
+        "allocs/op": 374.0
+      },
+      {
+        "iterations": 1266,
+        "ns/op": 831753.0,
+        "latency-samples": 256.0,
+        "p50-ns": 8003700.0,
+        "p95-ns": 24629800.0,
+        "workers": 12.0,
+        "B/op": 65950.0,
+        "allocs/op": 374.0
+      },
+      {
+        "iterations": 1100,
+        "ns/op": 984858.0,
+        "latency-samples": 256.0,
+        "p50-ns": 8083100.0,
+        "p95-ns": 32692500.0,
+        "workers": 12.0,
+        "B/op": 67023.0,
+        "allocs/op": 385.0
+      }
+    ]
+  }
+}

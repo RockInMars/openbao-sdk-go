@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "target_allowlist": [
+    "https://kms.jiup9.com:443"
+  ],
+  "target": "https://kms.jiup9.com:443",
+  "environment": "nonproduction",
+  "namespace_mode": "named",
+  "namespace": "sdk-test",
+  "run_id": "remote-sdk-20000101-0123456789abcdef",
+  "resource_prefix": "sdk-20000101-0123456789abcdef",
+  "bootstrap_mount": "auth/approle",
+  "issued_at": "2000-01-01T00:00:00Z",
+  "expires_at": "2000-01-01T00:20:00Z",
+  "request_budget": {
+    "total": 120,
+    "core": 43,
+    "transit": 32,
+    "cleanup": 15
+  },
+  "resource_budget": 9,
+  "ownership": "create_only_with_identity",
+  "cleanup": "reverse_created_resources_before_expiry",
+  "allowed_operations": [
+    "bootstrap_approle",
+    "create_isolated_mounts",
+    "create_acl_policies_cas",
+    "create_runtime_tokens",
+    "seed_kv_cas",
+    "configure_owned_transit_pki_approle",
+    "run_sdk_core",
+    "run_sdk_transit",
+    "cleanup_owned_resources"
+  ]
+}

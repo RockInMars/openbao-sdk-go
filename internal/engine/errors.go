@@ -6,8 +6,8 @@ import (
 	"crypto/x509"
 	"encoding/json"
 	"errors"
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/jsondoc"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/jsondoc"
 	"time"
 )
 

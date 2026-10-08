@@ -1,0 +1,174 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "evidence_class": "NORMAL_OFFICIAL_CLIENT",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T04:49:08.061008+00:00",
+  "platform": "windows",
+  "python_version": "3.13.13",
+  "run_id": "2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0",
+  "commands": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-json",
+        "-count=1",
+        "-timeout=120s",
+        "./..."
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/unit.log",
+      "started_at": "2026-09-29T04:49:08.844236+00:00",
+      "timeout_s": 300,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 30612,
+      "finished_at": "2026-09-29T04:49:28.809904+00:00",
+      "elapsed_s": 19.966,
+      "log_sha256": "09190f9b54325828f75fb11814f53f0dfd18ab3699a51229db3da9bd6a69751e",
+      "name": "unit"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-race",
+        "-count=1",
+        "-timeout=180s",
+        "-coverprofile=E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go\\.artifacts\\runs\\2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0\\normal\\coverage.out",
+        "./..."
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/race-coverage.log",
+      "started_at": "2026-09-29T04:49:29.319203+00:00",
+      "timeout_s": 600,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 10016,
+      "finished_at": "2026-09-29T04:50:51.447914+00:00",
+      "elapsed_s": 82.129,
+      "log_sha256": "911dc79eb56aec219a77f79551de367ad3990d9817ba35c84d117043b9e8c075",
+      "name": "race-coverage"
+    },
+    {
+      "command": [
+        "go",
+        "vet",
+        "-mod=readonly",
+        "./..."
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/vet.log",
+      "started_at": "2026-09-29T04:50:51.905379+00:00",
+      "timeout_s": 180,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 55664,
+      "finished_at": "2026-09-29T04:50:54.943748+00:00",
+      "elapsed_s": 3.038,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "vet"
+    },
+    {
+      "command": [
+        "go",
+        "mod",
+        "verify"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/modules.log",
+      "started_at": "2026-09-29T04:50:55.315246+00:00",
+      "timeout_s": 180,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 74776,
+      "finished_at": "2026-09-29T04:50:59.885096+00:00",
+      "elapsed_s": 4.57,
+      "log_sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+      "name": "modules"
+    },
+    {
+      "command": [
+        "go",
+        "build",
+        "-mod=readonly",
+        "./..."
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/build.log",
+      "started_at": "2026-09-29T04:51:00.187395+00:00",
+      "timeout_s": 180,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 96528,
+      "finished_at": "2026-09-29T04:51:04.775147+00:00",
+      "elapsed_s": 4.588,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "build"
+    },
+    {
+      "command": [
+        "go",
+        "list",
+        "-mod=readonly",
+        "-m",
+        "-json",
+        "all"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/module-graph.log",
+      "started_at": "2026-09-29T04:51:05.704445+00:00",
+      "timeout_s": 180,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 73052,
+      "finished_at": "2026-09-29T04:51:07.829592+00:00",
+      "elapsed_s": 2.125,
+      "log_sha256": "e2c9fc8c4ef5858544167913ef48e46b43ed61fc3ac4c3b544c72d83bb41adf6",
+      "name": "module-graph"
+    }
+  ],
+  "environment_commands": [
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/go-version.log",
+      "started_at": "2026-09-29T04:49:08.240152+00:00",
+      "timeout_s": 30,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 84248,
+      "finished_at": "2026-09-29T04:49:08.836287+00:00",
+      "elapsed_s": 0.596,
+      "log_sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "name": "go-version"
+    }
+  ],
+  "tool_versions": {
+    "python": "3.13.13",
+    "go": "go version go1.26.3 windows/amd64"
+  },
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "finished_at": "2026-09-29T04:51:09.011153+00:00",
+  "report_path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/report-007.json",
+  "coverage_profile": {
+    "path": ".artifacts/runs/2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0/normal/coverage.out",
+    "sha256": "db34a47ec6d08cbffef27faf51ef4ffb3d7f4ac6fb565e310c5fe02fec4d62b8",
+    "run_id": "2026-09-29T044908.236076Z-f0280f637e9342a0b07ac5a6dd583ff0"
+  },
+  "passed_tests": 291
+}

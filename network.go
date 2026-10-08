@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"crypto/tls"
 	"crypto/x509"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/internal/pemutil"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/internal/pemutil"
 	"io"
 	"os"
 )

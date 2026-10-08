@@ -1,0 +1,33 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "376c3dbba0d9340762216bd161170f435eb3834daeb76342aa6eb99b6496a85d",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "376c3dbba0d9340762216bd161170f435eb3834daeb76342aa6eb99b6496a85d"
+  },
+  "evidence_class": "STATIC_REVIEW",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "run_id": "remote-static-review-376c3d",
+  "reviewed_at": "2026-09-30T02:05:07+00:00",
+  "reviewer": "primary agent; static document and current change-impact review, not runtime or independent review",
+  "rationale": "Re-read current module/version, lock, compatibility, testing, release, remote testing, README, observability, example, license and independent-review records; verified their current raw-byte SHA256 values. The remote supplemental tests observed OpenBao self-reported 2.6.2 but did not supply a trusted artifact digest, so REAL_OPENBAO and scanner gates stay blocked. KV List remains LIST under the approved contract; the two diagnostic rounds and their non-A/B limitation are documented without claiming full remote coverage. No runtime evidence or old report hash is reused by this static review.",
+  "documents": [
+    {"path": "go.mod", "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54"},
+    {"path": "go.sum", "sha256": "afa6d84a2c28186898e805739b1e187424210ba1f492ad35f3ed5fb8ee16396b"},
+    {"path": "deploy/test/server-lock.json", "sha256": "0dbab82ba3ff06e80a8ec6be03340aece6dde7589cecb541d4e7b820e8bd789a"},
+    {"path": "docs/compatibility.md", "sha256": "5b782ace4d4bed9c7bc073cf2b73791c044c2e056b0ee678fdf863cb822bd1b3"},
+    {"path": "docs/testing.md", "sha256": "3049244c5727e2f08a4167c073d56345cb4b74e69534a7cf0c9e46a3f00380fc"},
+    {"path": "docs/release.md", "sha256": "dba5d4336c11c8d395afc23fd1f7edca9fc4038131c2e03d5342f11e324cb675"},
+    {"path": "README.md", "sha256": "41fcc1755f965616bab8f8123ac2882a4439bbde1553b9cafcd4f23c2bf6baef"},
+    {"path": "docs/observability.md", "sha256": "492941d96d13b84dbbd6523130a1f9487c0b81836d80add29de0db8fca77017e"},
+    {"path": "examples/README.md", "sha256": "45b17e49a4bf8ca4e9791ee5b12feb1dbf095bfb15a3478a23834c39df1ba5ed"},
+    {"path": "docs/remote-testing.md", "sha256": "608208d9fe238e9c37e597090e69cf53ee7aeb7289e6ae0d551a59cc36c7799a"},
+    {"path": "docs/evidence/OB-018/remote-2026-09-30/independent-review.md", "sha256": "6c7896a435ae6972ed9ce387d5911cb04c5d3a76ff2f181e2065f7774f2a3920"},
+    {"path": "LICENSE", "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"}
+  ],
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "376c3dbba0d9340762216bd161170f435eb3834daeb76342aa6eb99b6496a85d"
+  }
+}

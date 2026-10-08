@@ -1,16 +1,16 @@
 # OpenBao Go SDK 首次使用指南
 
-**文档修订：R3-D1｜2026-09-29｜按现有示例实际输入编写**
+**文档修订：2026-09-29 工程改进｜按现有示例实际输入编写**
 
 目标是让接入者从环境准备开始，先理解客户端生命周期，再依次进行准确版本 KV 操作、Transit 签名和 PKI 签发保存。所有真实调用只面向已授权的隔离测试资源，不能使用生产 Root Token、生产秘密路径或真实设备证书。
 
-> **先确认状态**：R3 尚未完成官方依赖和正式 SDK 验证，以下是恢复条件后执行的首次使用流程，不是本轮运行成功记录。`go run` 会执行网络请求，有的步骤会产生写入或证书签发。先阅读每步的副作用，再执行。
+> **先确认状态**：本地回归和真实服务验证分开，最新结果见 [实施交接](implementation-handoff.md)。以下是真实隔离环境条件齐备后执行的流程，不是本轮真实服务成功记录。`go run` 会执行网络请求，有的步骤会产生写入或证书签发。
 
 完整接入原理见 [接入说明](sdk-integration-guide.md)，方法参数见 [功能手册](sdk-feature-manual.md)。
 
 ## 1. 使用者和环境准备
 
-下列命令使用包内 Makefile 对应的 Bash 环境。当前历史测试记录是 Linux/amd64，不宣称 Windows/macOS 已验证。Windows 接入需要准备等价的 Bash/Go/Python 执行环境，并在目标平台补验证。
+下列环境变量样例采用 Bash。Windows 可直接使用 Python 脚本入口及 PowerShell 环境变量语法；主验证工具链固定为 Go 1.26.8，最低兼容检查固定为 Go 1.25.0。各平台实际执行范围见[兼容矩阵](compatibility.md)，不能据 Linux/Windows 推断 macOS 兼容。不要为阅读本指南自动安装工具。
 
 | 需要的材料 | 谁准备 | 本文不会做什么 |
 |---|---|---|
@@ -28,11 +28,10 @@
 
 ```bash
 go version
-make dependency-check
-make normal-test
+python -B scripts/normal-test.py
 ```
 
-`make normal-test` 不通过时先修复并保留证据；不能通过 `make contract-test` 的补充模式跳过正式依赖要求。`go.mod` 中临时域名不是远端仓库，不能直接对它 `go get`。
+普通门禁不通过时先修复并保留证据；不能通过补充模式跳过正式依赖要求。已确认 module 是 `github.com/RockInMars/openbao-sdk-go`，本轮未发布，不能假设远端已包含本工作区改动。
 
 需要从联网开发机转移依赖时执行：
 
@@ -65,7 +64,7 @@ unset SDK_BAO_NAMESPACE
 
 HTTPS 证书已经由系统信任且无需自定义信任池时可以 unset SDK_BAO_CA_FILE，不是关闭证书验证。Named Namespace 不存在时不能自动改 root；`xyouting-test` 只有实际确认为 Namespace 后才能填入。
 
-四个 main 示例均使用 `auth.NewTokenFile`，不是 AppRole。ManagedAppRole 的配置代码见 [接入说明第4节](sdk-integration-guide.md)。
+五个 main 示例均使用 `auth.NewTokenFile`，不是 AppRole。ManagedAppRole 的配置代码见 [接入说明第4节](sdk-integration-guide.md)。
 
 ### 不要混淆两套环境变量
 
@@ -92,6 +91,8 @@ SDK service started; awaiting cancellation
 来源：[service-bootstrap/main.go](../examples/service-bootstrap/main.go)、[bootstrap.Run](../examples/internal/bootstrap/config.go)、[Client.Start](../client.go)。
 
 ## 5. 第一次 KV 操作：创建 → 准确读取 → CAS
+
+若已有准确版本且只需验证只读与观察，可先运行 `go run ./examples/observer -mount kv -path <已授权路径> -version <正整数>`。它输出六个固定计数桶，不显示秘密正文，不签发或写入；详见 [观察示例](observability.md)。
 
 **副作用：产生一份测试秘密及新版本。**为每次独立演示使用受控、唯一、未用过的 path，Token 只对该测试前缀有权限。
 
@@ -164,14 +165,14 @@ GOWORK=off go run ./examples/pki-issue-store
 
 ```bash
 make integration-test
-make consumer-test
+python -B scripts/consumer-test.py --allow-network
 make tooling-test
 make fuzz-test
-make security-test
+python -B scripts/security-test.py --allow-network
 make release-check
 ```
 
-不要在不同资源之间复用管理员凭据；不要把环境缺失导致测试未运行说成无失败；不要把 HMAC/PKI 演示路径之外的能力自动标成通过。原验收和实际业务迁移分别记录。
+`--allow-network` 仅在已获依赖/扫描工具下载授权时传入。已有完整本地模块和签名校验代理时，消费者改用 `python -B scripts/consumer-test.py --offline-proxy <目录>`，保留 SUMDB 认证且不访问网络；扫描器仍需准备固定工具与数据库。实际结果见实施交接。不要在不同资源之间复用管理员凭据，不把环境缺失或未执行写成无失败；原验收和真实业务迁移分别记录。
 
 ## 9. 首次结果记录模板
 
@@ -191,4 +192,4 @@ make release-check
 
 ## 10. 本次文档检查范围
 
-本文按 R3 的四个 main 和配置层逐个核对环境变量与输出形式，检查相对链接及命令目标。没有运行这些真实示例，没有请求生产或测试 OpenBao，没有改变 OB-001 或 AC-001～AC-072 状态。
+原 R3-D1 检查保留历史记录；本轮增加 Observer，按实际 helper 和参数更新说明。示例本地 TLS fixture 与真实 OpenBao 分开，本轮未连接生产实例或使用业务 Token。

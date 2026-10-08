@@ -1,0 +1,43 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "evidence_class": "COMMAND_RECEIPT",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T04:58:40.868705+00:00",
+  "platform": "windows",
+  "tool_versions": {
+    "python": "3.13.13"
+  },
+  "run_id": "examples-03",
+  "commands": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "./examples/..."
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/final-supplemental/examples-test-examples-03.log",
+      "started_at": "2026-09-29T04:58:41.096677+00:00",
+      "timeout_s": 180.0,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 24136,
+      "finished_at": "2026-09-29T04:58:43.748241+00:00",
+      "elapsed_s": 2.652,
+      "log_sha256": "99adad70790aada13dcb652c1f4c42a5925123bb465befbc6a9ea51ea65aece3",
+      "name": "command"
+    }
+  ],
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "finished_at": "2026-09-29T04:58:44.100176+00:00"
+}

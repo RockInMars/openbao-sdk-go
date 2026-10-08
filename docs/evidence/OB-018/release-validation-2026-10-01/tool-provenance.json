@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "recorded_at": "2026-10-01T13:45:34.539149+00:00",
+  "scope": "Downloaded tool and Linux OpenBao artifact provenance; not runtime integration or release approval",
+  "linux_runtime": {
+    "base_image": "docker.io/library/golang:1.26.3-bookworm",
+    "linux_manifest_sha256": "3bf5b04541eb4a37fe62aa1bc9c98a1dec09db9d2e79c1d2eb54e3c9d08dbca9",
+    "image_id": "sha256:eafdda676c2e68f1d9a6574d33f89db1d6933e24f5be8e2cbe003b864fc865c9",
+    "archive": ".artifacts/tools/release-validation-20261001/docker-go126/go1.26.3-bookworm-docker.tar",
+    "archive_bytes": 858931200,
+    "archive_sha256": "5f1b37d55461fba0b9a568198e6fd2d6c87cb2db41371ecadc4c76e5b275e3aa",
+    "verification_receipt": ".artifacts/release-validation-20261001/prepare-linux-image-01.json",
+    "toolchain_override": "Verified Go 1.26.8 or 1.25.0 from the archives below; the base image Go is not the main validation toolchain.",
+    "isolation": "Task-owned Docker daemon and containers; no shared daemon or global configuration changed."
+  },
+  "sources": [
+    "https://go.dev/dl/?mode=json&include=all",
+    "https://api.github.com/repos/openbao/openbao/releases/tags/v2.6.3",
+    "https://openbao.org/docs/install/#signature-verification",
+    "https://openbao.org/assets/openbao-gpg-pub-20240618.asc"
+  ],
+  "gpg": {
+    "receipt": ".artifacts/release-validation-20261001/prepare-gpg-verify-01.json",
+    "primary_key_fingerprint": "66D15FDD87287219C8E15478D200CD702853E6D0",
+    "signing_subkey_fingerprint": "E617DCD4065C2AFC0B2CF7A7BA8BC08C0F691F94",
+    "trust_basis": "Primary key fingerprint matches the first-party HTTPS installation documentation, not local GPG ownertrust."
+  },
+  "files": [
+    {
+      "path": ".artifacts/tools/release-validation-20261001/downloads/go1.26.8.windows-amd64.zip",
+      "bytes": 74957586,
+      "sha256": "b92c3b2adae85a11ba71fe7216daf0d84e82af4c8ab6c5625807f28622043a59"
+    },
+    {
+      "path": ".artifacts/tools/release-validation-20261001/downloads/go1.26.8.linux-amd64.tar.gz",
+      "bytes": 66897291,
+      "sha256": "d0f743b33e8d8945e6b1f432edd15785c70507121d6e2a723b21285eddf8b57b"
+    },
+    {
+      "path": ".artifacts/tools/release-validation-20261001/downloads/checksums.txt",
+      "bytes": 8683,
+      "sha256": "78eb1a4d20968856959951513acfd32e1124bac855a6006dc0dba0a0968bb5be"
+    },
+    {
+      "path": ".artifacts/tools/release-validation-20261001/downloads/checksums.txt.gpgsig",
+      "bytes": 566,
+      "sha256": "95ffcccc7e964eea1a5c72d33b9d9cff489b2ef46ccd95f6856407f9766d168c"
+    },
+    {
+      "path": ".artifacts/tools/release-validation-20261001/downloads/openbao-gpg-pub-20240618.asc",
+      "bytes": 6896,
+      "sha256": "1862a196422947124282e026ea4e09d6f7c5d383b628d90c17906936e6e5a8e0"
+    },
+    {
+      "path": ".artifacts/tools/release-validation-20261001/downloads/go1.25.0.windows-amd64.zip",
+      "bytes": 67418204,
+      "sha256": "89efb4f9b30812eee083cc1770fdd2913c14d301064f6454851428f9707d190b"
+    },
+    {
+      "path": ".artifacts/tools/release-validation-20261001/downloads/go1.25.0.linux-amd64.tar.gz",
+      "bytes": 59659213,
+      "sha256": "2852af0cb20a13139b3448992e69b868e50ed0f8a1e5940ee1de9e19a123b613"
+    },
+    {
+      "path": ".artifacts/tools/release-validation-20261001/downloads/openbao_2.6.3_linux_amd64-verified.tar.gz",
+      "bytes": 76261643,
+      "sha256": "c6463ddd4fdc4214b62a7ffdeaa0fc6df170f7e6b75c6dea2c5e525bdc932ed3"
+    },
+    {
+      "path": ".artifacts/tools/release-validation-20261001/openbao-2.6.3-linux/bao",
+      "bytes": 196860067,
+      "sha256": "34528cdb5d41193fa2ed4a4b03a0527716ede248fa868f6061fee8b3b4e1e860"
+    }
+  ],
+  "openbao_version": {
+    "command": "wsl -d rancher-desktop --exec /mnt/e/xen/code/claude/project/jiupiao/openbao-sdk-go/.artifacts/tools/release-validation-20261001/openbao-2.6.3-linux/bao version",
+    "wrapper_exit_code": 0,
+    "stdout": "OpenBao v2.6.3 (63a65e6b907589dbb952c371a70260a065bf8bd7), committed 2026-09-23T16:41:56Z"
+  },
+  "replacement_download_receipt": ".artifacts/release-validation-20261001/prepare-bao-range-01.json",
+  "earlier_attempts": [
+    {
+      "step": "Windows GitHub direct zip download",
+      "status": "TIMEOUT",
+      "wrapper_exit_code": 1,
+      "curl_diagnostic_code": 28,
+      "bytes": 4292384,
+      "executed": false
+    },
+    {
+      "step": "Linux GitHub Release Asset API download",
+      "status": "TIMEOUT",
+      "wrapper_exit_code": 1,
+      "curl_diagnostic_code": 28,
+      "bytes": 3177133,
+      "executed": false
+    },
+    {
+      "step": "GPG public key import",
+      "status": "PARTIAL",
+      "wrapper_exit_code": 1,
+      "reason": "Key was imported; gpg-agent startup failed. Separate detached-signature verification returned 0."
+    }
+  ]
+}

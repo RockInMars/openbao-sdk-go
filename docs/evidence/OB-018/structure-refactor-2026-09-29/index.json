@@ -1,0 +1,491 @@
+{
+  "schema_version": 1,
+  "source_hash_version": 2,
+  "source_sha256": "771ac8fe1964aaebc7dd258d1060a34bbb8781e823ea86b182f8a465d9f8be0c",
+  "recorded_at": "2026-09-29T14:10:07.972534+00:00",
+  "status": "LOCAL_VALIDATED_DELIVERY_BLOCKED",
+  "note": "真实报告保留原始不可变路径与字节；未重写任何运行报告 hash。新静态复核与运行证据分开。原始日志/profile需随路径一起保留，单独拷贝索引不构成完整证据包。",
+  "reports": [
+    {
+      "name": "normal",
+      "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/report-007.json",
+      "sha256": "28df70309797c7fcdcbe2ebeb06074b3acc12852730e3bd2f245849dbd1580a9",
+      "bytes": 6184,
+      "status": "PASS",
+      "run_id": "2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7",
+      "evidence_class": "NORMAL_OFFICIAL_CLIENT"
+    },
+    {
+      "name": "fuzz",
+      "path": ".artifacts/runs/2026-09-29T135317.950426Z-f86b6e7019904de4b004c4ad28d9ecfa/fuzz/report-006.json",
+      "sha256": "3e02683127f1a0c8fb3becca9ebc3aa0905e0a9f5252946b0dc9d1e0e07fa58a",
+      "bytes": 5676,
+      "status": "PASS",
+      "run_id": "2026-09-29T135317.950426Z-f86b6e7019904de4b004c4ad28d9ecfa",
+      "evidence_class": "FUZZ_RUNTIME"
+    },
+    {
+      "name": "benchmark",
+      "path": ".artifacts/runs/2026-09-29T135720.358360Z-690c6652ffbf4d1580e2ef6b8e329507/benchmark/report-002.json",
+      "sha256": "8e1f8326944fc6ee332d627c15607e05e5622cacc050ef88ab920e0511835bfc",
+      "bytes": 5839,
+      "status": "PASS",
+      "run_id": "2026-09-29T135720.358360Z-690c6652ffbf4d1580e2ef6b8e329507",
+      "evidence_class": "BENCHMARK_BASELINE"
+    },
+    {
+      "name": "consumer",
+      "path": ".artifacts/runs/2026-09-29T135840.986917Z-ba1b5b65ca95455182a404c67ade609a/consumer/report-007.json",
+      "sha256": "08caf19765c31018d0d3b01800a39a9a91f9d9872a48cbd4eddeca75ec71e694",
+      "bytes": 8071,
+      "status": "PASS",
+      "run_id": "2026-09-29T135840.986917Z-ba1b5b65ca95455182a404c67ade609a",
+      "evidence_class": "INDEPENDENT_CONSUMERS"
+    },
+    {
+      "name": "integration",
+      "path": ".artifacts/runs/2026-09-29T135127.370221Z-11e221b716534d87ae576389726648a9/integration/report-001.json",
+      "sha256": "93765b23fbd28dbf68bbfda57cce6213e89bea70fe26aa7febfd558897d82988",
+      "bytes": 1758,
+      "status": "BLOCKED",
+      "run_id": "2026-09-29T135127.370221Z-11e221b716534d87ae576389726648a9",
+      "evidence_class": "REAL_OPENBAO"
+    },
+    {
+      "name": "security",
+      "path": ".artifacts/runs/2026-09-29T135152.834752Z-d33c6a5c42c24faebf0dcea24b6de3b5/security/report-001.json",
+      "sha256": "95663e6687733de0c0dca9205b6da210fb224e9788a5967c6b70f5b50bf63d1d",
+      "bytes": 1766,
+      "status": "BLOCKED",
+      "run_id": "2026-09-29T135152.834752Z-d33c6a5c42c24faebf0dcea24b6de3b5",
+      "evidence_class": "PINNED_SECURITY_SCANNERS"
+    },
+    {
+      "name": "tooling",
+      "path": ".artifacts/runs/structure-refactor-20260929-final/tooling-structure-tools-final-01.json",
+      "sha256": "c489bcf73f77a97b5612558959f62c70e57822744e0a66aa9b8dd7e52d04e19b",
+      "bytes": 1525,
+      "status": "PASS",
+      "run_id": "structure-tools-final-01",
+      "evidence_class": "COMMAND_TOOLING"
+    },
+    {
+      "name": "static",
+      "path": "docs/evidence/OB-018/structure-refactor-2026-09-29/static-review.json",
+      "sha256": "e9daf66564cedf93efbbc9486cde73dcbac8afdc696111b8aabd0b539078ea79",
+      "bytes": 2433,
+      "status": "PASS",
+      "run_id": "structure-static-review-20260929",
+      "evidence_class": "STATIC_REVIEW"
+    }
+  ],
+  "supplemental_receipts": [
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-export-normal-structure-ci-export-normal-01.json",
+      "sha256": "58a82312086daadf5f0b3f6e7691c20b766d0e3f3da6e77f5e17b99de4d9d0e5",
+      "bytes": 1696,
+      "status": "PASS",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-export-normal-structure-ci-export-normal-02.json",
+      "sha256": "3e0080976579ed764312f475cbfd01ab7813748164cf67c8f9b0270d0dfd9a31",
+      "bytes": 1631,
+      "status": "PASS",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-export-tooling-structure-ci-export-tooling-01.json",
+      "sha256": "7ba8c0aacba51cd41f78641723fbc0128015001b41dd9beeddd4bbecece76660",
+      "bytes": 1690,
+      "status": "PASS",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-export-tooling-structure-ci-export-tooling-02.json",
+      "sha256": "3a9e6c0f766333512c354b2c200c10032ff24cf148926bf91595478b5ce86017",
+      "bytes": 1636,
+      "status": "PASS",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-summary-structure-ci-summary-final-01.json",
+      "sha256": "2443fcef3e9aa79447c3cbe1c87afe6b9ab51c66ad326ea8e5696d06cfb56357",
+      "bytes": 1643,
+      "status": "FAIL",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-summary-structure-ci-summary-final-02.json",
+      "sha256": "7023b1e774e4c618fe766f7007923ef34dcb30ba0fe411c3815104567d785f6e",
+      "bytes": 1650,
+      "status": "FAIL",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-tests-structure-ci-tests-final-01.json",
+      "sha256": "7c959b27d8e5290c433ed386eddc8167c1f6ba6cd414cf312a12d274c79238fd",
+      "bytes": 1576,
+      "status": "PASS",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/diff-check-structure-diff-check-final-01.json",
+      "sha256": "9ce94299f23366b22599f36fac244b2ca1f38cd575ac34d2b42f8756d3788e02",
+      "bytes": 1448,
+      "status": "PASS",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/examples-build-examples-build-structure-01.json",
+      "sha256": "867d79a7f00faa4714920c99b03059c0427420e2e9fb7694406f15e4cdff4e1b",
+      "bytes": 1482,
+      "status": "PASS",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/examples-test-examples-test-structure-01.json",
+      "sha256": "8b047681139ba53dbf44c36af2d01973fc29fd37814b0e006ff3d4eb9110b7ca",
+      "bytes": 1540,
+      "status": "PASS",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/integration-structure-integration-final-01.json",
+      "sha256": "29d974943794467e4e34dad2e00026621eedfa7a14bf81dc70dfdc20a373c9f6",
+      "bytes": 1473,
+      "status": "FAIL",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/provenance-structure-provenance-final-01.json",
+      "sha256": "0f58bb5bc8b871385929ddf62d713592d266716db2d7748cef276e6baa7fe011",
+      "bytes": 1590,
+      "status": "PASS",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/security-structure-security-final-01.json",
+      "sha256": "736c8111818e7b71016e7eec6e1bac68a38251d0628cd19db086c5b5d75b42b8",
+      "bytes": 1460,
+      "status": "FAIL",
+      "evidence_class": "COMMAND_RECEIPT"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/tooling-structure-tools-final-01.json",
+      "sha256": "c489bcf73f77a97b5612558959f62c70e57822744e0a66aa9b8dd7e52d04e19b",
+      "bytes": 1525,
+      "status": "PASS",
+      "evidence_class": "COMMAND_TOOLING"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/verify-release-structure-release-final-01.json",
+      "sha256": "e58e3d500adf6e68315bba5deb7196209cafa6d3091eb4f45493873f9430df70",
+      "bytes": 1465,
+      "status": "FAIL",
+      "evidence_class": "COMMAND_RECEIPT"
+    }
+  ],
+  "raw_artifacts": [
+    {
+      "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/go-version.log",
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/unit.log",
+      "sha256": "460486a3f27d2ffaf261bc113ee7bedcc1032d2fa425bb1954041164d5c010ff",
+      "bytes": 276485
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/race-coverage.log",
+      "sha256": "066e3bb62a7ff7d09c2ae71d5411731df23cfeda8ab42c9d795c57ced9ff1947",
+      "bytes": 2238
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/vet.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/modules.log",
+      "sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+      "bytes": 21
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/module-graph.log",
+      "sha256": "e2c9fc8c4ef5858544167913ef48e46b43ed61fc3ac4c3b544c72d83bb41adf6",
+      "bytes": 22345
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135317.950426Z-f86b6e7019904de4b004c4ad28d9ecfa/fuzz/go-version.log",
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135317.950426Z-f86b6e7019904de4b004c4ad28d9ecfa/fuzz/FuzzPath.log",
+      "sha256": "b6d111e643c870023a3356f92c418fe5e6bdba3e6b41458fb66a3bce78b7a6fd",
+      "bytes": 1058
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135317.950426Z-f86b6e7019904de4b004c4ad28d9ecfa/fuzz/FuzzDocument.log",
+      "sha256": "a52c4cf05779fcbfadd7af43e13ee6ed523173df68c01626e8ab77677cf33503",
+      "bytes": 1042
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135317.950426Z-f86b6e7019904de4b004c4ad28d9ecfa/fuzz/FuzzPKICSR.log",
+      "sha256": "6bc5000d073eb5523338ea0d7a5356fe2bed7f5ade42a26dfaf7f303491e6a6a",
+      "bytes": 1044
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135317.950426Z-f86b6e7019904de4b004c4ad28d9ecfa/fuzz/FuzzEncoding.log",
+      "sha256": "c1f6192e155b51b6d254b116552744b0664c84778ff59743b8cbca73c25cffff",
+      "bytes": 1066
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135317.950426Z-f86b6e7019904de4b004c4ad28d9ecfa/fuzz/FuzzDecode.log",
+      "sha256": "0f1c14cff973ef2a7ac0189d6c2e182e6a8d558746317f7a12fd9440f2c87ec8",
+      "bytes": 1095
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135720.358360Z-690c6652ffbf4d1580e2ef6b8e329507/benchmark/go-version.log",
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135720.358360Z-690c6652ffbf4d1580e2ef6b8e329507/benchmark/benchmark.log",
+      "sha256": "4be74b94a9f2866588de34feb3ec203053dccf5ac9e46214ab779f6f3bc44d7d",
+      "bytes": 3644
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135840.986917Z-ba1b5b65ca95455182a404c67ade609a/consumer/go-version.log",
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135840.986917Z-ba1b5b65ca95455182a404c67ade609a/consumer/reader-tidy.log",
+      "sha256": "8800e4cf360ad8f6e9a4ea40725c3e5b1d0ab5dfb0addc3ebf8f9f2ecd175d28",
+      "bytes": 1469
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135840.986917Z-ba1b5b65ca95455182a404c67ade609a/consumer/reader-test.log",
+      "sha256": "c95c5fed86d005108693fa6b7061505eee63d94632e703533cb9309154611027",
+      "bytes": 1119
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135840.986917Z-ba1b5b65ca95455182a404c67ade609a/consumer/signer-tidy.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135840.986917Z-ba1b5b65ca95455182a404c67ade609a/consumer/signer-test.log",
+      "sha256": "d7d019f00002936745e2f60ba2154f44bfc8156d65019277e0391c58828016d0",
+      "bytes": 1106
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135127.370221Z-11e221b716534d87ae576389726648a9/integration/go-version.log",
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135152.834752Z-d33c6a5c42c24faebf0dcea24b6de3b5/security/go-version.log",
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/tooling-structure-tools-final-01.log",
+      "sha256": "7554544ebbb5bb819969c01406471e34f57660ebf9a7dc23fda7884703c5e198",
+      "bytes": 16172
+    },
+    {
+      "path": ".artifacts/runs/2026-09-29T135041.840129Z-6eddb617defa40c0be49641fa4e34be7/normal/coverage.out",
+      "sha256": "72614acdda4703c02566322bc21966fa367e247d07d5433afee2a83c37cbab39",
+      "bytes": 149309
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-export-normal-structure-ci-export-normal-01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-export-normal-structure-ci-export-normal-02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-export-tooling-structure-ci-export-tooling-01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-export-tooling-structure-ci-export-tooling-02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-summary-structure-ci-summary-final-01.log",
+      "sha256": "74b236bc8800c3387800b1c60620d90c8dcae068c686cc4ff9525bc4de53a16c",
+      "bytes": 742
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-summary-structure-ci-summary-final-02.log",
+      "sha256": "9cf738d30b11811d7a33901f0c09d6766fdc568957e9d607eb61dbf6a2eabb49",
+      "bytes": 603
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/ci-tests-structure-ci-tests-final-01.log",
+      "sha256": "f904a13090de0aee57cabec2529620c2036e2a0cf4eda7ad58bdae069f8bc482",
+      "bytes": 1593
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/diff-check-structure-diff-check-final-01.log",
+      "sha256": "4b549c3e64828ae91be9cb15c2e4be5153e819f2f62247110ce510a90f51f715",
+      "bytes": 10338
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/examples-build-examples-build-structure-01.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/examples-test-examples-test-structure-01.log",
+      "sha256": "a17b0ddd1eb796a3ef66bb217f84d839aacb16c515e799ca5171f3797d9b7351",
+      "bytes": 11987
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/integration-structure-integration-final-01.log",
+      "sha256": "cc83a96098eb59ddafcc18fbc1022c0bc8b3e3520d659cc68e2ff9040235c82c",
+      "bytes": 23
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/provenance-structure-provenance-final-01.log",
+      "sha256": "b28311942fbdb7917a4fe3b92eb658c7202374f6117fe6a3e89b1261282c8bdc",
+      "bytes": 2163
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/security-structure-security-final-01.log",
+      "sha256": "a0f6ae6098db2affc2a0d551a9bc6bd7f46d0ab6541296fdd742a49ca8c95c3d",
+      "bytes": 35
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-final/verify-release-structure-release-final-01.log",
+      "sha256": "78bd0a50edf0dc9a353e65b34c841e6f386dea00def59c4b86a15acf21318452",
+      "bytes": 742
+    }
+  ],
+  "baseline_and_expected_red_history": [
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/boundary-boundary-red-01.json",
+      "sha256": "2c879a44a3b78dadb7eb106c52d129430ac81dcd83c84214c936295334620c3f",
+      "bytes": 1527,
+      "status": "FAIL",
+      "source_sha256": "d41c732757493f2448330aaea2ce591b9cd267249ca61894572ebe1f2fe33438"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/ci-fixture-ci-01.json",
+      "sha256": "99d9148a0d5dfdc9fc62bf06ffe4e6f1180ee68aec4676260b4ee40dca78952e",
+      "bytes": 1418,
+      "status": "PASS",
+      "source_sha256": "1a80ec65558cc224c4519f857be003a402051cbfb7b39a8432e95f0b9898ced6"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/combined-fixture-combined-01.json",
+      "sha256": "9986a13ea8360cd732ec6cdc6d6d0b20983a60db9aaee9b4ba3e1f783422022b",
+      "bytes": 1485,
+      "status": "PASS",
+      "source_sha256": "1a80ec65558cc224c4519f857be003a402051cbfb7b39a8432e95f0b9898ced6"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/config-go-baseline-go-01.json",
+      "sha256": "c1364c8600eab2de4edfa0cb6b66d9a4fff0609c5f1ed272398cb554ae70b3b9",
+      "bytes": 1576,
+      "status": "PASS",
+      "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/config-go-baseline-go-02.json",
+      "sha256": "f6c12b3ca77d4bfbb1f33217b6796e249868cb01ad45efaa882dfd09d8f62a5c",
+      "bytes": 1593,
+      "status": "PASS",
+      "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/direction-direction-green-01.json",
+      "sha256": "e197b130c1f84553a0fd499a3da36557ebf93c9ffc101c25ab771511808504f6",
+      "bytes": 1484,
+      "status": "PASS",
+      "source_sha256": "e9ea3ecadd1c53187a001a316631870329537fed6938889c512760aa7b237ea9"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/fixture-fixture-red-01.json",
+      "sha256": "29b54e3ab690ac856666dd80c598caf8edafdda039f4b6ca07a37f8f08266e66",
+      "bytes": 1524,
+      "status": "FAIL",
+      "source_sha256": "d38cb6be6ee84127d5d9176bdba771561ad088c18a6a829a0a1a9b730110cebd"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/provenance-fixture-provenance-01.json",
+      "sha256": "7f6538b3cc483bd3bc48d41c87b3d310503ca8c72580ca21189c54e88992f27c",
+      "bytes": 1449,
+      "status": "PASS",
+      "source_sha256": "1a80ec65558cc224c4519f857be003a402051cbfb7b39a8432e95f0b9898ced6"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/record-cli-record-cli-green-02.json",
+      "sha256": "eaf7c3ce80d0f28b6d4fb61bd55741e075aad9f5ac66a651f7dc32700ad18511",
+      "bytes": 1561,
+      "status": "PASS",
+      "source_sha256": "771ac8fe1964aaebc7dd258d1060a34bbb8781e823ea86b182f8a465d9f8be0c"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/record-full-record-full-01.json",
+      "sha256": "c773783ffa86109fa9d1d8502f01de879c2c3cc14d9b8de29029f8eb7af4dae4",
+      "bytes": 1509,
+      "status": "PASS",
+      "source_sha256": "59bd66dd9c3f967cbae21eb1bc130584c3bac3723d2e3e9d5ac020c14d5e9c25"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/recording-recording-green-01.json",
+      "sha256": "d1b78ead9bed69eaaa9f57aec47064952bb381c52124c6160899348aee77d7e2",
+      "bytes": 1526,
+      "status": "PASS",
+      "source_sha256": "4b4ff6217b9a0ac79f1ca9767a265d94c298abfa47cd343954a90edb9023bdba"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/recording-recording-red-01.json",
+      "sha256": "f17cd14de8f7aecb2a7654453b1e6ebaf4b83ba705574b3ac587d9997c8d3d8b",
+      "bytes": 1559,
+      "status": "FAIL",
+      "source_sha256": "bcaa3851e274c619e3b66d08552c28f44c4a1d3d7f3fc57460f3ca70747463c1"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/tooling-baseline-tools-01.json",
+      "sha256": "edd7503657fb0f410dac2b329ef62160199b7ff476eef9e1f29225ca3523075c",
+      "bytes": 1482,
+      "status": "PASS",
+      "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+    },
+    {
+      "path": ".artifacts/runs/structure-refactor-20260929-start/validators-validators-green-01.json",
+      "sha256": "8a5aac5053ac8428db6b844a39beee5bd8288f50f3a31e5e838677dda3535d1d",
+      "bytes": 1487,
+      "status": "PASS",
+      "source_sha256": "5e49f8565ba086dbaa0afc2e2173134edf5243e5d30e9b0d202d6e9d48ca4f41"
+    }
+  ],
+  "baseline_snapshot": ".artifacts/runs/structure-refactor-20260929-start/baseline.json",
+  "previous_implementation_index": "docs/evidence/OB-018/implementation-2026-09-29/index.json",
+  "independent_review": "docs/evidence/OB-018/structure-refactor-2026-09-29/independent-review.md",
+  "source_manifest": "docs/evidence/OB-018/structure-refactor-2026-09-29/source-manifest.json",
+  "coverage_analysis": "docs/evidence/OB-018/structure-refactor-2026-09-29/coverage-analysis.json",
+  "local_ci_summaries": [
+    ".artifacts/runs/structure-refactor-20260929-final/local-ci-summary.json",
+    ".artifacts/runs/structure-refactor-20260929-final/local-ci-summary-v2.json"
+  ],
+  "final_workspace_audit": "docs/evidence/OB-018/structure-refactor-2026-09-29/workspace-audit.json"
+}

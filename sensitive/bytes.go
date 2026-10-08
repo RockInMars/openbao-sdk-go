@@ -15,11 +15,14 @@ type cell struct {
 }
 
 // Bytes never formats or marshals its contents implicitly. Value copies share an
-// erasure handle; use NewBytes(b.RevealCopy()) for an independently owned value.
+// erasure handle. To clone, pass RevealCopy to NewBytes and clear the temporary copy.
 // Zero cannot erase copies previously revealed or made by the Go runtime.
 type Bytes struct{ cell *cell }
 
+// NewBytes copies value. The caller remains responsible for clearing value.
 func NewBytes(value []byte) Bytes { return Bytes{cell: &cell{value: append([]byte(nil), value...)}} }
+
+// RevealCopy returns an independent plaintext copy; clear it after use.
 func (b Bytes) RevealCopy() []byte {
 	if b.cell == nil {
 		return nil
@@ -28,6 +31,9 @@ func (b Bytes) RevealCopy() []byte {
 	defer b.cell.mu.RUnlock()
 	return append([]byte(nil), b.cell.value...)
 }
+
+// Zero clears the shared handle's current bytes. All value copies become empty.
+// It is safe for nil and already-cleared values, but cannot erase revealed copies.
 func (b *Bytes) Zero() {
 	if b == nil || b.cell == nil {
 		return
@@ -37,6 +43,8 @@ func (b *Bytes) Zero() {
 	clear(b.cell.value)
 	b.cell.value = nil
 }
+
+// Len returns the current size, or zero for an empty or cleared handle.
 func (b Bytes) Len() int {
 	if b.cell == nil {
 		return 0

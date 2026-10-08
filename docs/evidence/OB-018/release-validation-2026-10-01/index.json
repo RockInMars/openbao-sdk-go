@@ -1,0 +1,1314 @@
+{
+  "schema_version": 1,
+  "source_hash_version": 2,
+  "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+  "recorded_at": "2026-10-01T17:11:24.814690+00:00",
+  "scope": "Current-source local Linux/Windows engineering gate. Not hosted CI, publication or business migration.",
+  "formal_reports": {
+    "normal": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+    "consumer": ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
+    "fuzz": ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json",
+    "integration": ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+    "security": ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json",
+    "minimum-normal-linux": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/report-007.json",
+    "minimum-normal-windows": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/report-007.json",
+    "minimum-consumer-linux": ".artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/report-007.json",
+    "minimum-consumer-windows": ".artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/report-007.json",
+    "tooling": ".artifacts/tooling-release-linux-20261001-final04.json",
+    "static": "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json",
+    "normal-windows": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/report-007.json",
+    "tooling-windows": ".artifacts/release-validation-20261001/tooling-windows-final-04.json"
+  },
+  "source_manifest": "docs/evidence/OB-018/release-validation-2026-10-01/source-manifest.json",
+  "historical_failures": [
+    ".artifacts/runs/2026-10-01T135046.346630Z-825626759a6e4f3aa489da076f3b6957/security/report-003.json",
+    ".artifacts/runs/2026-10-01T135523.594229Z-2f9b0c3adf9f4387b66dc261cf4cdc4c/security/report-003.json",
+    ".artifacts/runs/2026-10-01T142843.966980Z-cfd24f7c680249d1a00689c7000a80ea/security/report-003.json",
+    ".artifacts/runs/2026-10-01T150613.577024Z-dd2ae29274734b39a08ba8f0eb5c12a8/integration/report-002.json",
+    ".artifacts/runs/2026-10-01T154558.563301Z-8474947846304ac6a817852885ead50b/integration/report-002.json",
+    ".artifacts/tooling-release-linux-20261001-final02.json",
+    ".artifacts/tooling-release-linux-20261001-final03.json"
+  ],
+  "historical_missing_artifacts": [
+    {
+      "report": ".artifacts/runs/2026-10-01T135046.346630Z-825626759a6e4f3aa489da076f3b6957/security/report-003.json",
+      "path": ".artifacts/runs/2026-10-01T135046.346630Z-825626759a6e4f3aa489da076f3b6957/security/gitleaks-redacted.json",
+      "reason": "The original failed run could not download gitleaks; it never produced a findings file. Both failed command logs are preserved. No replacement file is fabricated."
+    },
+    {
+      "report": ".artifacts/runs/2026-10-01T142843.966980Z-cfd24f7c680249d1a00689c7000a80ea/security/report-003.json",
+      "path": ".artifacts/runs/2026-10-01T142843.966980Z-cfd24f7c680249d1a00689c7000a80ea/security/gitleaks-redacted.json",
+      "reason": "The original failed run could not download gitleaks; it never produced a findings file. Both failed command logs are preserved. No replacement file is fabricated."
+    }
+  ],
+  "release_gate": ".artifacts/release-validation-20261001/release-final-01.json",
+  "ci_summary": ".artifacts/release-validation-20261001/ci-summary-final.json",
+  "coverage": ".artifacts/release-validation-20261001/coverage-final.json",
+  "independent_review": "docs/evidence/OB-018/release-validation-2026-10-01/independent-review.md",
+  "cleanup": ".artifacts/release-validation-20261001/cleanup-final-02.json",
+  "cleanup_proxy": ".artifacts/release-validation-20261001/cleanup-proxy-final-01.json",
+  "cleanup_attempts": [
+    ".artifacts/release-validation-20261001/cleanup-final-01.json",
+    ".artifacts/release-validation-20261001/cleanup-final-02.json"
+  ],
+  "prior_checkpoint": {
+    "path": "docs/evidence/OB-018/project-improvement-2026-10-01/index-security-contact-01.json",
+    "matching_historical_files": 55
+  },
+  "reports": [
+    {
+      "path": ".artifacts/release-validation-20261001/baseline.json",
+      "sha256": "c494bc2d89175f15eb914db224aeb9d6b8d2563f076eca1f1e33b57043169bde",
+      "bytes": 38244
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-fixture-prepare-01.log",
+      "sha256": "6fba904393c03eafea6ed30c9bae19a64384b82581cddab02220b0377e78c82a",
+      "bytes": 329
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/consumers/.artifacts/consumer-report.json",
+      "sha256": "4f5b9872873069f2ebd0329ba7e10f7cea5c5ac3bf463c8560177cac930f4f4f",
+      "bytes": 9895
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/consumers/.artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/go-version.log.events",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/consumers/.artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/reader-test.log.events",
+      "sha256": "a38fab9889ab30d17b7ec841ae194c88736906fde8b6e03a488050a26295eb02",
+      "bytes": 236
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/consumers/.artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/reader-tidy.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/consumers/.artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/signer-test.log.events",
+      "sha256": "df46dcf82ca9b7957749cbd498c93bd671b7d39cfb94b40920149280dc15dc5e",
+      "bytes": 236
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/consumers/.artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/signer-tidy.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/consumers/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/fuzz/.artifacts/fuzz-report.json",
+      "sha256": "c2271c2d4653689e0457a91855f71f0dce85e30303bdd9a3d7c1b04edf93fcb6",
+      "bytes": 6753
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/fuzz/.artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzDecode.log.events",
+      "sha256": "c4043a359a28d4b8afa5f4a34e4c7bd070f1170d99c2408383e69817c9eb8a25",
+      "bytes": 861
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/fuzz/.artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzDocument.log.events",
+      "sha256": "3cf7ea4615ad29be883e5e31c90554e889402b505bae150aab003c68ebbf407a",
+      "bytes": 808
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/fuzz/.artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzEncoding.log.events",
+      "sha256": "01381b3a2a40dc905117a46a4ee8bee9f9e62bc5e7cea2c0689849694c7db237",
+      "bytes": 835
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/fuzz/.artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzPKICSR.log.events",
+      "sha256": "01e3756940813ff0f0d5c4e457e24a0a016c1260c92eb8b7cbe7c30878604ffe",
+      "bytes": 850
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/fuzz/.artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzPath.log.events",
+      "sha256": "a3c3d10cb65661aa3dada0d44c561588d498b608ee799b937705fc492ad97c68",
+      "bytes": 842
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/fuzz/.artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/go-version.log.events",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/fuzz/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-linux/.artifacts/minimum-consumer-linux-report.json",
+      "sha256": "b36441f5ab27308bc460b03bf0cb028b608ab6382efaaa4bafe8083bb95e3e9c",
+      "bytes": 10144
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-linux/.artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/go-version.log.events",
+      "sha256": "facbf2c278fea28b0b30dfdb6e466964bdda5bddde8cd336cbb5548076879de3",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-linux/.artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/reader-test.log.events",
+      "sha256": "a38fab9889ab30d17b7ec841ae194c88736906fde8b6e03a488050a26295eb02",
+      "bytes": 236
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-linux/.artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/reader-tidy.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-linux/.artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/signer-test.log.events",
+      "sha256": "df46dcf82ca9b7957749cbd498c93bd671b7d39cfb94b40920149280dc15dc5e",
+      "bytes": 236
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-linux/.artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/signer-tidy.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-linux/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-windows/.artifacts/minimum-consumer-windows-report.json",
+      "sha256": "c63f6d19c208c6fe6ac61454eca740e01d62b6adaa8844216ddd154f3284c2c5",
+      "bytes": 10345
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-windows/.artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/go-version.log.events",
+      "sha256": "3e5b13ffa970aaa7e080a7c614394e11dff1303798dfb5b5e8d023fa50883b10",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-windows/.artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/reader-test.log.events",
+      "sha256": "a38fab9889ab30d17b7ec841ae194c88736906fde8b6e03a488050a26295eb02",
+      "bytes": 236
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-windows/.artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/reader-tidy.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-windows/.artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/signer-test.log.events",
+      "sha256": "df46dcf82ca9b7957749cbd498c93bd671b7d39cfb94b40920149280dc15dc5e",
+      "bytes": 236
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-windows/.artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/signer-tidy.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-consumer-windows/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/.artifacts/minimum-normal-linux-report.json",
+      "sha256": "99b744dfe37b11c546ed572f9eb1c7e0087053c79415707a75ed703b4b096c5e",
+      "bytes": 7747
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/.artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/build.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/.artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/coverage.out",
+      "sha256": "03612088b25fdd019c9baf2c575c914d7ef52f521c067cefc7311e4385ac9ff2",
+      "bytes": 198397
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/.artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/go-version.log.events",
+      "sha256": "facbf2c278fea28b0b30dfdb6e466964bdda5bddde8cd336cbb5548076879de3",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/.artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/module-graph.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/.artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/modules.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/.artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/race-coverage.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/.artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/unit.log.events",
+      "sha256": "597f9e19f7eee3e5ba6ab56b8e81f614c5e854f72ccb98a324b40a30c7ec77a5",
+      "bytes": 101184
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/.artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/vet.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-linux/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/.artifacts/minimum-normal-windows-report.json",
+      "sha256": "0d12971d17fba9bb8abcb1f3640d87203d7e0a591efe161a78a39d4853043dc9",
+      "bytes": 8202
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/.artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/build.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/.artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/coverage.out",
+      "sha256": "19e09ae0a8b7d7a681ad1d30ba172340aff1fd361dfed0baa9d03bbb19459750",
+      "bytes": 198397
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/.artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/go-version.log.events",
+      "sha256": "3e5b13ffa970aaa7e080a7c614394e11dff1303798dfb5b5e8d023fa50883b10",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/.artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/module-graph.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/.artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/modules.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/.artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/race-coverage.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/.artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/unit.log.events",
+      "sha256": "725ceb9368501b5af3810613e6958ea2da3b79a485f5049ccfece2e21b6fbd19",
+      "bytes": 100947
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/.artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/vet.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/minimum-normal-windows/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/.artifacts/normal-report.json",
+      "sha256": "45818d18968660c9d59c051ef1e8ca2c00421ab73bec15b79446309a86d620a3",
+      "bytes": 7520
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/.artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/build.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/.artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/coverage.out",
+      "sha256": "d2adde939c177e71a320282cbf6e899f76fe3bbe6ce9d8f54996c60e843ff769",
+      "bytes": 198398
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/.artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/go-version.log.events",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/.artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/module-graph.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/.artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/modules.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/.artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/race-coverage.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/.artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/unit.log.events",
+      "sha256": "bf31877dc4a71a1c6b411a0e2637236922360f7ea30b0f93b246c72ad1b7954c",
+      "bytes": 101184
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/.artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/vet.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-linux/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/.artifacts/normal-report.json",
+      "sha256": "c408a218d33d4aa0e2ff90d175907f63b936e370e05222f77feecfadc0c6ad92",
+      "bytes": 7945
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/.artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/build.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/.artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/coverage.out",
+      "sha256": "032f4853583ca3b9d73a6d27006769bd4d57bc5dc70cc552723f50dac8af3afc",
+      "bytes": 198395
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/.artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/go-version.log.events",
+      "sha256": "ae54fa0d959ceafc024a6cf884ed104c8e6513e67dc55b69471b169ffed7105b",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/.artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/module-graph.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/.artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/modules.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/.artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/race-coverage.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/.artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/unit.log.events",
+      "sha256": "d091d935e5ca696fbeacb464d3886e15b0a531d2d65031b5454a1684ace61f7f",
+      "bytes": 100947
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/.artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/vet.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/normal-windows/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/real-integration/.artifacts/integration-report.json",
+      "sha256": "7394d11db53676e3d5851a47474e76845b8703a4127634f3efd2b6206f69f1d0",
+      "bytes": 2946
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/real-integration/.artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/go-version.log.events",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/real-integration/.artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/integration.log.events",
+      "sha256": "1947552f59c83acf882e5e36d37b0a464e63dedc72ea30b52c7f8e9b50a8b8a0",
+      "bytes": 1794
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/real-integration/deploy/test/server-lock.json",
+      "sha256": "3fb6a824ac8577a8bdf95e68a33d44f5da214aed3032afba19d91ed668104cec",
+      "bytes": 497
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/real-integration/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/security/.artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/gitleaks-redacted.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/security/.artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/gitleaks.log.events",
+      "sha256": "7c44d94f078b14472e6b6e1329359e8ab3f6e9ab6cf4063f02ab9f9e2da69017",
+      "bytes": 41
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/security/.artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/go-version.log.events",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/security/.artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/govulncheck.log.events",
+      "sha256": "191e38e6900daf7360c124fd24531ee9078cad51d084f951bfaa7d838341abf5",
+      "bytes": 94
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/security/.artifacts/security-report.json",
+      "sha256": "2569d8926a4d75d9513b75f7b9b959a7aff85c5a1f4df506a5cded30a57e5d3f",
+      "bytes": 4394
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/security/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/tooling-linux/.artifacts/tooling-release-linux-20261001-final04.log.events",
+      "sha256": "90efa889286dd8026ae5de2b2545fc44d30e0a76e623187f05ea23910b579afd",
+      "bytes": 28
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/tooling-linux/.artifacts/tooling-report.json",
+      "sha256": "e85dc6bd7590a2764efee5c0bf945e3efac333236d7fc9b398f833d9c85aecc7",
+      "bytes": 1711
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/tooling-linux/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/tooling-windows/.artifacts/release-validation-20261001/tooling-windows-final-04.log.events",
+      "sha256": "a8bcf794c6346a2c68fccee3f0ff9318214d7c5f75b00e7cf1273f07dd3edc0d",
+      "bytes": 28
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/tooling-windows/.artifacts/tooling-report.json",
+      "sha256": "56ac5c7fb3ac29ab9bb8e62416f7cc1019e5554edab57f089ed0b91e7e16c984",
+      "bytes": 1821
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-jobs/tooling-windows/go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54",
+      "bytes": 949
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ci-summary-final.json",
+      "sha256": "557fb13db283ef45d5f92544b56f7ed3e002bffe515a636354fcb112ea32b117",
+      "bytes": 2254
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/cleanup-final-01.json",
+      "sha256": "88c560e5e2957a4b7d3bdea42fa881447aceb87ece9d47d64159682704f092a1",
+      "bytes": 1556
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/cleanup-final-01.log",
+      "sha256": "567f4e2db2362c2f7c3a4b2d7a02df8d5a495fa4f18139978006c815564d99ef",
+      "bytes": 153
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/cleanup-final-02.json",
+      "sha256": "841b75e97360b8e5527389faffe322d19036bf13810bdd3c3b3f0c01c0dcf20e",
+      "bytes": 1556
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/cleanup-final-02.log",
+      "sha256": "59d44142d2497479fb8054100f96cc56a342955eb69c2cd2413413e7e1baaa70",
+      "bytes": 172
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/cleanup-linux-residual.sh",
+      "sha256": "6d31f12a2356b6108d0f889c3ca0f0dc188f30f2bcf32c3d461c3b5d3b64406e",
+      "bytes": 2207
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/cleanup-linux-runtime.sh",
+      "sha256": "752981706dbc1526214eeeff86105687bf116a48bf32f67185ede77806869fef",
+      "bytes": 2510
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/cleanup-proxy-final-01.json",
+      "sha256": "b118eb817c6a0dc0f6a90d6997cc402f8c3076d4522f5789438c1bc64eee6180",
+      "bytes": 1472
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/cleanup-proxy-final-01.log",
+      "sha256": "cdee6f6751744ab66f21764f7461bf3717e5d44e23e237bfca37c947d37c4f73",
+      "bytes": 82
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/coverage-final.json",
+      "sha256": "e8c0ee55055b338c9be581fb7dd8ab72713dd6d1bd6ae6f5f3084c79cf8e86f1",
+      "bytes": 3517
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/diagnose-integration-final02.log",
+      "sha256": "59867764d96972b5cc3952767227b5d10abff9d3c94b18f20c5f72d23588dbd0",
+      "bytes": 950
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/diagnose-integration-first-source.go",
+      "sha256": "8de2d6e99dd75f3e47f906cfe5bd28bd1d7497c3feb70405bb380fa95be50058",
+      "bytes": 4690
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/diagnose-integration-ttl-01.log",
+      "sha256": "619e55e2b319cfaae94e37fae0dad4bfa171879aa121550c77c349aa9de2a4f5",
+      "bytes": 8678
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/diagnose-integration.go",
+      "sha256": "d5a78126566d7e3e73c1273ef499dc61067bfa945de0060260750af871976468",
+      "bytes": 5052
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ed25519-wire-green-01.json",
+      "sha256": "cdf80134401e8501c3398e5ecb3c8d3a0d17a98d7355332711a08c2031ec0bf8",
+      "bytes": 1503
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ed25519-wire-green-01.log",
+      "sha256": "399fa5ae5091de50726ababb007bc9d4c4c4af69bfd56cc8b36881913b79fed4",
+      "bytes": 49
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ed25519-wire-red-01.json",
+      "sha256": "4fcafe2949a21de2b728fa8ca782b30fefeae064239f568d3ae4465d6d12e2e1",
+      "bytes": 1501
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/ed25519-wire-red-01.log",
+      "sha256": "053fb3207b90c8b7d1b56ceeda568d249e2bbd522050a25ed50b3f0253abf930",
+      "bytes": 182
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/final-worktree-audit.json",
+      "sha256": "d0203680786ff001d271e09b6fac45cf1c5e8556fdf8a022972b731fe508bf83",
+      "bytes": 3601
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-green01-findings.json",
+      "sha256": "6315172fa685bc2bb73c5ac17db81eb5773aae508030a10621bda31359b058ba",
+      "bytes": 2463
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-green01.json",
+      "sha256": "655104c52d72bd809476e67ec973509d350d177a92928409f03d92fc40f48441",
+      "bytes": 1836
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-green01.log",
+      "sha256": "8b639a9fd380b1b865b439231028543c3de290b9c2623c0731b29b0e8659fe41",
+      "bytes": 94
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-nested-green-01-findings.json",
+      "sha256": "139f333fbdf16a756b4ef9cda5522b81e7aa4cc3203c3091b37333b1d5d4a967",
+      "bytes": 2678
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-nested-green-01.json",
+      "sha256": "5d8dbdaed76f6faf1cfa1585835f745632508c453623668876dad7eb0fe11627",
+      "bytes": 1967
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-nested-green-01.log",
+      "sha256": "175e6b84ee62930b9ec997d1a75b1401a1f9da3a25c72cfa83d9cbed8593d697",
+      "bytes": 94
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-nested-red-01-findings.json",
+      "sha256": "0bec730fcf2ea95e848e055942dafaca2000d383d8337c206e96da25215bb1ae",
+      "bytes": 2135
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-nested-red-01.json",
+      "sha256": "073afe6ec140b8738f34603aa42969795aac1cc7f7e684369adc4ca973d3926e",
+      "bytes": 1881
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-nested-red-01.log",
+      "sha256": "cee3dfa2b1a77238191ab4baac63b9911dc2f93d0749d0cec40da331aa87913e",
+      "bytes": 94
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-red.json",
+      "sha256": "66fc609b4cbe3a9293a4af12a357b1ac110684b21648cbfd4e6ed863a567d372",
+      "bytes": 1521
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-red.log",
+      "sha256": "c1e8e567d22497705de4b657310a256c078f21bde9988a5e7366bfd719875d92",
+      "bytes": 146
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-red02-findings.json",
+      "sha256": "ebea5255d0919c8d6cb96f049feb5146fa547692f60928bc27c37bc90acf1445",
+      "bytes": 11897
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-red02.json",
+      "sha256": "2445f88e8b862c1f14c6e46b4abd7c68668206effe259dbd5f47ba75bd657263",
+      "bytes": 3159
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/gitleaks-policy-red02.log",
+      "sha256": "d3ec75d6684a2b66f1c64987e4f09c531b9d908f818fc925b8bebc649b0620e1",
+      "bytes": 95
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/hmac-policy-green-01.json",
+      "sha256": "e5d80220454c060f53e9e8e8d3faff3713069d11698611402724e8393995698e",
+      "bytes": 1536
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/hmac-policy-green-01.log",
+      "sha256": "ea8ae6bdb465ae7495810ad1b787d45002c6cca6ee87993285967d675d1a7ade",
+      "bytes": 66
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/hmac-policy-red-01.json",
+      "sha256": "2f4e44c314395b7b07518b46c95f745ecaeaa9227bd0844576727e5ea29dff83",
+      "bytes": 1534
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/hmac-policy-red-01.log",
+      "sha256": "91e68c99a3a797d6888a313ad3f2f1cb16c304d3ff0c3bdab2d2c3b924276804",
+      "bytes": 520
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/linux-final-receipt.json",
+      "sha256": "4c8ca0006a7ffb6624c8af6cdc7af9676d47c46836b0fbf0d198b39864044b05",
+      "bytes": 25973
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/packaging-green01.json",
+      "sha256": "e4cce4d39d55b7744ee01aa7aeff5d1f73d91cc556381f31a1012544762d4cd5",
+      "bytes": 969
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/packaging-green01.log",
+      "sha256": "41128ff1f6289009dc02fc784a171230d046bf04052dc027923b6b5a537d012d",
+      "bytes": 1624
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/packaging-red01.json",
+      "sha256": "c6b390f6a22d474525e8709869bc2d195f3734c29f1d0e48c524ae481063da34",
+      "bytes": 966
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/packaging-red01.log",
+      "sha256": "5951c997196d4d7efa624e8c85e0a7e1378a7b170f2aa573a406f4a2c4e0ef3d",
+      "bytes": 1624
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/packaging-red02.json",
+      "sha256": "7b964fa6c87b500a886deb0cb3184935eb7a8d945540ccf061e87ab9b03efec1",
+      "bytes": 967
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/packaging-red02.log",
+      "sha256": "bdd0b57263fdf9cc9dd715632f4dfee33b15c7ae41760d3750924500853205cd",
+      "bytes": 2466
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/release-final-01.json",
+      "sha256": "f54c7da83c52a97f0848672b33db7771ca30e337bb91b402a147a94c5b319b5e",
+      "bytes": 1406
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/release-final-01.log",
+      "sha256": "7f8629da6cb89ae3d3562c80d9bb53ae009d80680a511e8f50bd3c4235148157",
+      "bytes": 92
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/run-packaging-regression.py",
+      "sha256": "9e62c3a685a33eb4702ed0988721667eb6ec56e75d218da914dae228bf7096e8",
+      "bytes": 907
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/stop-own-proxy.ps1",
+      "sha256": "a1a8d1311d67b77393c56ef40cd089bfcd148cfba9dfce1aa8194a291a6bfecf",
+      "bytes": 1034
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/telemetry-preparation-green-01.json",
+      "sha256": "2a3ba56c51f9e76f986fc09e1f212d0b8b435cd2f960dcf22b1cc107352d59cc",
+      "bytes": 1448
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/telemetry-preparation-green-01.log",
+      "sha256": "67e6135a2fbebfbd11bb72aba3b7d45eb38ca0fcb4ccb5d87a2ba57e1f0c9d8c",
+      "bytes": 3506
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/telemetry-preparation-red-01.json",
+      "sha256": "c9e5a6242f1b81c34a42ef4f1d80fa8ccdd2c035901ea6ed4df2b26f49bccd67",
+      "bytes": 1446
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/telemetry-preparation-red-01.log",
+      "sha256": "8b9e17d623b1ca9bcbdf93ba14f633e63e796466337936de8e60300d0ea0585b",
+      "bytes": 7683
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/telemetry-residual-01.json",
+      "sha256": "192a0d2622a87c58d7b2a8275325942b60612ebc063c392facd89adde6607053",
+      "bytes": 1876
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/telemetry-residual-01.log",
+      "sha256": "140dfcb545155de6949f49688734a227a6e9e0ea9717271817f9606a8ec80c43",
+      "bytes": 702
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/test-gitleaks-policy.py",
+      "sha256": "451f5ce200a4e2929e647b8b6c07734a2ca04710c29ba4e90c014496bc336e74",
+      "bytes": 4008
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/tooling-windows-final-04.json",
+      "sha256": "5ecd12ea4e7e2bee4bd6cad0871344e725b4b1f737adfd31221785d91d0a66a1",
+      "bytes": 1500
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/tooling-windows-final-04.log",
+      "sha256": "8f5fe1873c4e5819a1f5241ae3c0648616a08a43ca601dcce2b5b7ac6fcfce5b",
+      "bytes": 24684
+    },
+    {
+      "path": ".artifacts/release-validation-20261001/validate-ci-fixture.sh",
+      "sha256": "00726e8c18607d6c76538cea77eaf47f9ac452e965a897ed8685a0de649a548f",
+      "bytes": 1743
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T135046.346630Z-825626759a6e4f3aa489da076f3b6957/security/gitleaks.log",
+      "sha256": "9cbb3a0cad323b3e770313a5ebcba2e0bf3f67cda668dc24624fea15f8a03bbe",
+      "bytes": 409
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T135046.346630Z-825626759a6e4f3aa489da076f3b6957/security/go-version.log",
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T135046.346630Z-825626759a6e4f3aa489da076f3b6957/security/govulncheck.log",
+      "sha256": "67346e926d9b33db52dea0fbb9749da53fdb621e849f7169bb46dd0e3bd1f45b",
+      "bytes": 403
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T135046.346630Z-825626759a6e4f3aa489da076f3b6957/security/report-003.json",
+      "sha256": "7587e2d7b6bbca49e86a9ab8d17944fcd611897c351ace8752ee3d55ad03bfc8",
+      "bytes": 3686
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T135523.594229Z-2f9b0c3adf9f4387b66dc261cf4cdc4c/security/gitleaks-redacted.json",
+      "sha256": "53d157a8c54b9327b32eb12a4a0ff82ee64dcffdd5178d7bebb2b23db61149b6",
+      "bytes": 517444
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T135523.594229Z-2f9b0c3adf9f4387b66dc261cf4cdc4c/security/gitleaks.log",
+      "sha256": "d057421bb36e80f31164f1a511c326bd49a34e78838e421657394a7e37e6f49b",
+      "bytes": 2317
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T135523.594229Z-2f9b0c3adf9f4387b66dc261cf4cdc4c/security/go-version.log",
+      "sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T135523.594229Z-2f9b0c3adf9f4387b66dc261cf4cdc4c/security/govulncheck.log",
+      "sha256": "3c2dc145bbf9de501122eec08251aa40f0db15495b7a56bcdb29e6962574160e",
+      "bytes": 4841
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T135523.594229Z-2f9b0c3adf9f4387b66dc261cf4cdc4c/security/report-003.json",
+      "sha256": "2d794746e1cb4c4fb01c63d7ad72f2c117daa504dee67fa20a256ea46c418b27",
+      "bytes": 3775
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T142843.966980Z-cfd24f7c680249d1a00689c7000a80ea/security/gitleaks.log",
+      "sha256": "5df87da479f2c2bbba42ed3317649fe9a21a2c39dbee21f0ee0370e51b255417",
+      "bytes": 268
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T142843.966980Z-cfd24f7c680249d1a00689c7000a80ea/security/go-version.log",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T142843.966980Z-cfd24f7c680249d1a00689c7000a80ea/security/govulncheck.log",
+      "sha256": "b09eb7d556c6c1e82650191b278704fbb635c6bf1691b49fab4363fc3753fb2e",
+      "bytes": 211
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T142843.966980Z-cfd24f7c680249d1a00689c7000a80ea/security/report-003.json",
+      "sha256": "e5a21b6a4853c2f1d71352d303d06379bddab699de25e84966a8d8444baa224b",
+      "bytes": 3348
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T150613.577024Z-dd2ae29274734b39a08ba8f0eb5c12a8/integration/go-version.log",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T150613.577024Z-dd2ae29274734b39a08ba8f0eb5c12a8/integration/integration.log",
+      "sha256": "8f3303fc6168ac7eb4d3126037ab3bc8a0829f42da64a3e905daad3deff33939",
+      "bytes": 6814
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T150613.577024Z-dd2ae29274734b39a08ba8f0eb5c12a8/integration/report-002.json",
+      "sha256": "28607ab7aeb8ffa4ab173c6ba2a9aabced4708b98fc2e20dabad02144620203c",
+      "bytes": 2482
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T154558.563301Z-8474947846304ac6a817852885ead50b/integration/go-version.log",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T154558.563301Z-8474947846304ac6a817852885ead50b/integration/integration.log",
+      "sha256": "86d39fe2cbc36f47d9572ff8c5585f55aecfed37c894c5b62b4fdbe1fd41b245",
+      "bytes": 6331
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T154558.563301Z-8474947846304ac6a817852885ead50b/integration/report-002.json",
+      "sha256": "2a946a31fd384c3fae87a4bf1b0b854e82a20924a4859c90c217cc05a4e19e2a",
+      "bytes": 2482
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/coverage.out",
+      "sha256": "19e09ae0a8b7d7a681ad1d30ba172340aff1fd361dfed0baa9d03bbb19459750",
+      "bytes": 198397
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/go-version.log",
+      "sha256": "3e5b13ffa970aaa7e080a7c614394e11dff1303798dfb5b5e8d023fa50883b10",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/module-graph.log",
+      "sha256": "e2c9fc8c4ef5858544167913ef48e46b43ed61fc3ac4c3b544c72d83bb41adf6",
+      "bytes": 22345
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/modules.log",
+      "sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+      "bytes": 21
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/race-coverage.log",
+      "sha256": "4f21cd555c73022420235cc4cf70014021e875fcaae65c70d76c1fab5f260b77",
+      "bytes": 2329
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/report-007.json",
+      "sha256": "d1adc537c0c2be24d905c6ccdffbc65a67ac96d2bd0ed13e59dad062435c45bf",
+      "bytes": 6344
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/unit.log",
+      "sha256": "3e7bcb7e1facf203864070684666217a7671cf1b0979c996d60d812607c90600",
+      "bytes": 365274
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163611.887943Z-204b0d01b488464aaa55a876c80d9a8c/minimum-normal-windows/vet.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/coverage.out",
+      "sha256": "d2adde939c177e71a320282cbf6e899f76fe3bbe6ce9d8f54996c60e843ff769",
+      "bytes": 198398
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/go-version.log",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/module-graph.log",
+      "sha256": "a1a5456a803e3efc6b9980f731de43527782fbb5274ffe675e8ce54f3bcf7b8a",
+      "bytes": 21258
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/modules.log",
+      "sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+      "bytes": 21
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/race-coverage.log",
+      "sha256": "9e0faadb4b96d7b9305e9de39245d11add7dca6a80c6f05287c31f9b74bb3341",
+      "bytes": 2329
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+      "sha256": "55c14ab7209cd44a7d5bc25d34da763ccb2a947677d8a099e4d34ff4d227be9c",
+      "bytes": 5758
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/unit.log",
+      "sha256": "8da710c982436247faf4b6af1c0d5df14d59e46cccbcb2121ead112eac720cbb",
+      "bytes": 351820
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/vet.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/go-version.log",
+      "sha256": "3e5b13ffa970aaa7e080a7c614394e11dff1303798dfb5b5e8d023fa50883b10",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/reader-test.log",
+      "sha256": "62fda43fdf73ec116c574edf78942dcc9180ba152f17cdebe4ebeb3ac685b4ce",
+      "bytes": 1106
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/reader-tidy.log",
+      "sha256": "581c24124b6204f25642c04a713c94db9b8d96ce19479edf7a4b391895e9a7ab",
+      "bytes": 1469
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/report-007.json",
+      "sha256": "06d4746b987d5b9deec2c32147efc2fa920cd8fb00a50f55005b0090b1b9b21b",
+      "bytes": 8228
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/signer-test.log",
+      "sha256": "cd30e0742fec844989232ef3dabbe3f228a1d7ecf0ebdda8a90aaa31c463aedd",
+      "bytes": 1106
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163746.278228Z-9032a2cadab845f3a24ea6df188d2210/minimum-consumer-windows/signer-tidy.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/gitleaks-redacted.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/gitleaks.log",
+      "sha256": "86e4aa3c1dd9b7a3f8d34d296f5764e2e80d8a2fd642755e5947287bc622c1f6",
+      "bytes": 131
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/go-version.log",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/govulncheck.log",
+      "sha256": "93bf19720511e7de40429a85f992657ac1cb93cf6d2580f497a2236770e22542",
+      "bytes": 134
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json",
+      "sha256": "32f6daffd277c25961f0bac5a41b6e55b8efc2fc3b378fa2d42ecb7e27928393",
+      "bytes": 3433
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/coverage.out",
+      "sha256": "03612088b25fdd019c9baf2c575c914d7ef52f521c067cefc7311e4385ac9ff2",
+      "bytes": 198397
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/go-version.log",
+      "sha256": "facbf2c278fea28b0b30dfdb6e466964bdda5bddde8cd336cbb5548076879de3",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/module-graph.log",
+      "sha256": "a1a5456a803e3efc6b9980f731de43527782fbb5274ffe675e8ce54f3bcf7b8a",
+      "bytes": 21258
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/modules.log",
+      "sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+      "bytes": 21
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/race-coverage.log",
+      "sha256": "23f5d2c051e5e46457e36b742e7a56386d78cb11116d0e278133e62d73e70c4b",
+      "bytes": 2329
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/report-007.json",
+      "sha256": "d57c5833d0ca08290997583d56f030b7b2db2fd69d14b24b2a7328cecf0cd756",
+      "bytes": 5901
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/unit.log",
+      "sha256": "279b4f2b2e336e4ee8f3254fc9f565d8d826621d684f3e681ca0021de22de798",
+      "bytes": 355269
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163841.624267Z-77e2989b86a54f95b52aa689c5ceb170/minimum-normal-linux/vet.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/go-version.log",
+      "sha256": "facbf2c278fea28b0b30dfdb6e466964bdda5bddde8cd336cbb5548076879de3",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/reader-test.log",
+      "sha256": "6a7b3f695cb0690c680e9ae89881239b4de7edc904deab08432a3582d1a0ceba",
+      "bytes": 1065
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/reader-tidy.log",
+      "sha256": "e71bbb8b5bf173e2ceaf9f2ca007d3585d192506620fccc3ce52fee4acd41c8c",
+      "bytes": 1469
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/report-007.json",
+      "sha256": "bdb83e276d1a64ced6acd7a94cc2393f221458fa6b5d7dd390c14b636b9b8cd0",
+      "bytes": 7963
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/signer-test.log",
+      "sha256": "2150ee3cddc06e6dc735517106ba27a3611ecec88492f2a66edc989f13869aae",
+      "bytes": 1063
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T163955.086155Z-873d525018a84805bd587948356404fc/minimum-consumer-linux/signer-tidy.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/coverage.out",
+      "sha256": "032f4853583ca3b9d73a6d27006769bd4d57bc5dc70cc552723f50dac8af3afc",
+      "bytes": 198395
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/go-version.log",
+      "sha256": "ae54fa0d959ceafc024a6cf884ed104c8e6513e67dc55b69471b169ffed7105b",
+      "bytes": 34
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/module-graph.log",
+      "sha256": "e2c9fc8c4ef5858544167913ef48e46b43ed61fc3ac4c3b544c72d83bb41adf6",
+      "bytes": 22345
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/modules.log",
+      "sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+      "bytes": 21
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/race-coverage.log",
+      "sha256": "9469d6d8f0a968a6f3c5418bbc7ef7dae241025db040da70ff5060b72b003e57",
+      "bytes": 2329
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/report-007.json",
+      "sha256": "457edb2921f1331351ae8c69e6322c70a6bf89c4bd20699f3ccee05529c94ddf",
+      "bytes": 6183
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/unit.log",
+      "sha256": "67b4753783df5c31b93077f11a31fafd4ff05a5cec0a31f70191cf2de73268ee",
+      "bytes": 369637
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164212.057304Z-c0d31c129dd34e5a961364f3097e9719/normal/vet.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzDecode.log",
+      "sha256": "57baee5531dee9b3e7dd5a826f7c6d385deca592e65e1c77627c274e2a587a68",
+      "bytes": 1083
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzDocument.log",
+      "sha256": "277dab51e5e59afcaa87e9b1c5d0f3524065d17bb9ea3ed59a710e572d07b487",
+      "bytes": 1019
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzEncoding.log",
+      "sha256": "cd8889dc3c05747f190f9e38b7b217fdb6a599ebc07309bfa3cf857882ec56fe",
+      "bytes": 1061
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzPKICSR.log",
+      "sha256": "25dfefc43fc03d6f0dde794daba823739e58c7f8b246becfed35fa9511688b09",
+      "bytes": 1059
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/FuzzPath.log",
+      "sha256": "447458a66db1cd757767b37be78787887f2ea1284065e96961d35d0129af8710",
+      "bytes": 1063
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/go-version.log",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json",
+      "sha256": "cecf92e6dcf0bbcad8e7a35ecd24939d56d4dd6e5492192bdc3c38fc1482d37e",
+      "bytes": 5346
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/go-version.log",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/reader-test.log",
+      "sha256": "a78cb046354ba62035cca7b7741359a77b4ec5ed73f6b49dd308f451e42befb3",
+      "bytes": 1062
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/reader-tidy.log",
+      "sha256": "10e84ecbdedde9620f59f19283d2afd1c17ba49f16d9171b44c59442b4179d9b",
+      "bytes": 1469
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
+      "sha256": "e390e13023ec8fadacc8fb53ea454ee5d2ef6c8b1b0acbc35a66213e940b48e3",
+      "bytes": 7826
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/signer-test.log",
+      "sha256": "8a98295b4e6970cdecd0568a767fe9aeec07c8010dd3c7453922e54f1cbaac44",
+      "bytes": 1064
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/signer-tidy.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/go-version.log",
+      "sha256": "7e35a947feee25f89c2649aa041942db786be35c3d6c484ab2ba2da849e3dc00",
+      "bytes": 32
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/integration.log",
+      "sha256": "26ac259d57c38dd3e029b39172f68734698fa1edbec8bccc39dd30dbbd16b8aa",
+      "bytes": 6077
+    },
+    {
+      "path": ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+      "sha256": "d29052abf105260daa331998bf7a4013fdedc4217764763e170ed72a7b489d96",
+      "bytes": 2500
+    },
+    {
+      "path": ".artifacts/tooling-release-linux-20261001-final02.json",
+      "sha256": "9e388e61e850704c96624b47a5c1b63c487a9f026539aff2a88f582527445974",
+      "bytes": 1462
+    },
+    {
+      "path": ".artifacts/tooling-release-linux-20261001-final02.log",
+      "sha256": "a77109d4542b5ff20bf76822f56b71e9ab48eaaf8c1bbf4721561e25cdc1ac51",
+      "bytes": 24135
+    },
+    {
+      "path": ".artifacts/tooling-release-linux-20261001-final03.json",
+      "sha256": "0454eb17e195f2bfae36cefae90a5d740950cabf8e73fb4d8bf7e69a9c5b3841",
+      "bytes": 1405
+    },
+    {
+      "path": ".artifacts/tooling-release-linux-20261001-final03.log",
+      "sha256": "6eb12a68d7a0dc2cf96dcc515252389952795ad1ff930957986db8a636208b5b",
+      "bytes": 25386
+    },
+    {
+      "path": ".artifacts/tooling-release-linux-20261001-final04.json",
+      "sha256": "467ed0e5a4f7ed58b0bb9b1e2bbc50b5b1631adea3e6c74b1c8324e3df3a70fb",
+      "bytes": 1404
+    },
+    {
+      "path": ".artifacts/tooling-release-linux-20261001-final04.log",
+      "sha256": "aa3db73c44f81939ad38770adfa852100899967a92ec42ee22c6f8530e68aeda",
+      "bytes": 24493
+    },
+    {
+      "path": "docs/evidence/OB-018/release-validation-2026-10-01/independent-review.md",
+      "sha256": "ee87c86f85aeb10f6ad79ca9dcc325b922274656d4b21a7a9bc3fe980bdc28f1",
+      "bytes": 5403
+    },
+    {
+      "path": "docs/evidence/OB-018/release-validation-2026-10-01/integration-diagnosis.md",
+      "sha256": "e7ab49cbfc63993bbdfbf40951aed6926a14229a36824fbd25f081f1827988eb",
+      "bytes": 6631
+    },
+    {
+      "path": "docs/evidence/OB-018/release-validation-2026-10-01/source-manifest-e60e3d.json",
+      "sha256": "82f3822a6d8d6b6e0b87527da3744f2e9772106c771e1b59a6da296af2b8c8c7",
+      "bytes": 27262
+    },
+    {
+      "path": "docs/evidence/OB-018/release-validation-2026-10-01/source-manifest.json",
+      "sha256": "b51e7b20ae26947f4b4b80c990f632d1a219e2355215f127e92c3d050e81f927",
+      "bytes": 27262
+    },
+    {
+      "path": "docs/evidence/OB-018/release-validation-2026-10-01/static-review-d3183d-01.json",
+      "sha256": "89fc6b7b211ab19be97ad38d9a825582605541b4c7f707ab6bbbb3b02f4c068e",
+      "bytes": 3221
+    },
+    {
+      "path": "docs/evidence/OB-018/release-validation-2026-10-01/static-review-e60e3d.json",
+      "sha256": "2dca2cfeb7e00dd841d26b077b4bd2230a5693f7230f6e9c72c1f6e54aa3fba7",
+      "bytes": 3036
+    },
+    {
+      "path": "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json",
+      "sha256": "b38f01b24f83bc958021547f1be7abc59adf6e56d82f6f7aa15bd914e1690562",
+      "bytes": 3445
+    },
+    {
+      "path": "docs/evidence/OB-018/release-validation-2026-10-01/tool-provenance.json",
+      "sha256": "90c70f0b87a526da251cbdeb9510339e3c37a22f77718df2ba11b35fbb342b54",
+      "bytes": 4768
+    },
+    {
+      "path": "docs/evidence/OB-018/release-validation-2026-10-01/tooling-diagnosis.md",
+      "sha256": "7545d86d20c6ed0d242bea9ababf50daf079e68293c09c1fc0d1c30d290bd98a",
+      "bytes": 2441
+    }
+  ],
+  "not_run": [
+    "hosted GitHub Actions",
+    "current remote manifest",
+    "real business migration",
+    "new performance benchmark",
+    "commit",
+    "push",
+    "publication"
+  ]
+}

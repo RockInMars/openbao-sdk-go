@@ -64,10 +64,16 @@ func (e *Error) Unwrap() error {
 	}
 	return nil
 }
+
+// IsCode matches a stable SDK code through wrapped errors. Do not parse Error text.
 func IsCode(err error, code string) bool {
 	var e *Error
 	return errors.As(err, &e) && e != nil && e.Code == code
 }
+
+// HasUnknownOutcome reports that a write may have taken effect despite its error.
+// Reconcile server state using the operation's business identity before deciding
+// whether to retry; an unknown outcome is not proof that the write failed.
 func HasUnknownOutcome(err error) bool {
 	var e *Error
 	return errors.As(err, &e) && e != nil && e.Effect == EffectUnknown

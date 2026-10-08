@@ -1,0 +1,2 @@
+{"Time":"2026-09-29T12:07:02.2469985+08:00","Action":"output","Package":"github.com/RockInMars/openbao-sdk-go/diagnostics","Output":"?   \tgithub.com/RockInMars/openbao-sdk-go/diagnostics\t[no test files]\n"}
+{"Time":"2026-09-29T12:07:02.2469985+08:00","Action":"skip","Package":"github.com/RockInMars/openbao-sdk-go/diagnostics","Elapsed":0}

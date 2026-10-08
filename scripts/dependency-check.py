@@ -128,12 +128,11 @@ def main():
     parser.add_argument('--prepare', action='store_true', help='allow go mod tidy in the SDK after the exact download is validated')
     args = parser.parse_args()
     # Imported here so local parser tests remain independent of the SDK imports.
-    from tooling import source_hash
+    from tooling import start_report, finish_report
     out = ROOT / '.artifacts'
     out.mkdir(exist_ok=True)
     report = {
-        'evidence_class': 'OFFICIAL_DEPENDENCY_PREFLIGHT', 'status': 'NOT_RUN',
-        'started_at': utc_now(), 'source_before_sha256': source_hash(),
+        **start_report('OFFICIAL_DEPENDENCY_PREFLIGHT'),
         'module': MODULE, 'version': VERSION, 'commands': [], 'minimum_go': None,
         'sdk_compile_verified': False, 'server_verified': False,
         'scope': 'actual download/go.mod/go.sum/module graph/cache verification only',
@@ -146,7 +145,7 @@ def main():
         log = out / ('dependency-' + name + '.log')
         started = utc_now()
         try:
-            result = subprocess.run(command, cwd=ROOT, env=env, text=True,
+            result = subprocess.run(command, cwd=ROOT, env=env, text=True, encoding='utf-8',
                                     stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=180)
             code, stdout, stderr = result.returncode, result.stdout, result.stderr
         except subprocess.TimeoutExpired:
@@ -158,7 +157,7 @@ def main():
         combined = stdout + stderr
         combined = re.sub(r'(https?://)[^/\s\"]*@', r'\1[REDACTED]@', combined)
         combined = re.sub(r'(https?://[^\s\"?]+)\?[^\s\"]+', r'\1?[REDACTED]', combined)
-        log.write_text(combined)
+        log.write_text(combined, encoding='utf-8')
         report['commands'].append({'name': name, 'command': command, 'exit_code': code,
                                    'started_at': started, 'finished_at': utc_now(),
                                    'log': str(log.relative_to(ROOT))})
@@ -184,7 +183,7 @@ def main():
         graph = decode_stream(run('graph', ['go', 'list', '-m', '-json', 'all']))
         validate_graph(graph)
         run('verify', ['go', 'mod', 'verify'])
-        validate_sums((ROOT / 'go.sum').read_text(), record)
+        validate_sums((ROOT / 'go.sum').read_text(encoding='utf-8'), record)
         report['go_sum_sha256'] = sha256(ROOT / 'go.sum')
         report['resolved_modules'] = len(graph)
         report['status'] = 'PASS'
@@ -192,9 +191,8 @@ def main():
         report['status'] = 'BLOCKED'
         report['reason'] = str(e) if isinstance(e, ValueError) else 'required metadata or artifact is unavailable'
     finally:
-        report['source_sha256'] = source_hash()
-        report['finished_at'] = utc_now()
-        (out / 'dependency-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+        finish_report(report)
+        (out / 'dependency-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print('OFFICIAL_DEPENDENCY_PREFLIGHT: ' + report['status'])
     return 0 if report['status'] == 'PASS' else 1
 

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
 	baoapi "github.com/openbao/openbao/api/v2"
 )
 

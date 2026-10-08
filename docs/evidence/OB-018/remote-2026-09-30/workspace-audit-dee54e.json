@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "source_hash_version": 2,
+  "source_sha256": "dee54e4f2f49c24f71e8cd412064eac0286b2ba3f415c1850de05e82ef1d093b",
+  "recorded_at": "2026-09-30T04:40:15+00:00",
+  "workspace": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "branch": "master",
+  "head": "6d8251658e76f88aec5935126f303b2c59497691",
+  "git_status": {
+    "porcelain_rows": 160,
+    "tracked_modified": 101,
+    "untracked_entries": 59,
+    "staged_paths": 0,
+    "existing_user_changes_preserved": [
+      ".codex/config.toml",
+      ".serena/"
+    ],
+    "note": "Counts include extensive pre-existing uncommitted work. No stage, commit, push, branch or worktree operation was performed."
+  },
+  "remote_run": {
+    "report": ".artifacts/runs/remote-full-fixture-20260930-07/report.json",
+    "status": "PASS",
+    "requests": 112,
+    "limit": 120,
+    "request_count_status": "EXACT",
+    "core": "39/39 PASS; 40 requests",
+    "transit": "22/22 PASS; 27 requests",
+    "cleanup": "PASS; nine run-owned resources removed",
+    "source_before_after_match": true,
+    "matching_owned_processes_after_run": 0
+  },
+  "secret_scan": {
+    "scope": "257 JSON/log files in fixture07 and both child run directories",
+    "injected_approle_credential_matches": 0,
+    "raw_secret_field_matches": 0,
+    "method": "memory-only comparison against controlled User environment values; values never printed"
+  },
+  "formal_gate": {
+    "command": "rtk proxy python -B scripts/verify-release.py",
+    "exit_code": 1,
+    "refusals": 25,
+    "receipt": ".artifacts/runs/remote-20260930-current/verify-release-release-20260930-03.json",
+    "note": "No current identity mismatch; formal independent integration and scanner inputs remain blocked."
+  },
+  "unverified": [
+    "Linux formal job",
+    "Go 1.25.0 minimum compatibility",
+    "remote CI/distribution",
+    "formal self-owned OpenBao fixture with verified binary/image digest",
+    "pinned scanner tools and database"
+  ]
+}

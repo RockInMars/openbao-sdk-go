@@ -1,0 +1,59 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "771ac8fe1964aaebc7dd258d1060a34bbb8781e823ea86b182f8a465d9f8be0c",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "771ac8fe1964aaebc7dd258d1060a34bbb8781e823ea86b182f8a465d9f8be0c"
+  },
+  "evidence_class": "STATIC_REVIEW",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T13:57:10.364395+00:00",
+  "run_id": "structure-static-review-20260929",
+  "reviewed_at": "2026-09-29T13:57:10.364436+00:00",
+  "reviewer": "primary agent; current document consistency review, not runtime or independent review",
+  "rationale": "Re-reviewed current runner interfaces, one-way dependency boundaries, immutable receipts and explicit Go probing against testing/release documentation. Confirmed module, official dependency and minimum Go declaration remain byte-identical to start snapshot; integration/scanner/platform limitations remain explicit. This is a new static review, not reuse of runtime evidence.",
+  "documents": [
+    {
+      "path": "go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "afa6d84a2c28186898e805739b1e187424210ba1f492ad35f3ed5fb8ee16396b"
+    },
+    {
+      "path": "deploy/test/server-lock.json",
+      "sha256": "0dbab82ba3ff06e80a8ec6be03340aece6dde7589cecb541d4e7b820e8bd789a"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "30efc66e9504a778efe800b6978f464e51682b52d0e47921ebf1ead20fce7cf6"
+    },
+    {
+      "path": "docs/testing.md",
+      "sha256": "400d0dbfcee4b0a2fa44f185877710f3efbd3db1fd4590315eae8b2283fd90d4"
+    },
+    {
+      "path": "docs/release.md",
+      "sha256": "dba5d4336c11c8d395afc23fd1f7edca9fc4038131c2e03d5342f11e324cb675"
+    },
+    {
+      "path": "README.md",
+      "sha256": "41fcc1755f965616bab8f8123ac2882a4439bbde1553b9cafcd4f23c2bf6baef"
+    },
+    {
+      "path": "docs/observability.md",
+      "sha256": "492941d96d13b84dbbd6523130a1f9487c0b81836d80add29de0db8fca77017e"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "45b17e49a4bf8ca4e9791ee5b12feb1dbf095bfb15a3478a23834c39df1ba5ed"
+    }
+  ],
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "771ac8fe1964aaebc7dd258d1060a34bbb8781e823ea86b182f8a465d9f8be0c"
+  },
+  "finished_at": "2026-09-29T13:57:10.594480+00:00"
+}

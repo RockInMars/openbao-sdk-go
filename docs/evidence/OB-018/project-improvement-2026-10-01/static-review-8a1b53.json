@@ -1,0 +1,69 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f"
+  },
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f"
+  },
+  "evidence_class": "STATIC_REVIEW",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "run_id": "project-improvement-static-8a1b53-01",
+  "reviewed_at": "2026-09-30T19:20:56.186231+00:00",
+  "reviewer": "primary agent document review; independent scope and conclusions are recorded in independent-review.md",
+  "rationale": "Reviewed current module/checksum pins and unverified server lock; ownership, minimum Go, remote manifest, testing and release guidance remain consistent with their limited evidence. No current-source remote PASS, actual minimum Go/Linux proof, formal integration or scanner PASS is claimed. This static result binds document bytes only and does not replace runtime checks.",
+  "documents": [
+    {
+      "path": "go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "afa6d84a2c28186898e805739b1e187424210ba1f492ad35f3ed5fb8ee16396b"
+    },
+    {
+      "path": "deploy/test/server-lock.json",
+      "sha256": "0dbab82ba3ff06e80a8ec6be03340aece6dde7589cecb541d4e7b820e8bd789a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "06ff0e5bbae6fd412a15f2d2cb268887ad9f2377153801f34ece8f10a0c89f63"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "d5cb85071fe1909fdd8f91b7132cd9b95abaa59803ad0a2f3cc34a623770fa4c"
+    },
+    {
+      "path": "docs/testing.md",
+      "sha256": "894607db47a0df57cf1a1eb071a7968d994a0ab42d2dea223c2df3c51f2213fc"
+    },
+    {
+      "path": "docs/release.md",
+      "sha256": "f4fa666a2facb11bec0c4b62685c777e44f9a2c73a9e154d616539c10ba74811"
+    },
+    {
+      "path": "docs/authentication.md",
+      "sha256": "71062e662c0e7619d9da54a461a9079de7caaa21aff3959551ee7b1a947f4ca0"
+    },
+    {
+      "path": "docs/remote-testing.md",
+      "sha256": "33df8c77ccc8749e23ac4a356a30349b8ebe8a47da60216b2fa1c7e29ad19342"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "7117d9456fec5e7807ca5d7f46486c07bb5d5053d77cc83f2990c94a15ae5d07"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "7b47513341dd206d06c5608a1437cd1825d802f64593e0fad08f6322b2645dc1"
+    },
+    {
+      "path": "docs/evidence/OB-018/project-improvement-2026-10-01/independent-review.md",
+      "sha256": "c1c2d39580aa84ab605c8ab35671bc5457f1dffa00b88264942b3cf0e543618c"
+    }
+  ]
+}

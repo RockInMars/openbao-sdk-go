@@ -2,7 +2,7 @@
 package transit
 
 import (
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 )
 
 type Profile string

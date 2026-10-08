@@ -12,10 +12,10 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/internal/pkiutil"
-	"git.example.com/infra/openbao-sdk-go/pki"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/internal/pkiutil"
+	"github.com/RockInMars/openbao-sdk-go/pki"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
 )
 
 // PKIClient performs certificate operations; it never persists credentials.
@@ -24,6 +24,8 @@ type PKIClient struct {
 	mount  string
 }
 
+// PKI binds an existing PKI mount; roles, issuers, and server policy must already
+// be provisioned by an administrator. Binding performs no network I/O.
 func (c *Client) PKI(mount string) (*PKIClient, error) {
 	if c == nil || engine.ValidatePath(mount) != nil {
 		return nil, invalid("PKI_MOUNT")
@@ -41,6 +43,10 @@ func certificateText(s string, empty bool) bool {
 	}
 	return true
 }
+
+// Issue requests a certificate and server-generated private key from req.Role.
+// The caller must Zero the returned PrivateKey after use. An unknown outcome may
+// still have issued a certificate; do not blindly repeat issuance.
 func (p *PKIClient) Issue(ctx context.Context, req pki.IssueRequest) (*pki.IssuedCertificate, error) {
 	op := engine.PKIIssue
 	if engine.ValidateSegment(req.Role) != nil || req.TTL <= 0 || !certificateText(req.CommonName, true) {
@@ -121,6 +127,10 @@ func (p *PKIClient) Issue(ctx context.Context, req pki.IssueRequest) (*pki.Issue
 	}
 	return result, nil
 }
+
+// SignCSR signs a caller-created CSR using the configured server role. The
+// caller keeps its private key and ownership of req.CSRPEM. Server policy decides
+// which names and TTL are permitted; uncertain issuance requires reconciliation.
 func (p *PKIClient) SignCSR(ctx context.Context, req pki.SignCSRRequest) (*pki.SignedCertificate, error) {
 	op := engine.PKISignCSR
 	if engine.ValidateSegment(req.Role) != nil || req.TTL <= 0 {

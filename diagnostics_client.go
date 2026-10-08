@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/diagnostics"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/diagnostics"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
 )
 
 // ClusterHealth reports the cluster, without a token or namespace. It can be

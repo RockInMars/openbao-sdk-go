@@ -3,13 +3,15 @@ package bao
 import (
 	"context"
 	"encoding/json"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/internal/pkiutil"
-	"git.example.com/infra/openbao-sdk-go/pki"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/internal/pkiutil"
+	"github.com/RockInMars/openbao-sdk-go/pki"
 	"strings"
 	"time"
 )
 
+// ReadCertificate reads a stored certificate by serial. RevokedAt is populated
+// only when returned by the server; its absence is not proof of non-revocation.
 func (p *PKIClient) ReadCertificate(ctx context.Context, serial string) (*pki.CertificateRecord, error) {
 	op := engine.PKIRead
 	canonical, e := pkiutil.CanonicalSerial(serial)
@@ -49,6 +51,9 @@ func (p *PKIClient) ReadCertificate(ctx context.Context, serial string) (*pki.Ce
 	}
 	return result, nil
 }
+
+// ReadIssuerChain retrieves the server's chain. Returned roots are not implicitly
+// trusted; verification must use trust anchors selected by the caller.
 func (p *PKIClient) ReadIssuerChain(ctx context.Context) (*pki.ChainResult, error) {
 	op := engine.PKIChain
 	var result *pki.ChainResult
@@ -65,6 +70,9 @@ func (p *PKIClient) ReadIssuerChain(ctx context.Context) (*pki.ChainResult, erro
 	}
 	return result, nil
 }
+
+// Revoke requests revocation by serial and requires revoke permission. A lost
+// response can leave the result unknown; reconciliation belongs to the caller.
 func (p *PKIClient) Revoke(ctx context.Context, serial string) (*pki.RevokeResult, error) {
 	op := engine.PKIRevoke
 	canonical, e := pkiutil.CanonicalSerial(serial)

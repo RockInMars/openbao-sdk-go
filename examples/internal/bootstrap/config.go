@@ -4,8 +4,8 @@ package bootstrap
 import (
 	"context"
 	"errors"
-	bao "git.example.com/infra/openbao-sdk-go"
-	"git.example.com/infra/openbao-sdk-go/auth"
+	bao "github.com/RockInMars/openbao-sdk-go"
+	"github.com/RockInMars/openbao-sdk-go/auth"
 	"os"
 	"os/signal"
 	"syscall"
@@ -35,7 +35,7 @@ func ConfigFrom(get func(string) string) (bao.Config, error) {
 
 // Run keeps the service context alive through all API calls; only Close receives
 // a fresh bounded shutdown context. Callbacks never receive raw authentication.
-func Run(action func(context.Context, *bao.Client) error) (err error) {
+func Run(action func(context.Context, *bao.Client) error, opts ...bao.Option) (err error) {
 	if action == nil {
 		return ErrConfiguration
 	}
@@ -43,7 +43,7 @@ func Run(action func(context.Context, *bao.Client) error) (err error) {
 	if e != nil {
 		return e
 	}
-	c, e := bao.New(cfg)
+	c, e := bao.New(cfg, opts...)
 	if e != nil {
 		return e
 	}

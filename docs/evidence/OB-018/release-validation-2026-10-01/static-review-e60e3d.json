@@ -1,0 +1,73 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "e60e3d4b8dad675867e6105a5b81a110bc36dd429c1a226c471656ad03079540",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "e60e3d4b8dad675867e6105a5b81a110bc36dd429c1a226c471656ad03079540"
+  },
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "e60e3d4b8dad675867e6105a5b81a110bc36dd429c1a226c471656ad03079540"
+  },
+  "evidence_class": "STATIC_REVIEW",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "run_id": "release-validation-static-e60e3d-01",
+  "reviewed_at": "2026-10-01T16:12:11.556851+00:00",
+  "reviewer": "primary agent document and pinned input review; independent review is recorded separately",
+  "rationale": "Reviewed current module/checksum pins, main and minimum Go roles, verified PINNED 2.6.3 binary lock, exact HMAC ACL and latest-only guard, Ed25519 wire compatibility, local JSON versus backend numeric precision, auth expiry/recovery, offline consumers, root-scoped scanner exclusions and CI preparation. Documentation distinguishes local runtime proof from hosted CI, publication, business migration and unapproved security support commitments. This static result binds only the listed document bytes and cannot replace runtime reports.",
+  "documents": [
+    {
+      "path": "go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "afa6d84a2c28186898e805739b1e187424210ba1f492ad35f3ed5fb8ee16396b"
+    },
+    {
+      "path": "deploy/test/server-lock.json",
+      "sha256": "3fb6a824ac8577a8bdf95e68a33d44f5da214aed3032afba19d91ed668104cec"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1d6b0cf6f91160034414bca7606f1c066e649989ebc627b3ecc6ae030a66c575"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "46f4e2c7817cab350c9a7e30600a4e7c9a965e6de28e15143791231fdd393f4d"
+    },
+    {
+      "path": "docs/testing.md",
+      "sha256": "b3f135cee908e64ce3ad8050d527bff83d61d019bc41f2dba7e0e6e1fba37c34"
+    },
+    {
+      "path": "docs/release.md",
+      "sha256": "9bfe6167b969b4a93c33e22625e8d01c6fcac97cf1a15bbcb01fa79dff9401f2"
+    },
+    {
+      "path": "docs/authentication.md",
+      "sha256": "40a97fee035ed1ad441f15de61f0d978d498ce8fbf71d2ac0449663ceac38c39"
+    },
+    {
+      "path": "docs/sdk-feature-manual.md",
+      "sha256": "5289bd66fec6e429c411cda649016a84cd5f0610bc91562d5781c3932ab6da9a"
+    },
+    {
+      "path": "docs/first-use-guide.md",
+      "sha256": "4c72fde7702e247374de5cc4ba6ffc297e495fc00c4786092491abb2481479fc"
+    },
+    {
+      "path": "docs/sdk-integration-guide.md",
+      "sha256": "651e8167f20cc1693366583a47d250f0fc89e1df10088ecbb317232d4f08d26e"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "475040d4092d796b8ec923704ed91f6cbfa281084b9c0ede8a295bf06cd08540"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "740c304e7122d2aa7163b78f6ac9adfa19bfd18a6c0bc3b006c1aac55f0f7190"
+    }
+  ]
+}

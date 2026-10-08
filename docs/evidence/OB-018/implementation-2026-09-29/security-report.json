@@ -1,0 +1,46 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "evidence_class": "PINNED_SECURITY_SCANNERS",
+  "status": "BLOCKED",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T04:50:01.998298+00:00",
+  "platform": "windows",
+  "python_version": "3.13.13",
+  "run_id": "2026-09-29T045004.061824Z-9853d84e370c46ebb43a81300dc6fd86",
+  "commands": [],
+  "environment_commands": [
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045004.061824Z-9853d84e370c46ebb43a81300dc6fd86/security/go-version.log",
+      "started_at": "2026-09-29T04:50:04.067015+00:00",
+      "timeout_s": 30,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 2204,
+      "finished_at": "2026-09-29T04:50:14.083956+00:00",
+      "elapsed_s": 10.017,
+      "log_sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "name": "go-version"
+    }
+  ],
+  "tool_versions": {
+    "python": "3.13.13",
+    "go": "go version go1.26.3 windows/amd64"
+  },
+  "reason": "scanner and database downloads need explicit --allow-network authorization",
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "finished_at": "2026-09-29T04:50:14.634878+00:00",
+  "report_path": ".artifacts/runs/2026-09-29T045004.061824Z-9853d84e370c46ebb43a81300dc6fd86/security/report-001.json"
+}

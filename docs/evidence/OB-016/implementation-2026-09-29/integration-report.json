@@ -1,0 +1,46 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "evidence_class": "REAL_OPENBAO",
+  "status": "BLOCKED",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T04:49:56.507410+00:00",
+  "platform": "windows",
+  "python_version": "3.13.13",
+  "run_id": "2026-09-29T044957.087058Z-6f5ea1c8ed2147bea733b6101a53f621",
+  "commands": [],
+  "environment_commands": [
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T044957.087058Z-6f5ea1c8ed2147bea733b6101a53f621/integration/go-version.log",
+      "started_at": "2026-09-29T04:49:57.094712+00:00",
+      "timeout_s": 30,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 59024,
+      "finished_at": "2026-09-29T04:50:02.868904+00:00",
+      "elapsed_s": 5.774,
+      "log_sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "name": "go-version"
+    }
+  ],
+  "tool_versions": {
+    "python": "3.13.13",
+    "go": "go version go1.26.3 windows/amd64"
+  },
+  "reason": "Set exact BAO_TEST_VERSION and ONE verified binary or digest-pinned image",
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "finished_at": "2026-09-29T04:50:03.852109+00:00",
+  "report_path": ".artifacts/runs/2026-09-29T044957.087058Z-6f5ea1c8ed2147bea733b6101a53f621/integration/report-001.json"
+}

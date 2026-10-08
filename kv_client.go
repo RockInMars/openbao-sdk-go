@@ -3,8 +3,8 @@ package bao
 import (
 	"context"
 	"encoding/json"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/kv"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/kv"
 	"math"
 	"net/url"
 	"strconv"
@@ -17,6 +17,8 @@ type KVClient struct {
 	mount  string
 }
 
+// KVv2 binds an existing KV v2 mount within this client's fixed namespace.
+// Binding is local; it neither creates a mount nor proves server permissions.
 func (c *Client) KVv2(mount string) (*KVClient, error) {
 	if c == nil || engine.ValidatePath(mount) != nil {
 		return nil, invalid("KV_MOUNT")
@@ -26,9 +28,15 @@ func (c *Client) KVv2(mount string) (*KVClient, error) {
 func (k *KVClient) ref(path string, v int) kv.Ref {
 	return kv.Ref{ClusterAlias: k.client.cfg.ClusterAlias, Namespace: k.client.cfg.Namespace.Path, Mount: k.mount, Path: path, Version: v}
 }
+
+// Create uses CAS=0 to create a previously absent key. data remains caller-owned.
+// On an unknown outcome, reconcile the key/version before considering a retry.
 func (k *KVClient) Create(ctx context.Context, path string, data kv.Document) (*kv.WriteResult, error) {
 	return k.write(ctx, path, 0, data, engine.KVCreate)
 }
+
+// CompareAndSwap writes only when the current version equals positive expected.
+// It does not retry a conflicting or uncertain write; data remains caller-owned.
 func (k *KVClient) CompareAndSwap(ctx context.Context, path string, expected int, data kv.Document) (*kv.WriteResult, error) {
 	if expected <= 0 || expected == math.MaxInt {
 		return nil, invalid(string(engine.KVCAS))
@@ -74,15 +82,23 @@ func (k *KVClient) write(ctx context.Context, path string, expected int, data kv
 	}
 	return result, nil
 }
+
+// ReadVersion reads an exact positive version. The caller must Zero result.Data.
 func (k *KVClient) ReadVersion(ctx context.Context, path string, version int) (*kv.ReadResult, error) {
 	if version <= 0 {
 		return nil, invalid(string(engine.KVReadVersion))
 	}
 	return k.read(ctx, path, version, engine.KVReadVersion)
 }
+
+// ReadLatest requests the current latest version and returns its concrete Ref.
+// The caller owns result.Data and must Zero it when finished.
 func (k *KVClient) ReadLatest(ctx context.Context, path string) (*kv.ReadResult, error) {
 	return k.read(ctx, path, 0, engine.KVReadLatest)
 }
+
+// ReadRef reads a version only if ref matches this client's cluster, namespace,
+// and mount. It cannot change the client's authorization scope.
 func (k *KVClient) ReadRef(ctx context.Context, ref kv.Ref) (*kv.ReadResult, error) {
 	if ref.ClusterAlias != k.client.cfg.ClusterAlias || ref.Namespace != k.client.cfg.Namespace.Path || ref.Mount != k.mount {
 		return nil, invalid(string(engine.KVReadVersion))

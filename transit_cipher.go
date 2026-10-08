@@ -3,14 +3,13 @@ package bao
 import (
 	"context"
 	"encoding/base64"
-	"encoding/json"
 	"strconv"
 
-	"git.example.com/infra/openbao-sdk-go/baoerr"
-	"git.example.com/infra/openbao-sdk-go/internal/engine"
-	"git.example.com/infra/openbao-sdk-go/internal/transitutil"
-	"git.example.com/infra/openbao-sdk-go/sensitive"
-	"git.example.com/infra/openbao-sdk-go/transit"
+	"github.com/RockInMars/openbao-sdk-go/baoerr"
+	"github.com/RockInMars/openbao-sdk-go/internal/engine"
+	"github.com/RockInMars/openbao-sdk-go/internal/transitutil"
+	"github.com/RockInMars/openbao-sdk-go/sensitive"
+	"github.com/RockInMars/openbao-sdk-go/transit"
 )
 
 func (t *TransitClient) cryptoKey(ctx context.Context, name string, v int, contextBytes []byte, encrypt bool, op engine.Operation) (*keyData, error) {
@@ -34,6 +33,9 @@ func (t *TransitClient) ciphertext(c transit.Ciphertext, op engine.Operation) er
 	}
 	return nil
 }
+
+// Encrypt encrypts caller-owned Plaintext using an explicit key version. Grant
+// key metadata read as well as encrypt permission; the key must already exist.
 func (t *TransitClient) Encrypt(parent context.Context, r transit.EncryptRequest) (*transit.CipherResult, error) {
 	op := engine.TransitEncrypt
 	plain := r.Plaintext.RevealCopy()
@@ -43,6 +45,13 @@ func (t *TransitClient) Encrypt(parent context.Context, r transit.EncryptRequest
 	if engine.ValidateSegment(r.KeyName) != nil || r.KeyVersion <= 0 || int64(len(plain))+int64(len(contextBytes)) > t.client.cfg.Limits.MaxRequestBytes {
 		return nil, invalid(string(op))
 	}
+	b := map[string]any{"key_version": r.KeyVersion, "plaintext": base64.StdEncoding.EncodeToString(plain)}
+	withDerivation(b, contextBytes)
+	payload, e := t.requestPayload(b, op)
+	if e != nil {
+		return nil, e
+	}
+	defer clear(payload)
 	ctx, cancel, e := t.operationContext(parent, op)
 	if e != nil {
 		return nil, e
@@ -51,10 +60,11 @@ func (t *TransitClient) Encrypt(parent context.Context, r transit.EncryptRequest
 	if _, e = t.cryptoKey(ctx, r.KeyName, r.KeyVersion, contextBytes, true, op); e != nil {
 		return nil, e
 	}
-	b := map[string]any{"key_version": r.KeyVersion, "plaintext": base64.StdEncoding.EncodeToString(plain)}
-	withDerivation(b, contextBytes)
-	return t.cipherResult(ctx, r.KeyName, r.KeyVersion, "encrypt", b, op)
+	return t.cipherResult(ctx, r.KeyName, r.KeyVersion, "encrypt", payload, op)
 }
+
+// Decrypt returns caller-owned Plaintext, which must be Zeroed after use. It
+// requires key metadata read and decrypt permissions; no key material is exported.
 func (t *TransitClient) Decrypt(parent context.Context, r transit.DecryptRequest) (*transit.DecryptResult, error) {
 	op := engine.TransitDecrypt
 	cb := r.Context.RevealCopy()
@@ -65,6 +75,13 @@ func (t *TransitClient) Decrypt(parent context.Context, r transit.DecryptRequest
 	if e := t.ciphertext(r.Ciphertext, op); e != nil {
 		return nil, e
 	}
+	b := map[string]any{"ciphertext": r.Ciphertext.Wrapped}
+	withDerivation(b, cb)
+	payload, e := t.requestPayload(b, op)
+	if e != nil {
+		return nil, e
+	}
+	defer clear(payload)
 	ctx, cancel, e := t.operationContext(parent, op)
 	if e != nil {
 		return nil, e
@@ -73,13 +90,6 @@ func (t *TransitClient) Decrypt(parent context.Context, r transit.DecryptRequest
 	if _, e = t.cryptoKey(ctx, r.KeyName, r.Ciphertext.Version, cb, false, op); e != nil {
 		return nil, e
 	}
-	b := map[string]any{"ciphertext": r.Ciphertext.Wrapped}
-	withDerivation(b, cb)
-	payload, e := json.Marshal(b)
-	if e != nil {
-		return nil, invalid(string(op))
-	}
-	defer clear(payload)
 	var out *transit.DecryptResult
 	e = t.client.execute(ctx, engine.Call{Operation: op, Path: "/v1/" + t.mount + "/decrypt/" + r.KeyName, Payload: payload}, t.mount, func(resp *engine.Response) error {
 		d, e := engine.Data(resp, op)
@@ -103,6 +113,10 @@ func (t *TransitClient) Decrypt(parent context.Context, r transit.DecryptRequest
 	}
 	return out, nil
 }
+
+// Rewrap moves ciphertext to explicit TargetVersion without revealing plaintext.
+// It requires key metadata read and rewrap permissions; an uncertain response is
+// not proof that the server did no work.
 func (t *TransitClient) Rewrap(parent context.Context, r transit.RewrapRequest) (*transit.CipherResult, error) {
 	op := engine.TransitRewrap
 	cb := r.Context.RevealCopy()
@@ -113,6 +127,13 @@ func (t *TransitClient) Rewrap(parent context.Context, r transit.RewrapRequest) 
 	if e := t.ciphertext(r.Ciphertext, op); e != nil {
 		return nil, e
 	}
+	b := map[string]any{"key_version": r.TargetVersion, "ciphertext": r.Ciphertext.Wrapped}
+	withDerivation(b, cb)
+	payload, e := t.requestPayload(b, op)
+	if e != nil {
+		return nil, e
+	}
+	defer clear(payload)
 	ctx, cancel, e := t.operationContext(parent, op)
 	if e != nil {
 		return nil, e
@@ -125,23 +146,16 @@ func (t *TransitClient) Rewrap(parent context.Context, r transit.RewrapRequest) 
 	if _, ok := d.keys[strconv.Itoa(r.Ciphertext.Version)]; !ok || r.Ciphertext.Version < d.metadata.MinDecryptionVersion {
 		return nil, engine.SafeError(baoerr.CodeVersionUnavailable, op, 0, baoerr.EffectNone)
 	}
-	b := map[string]any{"key_version": r.TargetVersion, "ciphertext": r.Ciphertext.Wrapped}
-	withDerivation(b, cb)
-	return t.cipherResult(ctx, r.KeyName, r.TargetVersion, "rewrap", b, op)
+	return t.cipherResult(ctx, r.KeyName, r.TargetVersion, "rewrap", payload, op)
 }
 func withDerivation(b map[string]any, cb []byte) {
 	if len(cb) > 0 {
 		b["context"] = base64.StdEncoding.EncodeToString(cb)
 	}
 }
-func (t *TransitClient) cipherResult(ctx context.Context, name string, v int, action string, b map[string]any, op engine.Operation) (*transit.CipherResult, error) {
-	payload, e := json.Marshal(b)
-	if e != nil {
-		return nil, invalid(string(op))
-	}
-	defer clear(payload)
+func (t *TransitClient) cipherResult(ctx context.Context, name string, v int, action string, payload []byte, op engine.Operation) (*transit.CipherResult, error) {
 	var out *transit.CipherResult
-	e = t.client.execute(ctx, engine.Call{Operation: op, Path: "/v1/" + t.mount + "/" + action + "/" + name, Payload: payload}, t.mount, func(r *engine.Response) error {
+	e := t.client.execute(ctx, engine.Call{Operation: op, Path: "/v1/" + t.mount + "/" + action + "/" + name, Payload: payload}, t.mount, func(r *engine.Response) error {
 		d, e := engine.Data(r, op)
 		if e != nil {
 			return e

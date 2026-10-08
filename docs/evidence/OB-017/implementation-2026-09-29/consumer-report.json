@@ -1,0 +1,231 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "evidence_class": "INDEPENDENT_CONSUMERS",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "started_at": "2026-09-29T04:56:46.499205+00:00",
+  "platform": "windows",
+  "python_version": "3.13.13",
+  "run_id": "2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b",
+  "commands": [
+    {
+      "command": [
+        "go",
+        "mod",
+        "tidy"
+      ],
+      "cwd": "E:\\Temp\\bao-consumers-wml3lfjs\\reader",
+      "log": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/reader-tidy.log",
+      "started_at": "2026-09-29T04:56:52.509546+00:00",
+      "timeout_s": 180,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 39508,
+      "finished_at": "2026-09-29T04:57:01.017443+00:00",
+      "elapsed_s": 8.508,
+      "log_sha256": "c2447ac47a6e1e0fbf6e9e34faf557d4ea34cb1707dbcb87783b3c0f9f4d75f7",
+      "name": "reader-tidy"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-json",
+        "-race",
+        "-count=1",
+        "-timeout=180s",
+        "./..."
+      ],
+      "cwd": "E:\\Temp\\bao-consumers-wml3lfjs\\reader",
+      "log": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/reader-test.log",
+      "started_at": "2026-09-29T04:57:01.343997+00:00",
+      "timeout_s": 600,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 3460,
+      "finished_at": "2026-09-29T04:57:23.460726+00:00",
+      "elapsed_s": 22.117,
+      "log_sha256": "90170223527d303a9a29b7b44cb4c66b88e25e8c808848f123a362be0a0e5e13",
+      "name": "reader-test"
+    },
+    {
+      "command": [
+        "go",
+        "mod",
+        "tidy"
+      ],
+      "cwd": "E:\\Temp\\bao-consumers-wml3lfjs\\signer",
+      "log": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/signer-tidy.log",
+      "started_at": "2026-09-29T04:57:24.044275+00:00",
+      "timeout_s": 180,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 58796,
+      "finished_at": "2026-09-29T04:57:24.488771+00:00",
+      "elapsed_s": 0.445,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "signer-tidy"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "-json",
+        "-race",
+        "-count=1",
+        "-timeout=180s",
+        "./..."
+      ],
+      "cwd": "E:\\Temp\\bao-consumers-wml3lfjs\\signer",
+      "log": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/signer-test.log",
+      "started_at": "2026-09-29T04:57:24.757794+00:00",
+      "timeout_s": 600,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 69508,
+      "finished_at": "2026-09-29T04:57:34.236884+00:00",
+      "elapsed_s": 9.479,
+      "log_sha256": "502efedd5b129d872ccbe5ddaab04403c3cdc79c58c34650212d667a37944033",
+      "name": "signer-test"
+    }
+  ],
+  "environment_commands": [
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "cwd": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+      "log": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/go-version.log",
+      "started_at": "2026-09-29T04:56:46.689597+00:00",
+      "timeout_s": 30,
+      "completion": "exited",
+      "exit_code": 0,
+      "owned_pid": 70152,
+      "finished_at": "2026-09-29T04:56:47.110716+00:00",
+      "elapsed_s": 0.421,
+      "log_sha256": "89dcc0e791e19c2da9bb1b127660cfeaa4725589dd52e972325c903181dc1842",
+      "name": "go-version"
+    }
+  ],
+  "tool_versions": {
+    "python": "3.13.13",
+    "go": "go version go1.26.3 windows/amd64"
+  },
+  "delivery": "temporary file GOPROXY, NOT a remote publication",
+  "consumers": [
+    {
+      "name": "reader",
+      "directory": "E:\\Temp\\bao-consumers-wml3lfjs\\reader",
+      "status": "PASS",
+      "commands": [
+        {
+          "command": [
+            "go",
+            "mod",
+            "tidy"
+          ],
+          "cwd": "E:\\Temp\\bao-consumers-wml3lfjs\\reader",
+          "log": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/reader-tidy.log",
+          "started_at": "2026-09-29T04:56:52.509546+00:00",
+          "timeout_s": 180,
+          "completion": "exited",
+          "exit_code": 0,
+          "owned_pid": 39508,
+          "finished_at": "2026-09-29T04:57:01.017443+00:00",
+          "elapsed_s": 8.508,
+          "log_sha256": "c2447ac47a6e1e0fbf6e9e34faf557d4ea34cb1707dbcb87783b3c0f9f4d75f7",
+          "name": "reader-tidy"
+        },
+        {
+          "command": [
+            "go",
+            "test",
+            "-mod=readonly",
+            "-json",
+            "-race",
+            "-count=1",
+            "-timeout=180s",
+            "./..."
+          ],
+          "cwd": "E:\\Temp\\bao-consumers-wml3lfjs\\reader",
+          "log": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/reader-test.log",
+          "started_at": "2026-09-29T04:57:01.343997+00:00",
+          "timeout_s": 600,
+          "completion": "exited",
+          "exit_code": 0,
+          "owned_pid": 3460,
+          "finished_at": "2026-09-29T04:57:23.460726+00:00",
+          "elapsed_s": 22.117,
+          "log_sha256": "90170223527d303a9a29b7b44cb4c66b88e25e8c808848f123a362be0a0e5e13",
+          "name": "reader-test"
+        }
+      ]
+    },
+    {
+      "name": "signer",
+      "directory": "E:\\Temp\\bao-consumers-wml3lfjs\\signer",
+      "status": "PASS",
+      "commands": [
+        {
+          "command": [
+            "go",
+            "mod",
+            "tidy"
+          ],
+          "cwd": "E:\\Temp\\bao-consumers-wml3lfjs\\signer",
+          "log": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/signer-tidy.log",
+          "started_at": "2026-09-29T04:57:24.044275+00:00",
+          "timeout_s": 180,
+          "completion": "exited",
+          "exit_code": 0,
+          "owned_pid": 58796,
+          "finished_at": "2026-09-29T04:57:24.488771+00:00",
+          "elapsed_s": 0.445,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "name": "signer-tidy"
+        },
+        {
+          "command": [
+            "go",
+            "test",
+            "-mod=readonly",
+            "-json",
+            "-race",
+            "-count=1",
+            "-timeout=180s",
+            "./..."
+          ],
+          "cwd": "E:\\Temp\\bao-consumers-wml3lfjs\\signer",
+          "log": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/signer-test.log",
+          "started_at": "2026-09-29T04:57:24.757794+00:00",
+          "timeout_s": 600,
+          "completion": "exited",
+          "exit_code": 0,
+          "owned_pid": 69508,
+          "finished_at": "2026-09-29T04:57:34.236884+00:00",
+          "elapsed_s": 9.479,
+          "log_sha256": "502efedd5b129d872ccbe5ddaab04403c3cdc79c58c34650212d667a37944033",
+          "name": "signer-test"
+        }
+      ]
+    }
+  ],
+  "dependency_mode": "offline-proxy",
+  "dependency_proxy": "file:///E:/xen/code/claude/project/jiupiao/openbao-sdk-go/.artifacts/offline-consumer-proxy",
+  "checksum_database": "sum.golang.org file:///E:/xen/code/claude/project/jiupiao/openbao-sdk-go/.artifacts/offline-consumer-proxy/sumdb/sum.golang.org",
+  "fresh_module_cache": true,
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "cd46dc83078962d602886183bba7aa4a77f60702df5a4a167a4340f529fe3af2"
+  },
+  "finished_at": "2026-09-29T04:57:39.192129+00:00",
+  "report_path": ".artifacts/runs/2026-09-29T045646.661422Z-38b21ab2c337449aac762b583452fc6b/consumer/report-007.json"
+}
