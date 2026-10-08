@@ -1,6 +1,6 @@
 # Security
 
-此 SDK 是未发布开发快照；当前工程门禁及实际验证范围见[当前验证状态](docs/current-status.md)。私密安全报告请发送至维护者确认的邮箱 [git@whereisit.cc](mailto:git@whereisit.cc)。支持版本策略和响应时限尚待维护者确认；不要在公开 issue 中附 Token、SecretID、私钥、秘密正文或可利用细节。
+当前工程门禁及实际验证范围见[当前验证状态](docs/current-status.md)。私密安全报告请发送至维护者确认的邮箱 [git@whereisit.cc](mailto:git@whereisit.cc)。支持版本策略和响应时限尚待维护者确认；不要在公开 issue 中附 Token、SecretID、私钥、秘密正文或可利用细节。
 
 ## 运行边界
 

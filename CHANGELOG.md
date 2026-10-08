@@ -1,6 +1,16 @@
 # Changelog
 
-## Unreleased — 2026-10-01 verification and ownership
+## v0.1.0 — 2026-10-08
+
+首个版本收录 Core/Auth、KV v2、PKI、Transit、Diagnostics/Observe、敏感值封装、示例及验证工具；保持 `github.com/RockInMars/openbao-sdk-go` 模块路径、Go 1.25.0 下限、固定 api/v2 v2.7.0 和现有 Apache-2.0 许可。
+
+包含 Transit 编码后请求体大小边界与失败语义回归、发布预检查和固定 SHA 标签推送脚本、仓库开发规则。发布脚本拒绝候选提交树中的机器配置、缓存和临时产物，不将忽略本地改动误当作发布树隔离。CI 工具回归收据使用显式 1200 秒预算，避免完整测试被默认 180 秒截断；没有跳过断言或降低门禁。
+
+当前源码的 Linux/Windows 主工具链、最低 Go、独立消费者、fuzz、固定扫描和 OpenBao 2.6.3 fixture 证据见[当前验证状态](docs/current-status.md)及[发布交接](docs/implementation-handoff.md)。Git 标签与远端核验定义发行状态；本地检查不能代替托管 CI、公共模块代理可获取性或 AC-072 真实业务迁移。
+
+以下为首次版本所收录的历史开发记录，不作为当前验证或发布批准。
+
+### 2026-10-01 verification and ownership
 
 构造配置在校验完成后才克隆秘密，后续构造失败统一清理 SDK 自有副本。Provider 接口及快照字段不变：自定义 provider 默认借用，显式所有权协议和内建独立快照才由 SDK 清理；包装器不会因继承标记而自动交付所有权。
 
@@ -16,11 +26,11 @@
 
 没有更改公开导入路径、既有接口签名、持久化格式或依赖版本。没有数据库迁移；已经擦除的缓冲不能通过回退代码恢复。Go/TLS/HTTP 运行时副本不在绝对擦除承诺内。验证与阻塞见[当前状态](docs/current-status.md)，环境准备和恢复限制见[发布检查](docs/release.md)。这些是未发布变化，不构成发布批准。
 
-## Unreleased — 2026-09-29 R3-D1 documentation
+### 2026-09-29 R3-D1 documentation
 
 新增中文 SDK 接入说明、功能手册与调用示例、首次使用指南和文档导航；README 与示例说明加入入口。按源码记录 Transit 预检权限、CheckReady 否定结果及 HMAC/PKI 示例限制。仅文档变更，运行时源码、依赖、原方案、任务与验收状态均不变；没有新软件发布或真实服务验证。
 
-## Unreleased — 2026-09-28 implementation snapshot
+### 2026-09-28 implementation snapshot
 
 新增运行时 Core/Auth/KV v2/PKI/Transit/Diagnostics/Observe 代码、四类示例、故障恢复业务示例、独立消费模块、真实集成环境和安全门禁脚本。
 

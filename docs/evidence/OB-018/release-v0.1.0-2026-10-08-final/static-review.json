@@ -1,0 +1,45 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b"
+  },
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b"
+  },
+  "evidence_class": "STATIC_REVIEW",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "run_id": "release-v010-static-20261008-final",
+  "reviewed_at": "2026-10-08T09:05:55.800221+00:00",
+  "reviewer": "primary agent current pinned input, candidate-tree exclusion and workflow review; independent risk and runtime verification are separate",
+  "rationale": "Reviewed actual canonical module, Go 1.25.0 minimum, main Go 1.26.8, api/v2 v2.7.0, checksum file and signed OpenBao 2.6.3 lock. Current CI definitions cover twelve separate jobs and the full tooling receipt has 1200 seconds within a thirty-minute job; no assertion, coverage or gate relaxation. Testing and release documents preserve official-client, isolated fixture, fresh-consumer and pinned-scanner boundaries. Candidate Git trees must exclude machine configuration, cache and temporary paths; ignored local changes alone are not exclusion. This static proof covers only the six listed document bytes, not completion of the runtime matrix, publication, hosted CI or business migration.",
+  "documents": [
+    {
+      "path": "go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "afa6d84a2c28186898e805739b1e187424210ba1f492ad35f3ed5fb8ee16396b"
+    },
+    {
+      "path": "deploy/test/server-lock.json",
+      "sha256": "3fb6a824ac8577a8bdf95e68a33d44f5da214aed3032afba19d91ed668104cec"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "46f4e2c7817cab350c9a7e30600a4e7c9a965e6de28e15143791231fdd393f4d"
+    },
+    {
+      "path": "docs/testing.md",
+      "sha256": "a603ad7f4aacc29d2163690284213cbf9e1d03fb88781685e02a12ff79872603"
+    },
+    {
+      "path": "docs/release.md",
+      "sha256": "300ee30d2a06bc2963eb898f5896e9ef888867b1a0de0439f3a96e1577216eb5"
+    }
+  ]
+}

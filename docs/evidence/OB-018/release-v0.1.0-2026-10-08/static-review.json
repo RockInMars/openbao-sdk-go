@@ -1,0 +1,45 @@
+{
+  "source_hash_version": 2,
+  "source_sha256": "1b31b5677db1bbcefc0f03ba2790aa3b9a9862c8fbadeff4c8cd75231b2f9414",
+  "source_before": {
+    "source_hash_version": 2,
+    "source_sha256": "1b31b5677db1bbcefc0f03ba2790aa3b9a9862c8fbadeff4c8cd75231b2f9414"
+  },
+  "source_after": {
+    "source_hash_version": 2,
+    "source_sha256": "1b31b5677db1bbcefc0f03ba2790aa3b9a9862c8fbadeff4c8cd75231b2f9414"
+  },
+  "evidence_class": "STATIC_REVIEW",
+  "status": "PASS",
+  "working_directory": "E:\\xen\\code\\claude\\project\\jiupiao\\openbao-sdk-go",
+  "run_id": "release-v010-static-20261008",
+  "reviewed_at": "2026-10-08T08:34:59.595408+00:00",
+  "reviewer": "primary agent current pinned input and release workflow review; independent release risk review is separate",
+  "rationale": "Reviewed actual canonical module/Go/API pins, checksum file and signed binary lock; validated current 12-job local matrix with main Go 1.26.8 and minimum Go 1.25.0. Testing/release documentation preserves official-client, isolated fixture, fresh-consumer and pinned-scanner boundaries; full tooling command has an explicit sufficient time budget, no assertion or coverage relaxation. Static proof covers only the six listed current documents and cannot replace runtime receipts. Git publication, hosted CI and real business migration are distinct states.",
+  "documents": [
+    {
+      "path": "go.mod",
+      "sha256": "df78d69415560df37ab52a388fdd75d043364fe1e9d4ebca33fb4046ad87fc54"
+    },
+    {
+      "path": "go.sum",
+      "sha256": "afa6d84a2c28186898e805739b1e187424210ba1f492ad35f3ed5fb8ee16396b"
+    },
+    {
+      "path": "deploy/test/server-lock.json",
+      "sha256": "3fb6a824ac8577a8bdf95e68a33d44f5da214aed3032afba19d91ed668104cec"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "46f4e2c7817cab350c9a7e30600a4e7c9a965e6de28e15143791231fdd393f4d"
+    },
+    {
+      "path": "docs/testing.md",
+      "sha256": "a603ad7f4aacc29d2163690284213cbf9e1d03fb88781685e02a12ff79872603"
+    },
+    {
+      "path": "docs/release.md",
+      "sha256": "c5a519fe6c02aac5d6c7e5a7b711ac66dc8c9c5fbfd99f140f5b20e35b48bf2c"
+    }
+  ]
+}

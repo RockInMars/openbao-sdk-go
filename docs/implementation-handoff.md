@@ -1,5 +1,35 @@
 # openbao-sdk-go 实施交接
 
+## 2026-10-08 v0.1.0 发布候选
+
+用户明确授权发布 `v0.1.0`，并允许按现有流程在隔离非生产环境重建 Linux/Windows 门禁，访问官方模块代理、工具源和漏洞库；没有生产或历史远端 OpenBao 授权。候选收录此前 SDK 源码、测试、工具和文档，机器配置、缓存与临时产物不入 SDK 提交。
+
+最终冻结源码 v2 为 `0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b`，194 个选中输入。起点为 `master` / HEAD `2a842ab1012b097d1097735cc21c7dc4c64229db`；远端为 `https://github.com/RockInMars/openbao-sdk-go.git`。默认远端分支与本地分支不同，本轮不自动切换、合并、改写历史或推送其他分支。
+
+当前候选的实际命令 `scripts/verify-release.py` 自然退出 0，`RELEASE GATE: PASS`。台账逐项依据当前报告及前置依赖重建：18 VERIFIED / 1 BLOCKED，AC001–071 共 71 PASS；AC072 真实业务迁移仍为 NOT_RUN。完整索引与具体不可变路径见[本轮证据](evidence/OB-018/release-v0.1.0-2026-10-08-final/index.json)，不将旧源码 PASS 改绑。
+
+- 本地十二作业 CI 汇总自然通过：Linux/Windows tooling、main normal、最低 Go normal/consumer，以及 Linux fuzz、main consumer、固定扫描和真实 fixture；不是托管 GitHub Actions 执行。
+- 主工具链 Go 1.26.8、最低兼容 Go 1.25.0；四份 normal 的 unit、fresh race coverage、vet、mod verify、build、module graph 均自然成功。三个独立消费者 profile 各两个全新缓存模块通过签名离线代理，未用工作树 replace 掩盖模块消费。
+- 当前 Linux 主 normal 的 fresh race profile：15/15 既有 85% 门槛通过。五个 fuzz 目标各实际执行 30 秒并有非零执行数；固定 govulncheck 1.1.4、gitleaks 8.24.3 及官方数据库扫描通过。
+- 自有、来源和摘要核验的 OpenBao 2.6.3 fixture 自然通过，解析到 runtime 与五项子场景共六个记录。管理员只初始化，业务断言使用受限身份；未访问历史远端或生产服务。
+- Windows 独立 verifier 完整 190 tests 自然通过，706.619 秒，Python 3.13.13、显式 PYTHONUTF8=0、实测 utf8_mode=0；四个正式 Windows 作业没有失败或超时，原始收据、结构化导出和最终审计均复验。
+
+### 首次问题及替代路径
+
+最早 `1b31b5677db1bbcefc0f03ba2790aa3b9a9862c8fbadeff4c8cd75231b2f9414` 的完整矩阵完成后，独立审查发现 P1：原 HEAD 跟踪 `.codex/config.toml`，忽略本地改动不等于从整个标签树排除机器配置。两个真实临时 Git 回归先复现错误发布，再通过最小全树 EXCLUDED 检查变绿。新源码 `0bca…` 的全部正式证据已重建；脚本在创建标签前拒绝任意排除路径，正常发布回归确认远端树没有机器目录且本地文件保留。独立风险复核无新增高风险或发布阻塞，详见[审查](evidence/OB-018/release-v0.1.0-2026-10-08-final/independent-review.md)。
+
+Linux 在 Windows 挂载路径的完整 190 项 tooling 两次自然 FAIL（312.479 秒两项、574.302 秒三项），均是既有 20 秒子 CLI 启动预算超时；降并发的两项定向诊断曾通过，未掩盖完整失败。随后改用任务自有容器的原生 Linux 文件系统实际副本，复制前后 194 输入及 v2 完全相同，全套 190 项在不修改断言、预算或门禁的情况下自然通过（28.034 秒）。原报告与日志逐字节传回并由原仓库 parser 复验，旧失败完整保留。
+
+Windows 验证资源最初委派范围过窄，故曾停在只读预检；补齐本次自有 E:\Temp 临时资源及 Go 自然缓存范围后执行正式四作业。辅助监控/CRLF 统计与一次审计参数引号错误已保留，不能混计为正式作业失败。物理 index 统计缓存摘要变化的早期 BLOCKED 判断也由原 verifier 撤回；没有逻辑 stage、HEAD 或 v2 污染证据。
+
+### 当前动作及交付边界
+
+工程候选已验证，标签尚未在本检查点创建。下一步仅按既有流程定向取消机器文件跟踪并保留本地字节，提交明确 SDK 清单；再用新 HEAD 完整 SHA 运行只读预检、单次推送 `v0.1.0` 注解标签，并从实际目的地核对标签对象及 peeled commit。不能以 dry-run、提交或推送退出码代替远端核验，也不强推或自动回滚局部发布。
+
+`.codex/config.toml` 旧提交 blob 已存在于 upstream；本轮不上传本地修改，也不改写已有公共历史。`.serena/` 及所有本地配置保持原文件，运行材料留在 `.artifacts/`。任务自有 Linux 容器、独立 daemon 和 stdio 官方代理隧道在验证完成后按归属严格清理；不动共享 Rancher daemon、现有机器代理或用户配置。
+
+托管 CI、公共模块代理可获取性、GitHub Release 页面对象、新性能 benchmark、维护者支持承诺及 AC072 真实业务接入/回滚不是本地工程 PASS 的推论；Git 标签发布与后续分发结果以实际操作收据为准。以下 2026-10-04 及更早章节均保留为历史，不覆盖本节的冻结源码与下一步。
+
 ## 2026-10-04 Transit 预检优化与交付准备
 
 本轮以 [项目评估](project-assessment-2026-10-04.md) 为输入，只处理 Transit 编码后请求体检查、回归、当前源码证据及接入交接准备。未安装/升级依赖，未访问真实 OpenBao、运行安全扫描或修改业务仓库；未暂存、提交、推送、切换分支、发布或部署。原有工作树修改全部保留。唯一状态入口仍为 `task-status.json`，当前检查点为 `transit_preflight_2026_10_04`；旧 OB/AC 记录及报告保留其原源码归属，不改写 hash 或复制 PASS。

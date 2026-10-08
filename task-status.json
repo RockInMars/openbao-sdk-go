@@ -305,12 +305,12 @@
       "depends_on": [],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
-        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
-        "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+        ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json",
+        "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/static-review.json"
       ],
       "implementation_note": "Fixed api/v2 v2.7.0 and go.mod Go 1.25.0 are unchanged. Main/minimum Linux and Windows checks and trusted OpenBao 2.6.3 fixture are verified. Dependency transfer initializes telemetry off in each temporary HOME with isolated configuration; setup failure stops before dependency commands.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-001",
         "AC-002"
@@ -340,7 +340,7 @@
         "scripts/tests/test_source_identity.py"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -425,6 +425,19 @@
         ],
         "remaining_gate": "Associated acceptance not verified: AC-001",
         "implementation_note": "Module, dependency pins and Go 1.25.0 declaration are unchanged. Main Go 1.26.3 checks passed; trusted server artifact and actual Go 1.25.0/Linux verification remain unavailable."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+          ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+          "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Fixed api/v2 v2.7.0 and go.mod Go 1.25.0 are unchanged. Main/minimum Linux and Windows checks and trusted OpenBao 2.6.3 fixture are verified. Dependency transfer initializes telemetry off in each temporary HOME with isolated configuration; setup failure stops before dependency commands."
       }
     },
     {
@@ -435,10 +448,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "Local Document exact-number guarantee is unchanged. Real OpenBao 2.6.3 KV may round integers beyond binary64 exact range; the backend limitation and raw probe are documented.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-003",
         "AC-004",
@@ -458,7 +471,7 @@
         "sensitive/bytes_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -537,6 +550,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-001",
         "implementation_note": "Configuration validation precedes secret cloning; constructor failure clears only newly owned SDK copies. Focused regression and current formal checks passed."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Local Document exact-number guarantee is unchanged. Real OpenBao 2.6.3 KV may round integers beyond binary64 exact range; the backend limitation and raw probe are documented."
       }
     },
     {
@@ -548,10 +572,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "Constructor failure cleanup and successful client lifecycle preserve caller-owned RoleID/TLS inputs; public signatures and lifecycle are unchanged.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-008",
         "AC-009",
@@ -571,7 +595,7 @@
         "tls_pem_regression_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -676,6 +700,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-001,OB-002",
         "implementation_note": "Constructor failure cleanup and successful client lifecycle preserve caller-owned RoleID/TLS inputs; public signatures and lifecycle are unchanged."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Constructor failure cleanup and successful client lifecycle preserve caller-owned RoleID/TLS inputs; public signatures and lifecycle are unchanged."
       }
     },
     {
@@ -686,10 +721,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-013",
         "AC-014",
@@ -722,7 +757,7 @@
         "internal/engine/transport_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -804,6 +839,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-003",
         "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -814,10 +860,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "Optional provider snapshot ownership transfer is explicit and instance-bound; unknown custom providers keep ownership. Constructor and snapshot regressions passed.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-022",
         "AC-023",
@@ -835,7 +881,7 @@
         "options.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -918,6 +964,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-004",
         "implementation_note": "Optional provider snapshot ownership transfer is explicit and instance-bound; unknown custom providers keep ownership. Constructor and snapshot regressions passed."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Optional provider snapshot ownership transfer is explicit and instance-bound; unknown custom providers keep ownership. Constructor and snapshot regressions passed."
       }
     },
     {
@@ -928,10 +985,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "Owned token snapshots are cleared after use on success, failure and cancellation; borrowed custom snapshots remain usable. Current auth race and formal coverage passed.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-027",
         "AC-028",
@@ -945,7 +1002,7 @@
         "internal/authn/manager_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1021,6 +1078,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-005",
         "implementation_note": "Owned token snapshots are cleared after use on success, failure and cancellation; borrowed custom snapshots remain usable. Current auth race and formal coverage passed."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Owned token snapshots are cleared after use on success, failure and cancellation; borrowed custom snapshots remain usable. Current auth race and formal coverage passed."
       }
     },
     {
@@ -1031,10 +1099,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "Existing managed-auth fail-closed expiry and relogin contract is unchanged; real fixture permits only the observed expired-snapshot authentication failure and requires recovery.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-031",
         "AC-032",
@@ -1050,7 +1118,7 @@
         "internal/authn/manager_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1125,6 +1193,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-006",
         "implementation_note": "Owned SecretID snapshots are cleared after login on success, error and cancellation; shared custom handles remain borrowed. Public error and retry semantics remain unchanged."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Existing managed-auth fail-closed expiry and relogin contract is unchanged; real fixture permits only the observed expired-snapshot authentication failure and requires recovery."
       }
     },
     {
@@ -1135,10 +1214,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-035",
         "AC-036",
@@ -1152,7 +1231,7 @@
         "kv_scheduled_deletion_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1231,6 +1310,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-005",
         "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -1241,10 +1331,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-039",
         "AC-040",
@@ -1257,7 +1347,7 @@
         "kv_response_boundary_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1332,6 +1422,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-008",
         "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -1342,10 +1443,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-043",
         "AC-044",
@@ -1364,7 +1465,7 @@
         "pki_client_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1443,6 +1544,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-008",
         "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -1453,10 +1565,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-048",
         "AC-049",
@@ -1468,7 +1580,7 @@
         "pki_response_boundary_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1543,6 +1655,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-010",
         "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
       }
     },
     {
@@ -1553,10 +1676,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "Ed25519 raw-message wire requests omit hash_algorithm while retaining prehashed=false. HTTP regression and the real signature fixture passed on this source.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-051",
         "AC-052",
@@ -1573,7 +1696,7 @@
         "transit_keys.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1649,6 +1772,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-007",
         "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Ed25519 raw-message wire requests omit hash_algorithm while retaining prehashed=false. HTTP regression and the real signature fixture passed on this source."
       }
     },
     {
@@ -1659,10 +1793,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "HMAC latest-only guard is unchanged; the real fixture uses v2, rejects unlisted v1 and grants only the exact SHA-256 verify ACL.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-056",
         "AC-057",
@@ -1675,7 +1809,7 @@
         "transit_response_boundary_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1751,6 +1885,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-012",
         "implementation_note": "本轮可执行改进及对应当前官方工厂规则目标已核对；公开 SDK 签名、错误、认证、重试及写入语义保持。原依赖或关联验收未满足，不标 VERIFIED。"
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "HMAC latest-only guard is unchanged; the real fixture uses v2, rejects unlisted v1 and grants only the exact SHA-256 verify ACL."
       }
     },
     {
@@ -1763,10 +1908,10 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "新增固定六桶、原子计数和脱敏输出的Observer示例；只扩展示例内部helper透传Option，保留旧调用。",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-059",
         "AC-060",
@@ -1782,7 +1927,7 @@
         "examples/internal/bootstrap/options_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -1861,6 +2006,17 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-009,OB-011,OB-013",
         "implementation_note": "新增固定六桶、原子计数和脱敏输出的Observer示例；只扩展示例内部helper透传Option，保留旧调用。"
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "新增固定六桶、原子计数和脱敏输出的Observer示例；只扩展示例内部helper透传Option，保留旧调用。"
       }
     },
     {
@@ -1871,11 +2027,11 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
-        ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+        ".artifacts/runs/2026-10-08T092215.356465Z-b882c2bd161049798a601b908a0913bc/fuzz/report-006.json"
       ],
       "implementation_note": "Current normal coverage meets all 15 existing 85 percent groups; five fuzz targets execute their full budgets. Historical benchmark receipts remain historical; no new performance benchmark claim.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-062",
         "AC-063",
@@ -1906,7 +2062,7 @@
         "scripts/coverage-check.py"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -2010,6 +2166,18 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-014",
         "implementation_note": "Current 15 coverage groups meet the existing 85 percent floor and five fuzz targets execute for 30 seconds each. Existing benchmark results remain historical; no new benchmark or performance claim is made."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+          ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Current normal coverage meets all 15 existing 85 percent groups; five fuzz targets execute their full budgets. Historical benchmark receipts remain historical; no new performance benchmark claim."
       }
     },
     {
@@ -2020,11 +2188,11 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json",
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "Formal independent OpenBao 2.6.3 fixture passed with the signed binary input and reported cleanup. No old remote server budget was used.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-065",
         "AC-066"
@@ -2048,7 +2216,7 @@
         "tests/integration/runtime_test.go"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -2164,6 +2332,18 @@
         ],
         "remaining_gate": "Associated acceptance not verified: AC-065,AC-066; Dependencies not verified: OB-015",
         "implementation_note": "Formal independent integration is BLOCKED by missing trusted server artifact inputs; local boundary checks passed. The new remote manifest has local validation only and no new remote authorization."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Formal independent OpenBao 2.6.3 fixture passed with the signed binary input and reported cleanup. No old remote server budget was used."
       }
     },
     {
@@ -2174,11 +2354,11 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json",
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "implementation_note": "Fresh-cache reader/signer consumers passed with signed offline dependencies, on main Linux and both minimum-Go platforms. Packaging prunes excluded and nested trees before walking; exported source rules are unchanged.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-067",
         "AC-068",
@@ -2205,7 +2385,7 @@
         "scripts/tests/test_consumer_offline.py"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -2286,6 +2466,18 @@
         ],
         "remaining_gate": "Dependencies not verified: OB-016",
         "implementation_note": "Two independent fresh-cache consumers passed via the prepared signed local proxy, without replace or prefilled go.sum. Four executable offline Examples and lifecycle/API GoDoc were added; remote distribution remains unverified."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Fresh-cache reader/signer consumers passed with signed offline dependencies, on main Linux and both minimum-Go platforms. Packaging prunes excluded and nested trees before walking; exported source rules are unchanged."
       }
     },
     {
@@ -2296,14 +2488,14 @@
       ],
       "status": "VERIFIED",
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
-        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
-        ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
-        ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json",
-        "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+        ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json",
+        ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json",
+        ".artifacts/runs/2026-10-08T085648.651286Z-c7186837b2b44b08aed97f9462279d2d/security/report-003.json",
+        "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/static-review.json"
       ],
-      "implementation_note": "Both-platform tooling/normal, four minimum-Go jobs, Linux fuzz/consumers/scanners/real-integration and the local 12-job summary are verified. Hosted CI, publishing and security policy commitments remain separate external work.",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "implementation_note": "Both-platform tooling/normal, four minimum-Go jobs, Linux fuzz/consumers/scanners/real-integration and the local twelve-job summary are verified on the final source. Two Windows-mount Linux tooling timeout attempts remain retained; the same-byte native Linux copy passed all 190 tests. Tag publication is authorized but pending; hosted CI, public proxy availability and security policy commitments remain separate.",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-070",
         "AC-071"
@@ -2353,7 +2545,7 @@
         "scripts/tests/test_record_cli.py"
       ],
       "remaining_gate": "",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [
@@ -2522,6 +2714,21 @@
         ],
         "remaining_gate": "Associated acceptance not verified: AC-070,AC-071; Dependencies not verified: OB-017",
         "implementation_note": "Current summary, minimum-Go evidence/CI jobs, reusable remote manifest, pinned scanner provenance and findings digest checks are implemented. 152 tooling tests passed; the independent findings-digest issue was fixed and rechecked. Formal integration, scanner and platform gates remain blocked."
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "VERIFIED",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+          ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+          ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
+          ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json",
+          "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+        ],
+        "remaining_gate": "",
+        "implementation_note": "Both-platform tooling/normal, four minimum-Go jobs, Linux fuzz/consumers/scanners/real-integration and the local 12-job summary are verified. Hosted CI, publishing and security policy commitments remain separate external work."
       }
     },
     {
@@ -2533,7 +2740,7 @@
       "status": "BLOCKED",
       "evidence": [],
       "implementation_note": "未执行生产迁移或修改业务数据；保留原任务和历史记录。",
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
       "acceptance_ids": [
         "AC-072"
       ],
@@ -2541,7 +2748,7 @@
         "docs/integration-and-rollback.md"
       ],
       "remaining_gate": "AC-072 real business migration is outside this task; an actual consumer project is required.",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
         "evidence": [],
@@ -2605,12 +2812,22 @@
         "remaining_gate": "Associated acceptance not verified: AC-072; Dependencies not verified: OB-018",
         "scope": "OUT_OF_SCOPE",
         "implementation_note": "未执行生产迁移或修改业务数据；保留原任务和历史记录。"
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "BLOCKED",
+        "evidence": [],
+        "remaining_gate": "AC-072 real business migration is outside this task; an actual consumer project is required.",
+        "scope": "OUT_OF_SCOPE",
+        "implementation_note": "未执行生产迁移或修改业务数据；保留原任务和历史记录。"
       }
     }
   ],
-  "recorded_at": "2026-10-01T17:00:25.636918+00:00",
-  "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-  "release_status": "BLOCKED",
+  "recorded_at": "2026-10-08T09:35:01+00:00",
+  "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+  "release_status": "PASS",
   "business_migration_status": "OUT_OF_SCOPE",
   "status_rule": "VERIFIED要求本任务关联AC及原依赖均满足；本地实现、验证、正式交付与远端发布分别记录。",
   "task_status_counts": {
@@ -2618,8 +2835,8 @@
     "BLOCKED": 1
   },
   "continuation": {
-    "round": "transit-preflight-2026-10-04",
-    "scope": "Authorized Transit implementation, current-source Windows verification and delivery preparation completed. Remaining Linux, real-fixture and scanning evidence is source-stale; publication and business migration are not authorized.",
+    "round": "release-v0.1.0-2026-10-08-final",
+    "scope": "Authorized v0.1.0 candidate engineering verification complete; commit, fixed-SHA preflight and single-tag publication remain pending. Business migration is separate.",
     "entrypoint": "docs/implementation-handoff.md"
   },
   "transit_preflight_2026_10_04": {
@@ -2737,7 +2954,7 @@
     "current_action": "Authorized local work completed; mandatory formal validation remains blocked by the listed prerequisites.",
     "next_action": "Resume from the first newly authorized formal evidence step, then bind actual evidence. Do not redo completed Transit implementation or unchanged Windows checks."
   },
-  "previous_source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+  "previous_source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
   "prior_review_r3": {
     "schema_version": 1,
     "plan_version": "1.0",
@@ -2760,7 +2977,7 @@
     "previous_source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d"
   },
   "source_hash_version": 2,
-  "evidence_index": "docs/evidence/OB-018/release-validation-2026-10-01/index.json",
+  "evidence_index": "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/index.json",
   "execution_report": "docs/implementation-handoff.md",
   "external_blockers": [
     {
@@ -2777,8 +2994,8 @@
         "remote_distribution",
         "publication"
       ],
-      "missing": "Remote execution and publishing authorization; no hosted CI or distribution run was performed.",
-      "unblock": "Explicitly authorize a separate remote delivery task. The checked-in CI already prepares the pinned binary with archive and binary digest verification."
+      "missing": "Hosted CI and public Go proxy availability not yet verified; v0.1.0 tag publication is authorized but pending committed candidate verification.",
+      "unblock": "Complete the authorized fixed-SHA v0.1.0 tag publication, independently verify the real destination, and separately verify public distribution; the pinned fixture archive and binary remain verified."
     },
     {
       "affected": [
@@ -3031,7 +3248,7 @@
     }
   },
   "release_scope": "Local engineering gate only; not publication approval or hosted GitHub Actions execution.",
-  "publication_status": "NOT_PUBLISHED",
+  "publication_status": "RELEASE_CANDIDATE_VERIFIED_TAG_PENDING",
   "release_validation_2026_10_01": {
     "status": "LOCAL_ENGINEERING_VERIFIED_NOT_PUBLISHED",
     "plan": "docs/implementation-handoff.md",
@@ -3069,6 +3286,91 @@
     ],
     "prior_candidates": [
       "8f63b2b4a65dde5737a22ba4faff2bd4a69c07cd43bf8a2cfbbf7a398b8918c5",
+      "8352aef4d57a886741a387688c0b79210cb2ab0c9ed5ad76e7456da0c820b39d",
+      "20508f793a1b992b546d1309065000882144399edb0fc9d021ffb50d952ea231",
+      "169b03d2c6c75080611990c3c9234adc6edc87c8464ace94eff2e4764486b077",
+      "e60e3d4b8dad675867e6105a5b81a110bc36dd429c1a226c471656ad03079540"
+    ]
+  },
+  "prior_release_v0_1_0_final_2026_10_08": {
+    "source_hash_version": 2,
+    "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+    "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+    "task_status_counts": {
+      "VERIFIED": 18,
+      "BLOCKED": 1
+    },
+    "release_status": "BLOCKED",
+    "external_blockers": [
+      {
+        "affected": [
+          "OB-019",
+          "AC-072"
+        ],
+        "missing": "Actual business consumer repository and migration authorization.",
+        "unblock": "Provide the real consumer project under a separately scoped migration task."
+      },
+      {
+        "affected": [
+          "hosted_ci",
+          "remote_distribution",
+          "publication"
+        ],
+        "missing": "Remote execution and publishing authorization; no hosted CI or distribution run was performed.",
+        "unblock": "Explicitly authorize a separate remote delivery task. The checked-in CI already prepares the pinned binary with archive and binary digest verification."
+      },
+      {
+        "affected": [
+          "security_support_policy"
+        ],
+        "missing": "Maintainer-approved supported versions and response-time commitments.",
+        "unblock": "Maintainer decision; the private report address remains git@whereisit.cc."
+      }
+    ],
+    "evidence_index": "docs/evidence/OB-018/release-validation-2026-10-01/index.json",
+    "continuation": {
+      "round": "transit-preflight-2026-10-04",
+      "scope": "Authorized Transit implementation, current-source Windows verification and delivery preparation completed. Remaining Linux, real-fixture and scanning evidence is source-stale; publication and business migration are not authorized.",
+      "entrypoint": "docs/implementation-handoff.md"
+    }
+  },
+  "release_v0_1_0_validation_final_2026_10_08": {
+    "status": "RELEASE_CANDIDATE_ENGINEERING_VERIFIED",
+    "plan": "docs/implementation-handoff.md",
+    "source_identity": {
+      "source_hash_version": 2,
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b"
+    },
+    "completed_at": "2026-10-08T09:35:01+00:00",
+    "starting_source": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+    "formal_reports": {
+      "normal": ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+      "consumer": ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json",
+      "fuzz": ".artifacts/runs/2026-10-08T092215.356465Z-b882c2bd161049798a601b908a0913bc/fuzz/report-006.json",
+      "integration": ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json",
+      "security": ".artifacts/runs/2026-10-08T085648.651286Z-c7186837b2b44b08aed97f9462279d2d/security/report-003.json",
+      "minimum-normal-linux": ".artifacts/runs/2026-10-08T085408.701271Z-2944b1a3eef9467089dc57e1686a11a8/minimum-normal-linux/report-007.json",
+      "minimum-normal-windows": ".artifacts/runs/2026-10-08T092116.794520Z-fc24c25669124d66baa0b893ea4d76a2/minimum-normal-windows/report-007.json",
+      "minimum-consumer-linux": ".artifacts/runs/2026-10-08T085622.476354Z-bfcf269d3b6441409e06c8fe65c1095a/minimum-consumer-linux/report-007.json",
+      "minimum-consumer-windows": ".artifacts/runs/2026-10-08T092318.419105Z-266206fb6d3a44d08570ffc60aab3929/minimum-consumer-windows/report-007.json",
+      "tooling": ".artifacts/tooling-release-v010-20261008-final-linux-ext4.json",
+      "static": "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/static-review.json"
+    },
+    "ci_summary": ".artifacts/release-v0.1.0-20261008-01/ci-summary-final.json",
+    "coverage": ".artifacts/coverage-report.json",
+    "review": "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/independent-review.md",
+    "evidence_index": "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/index.json",
+    "current_step": "Local validation and review complete; final gate and resource cleanup are recorded in the evidence index.",
+    "next_step": "Commit only the approved SDK candidate, remove tracked machine files without deleting local bytes, preflight the full HEAD SHA, publish only v0.1.0 once and independently verify the destination refs.",
+    "not_run": [
+      "hosted GitHub Actions",
+      "current remote manifest",
+      "business migration",
+      "new benchmark",
+      "publishing"
+    ],
+    "prior_candidates": [
+      "1b31b5677db1bbcefc0f03ba2790aa3b9a9862c8fbadeff4c8cd75231b2f9414",
       "8352aef4d57a886741a387688c0b79210cb2ab0c9ed5ad76e7456da0c820b39d",
       "20508f793a1b992b546d1309065000882144399edb0fc9d021ffb50d952ea231",
       "169b03d2c6c75080611990c3c9234adc6edc87c8464ace94eff2e4764486b077",

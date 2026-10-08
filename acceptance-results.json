@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-  "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+  "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+  "recorded_at": "2026-10-08T09:35:01+00:00",
   "overall_status": "PASS",
   "definitions": {
     "PASS": "该项在明确注明的本地范围已经取得满足断言的证据，不自动代表任务或发布完成。",
@@ -29,9 +29,9 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
-        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
-        "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+        ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json",
+        "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/static-review.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -41,8 +41,8 @@
           "docs/evidence/OB-018/delivery-normal.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -87,7 +87,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         },
         {
@@ -96,7 +96,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+            ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json"
           ]
         },
         {
@@ -105,7 +105,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+            "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/static-review.json"
           ]
         }
       ],
@@ -189,6 +189,48 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+          ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+          "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          },
+          {
+            "classes": [
+              "REAL_OPENBAO"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+            ]
+          },
+          {
+            "classes": [
+              "STATIC_REVIEW"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -213,7 +255,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -221,8 +263,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -272,7 +314,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -320,6 +362,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -338,7 +402,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -346,8 +410,8 @@
           "docs/evidence/OB-018/delivery-direct-own-tests.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -394,7 +458,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -442,6 +506,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -466,7 +552,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -474,8 +560,8 @@
           "docs/evidence/OB-018/delivery-direct-own-tests.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -522,7 +608,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -570,6 +656,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -594,7 +702,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -602,8 +710,8 @@
           "docs/evidence/OB-018/delivery-direct-own-tests.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -650,7 +758,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -698,6 +806,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -716,7 +846,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -724,8 +854,8 @@
           "docs/evidence/OB-018/delivery-direct-own-tests.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -772,7 +902,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -820,6 +950,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -862,7 +1014,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -870,8 +1022,8 @@
           "docs/evidence/OB-018/delivery-direct-own-tests.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -918,7 +1070,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -966,6 +1118,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -984,7 +1158,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -992,8 +1166,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -1043,7 +1217,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -1100,6 +1274,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1118,7 +1314,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -1126,8 +1322,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -1177,7 +1373,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -1234,6 +1430,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1264,7 +1482,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -1272,8 +1490,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -1323,7 +1541,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -1380,6 +1598,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1410,7 +1650,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -1418,8 +1658,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -1469,7 +1709,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -1526,6 +1766,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1550,7 +1812,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -1558,8 +1820,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -1609,7 +1871,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -1666,6 +1928,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1690,7 +1974,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -1698,8 +1982,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -1749,7 +2033,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -1797,6 +2081,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1821,7 +2127,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -1829,8 +2135,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -1888,7 +2194,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -1936,6 +2242,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1954,7 +2282,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -1962,8 +2290,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -2013,7 +2341,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -2061,6 +2389,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2079,7 +2429,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -2087,8 +2437,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -2138,7 +2488,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -2186,6 +2536,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2204,7 +2576,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -2212,8 +2584,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -2263,7 +2635,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -2311,6 +2683,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2335,7 +2729,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -2343,8 +2737,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -2394,7 +2788,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -2442,6 +2836,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2460,7 +2876,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -2468,8 +2884,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -2519,7 +2935,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -2567,6 +2983,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2597,7 +3035,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -2605,8 +3043,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -2656,7 +3094,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -2704,6 +3142,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2722,7 +3182,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -2730,8 +3190,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -2781,7 +3241,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -2829,6 +3289,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2847,7 +3329,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -2855,8 +3337,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -2906,7 +3388,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -2954,6 +3436,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2990,7 +3494,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -2998,8 +3502,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -3049,7 +3553,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -3097,6 +3601,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3115,7 +3641,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -3123,8 +3649,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -3174,7 +3700,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -3222,6 +3748,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3240,7 +3788,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -3248,8 +3796,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -3299,7 +3847,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -3347,6 +3895,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3365,7 +3935,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -3373,8 +3943,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -3424,7 +3994,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -3472,6 +4042,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3490,7 +4082,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -3498,8 +4090,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -3549,7 +4141,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -3597,6 +4189,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3615,7 +4229,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -3623,8 +4237,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -3674,7 +4288,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -3722,6 +4336,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3740,7 +4376,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -3748,8 +4384,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -3799,7 +4435,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -3847,6 +4483,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3865,7 +4523,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -3873,8 +4531,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -3924,7 +4582,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -3972,6 +4630,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3990,7 +4670,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -3998,8 +4678,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -4049,7 +4729,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -4097,6 +4777,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -4115,7 +4817,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -4123,8 +4825,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -4174,7 +4876,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -4222,6 +4924,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -4246,7 +4970,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -4254,8 +4978,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -4305,7 +5029,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -4353,6 +5077,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -4371,7 +5117,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -4379,8 +5125,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -4430,7 +5176,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -4478,6 +5224,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -4496,7 +5264,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -4504,8 +5272,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -4555,7 +5323,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -4603,6 +5371,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -4627,7 +5417,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -4635,8 +5425,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -4686,7 +5476,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -4734,6 +5524,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -4752,7 +5564,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -4760,8 +5572,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -4811,7 +5623,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -4859,6 +5671,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -4895,7 +5729,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -4903,8 +5737,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -4954,7 +5788,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -5002,6 +5836,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -5020,7 +5876,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -5028,8 +5884,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -5079,7 +5935,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -5127,6 +5983,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -5151,7 +6029,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -5159,8 +6037,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -5210,7 +6088,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -5258,6 +6136,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -5276,7 +6176,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -5284,8 +6184,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -5335,7 +6235,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -5383,6 +6283,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -5401,7 +6323,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -5409,8 +6331,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -5460,7 +6382,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -5508,6 +6430,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -5532,7 +6476,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -5540,8 +6484,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -5599,7 +6543,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -5647,6 +6591,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -5665,7 +6631,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -5673,8 +6639,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -5724,7 +6690,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -5772,6 +6738,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -5796,7 +6784,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -5804,8 +6792,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -5855,7 +6843,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -5903,6 +6891,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -5933,7 +6943,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -5941,8 +6951,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -5992,7 +7002,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -6040,6 +7050,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -6064,7 +7096,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -6072,8 +7104,8 @@
           "docs/evidence/OB-018/delivery-direct-own-tests.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -6120,7 +7152,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -6168,6 +7200,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -6186,7 +7240,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -6194,8 +7248,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -6245,7 +7299,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -6293,6 +7347,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -6323,7 +7399,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -6331,8 +7407,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -6382,7 +7458,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -6430,6 +7506,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -6448,7 +7546,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -6456,8 +7554,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -6507,7 +7605,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -6555,6 +7653,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -6573,7 +7693,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -6581,8 +7701,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -6632,7 +7752,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -6680,6 +7800,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -6698,7 +7840,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -6706,8 +7848,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -6757,7 +7899,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -6805,6 +7947,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -6829,7 +7993,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -6837,8 +8001,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -6888,7 +8052,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -6936,6 +8100,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -6966,7 +8152,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -6974,8 +8160,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -7025,7 +8211,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -7073,6 +8259,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -7091,7 +8299,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -7099,8 +8307,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -7150,7 +8358,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -7198,6 +8406,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -7222,7 +8452,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -7230,8 +8460,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -7281,7 +8511,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -7329,6 +8559,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -7347,7 +8599,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -7355,8 +8607,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -7406,7 +8658,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -7454,6 +8706,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -7472,7 +8746,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -7480,8 +8754,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -7531,7 +8805,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -7579,6 +8853,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -7603,7 +8899,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -7611,8 +8907,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -7662,7 +8958,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -7710,6 +9006,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -7728,7 +9046,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -7736,8 +9054,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -7787,7 +9105,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -7835,6 +9153,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -7853,7 +9193,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -7861,8 +9201,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -7912,7 +9252,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -7960,6 +9300,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -7978,7 +9340,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -7986,8 +9348,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -8037,7 +9399,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -8085,6 +9447,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -8109,7 +9493,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -8117,8 +9501,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -8168,7 +9552,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         }
       ],
@@ -8216,6 +9600,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -8258,7 +9664,7 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json"
+        ".artifacts/runs/2026-10-08T092215.356465Z-b882c2bd161049798a601b908a0913bc/fuzz/report-006.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -8270,8 +9676,8 @@
           "docs/evidence/OB-015/fuzz-encoding-reproduce.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -8321,7 +9727,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json"
+            ".artifacts/runs/2026-10-08T092215.356465Z-b882c2bd161049798a601b908a0913bc/fuzz/report-006.json"
           ]
         }
       ],
@@ -8369,6 +9775,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "FUZZ_RUNTIME"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T164222.272552Z-7e9048ee98fd4324be158c78a82f7e9d/fuzz/report-006.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -8380,7 +9808,7 @@
       "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
       "tests": [],
       "evidence": [
-        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+        ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -8390,8 +9818,8 @@
           "docs/evidence/OB-018/green-fuzz-make-targets.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prepared_tests_not_run": [
         "TestIntegrationKVScheduledDeletion"
       ],
@@ -8433,7 +9861,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+            ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json"
           ]
         }
       ],
@@ -8489,6 +9917,28 @@
             "matched_evidence": []
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "REAL_OPENBAO"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -8513,8 +9963,8 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
-        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+        ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -8524,8 +9974,8 @@
           "docs/evidence/OB-018/green-fuzz-make-targets.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -8573,7 +10023,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         },
         {
@@ -8582,7 +10032,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+            ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json"
           ]
         }
       ],
@@ -8655,6 +10105,38 @@
             "matched_evidence": []
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+          ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          },
+          {
+            "classes": [
+              "REAL_OPENBAO"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -8666,7 +10148,7 @@
       "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
       "tests": [],
       "evidence": [
-        ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+        ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -8675,8 +10157,8 @@
           "docs/evidence/OB-017/delivery-consumer-sources.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -8715,7 +10197,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+            ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json"
           ]
         }
       ],
@@ -8763,6 +10245,28 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "INDEPENDENT_CONSUMERS"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -8793,8 +10297,8 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
-        ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+        ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -8802,8 +10306,8 @@
           "docs/evidence/OB-018/delivery-direct-own-tests.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -8850,7 +10354,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         },
         {
@@ -8859,7 +10363,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+            ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json"
           ]
         }
       ],
@@ -8927,6 +10431,38 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+          ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          },
+          {
+            "classes": [
+              "INDEPENDENT_CONSUMERS"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -8945,8 +10481,8 @@
         }
       ],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
-        ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+        ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -8954,8 +10490,8 @@
           "docs/evidence/OB-018/delivery-own-contracts.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -9005,7 +10541,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         },
         {
@@ -9014,7 +10550,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+            ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json"
           ]
         }
       ],
@@ -9082,6 +10618,38 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+          ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          },
+          {
+            "classes": [
+              "INDEPENDENT_CONSUMERS"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -9093,11 +10661,11 @@
       "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
       "tests": [],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
-        ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
-        ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
-        ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json",
-        "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+        ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+        ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json",
+        ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json",
+        ".artifacts/runs/2026-10-08T085648.651286Z-c7186837b2b44b08aed97f9462279d2d/security/report-003.json",
+        "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/static-review.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -9108,8 +10676,8 @@
           "docs/evidence/OB-018/delivery-scanners.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -9166,7 +10734,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json"
           ]
         },
         {
@@ -9175,7 +10743,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+            ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json"
           ]
         },
         {
@@ -9184,7 +10752,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+            ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json"
           ]
         },
         {
@@ -9193,7 +10761,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json"
+            ".artifacts/runs/2026-10-08T085648.651286Z-c7186837b2b44b08aed97f9462279d2d/security/report-003.json"
           ]
         },
         {
@@ -9202,7 +10770,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+            "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/static-review.json"
           ]
         }
       ],
@@ -9331,6 +10899,68 @@
             ]
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json",
+          ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json",
+          ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json",
+          ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json",
+          "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "NORMAL_OFFICIAL_CLIENT"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163656.429952Z-54ddc5ea65954ee5befd9990ef245cac/normal/report-007.json"
+            ]
+          },
+          {
+            "classes": [
+              "REAL_OPENBAO"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T164718.704427Z-9e10d0a7f0f140bea8c7545adee9e7a2/integration/report-002.json"
+            ]
+          },
+          {
+            "classes": [
+              "INDEPENDENT_CONSUMERS"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T164537.151510Z-15f3d136020d491f9e17c48a5d102d9c/consumer/report-007.json"
+            ]
+          },
+          {
+            "classes": [
+              "PINNED_SECURITY_SCANNERS"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json"
+            ]
+          },
+          {
+            "classes": [
+              "STATIC_REVIEW"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              "docs/evidence/OB-018/release-validation-2026-10-01/static-review.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -9342,7 +10972,7 @@
       "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
       "tests": [],
       "evidence": [
-        ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json"
+        ".artifacts/runs/2026-10-08T085648.651286Z-c7186837b2b44b08aed97f9462279d2d/security/report-003.json"
       ],
       "historical_evidence": {
         "source_sha256": "91e13af25d1501acdc26a11d0df83f81a683d0f016baab607718dcded2e52384",
@@ -9350,8 +10980,8 @@
           "docs/evidence/OB-018/delivery-scanners.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -9389,7 +11019,7 @@
           ],
           "status": "PASS",
           "matched_evidence": [
-            ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json"
+            ".artifacts/runs/2026-10-08T085648.651286Z-c7186837b2b44b08aed97f9462279d2d/security/report-003.json"
           ]
         }
       ],
@@ -9442,6 +11072,28 @@
             "matched_evidence": []
           }
         ]
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "PASS",
+        "evidence": [
+          ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json"
+        ],
+        "execution_note": "Every required group matches independently parsed current-source reports. Historical supplemental remote receipts are not used for these results.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": [
+          {
+            "classes": [
+              "PINNED_SECURITY_SCANNERS"
+            ],
+            "status": "PASS",
+            "matched_evidence": [
+              ".artifacts/runs/2026-10-01T163823.034057Z-b4f7427179764aa6b8bbdaf86d8bf78c/security/report-003.json"
+            ]
+          }
+        ]
       }
     },
     {
@@ -9459,8 +11111,8 @@
           "docs/evidence/OB-001/delivery-environment.json"
         ]
       },
-      "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
-      "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+      "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+      "recorded_at": "2026-10-08T09:35:01+00:00",
       "prior_review": {
         "recorded_at": "2026-09-28T11:32:23.851721+00:00",
         "source_sha256": "54b0a506d504078aef74886f1ccf072e165d38116211d4f863b6499f9943d38d",
@@ -9511,15 +11163,25 @@
         "execution_note": "Real business migration remains outside this task and was not run.",
         "scope": "Current candidate on Windows Go 1.26.3; current-source local evidence only. Earlier sdk-test reports are historical and supplemental.",
         "validated_groups": []
+      },
+      "prior_release_v0_1_0_final_2026_10_08": {
+        "source_hash_version": 2,
+        "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+        "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+        "status": "NOT_RUN",
+        "evidence": [],
+        "execution_note": "Real business migration remains outside the authorized scope and was not executed.",
+        "scope": "Current-source local Linux/Windows validation; main Go 1.26.8, separate Go 1.25.0 compatibility receipts; no hosted CI, publication or production execution.",
+        "validated_groups": []
       }
     }
   ],
   "continuation": {
-    "round": "release-validation-2026-10-01",
-    "scope": "Authorized local engineering verification complete; publication and business migration are separate.",
+    "round": "release-v0.1.0-2026-10-08-final",
+    "scope": "Authorized v0.1.0 candidate engineering verification complete; commit, fixed-SHA preflight and single-tag publication remain pending. Business migration is separate.",
     "entrypoint": "docs/implementation-handoff.md"
   },
-  "previous_source_sha256": "8a1b5313ccda18142539b6cc167ee987d1f07fed1368662970fd09a5897d628f",
+  "previous_source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
   "prior_review_r3": {
     "schema_version": 1,
     "source_sha256": "459e4262e9d1665e9ff6018fda0797046daf361b55a2052c230903c0c80e3399",
@@ -9640,5 +11302,20 @@
       "entrypoint": "docs/implementation-handoff.md"
     }
   },
-  "overall_scope": "AC-001 through AC-071; AC-072 remains NOT_RUN and outside the engineering release gate."
+  "overall_scope": "AC-001 through AC-071; AC-072 remains NOT_RUN and outside the engineering release gate.",
+  "prior_release_v0_1_0_final_2026_10_08": {
+    "source_hash_version": 2,
+    "source_sha256": "d3183d2e79ec39057ae5f4d437362d4e7d87b61aa16c1055431ca5db11d37233",
+    "recorded_at": "2026-10-01T17:00:25.636918+00:00",
+    "counts": {
+      "PASS": 71,
+      "NOT_RUN": 1
+    },
+    "overall_status": "PASS",
+    "continuation": {
+      "round": "release-validation-2026-10-01",
+      "scope": "Authorized local engineering verification complete; publication and business migration are separate.",
+      "entrypoint": "docs/implementation-handoff.md"
+    }
+  }
 }

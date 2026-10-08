@@ -37,7 +37,7 @@ jobs:
         with:
           go-version: '1.26.8'
           cache: false
-      - run: python -B scripts/record.py --evidence-class COMMAND_TOOLING --output-dir .artifacts --run-id ci-${{ github.run_id }}-${{ github.run_attempt }} OB-018 tooling -- python -B -m unittest discover -s scripts/tests -v
+      - run: python -B scripts/record.py --timeout-s 1200 --evidence-class COMMAND_TOOLING --output-dir .artifacts --run-id ci-${{ github.run_id }}-${{ github.run_attempt }} OB-018 tooling -- python -B -m unittest discover -s scripts/tests -v
       - name: Prepare allowed evidence
         if: always()
         run: python -B scripts/ci-summary.py --package-report .artifacts/tooling-report.json --output .artifacts/ci-upload/tooling-${{ matrix.platform }}

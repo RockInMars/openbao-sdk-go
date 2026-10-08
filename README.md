@@ -1,6 +1,6 @@
 # openbao-sdk-go
 
-**开发快照，尚未发布。当前工程门禁结果以自动生成的验证状态为准。**
+**Go 运行时 SDK；版本以仓库 Git 标签为准，当前工程门禁结果以自动生成的验证状态为准。**
 
 这是依据 `docs/spec/01–06` 实施的 Go 运行时 SDK。包含 Core/Auth、KV v2、PKI、Transit、Diagnostics/Observe 的真实实现、测试、示例和验证脚本。管理 API 不在运行时范围。
 

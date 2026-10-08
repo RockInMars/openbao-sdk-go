@@ -2,23 +2,23 @@
 
 由 `scripts/current-status.py` 读取现有台账、证据索引和报告生成；此页不修改验收状态，也不授予发布批准。
 
-源码标识：v2 `fd39a6a6ff089e5185d4a52ef72ec43dc5b94e4a746d53665e91ca45baa7b183`。
+源码标识：v2 `0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b`。
 
-- 任务台账：STALE；记录状态为 BLOCKED 1 / VERIFIED 18。
-- 验收台账：STALE；记录状态为 NOT_RUN 1 / PASS 71。
-- 台账指向的证据索引：STALE；文件摘要匹配 249/249。
-- 按当前源码即时计算的发布门禁：**FAIL**，99 项拒绝。
+- 任务台账：CURRENT；记录状态为 BLOCKED 1 / VERIFIED 18。
+- 验收台账：CURRENT；记录状态为 NOT_RUN 1 / PASS 71。
+- 台账指向的证据索引：CURRENT；文件摘要匹配 17/17。
+- 按当前源码即时计算的发布门禁：**PASS**，0 项拒绝。
 
 | 报告 | 证据类别 | 报告原状态 | 当前校验 |
 | --- | --- | --- | --- |
-| [normal](../.artifacts/normal-report.json) | `NORMAL_OFFICIAL_CLIENT` | PASS | STALE |
-| [integration](../.artifacts/integration-report.json) | `REAL_OPENBAO` | PASS | STALE |
-| [consumers](../.artifacts/consumer-report.json) | `INDEPENDENT_CONSUMERS` | PASS | STALE |
-| [scans](../.artifacts/security-report.json) | `PINNED_SECURITY_SCANNERS` | PASS | STALE |
-| [minimum-normal-linux](../.artifacts/minimum-normal-linux-report.json) | `MINIMUM_GO_COMPATIBILITY` | PASS | STALE |
-| [minimum-normal-windows](../.artifacts/minimum-normal-windows-report.json) | `MINIMUM_GO_COMPATIBILITY` | PASS | STALE |
-| [minimum-consumer-linux](../.artifacts/minimum-consumer-linux-report.json) | `MINIMUM_GO_CONSUMERS` | PASS | STALE |
-| [minimum-consumer-windows](../.artifacts/minimum-consumer-windows-report.json) | `MINIMUM_GO_CONSUMERS` | PASS | STALE |
+| [normal](../.artifacts/normal-report.json) | `NORMAL_OFFICIAL_CLIENT` | PASS | PASS |
+| [integration](../.artifacts/integration-report.json) | `REAL_OPENBAO` | PASS | PASS |
+| [consumers](../.artifacts/consumer-report.json) | `INDEPENDENT_CONSUMERS` | PASS | PASS |
+| [scans](../.artifacts/security-report.json) | `PINNED_SECURITY_SCANNERS` | PASS | PASS |
+| [minimum-normal-linux](../.artifacts/minimum-normal-linux-report.json) | `MINIMUM_GO_COMPATIBILITY` | PASS | PASS |
+| [minimum-normal-windows](../.artifacts/minimum-normal-windows-report.json) | `MINIMUM_GO_COMPATIBILITY` | PASS | PASS |
+| [minimum-consumer-linux](../.artifacts/minimum-consumer-linux-report.json) | `MINIMUM_GO_CONSUMERS` | PASS | PASS |
+| [minimum-consumer-windows](../.artifacts/minimum-consumer-windows-report.json) | `MINIMUM_GO_CONSUMERS` | PASS | PASS |
 
 PASS 要求当前源码、前后标识、实际目标、命令、工具链、平台及日志摘要通过现有证据校验。STALE 表示历史源码；INVALID 表示当前报告不能支持其声明；NOT_RUN 包括缺失报告。BLOCKED/FAIL 保留报告原有结论，不代表检查成功。
 

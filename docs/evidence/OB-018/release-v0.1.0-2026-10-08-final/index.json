@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "source_hash_version": 2,
+  "source_sha256": "0bca95690d54ed20de1703f4cb1523984cdc122398957665b85502b9738de74b",
+  "recorded_at": "2026-10-08T09:47:27.372631+00:00",
+  "selected_input_count": 194,
+  "scope": "Current-source authorized v0.1.0 engineering candidate. Not hosted CI, production execution, public Go proxy availability or business migration.",
+  "formal_reports": {
+    "normal": ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+    "consumer": ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json",
+    "fuzz": ".artifacts/runs/2026-10-08T092215.356465Z-b882c2bd161049798a601b908a0913bc/fuzz/report-006.json",
+    "integration": ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json",
+    "security": ".artifacts/runs/2026-10-08T085648.651286Z-c7186837b2b44b08aed97f9462279d2d/security/report-003.json",
+    "minimum-normal-linux": ".artifacts/runs/2026-10-08T085408.701271Z-2944b1a3eef9467089dc57e1686a11a8/minimum-normal-linux/report-007.json",
+    "minimum-normal-windows": ".artifacts/runs/2026-10-08T092116.794520Z-fc24c25669124d66baa0b893ea4d76a2/minimum-normal-windows/report-007.json",
+    "minimum-consumer-linux": ".artifacts/runs/2026-10-08T085622.476354Z-bfcf269d3b6441409e06c8fe65c1095a/minimum-consumer-linux/report-007.json",
+    "minimum-consumer-windows": ".artifacts/runs/2026-10-08T092318.419105Z-266206fb6d3a44d08570ffc60aab3929/minimum-consumer-windows/report-007.json",
+    "tooling": ".artifacts/tooling-release-v010-20261008-final-linux-ext4.json",
+    "static": "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/static-review.json"
+  },
+  "reports": [
+    {
+      "path": ".artifacts/runs/2026-10-08T084857.442040Z-b92e6c29fa2b46f489a8b583f6dd1ca2/normal/report-007.json",
+      "sha256": "96556f1fa1277612200bd756fd09a576cc5e5bf65ee021191867845d85717fec",
+      "bytes": 5770
+    },
+    {
+      "path": ".artifacts/runs/2026-10-08T085519.805193Z-fed221c98a3d4e15ab8dd583bdea22bf/consumer/report-007.json",
+      "sha256": "fb7ffb9159a34393eea6622307fe065626d7abe81af40237c06e90dfbcdcd7e8",
+      "bytes": 7827
+    },
+    {
+      "path": ".artifacts/runs/2026-10-08T092215.356465Z-b882c2bd161049798a601b908a0913bc/fuzz/report-006.json",
+      "sha256": "31594a37be92d95c6b73a64eb241f95480baf6845c69fa61bfc8bebd6aa963bf",
+      "bytes": 5347
+    },
+    {
+      "path": ".artifacts/runs/2026-10-08T092203.010415Z-e03c0aad3b1045b182d0e2fbdfd3bdd1/integration/report-002.json",
+      "sha256": "f560fa59a15645ae34d13eb3baa9f8bcd7b3dfd557ac478a20b966e893cc083f",
+      "bytes": 2501
+    },
+    {
+      "path": ".artifacts/runs/2026-10-08T085648.651286Z-c7186837b2b44b08aed97f9462279d2d/security/report-003.json",
+      "sha256": "7c513e72e359d233bec8c11a0dd98f4fafdfde4093137d68cb2cb31874ba1256",
+      "bytes": 3433
+    },
+    {
+      "path": ".artifacts/runs/2026-10-08T085408.701271Z-2944b1a3eef9467089dc57e1686a11a8/minimum-normal-linux/report-007.json",
+      "sha256": "431c1c549b0e00036d19f234a573803cb84290c766cabc3b8074d2d1f9ccb4e0",
+      "bytes": 5905
+    },
+    {
+      "path": ".artifacts/runs/2026-10-08T092116.794520Z-fc24c25669124d66baa0b893ea4d76a2/minimum-normal-windows/report-007.json",
+      "sha256": "a273c01fae75cc634742fede3c1ad641bc3cfa43dc36d47e2beb0311960ac68d",
+      "bytes": 6346
+    },
+    {
+      "path": ".artifacts/runs/2026-10-08T085622.476354Z-bfcf269d3b6441409e06c8fe65c1095a/minimum-consumer-linux/report-007.json",
+      "sha256": "5e1d71557bf9f23fb36776bf05b8835a38c3a1f6d2c90691815d6c6cc87826a3",
+      "bytes": 7967
+    },
+    {
+      "path": ".artifacts/runs/2026-10-08T092318.419105Z-266206fb6d3a44d08570ffc60aab3929/minimum-consumer-windows/report-007.json",
+      "sha256": "bbf403323dfa935d49ce38a4b33f9a6d01be0e222276472d972773fb0e66b599",
+      "bytes": 8234
+    },
+    {
+      "path": ".artifacts/tooling-release-v010-20261008-final-linux-ext4.json",
+      "sha256": "4bde40d6184cc76393ccea65102ead1615ddbe39a1dbd58f324c26c9e3cc8a45",
+      "bytes": 1481
+    },
+    {
+      "path": "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/static-review.json",
+      "sha256": "a5a07dc35a70f48a9265d89d030740cad9a4f983779877c98e4280b54c3e3c77",
+      "bytes": 2306
+    },
+    {
+      "path": ".artifacts/tooling-release-v010-20261008-final-windows.json",
+      "sha256": "f06885832e26c2c1cd95ef27f09e9edd84629dea075df1f90096b47e477eb311",
+      "bytes": 1512
+    },
+    {
+      "path": ".artifacts/runs/2026-10-08T091908.899891Z-8f5db62e9bd546408c77c0c6f78a71ea/normal/report-007.json",
+      "sha256": "1b0ac8abec427e979e1ffb5936582162159b4daa29845cff3c0500882e142792",
+      "bytes": 6182
+    },
+    {
+      "path": ".artifacts/release-v0.1.0-20261008-01/ci-summary-final.json",
+      "sha256": "27a86f1184534c0bc482af02ee8b8ab73e377906403e3fb498a869f5bfbd0c37",
+      "bytes": 2281
+    },
+    {
+      "path": ".artifacts/coverage-report.json",
+      "sha256": "cd642171bd4ea44bf814d5def3b75729e620fc3dc66b4481acd418cacee3d62d",
+      "bytes": 3339
+    },
+    {
+      "path": "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/independent-review.md",
+      "sha256": "1af98a082116d3b68ef4616c2d6f164dff15469f012e8e0640eb6a733ac09d0d",
+      "bytes": 2478
+    },
+    {
+      "path": ".artifacts/release-v0.1.0-20261008-01/windows-audit-release-v010-20261008-final-windows-audit-b64.json",
+      "sha256": "8589f56f8f2bff79384c917230f16e7d133b4bc555c9e9bfe2927f5f3f62c446",
+      "bytes": 7546
+    }
+  ],
+  "ci_summary": ".artifacts/release-v0.1.0-20261008-01/ci-summary-final.json",
+  "coverage": ".artifacts/coverage-report.json",
+  "independent_review": "docs/evidence/OB-018/release-v0.1.0-2026-10-08-final/independent-review.md",
+  "windows_audit": ".artifacts/release-v0.1.0-20261008-01/windows-audit-release-v010-20261008-final-windows-audit-b64.json",
+  "release_gate": {
+    "command": "python -B scripts/verify-release.py",
+    "status": "PASS",
+    "exit_code": 0
+  },
+  "publication_status": "VERIFIED_CANDIDATE_TAG_PENDING",
+  "runtime_attempts": [
+    {
+      "path": ".artifacts/tooling-release-v010-20261008-final-linux.json",
+      "status": "FAIL",
+      "tests": 190,
+      "seconds": 312.479,
+      "errors": 2,
+      "cause_observed": "Existing twenty-second child CLI timeouts on the Windows-mounted Linux workspace; no assertion or timeout change."
+    },
+    {
+      "path": ".artifacts/tooling-release-v010-20261008-final-linux-serial.json",
+      "status": "FAIL",
+      "tests": 190,
+      "seconds": 574.302,
+      "errors": 3,
+      "cause_observed": "Same mounted-path child CLI timeouts retained after reduced concurrency."
+    },
+    {
+      "path": ".artifacts/tooling-release-v010-20261008-final-linux-ext4.json",
+      "status": "PASS",
+      "tests": 190,
+      "seconds": 28.034,
+      "working_directory": "/tmp/openbao-release-fast-v010-20261008",
+      "filesystem_probe": "stat -f: ext2/ext3",
+      "recovery": "Actual same-byte snapshot on the owned container native Linux filesystem, 194 inputs and matching v2 before/after; unchanged full suite and budgets. Original report/log transported byte-for-byte and independently parsed in the SDK checkout."
+    },
+    {
+      "path": ".artifacts/tooling-release-v010-20261008-final-windows.json",
+      "status": "PASS",
+      "tests": 190,
+      "seconds": 706.619,
+      "python_utf8_mode": 0,
+      "verification": "Independent Windows verifier; report, raw log and structured export checked."
+    }
+  ],
+  "historical_only": [
+    {
+      "path": "docs/evidence/OB-018/release-v0.1.0-2026-10-08/static-review.json",
+      "source_sha256": "1b31b5677db1bbcefc0f03ba2790aa3b9a9862c8fbadeff4c8cd75231b2f9414",
+      "note": "Earlier complete matrix became stale after the candidate-tree exclusion P1 fix; not reused for the final candidate."
+    }
+  ],
+  "not_run": [
+    "hosted GitHub Actions",
+    "AC-072 real business migration",
+    "new performance benchmark",
+    "historical or production OpenBao remote tests",
+    "public Go proxy availability",
+    "tag publication at this candidate checkpoint"
+  ]
+}

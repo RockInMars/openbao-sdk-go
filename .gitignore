@@ -1,4 +1,6 @@
 .artifacts/
+.codex/
+.serena/
 coverage.out
 *.test
 .env

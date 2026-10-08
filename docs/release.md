@@ -1,6 +1,6 @@
 # 发布检查
 
-维护者已确认仓库 `github.com/RockInMars/openbao-sdk-go` 和其现有 Apache-2.0 LICENSE；本轮已同步 module/import，未提交、推送、发布或部署，尚未验证远端分发本轮快照。不要用 tag/push 掩盖未通过门禁。
+维护者已确认仓库 `github.com/RockInMars/openbao-sdk-go` 和其现有 Apache-2.0 LICENSE。最新验证状态以[当前状态页](current-status.md)为准；本地提交不代表发布批准，也不代表远端分发已验证。不要用 tag/push 掩盖未通过门禁。
 
 1. OB-001核对当前 Go 1.25.0 声明下限、固定 api/v2 v2.7.0 和已有 go.sum；主 Go 1.26.8 的通过不替代最低版本兼容验证。
 2. 保持已确认 module 大小写与原 LICENSE；后续远端分发需要另行明确授权和可获取性验证。
@@ -15,6 +15,50 @@
 CI 使用固定 commit 的 checkout/setup-go/upload/download，仅 contents:read、关闭凭据持久化，无发布步骤。新 upload-artifact v4.6.2 和 download-artifact v4.3.0 引用经官方 GitHub tag API 核验；失败仍上传结构化脱敏证据，summary 即使依赖失败也运行。它尚未在远端运行，缺真实集成输入时 job 失败。Linux/Windows 必须使用同字节源码（checkout 禁止 autocrlf 转换），跨平台逻辑单测不能代替两个平台正式运行。
 
 主工具链四类正式报告、最低版本两类报告（分别要求 Linux/Windows）、逐目标 fuzz 和 CI 补充结果分开。benchmark 保留可复跑记录但不新增发布硬门槛。`PINNED` 只表示服务输入已固定；测试后不得改锁文件延用旧报告。最终结论必须区分实现完成、本地通过、门禁通过和已发布。
+
+## 标签发布脚本
+
+`scripts/release.py` 只使用 Python 标准库和 Git，默认预检查，不暂存、提交、创建标签或推送。先冻结并提交候选，再按现有验证入口为相同 v2 指纹补齐真实证据；新增脚本或测试也会改变指纹，旧报告不得改绑为新快照的 PASS。
+
+预检查示例（版本号由维护者选择，不会自动递增）：
+
+```text
+rtk proxy python -B scripts/release.py --version v0.1.0
+```
+
+脚本复用 `verify-release.py` 的 `release_problems` 门禁，读取当前台账及 `.artifacts/*-report.json`。缺失、过期、失败或无法读取的证据均拒绝发布，没有跳过门禁选项。预检查通过仅表示候选满足检查，不授予发布批准；AC-072 业务迁移仍是独立门禁。
+
+同时必须满足以下条件：
+
+- 在 SDK 仓库根目录对应的 checkout 中运行，暂存区为空，SDK 源码、测试、工具与文档没有未提交或未跟踪改动。工具定义的机器配置、缓存和产物排除目录可保留本地文件，但候选提交树中不得包含任何排除目录的路径；脚本在创建标签前拒绝这些已提交文件。原先已跟踪的机器文件须经明确范围核对后仅取消跟踪，保留本地原文件和改动，不能只依赖忽略规则或跳过暂存。
+- 候选提交等于 `HEAD`，使用完整 checkout，不允许 SDK 路径上的 `skip-worktree` / `assume-unchanged` 隐藏改动。提交与文件系统的 v2 输入集合必须一致，所有输入的原始字节与提交中的 blob 一致；脚本所有 Git 操作禁用 replacement objects，避免用替代树验证原提交。Git 把 CRLF 规范化为 LF 后显示 clean，并不能替代同字节验证；发现不一致时使用同字节 checkout 重建证据，不自动转换源码或复用旧报告。
+- module 仍为 `github.com/RockInMars/openbao-sdk-go`。版本必须是规范的 `v0.x.y` 或 `v1.x.y`，可带 `-rc.1` 等预发布标识，不接受前导零、build metadata 或需要另行管理模块路径的 v2 标签。v1 的稳定兼容承诺仍由维护者决定。
+- `--remote` 默认为 `origin`，只接受已配置的 remote 名称；其 push destination 必须唯一，且不能被 Git 再解析为任一已配置 remote 名称。即使 fetch URL 不同，冲突检查和发布后核验也使用实际 push destination。有任何 `url.*.pushInsteadOf` 定向重写配置时拒绝发布，以免读写落到不同仓库；脚本不自动关闭或修改这些配置。
+- 本地与目标远端均不存在同名标签。远端不可访问时也拒绝；不会覆盖、删除或自动恢复任何已有标签。
+
+经明确授权后，使用已核对的完整提交 SHA 发布。PowerShell 示例：
+
+```powershell
+$releaseSha = (rtk proxy git rev-parse HEAD).Trim()
+rtk proxy python -B scripts/release.py --version v0.1.0 --commit $releaseSha --publish
+```
+
+`--publish` 必须显式提供 `--commit`，不接受缩写或分支名。脚本在网络检查后和写操作前再次核对候选与证据，创建绑定该 SHA 的 annotated tag，然后仅推送固定 tag object SHA 到单一 `refs/tags/<version>`。它不推送分支或其他标签，不递归推送 submodule，不使用 force、不跳过 hooks，也不改 Git 身份、remote 或 hooks 配置。默认每次 Git 操作超时 300 秒，可用 `--timeout 600` 调整（范围 1–3600）。认证应提前配置；脚本不交互索取凭据，不输出 remote URL 或可能含凭据的 Git 原始错误。
+
+发布窗口内应冻结 checkout、证据及 Git/传输配置，不与其他配置或标签操作并行。上述分离检查不是跨进程原子锁；外部并发改写配置仍可能改变传输语义，不能把脚本当作对不可信 Git 配置的隔离器。
+
+成功条件是从同一 push destination 重新读取并确认 tag object 和 peeled commit 均匹配，而非仅依据 `git push` 退出码。退出 0 的 `DRY-RUN: PASS` 没有任何 tag/push；退出 0 的 `RELEASE: PUBLISHED` 表示远端标签已核验，**不表示 Go 公共代理已可获取、GitHub Release 已创建或业务迁移已完成**。
+
+写操作开始后的失败、超时、中断或本地/远端标签核验不一致返回退出 1 和 `RELEASE: PARTIAL`，保留本地/远端已有状态，不自动回滚或重试。此时先检查本地标签、真实 push destination 和运行进程；不要重复发布、删改可能已分发的版本或强推。写操作前的拒绝返回 `RELEASE: BLOCKED`；参数解析错误返回退出 2。
+
+公共分发还需确认仓库公开可读，并在独立消费者环境核验下载（不使用 `replace`）：
+
+```text
+rtk proxy go list -m github.com/RockInMars/openbao-sdk-go@v0.1.0
+rtk proxy go get github.com/RockInMars/openbao-sdk-go@v0.1.0
+```
+
+私有模块应使用消费方既有的私有模块代理与认证配置。脚本不会替你修改 `GOPROXY`、`GOPRIVATE` 或全局 Go 环境；发布后修复使用新版本，不重写已发布标签。
 
 ## 2026-10-01 续作验证与复现
 
