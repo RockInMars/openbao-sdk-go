@@ -68,6 +68,8 @@ TokenSnapshot 字段为 `Token`、`Generation`、`ValidUntil`；SecretIDSnapshot
 
 ## 4. KV v2：秘密数据与版本
 
+逐个方法的用途、完整字段、版本与 CAS 规则、精确 ACL 路径、Document 所有权和组合示例见 [KV v2 全部公开方法详解](kv-methods.md)。
+
 ### 4.1 九个公开方法
 
 以下 `ctx` 为 `context.Context`，路径相对 KV 挂载，不能自行拼 `/data/` 前缀。
@@ -157,6 +159,8 @@ func CreateReadUpdate(ctx context.Context, store *bao.KVClient, path string) (kv
 List 的条目为 `Name` 和 `IsFolder`，Name 不保留尾随斜杠；404 不自动解释为空列表。删除/恢复返回 error 而非完整结果，业务需要确认目标版本状态时应再次做明确读取或元数据核对。
 
 ## 5. PKI：证书签发与校验
+
+逐个方法的用途、全部字段、CSR 与私钥所有权、独立信任链、EKU、吊销边界和组合示例见 [PKI 全部公开方法详解](pki-methods.md)。
 
 ### 5.1 五个网络方法
 
@@ -248,6 +252,8 @@ func IssueForClient(ctx context.Context, issuer *bao.PKIClient, role, cn string,
 完整单次签发与保存示例见 [pki-issue-store](../examples/pki-issue-store/main.go)，持久恢复边界见 [credentialworkflow](../examples/credentialworkflow/workflow.go)。当前示例用 map 编码，`[][]byte` 的 ca_chain_pem 在 JSON 中是 Base64 字符串数组，不是字面 PEM 数组；示例也未把独立 IssuingCAPEM 字段写入文档，回读只核对操作号与代次。业务落地前要明确自己的存储 schema、所需证书材料和回读校验，不能把这个演示当作完整跨进程恢复实现。
 
 ## 6. Transit：签名、加密和 HMAC
+
+逐个方法的用途、完整字段、版本与派生规则、精确 ACL 路径和组合示例见 [Transit 全部公开方法详解](transit-methods.md)。
 
 ### 6.1 版本化接口
 

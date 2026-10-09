@@ -14,7 +14,7 @@
 
 ## 专项说明
 
-[认证](authentication.md) · [错误处理](error-handling.md) · [观察接口](observability.md) · [兼容性](compatibility.md) · [测试](testing.md) · [发布](release.md) · [业务接入与回滚](integration-and-rollback.md)
+[认证](authentication.md) · [KV v2 方法详解](kv-methods.md) · [PKI 方法详解](pki-methods.md) · [Transit 方法详解](transit-methods.md) · [错误处理](error-handling.md) · [观察接口](observability.md) · [兼容性](compatibility.md) · [测试](testing.md) · [发布](release.md) · [业务接入与回滚](integration-and-rollback.md)
 
 ## 依赖恢复与实施
 
